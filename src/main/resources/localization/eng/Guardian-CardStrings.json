@@ -1,0 +1,150 @@
+{
+  "Guardian:Strike_Guardian": {
+    "NAME": "Strike",
+    "DESCRIPTION": "Deal !D! damage."
+  },
+  "Guardian:Defend_Guardian": {
+    "NAME": "Defend",
+    "DESCRIPTION": "Gain !B! Block."
+  },
+  "Guardian:Gem_Red": {
+    "NAME": "Power Gem",
+    "DESCRIPTION": "Gem. NL Gain 2 Strength for this turn."
+  },
+  "Guardian:ChargeUp": {
+    "NAME": "Charge Up",
+    "DESCRIPTION": "On your next turn, gain !B! Block and !M! Strength. NL Exhaust."
+  },
+  "Guardian:DonusPower": {
+    "NAME": "Ancient Power",
+    "DESCRIPTION": "Gain 1 Strength. NL Add a random Attack card to your hand. It costs 0 this turn. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Gain 1 Strength and 1 Artifact. NL Add a random Attack card to your hand. It costs 0 this turn. NL Exhaust."
+  },
+  "Guardian:DecasProtection": {
+    "NAME": "Ancient Protection",
+    "DESCRIPTION": "Gain 1 Dexterity. NL Add a random Power card to your hand. It costs 0 this turn. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Gain 1 Dexterity and 1 Artifact. NL Add a random Power card to your hand. It costs 0 this turn. NL Exhaust."
+  },
+  "Guardian:FierceBash": {
+    "NAME": "Fierce Bash",
+    "DESCRIPTION": "Deal !D! damage. NL Enter Offensive Mode."
+  },
+  "Guardian:PolyBeam": {
+    "NAME": "Poly Beam",
+    "DESCRIPTION": "Deal !D! damage !GuardianMulti! times. NL Set this card's cost to 2, then place it into Stasis."
+  },
+  "Guardian:TwinSlam": {
+    "NAME": "Twin Slam",
+    "DESCRIPTION": "Deal !D! damage !GuardianMulti! times. NL Enter Offensive Mode."
+  },
+  "Guardian:GuardianWhirl": {
+    "NAME": "Guardian Whirl",
+    "DESCRIPTION": "Deal !D! damage !GuardianMulti! times."
+  },
+  "Guardian:VentSteam": {
+    "NAME": "Vent Steam",
+    "DESCRIPTION": "Apply !M! Weak and Vulnerable."
+  },
+  "Guardian:CurlUp": {
+    "NAME": "Curl Up",
+    "DESCRIPTION": "Gain !B! Block !GuardianMulti! times. NL Enter Defensive Mode."
+  },
+  "Guardian:ExploderProtocol": {
+    "NAME": "Exploder Protocol",
+    "DESCRIPTION": "Summon Bronze Orb. NL In 3 turns, your Bronze Orb will explode, dealing !M! damage to ALL enemies."
+  },
+  "Guardian:SpikerProtocol": {
+    "NAME": "Spiker Protocol",
+    "DESCRIPTION": "Summon Bronze Orb. NL Your Bronze Orb attacks a random enemy for !GuardianSecondM! damage each turn, and deals !M! damage to attackers."
+  },
+  "Guardian:RepulsorProtocol": {
+    "NAME": "Repulsor Protocol",
+    "DESCRIPTION": "Summon Bronze Orb. NL Your Bronze Orb attacks a random enemy for !GuardianSecondM! damage and applies !M! Weak each turn."
+  },
+  "Guardian:GuardProtocol": {
+    "NAME": "Guard Protocol",
+    "DESCRIPTION": "Summon Bronze Orb. NL Your Bronze Orb grants you !M! Block each turn."
+  },
+  "Guardian:HyperBeam_Guardian": {
+    "NAME": "Hyper Beam",
+    "DESCRIPTION": "Deal !D! damage to ALL enemies. NL Skip your next turn."
+  },
+  "Guardian:BronzeArmor": {
+    "NAME": "Bronze Armor",
+    "DESCRIPTION": "Gain !M! Artifact. NL Exhaust."
+  },
+  "Guardian:FloatingOrbs": {
+    "NAME": "Floating Orbs",
+    "DESCRIPTION": "At the start of your turn, add an Orb Slam to your hand."
+  },
+  "Guardian:OrbSlam": {
+    "NAME": "Orb Slam",
+    "DESCRIPTION": "Deal !D! damage !GuardianMulti! times. NL Exhaust."
+  },
+  "Guardian:Incinerate": {
+    "NAME": "Incinerate",
+    "DESCRIPTION": "Deal !D! damage, plus an additional !M! damage every turn this combat."
+  },
+  "Guardian:Orbwalk": {
+    "NAME": "Orbwalk",
+    "DESCRIPTION": "Gain !M! Strength at the start of each turn."
+  },
+  "Guardian:WalkerClaw": {
+    "NAME": "Walker Claw",
+    "DESCRIPTION": "Deal !D! damage."
+  },
+  "Guardian:SphericShield": {
+    "NAME": "Spheric Shield",
+    "DESCRIPTION": "Block is not removed at the start of your turn. NL Enter Defensive Mode."
+  },
+  "Guardian:Harden": {
+    "NAME": "Harden",
+    "DESCRIPTION": "Deal !D! Damage. NL Gain !B! Block."
+  },
+  "Guardian:SentryBeam": {
+    "NAME": "Sentry Beam",
+    "DESCRIPTION": "Deal !D! Damage. NL Place a Sentry Wave into Stasis with this card's Gems."
+  },
+  "Guardian:SentryWave": {
+    "NAME": "Sentry Wave",
+    "DESCRIPTION": "Apply !M! Weak to ALL enemies. NL Place a Sentry Beam into Stasis with this card's Gems."
+  },
+  "Guardian:CompilePackage": {
+    "NAME": "Compile Package",
+    "DESCRIPTION": "Choose one of three Packages to add to your hand. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Choose one of three Packages to add to your hand. The cards the Package adds will all be Upgraded. NL Exhaust.",
+    "EXTENDED_DESCRIPTION": [
+      "Choose a Package."
+    ]
+  },
+  "Guardian:PackageShapes": {
+    "NAME": "Package: Shapes",
+    "DESCRIPTION": "Add an Exploder Protocol, Spiker Protocol, and Repulsor Protocol to your hand. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Add an Exploder Protocol, Spiker Protocol, and Repulsor Protocol to your hand, each of which is Upgraded. NL Exhaust."
+  },
+  "Guardian:PackageDonuDeca": {
+    "NAME": "Package: Ancients",
+    "DESCRIPTION": "Add an Ancient Power, Ancient Protection, and Poly Beam to your hand. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Add an Ancient Power, Ancient Protection, and Poly Beam to your hand, each of which is Upgraded. NL Exhaust."
+  },
+  "Guardian:PackageSphere": {
+    "NAME": "Package: Spheric",
+    "DESCRIPTION": "Add a Spheric Shield, Harden, and Floating Orbs to your hand. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Add a Spheric Shield, Harden, and Floating Orbs to your hand, each of which is Upgraded. NL Exhaust."
+  },
+  "Guardian:PackageSentry": {
+    "NAME": "Package: Sentry",
+    "DESCRIPTION": "Add a Sentry Beam and two Sentry Waves to your hand. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Add a Sentry Beam and two Sentry Waves to your hand, each of which is Upgraded. NL Exhaust."
+  },
+  "Guardian:PackageWalker": {
+    "NAME": "Package: Orbwalker",
+    "DESCRIPTION": "Add an Orbwalk, Walker Claw, and Incinerate to your hand. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Add an Orbwalk, Walker Claw, and Incinerate to your hand, each of which is Upgraded. NL Exhaust."
+  },
+  "Guardian:PackageAutomaton": {
+    "NAME": "Package: Automaton",
+    "DESCRIPTION": "Add a Hyper Beam, Guard Protocol, and Bronze Armor to your hand. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Add a Hyper Beam, Guard Protocol, and Bronze Armor to your hand, each of which is Upgraded. NL Exhaust."
+  }
+}

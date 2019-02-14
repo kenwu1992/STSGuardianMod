@@ -1,0 +1,11 @@
+{
+"Guardian:EnhanceBonfireOptions": {
+"TEXT": [
+"Enhance",
+"Place a Gem into an open Socket.",
+  "Requires a Gem and an open Socket.",
+  "Select a Gem.",
+  "Select a Card to receive the Gem."
+]
+}
+}

@@ -1,0 +1,100 @@
+{
+	"Guardian:GuardianModePowerOffense": {
+		"NAME": "Offensive Mode",
+		"DESCRIPTIONS": [
+			"Offensive Mode."
+		]
+	},
+	"Guardian:GuardianModePowerDefense": {
+		"NAME": "Defensive Mode",
+		"DESCRIPTIONS": [
+			"Defensive Mode."
+		]
+	},
+	"Guardian:BronzeOrbLocationPowerFront": {
+		"NAME": "Vanguard",
+		"DESCRIPTIONS": [
+			"Bronze Orb will receive half of the damage that would be dealt to you."
+		]
+	},
+	"Guardian:BronzeOrbLocationPowerBack": {
+		"NAME": "Support",
+		"DESCRIPTIONS": [
+			"Bronze Orb will not absorb incoming damage."
+		]
+	},
+	"Guardian:BronzeOrbProtectionPower": {
+		"NAME": "Orb Guard",
+		"DESCRIPTIONS": [
+			"Bronze Orb will take half of incoming damage.",
+			"Bronze Orb will not absorb incoming damage."
+		]
+	},
+	"Guardian:NextTurnGainStrengthPower": {
+	"NAME": "Charging Up",
+	"DESCRIPTIONS": [
+		"Gain ",
+		" Strength on your next turn."
+	]
+	},
+	"Guardian:BronzeOrbExplodePower": {
+		"NAME": "Explosive",
+		"DESCRIPTIONS": [
+			"Explodes next turn, dealing ",
+			" damage to ALL enemies.",
+			"Explodes in ",
+			" turns, dealing "
+		]
+	},
+	"Guardian:BronzeOrbDamagePower": {
+		"NAME": "Orb Laser",
+		"DESCRIPTIONS": [
+			"Attacks a random enemy for ",
+			" damage at the end of your turn."
+		]
+	},
+	"Guardian:BronzeOrbWeakenPower": {
+		"NAME": "Repulse",
+		"DESCRIPTIONS": [
+			"Orb Laser also applies ",
+			" Weak."
+		]
+	},
+	"Guardian:BronzeOrbBlockPower": {
+		"NAME": "Guard",
+		"DESCRIPTIONS": [
+			"Grants ",
+			" Block to you each turn."
+		]
+	},
+	"Guardian:StunnedPower": {
+	"NAME": "Stunned",
+	"DESCRIPTIONS": [
+		"Skip your next turn.",
+		"Skip your next ",
+		" turns."
+	]
+},
+	"Guardian:FloatingOrbsPower": {
+		"NAME": "Floating Orbs",
+		"DESCRIPTIONS": [
+			"At the start of your turn, add an Orb Slam to your hand.",
+			"At the start of your turn, add ",
+			" Orb Slams to your hand."
+		]
+	},
+	"Guardian:SearingPower": {
+	"NAME": "Burn",
+	"DESCRIPTIONS": [
+		"Taking ",
+		" damage each turn."
+	]
+},
+	"Guardian:OrbwalkPower": {
+		"NAME": "Orbwalk",
+		"DESCRIPTIONS": [
+			"Gain ",
+			" Strength at the start of each turn."
+		]
+	}
+}
