@@ -7,5 +7,10 @@
   "Select a Gem.",
   "Select a Card to receive the Gem."
 ]
-}
+},
+  "Guardian:UIOptions": {
+    "TEXT": [
+      "Choose a Card to place into Stasis."
+    ]
+  }
 }

@@ -11,7 +11,7 @@
       "stasis"
     ],
     "PROPERNAME": "Stasis",
-    "DESCRIPTION": "A card in Stasis reduces its cost by 1 at the start of each turn. When the cost reaches 0, it is returned to your hand and remains 0-cost until played."
+    "DESCRIPTION": "A card in Stasis reduces its cost by 1 at the start of each turn. When the cost reaches 0, it is returned to your hand, keeping its modified cost for one turn."
   },
   {
     "NAMES": [

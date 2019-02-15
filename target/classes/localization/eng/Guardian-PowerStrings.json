@@ -96,5 +96,13 @@
 			"Gain ",
 			" Strength at the start of each turn."
 		]
+	},
+	"Guardian:ClonePower": {
+		"NAME": "Clone",
+		"DESCRIPTIONS": [
+			"Place a copy of the next card you play into Stasis.",
+			"Place copies of the next ",
+			" cards you play into Stasis."
+		]
 	}
 }

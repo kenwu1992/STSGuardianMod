@@ -27,7 +27,6 @@ public class PackageDiscoveryPatch {
 
             ArrayList startingList = new ArrayList();
             ArrayList discoveryList = new ArrayList();
-            ArrayList discoveryListCards = new ArrayList();
 
             int rando;
             AbstractCard tmp;
@@ -51,42 +50,41 @@ public class PackageDiscoveryPatch {
                         tmp = new PackageShapes();
                         if (GuardianMod.discoveryOverrideUpgrade) tmp.upgrade();
                         GuardianMod.logger.info("randomed into SHAPES");
-                        discoveryListCards.add(tmp.makeStatEquivalentCopy());
+                        derp.add(tmp.makeStatEquivalentCopy());
                         break;
                     case "SENTRY":
                         tmp = new PackageSentry();
                         if (GuardianMod.discoveryOverrideUpgrade) tmp.upgrade();
                         GuardianMod.logger.info("randomed into SENTRY");
-                        discoveryListCards.add(tmp.makeStatEquivalentCopy());
+                        derp.add(tmp.makeStatEquivalentCopy());
                         break;
                     case "SPHERE":
                         tmp = new PackageSphere();
                         if (GuardianMod.discoveryOverrideUpgrade) tmp.upgrade();
                         GuardianMod.logger.info("randomed into SPHERE");
-                        discoveryListCards.add(tmp.makeStatEquivalentCopy());
+                        derp.add(tmp.makeStatEquivalentCopy());
                         break;
                     case "DONUDECA":
                         tmp = new PackageDonuDeca();
                         if (GuardianMod.discoveryOverrideUpgrade) tmp.upgrade();
                         GuardianMod.logger.info("randomed into DONUDECA");
-                        discoveryListCards.add(tmp.makeStatEquivalentCopy());
+                        derp.add(tmp.makeStatEquivalentCopy());
                         break;
                     case "AUTOMATON":
                         tmp = new PackageAutomaton();
                         if (GuardianMod.discoveryOverrideUpgrade) tmp.upgrade();
                         GuardianMod.logger.info("randomed into AUTOMATON");
-                        discoveryListCards.add(tmp.makeStatEquivalentCopy());
+                        derp.add(tmp.makeStatEquivalentCopy());
                         break;
                     case "WALKER":
                         tmp = new PackageWalker();
                         if (GuardianMod.discoveryOverrideUpgrade) tmp.upgrade();
                         GuardianMod.logger.info("randomed into WALKER");
-                        discoveryListCards.add(tmp.makeStatEquivalentCopy());
+                        derp.add(tmp.makeStatEquivalentCopy());
                         break;
                 }
             }
                 GuardianMod.discoveryOverrideUpgrade = false;
-                derp = discoveryListCards;
 
                 GuardianMod.logger.info(derp.get(0));
                 GuardianMod.logger.info(derp.get(1));

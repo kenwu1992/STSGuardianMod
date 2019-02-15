@@ -335,6 +335,15 @@ public class GuardianMod implements OnStartBattleSubscriber, PreMonsterTurnSubsc
         BaseMod.addCard(new PackageShapes());
         BaseMod.addCard(new PackageSphere());
         BaseMod.addCard(new PackageWalker());
+        BaseMod.addCard(new Gem_Green());
+        BaseMod.addCard(new Gem_Cyan());
+        BaseMod.addCard(new Gem_Orange());
+        BaseMod.addCard(new Gem_White());
+        BaseMod.addCard(new Preprogram());
+        BaseMod.addCard(new Clone());
+        BaseMod.addCard(new Recover());
+        BaseMod.addCard(new Planning());
+        BaseMod.addCard(new Emergency());
 
 
 
@@ -697,8 +706,10 @@ public static void saveData() {
     public void initializeSocketTextures(){
         socketTextures.add(ImageMaster.loadImage(getResourcePath("/cardIcons/emptysocket.png")));
         socketTextures.add(ImageMaster.loadImage(getResourcePath("/cardIcons/redgem.png")));
-        socketTextures.add(ImageMaster.loadImage(getResourcePath("/cardIcons/bluegem.png")));
         socketTextures.add(ImageMaster.loadImage(getResourcePath("/cardIcons/greengem.png")));
+        socketTextures.add(ImageMaster.loadImage(getResourcePath("/cardIcons/orangegem.png")));
+        socketTextures.add(ImageMaster.loadImage(getResourcePath("/cardIcons/whitegem.png")));
+        socketTextures.add(ImageMaster.loadImage(getResourcePath("/cardIcons/cyangem.png")));
 
     }
 
@@ -749,7 +760,10 @@ public static void saveData() {
     public enum socketTypes {
         RED,
         BLUE,
-        GREEN
+        GREEN,
+        WHITE,
+        ORANGE,
+        CYAN
 
     }
 

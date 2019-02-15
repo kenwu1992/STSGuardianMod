@@ -1,14 +1,18 @@
 guardian\cards\TwinSlam.class
 guardian\powers\BronzeOrbDamagePower.class
+guardian\cards\Gem_White.class
 guardian\cards\AbstractGuardianCard$2.class
 guardian\patches\PackageDiscoveryPatch.class
 guardian\cards\Incinerate.class
+guardian\cards\Clone.class
 guardian\actions\PlaceTopCardIntoStasisAction.class
 guardian\cards\SentryWave.class
 guardian\cards\FierceBash.class
 guardian\summons\AbstractGuardianMinion.class
 guardian\cards\PackageSphere.class
 guardian\cards\AbstractGuardianCard.class
+guardian\cards\Planning.class
+guardian\actions\DiscardPileToStasisAction.class
 guardian\powers\GuardianModePower.class
 guardian\powers\SearingPower.class
 guardian\cards\Defend_Guardian.class
@@ -20,6 +24,7 @@ guardian\vfx\FloatingOrbsEffect.class
 guardian\cards\FloatingOrbs.class
 guardian\cards\SphericShield.class
 guardian\GuardianMod$1.class
+guardian\cards\Recover.class
 guardian\powers\StunnedPower.class
 guardian\cards\Gem_Red.class
 guardian\ui\EnhanceBonfireOption.class
@@ -28,6 +33,7 @@ guardian\cards\PackageSentry.class
 guardian\powers\FloatingOrbsPower.class
 guardian\helpers\MultihitVariable.class
 guardian\actions\SpawnBronzeOrbAction$1.class
+guardian\cards\Preprogram.class
 guardian\cards\GuardianWhirl.class
 guardian\GuardianMod$socketTypes.class
 guardian\actions\CompilePackageAction.class
@@ -38,7 +44,9 @@ guardian\cards\PackageDonuDeca.class
 guardian\cards\HyperBeam_Guardian.class
 guardian\cards\OrbSlam.class
 guardian\cards\Harden.class
+guardian\cards\Gem_Green.class
 guardian\patches\CampfirePatch.class
+guardian\cards\Gem_Orange.class
 guardian\actions\ReturnStasisCardToHandAction.class
 guardian\cards\PackageShapes.class
 guardian\actions\StasisEvokeIfRoomInHandAction.class
@@ -64,7 +72,9 @@ guardian\powers\OrbwalkPower.class
 guardian\cards\VentSteam.class
 guardian\patches\StasisGlowPatch.class
 guardian\helpers\SecondaryMagicVariable.class
+guardian\cards\Gem_Cyan.class
 guardian\cards\SentryBeam.class
+guardian\actions\PreprogramAction.class
 guardian\orbs\StasisOrb.class
 guardian\patches\RenderStasisPreviewInFrontPatch.class
 guardian\cards\DonusPower.class
@@ -79,3 +89,5 @@ guardian\cards\WalkerClaw.class
 guardian\powers\BronzeOrbBlockPower.class
 guardian\cards\PolyBeam.class
 guardian\patches\AbstractCardEnum.class
+guardian\cards\Emergency.class
+guardian\powers\ClonePower.class

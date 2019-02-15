@@ -8,8 +8,29 @@
     "DESCRIPTION": "Gain !B! Block."
   },
   "Guardian:Gem_Red": {
-    "NAME": "Power Gem",
-    "DESCRIPTION": "Gem. NL Gain 2 Strength for this turn."
+    "NAME": "Ruby",
+    "DESCRIPTION": "Gem. NL Gain 2 Strength for this turn.",
+    "UPGRADE_DESCRIPTION": "Gain 2 Strength for this turn."
+  },
+  "Guardian:Gem_Green": {
+    "NAME": "Emerald",
+    "DESCRIPTION": "Gem. NL Gain 2 Dexterity for this turn.",
+    "UPGRADE_DESCRIPTION": "Gain 2 Dexterity for this turn."
+  },
+  "Guardian:Gem_White": {
+    "NAME": "Quartz",
+    "DESCRIPTION": "Gem. NL Draw a card.",
+    "UPGRADE_DESCRIPTION": "Draw a card."
+  },
+  "Guardian:Gem_Orange": {
+    "NAME": "Citrine",
+    "DESCRIPTION": "Gem. NL Gain [E].",
+    "UPGRADE_DESCRIPTION": "Gain [E]."
+  },
+  "Guardian:Gem_Cyan": {
+    "NAME": "Aquamarine",
+    "DESCRIPTION": "Gem. NL Gain 4 Block.",
+    "UPGRADE_DESCRIPTION": "Gain 4 Block."
   },
   "Guardian:ChargeUp": {
     "NAME": "Charge Up",
@@ -146,5 +167,27 @@
     "NAME": "Package: Automaton",
     "DESCRIPTION": "Add a Hyper Beam, Guard Protocol, and Bronze Armor to your hand. NL Exhaust.",
     "UPGRADE_DESCRIPTION": "Add a Hyper Beam, Guard Protocol, and Bronze Armor to your hand, each of which is Upgraded. NL Exhaust."
+  },
+  "Guardian:Planning": {
+    "NAME": "Planning",
+    "DESCRIPTION": "Place the top !M! cards of your draw pile into Stasis."
+  },
+  "Guardian:Recover": {
+    "NAME": "Recover",
+    "DESCRIPTION": "Gain !B! Block. NL Place a card from your discard pile into Stasis.",
+    "UPGRADE_DESCRIPTION": "Gain !B! Block. NL Place up to !M! cards from your discard pile into Stasis."
+  },
+  "Guardian:Emergency": {
+    "NAME": "Emergency",
+    "DESCRIPTION": "Return all cards in Stasis to your hand."
+  },
+  "Guardian:Clone": {
+    "NAME": "Clone",
+    "DESCRIPTION": "Place a copy of the next card you play into Stasis.",
+    "UPGRADE_DESCRIPTION": "Place copies of the next 2 cards you play into Stasis."
+  },
+  "Guardian:Preprogram": {
+    "NAME": "Preprogram",
+    "DESCRIPTION": "Look at the top !M! cards of your draw pile. You may choose one to place into Stasis."
   }
 }

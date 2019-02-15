@@ -59,9 +59,6 @@ public class Strike_Guardian extends AbstractGuardianCard {
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         super.use(p, m);
-        AbstractDungeon.actionManager.addToBottom(new PlaceTopCardIntoStasisAction(this));
-        AbstractDungeon.actionManager.addToBottom(new GuardianSwitchModesAction(p,false));
-
         AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
         this.useGems(p, m);
     }

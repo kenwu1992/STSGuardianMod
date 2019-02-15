@@ -52,7 +52,7 @@ public class StasisOrb extends AbstractOrb {
     public void updateDescription() {
         this.applyFocus();
         if (this.passiveAmount > 1){
-            this.description = this.stasisCard.name + DESC[1] + this.evokeAmount + DESC[2];
+            this.description = this.stasisCard.name + DESC[1] + this.passiveAmount + DESC[2];
 
         } else {
             this.description = this.stasisCard.name + DESC[0];
@@ -69,7 +69,7 @@ public class StasisOrb extends AbstractOrb {
         }
         if (this.passiveAmount > 0){
             this.passiveAmount -= 1;
-            this.stasisCard.modifyCostForTurn(this.passiveAmount);
+            this.stasisCard.modifyCostForTurn(-1);
         }
 
         if (this.passiveAmount <= 0) {
@@ -80,7 +80,7 @@ public class StasisOrb extends AbstractOrb {
     public void onEvoke() {
         AbstractDungeon.actionManager.addToTop(new ReturnStasisCardToHandAction(this.stasisCard));
         this.stasisCard.superFlash(Color.GOLDENROD);
-        this.stasisCard.freeToPlayOnce = true;
+        if (!stasisCard.isCostModifiedForTurn) stasisCard.tags.remove(GuardianMod.STASISGLOW);
 
     }
 
@@ -155,10 +155,10 @@ public class StasisOrb extends AbstractOrb {
             AbstractDungeon.effectsQueue.add(stasisStartEffect);
         } else if (AbstractDungeon.player.limbo.contains(stasisCard)){
             AbstractDungeon.player.limbo.removeCard(stasisCard);
-            stasisStartEffect = new AddCardToStasisEffect(stasisCard,this, stasisCard.current_x, stasisCard.current_y, AbstractDungeon.overlayMenu.discardPilePanel.current_x - (200F * Settings.scale), AbstractDungeon.overlayMenu.discardPilePanel.current_y + (600F * Settings.scale));
+            stasisStartEffect = new AddCardToStasisEffect(stasisCard,this, Settings.WIDTH / 2, Settings.HEIGHT * .25F, Settings.WIDTH / 2, Settings.HEIGHT / 2);
             AbstractDungeon.effectsQueue.add(stasisStartEffect);
         } else {
-            stasisStartEffect = new AddCardToStasisEffect(stasisCard,this, stasisCard.current_x, stasisCard.current_y, AbstractDungeon.overlayMenu.discardPilePanel.current_x - (200F * Settings.scale), AbstractDungeon.overlayMenu.discardPilePanel.current_y + (600F * Settings.scale));
+            stasisStartEffect = new AddCardToStasisEffect(stasisCard,this, Settings.WIDTH / 2, Settings.HEIGHT * .25F, Settings.WIDTH / 2, Settings.HEIGHT / 2);
             AbstractDungeon.effectsQueue.add(stasisStartEffect);
         }
         this.stasisCard.targetDrawScale = GuardianMod.stasisCardRenderScale;

@@ -43,7 +43,7 @@ public abstract class AbstractGuardianCard extends CustomCard implements CustomS
     @Override
     public Type savedType()
     {
-        return new TypeToken<Integer[][]>(){}.getType();
+        return new TypeToken<ArrayList<Integer>>(){}.getType();
     }
 
     @Override
@@ -56,6 +56,18 @@ public abstract class AbstractGuardianCard extends CustomCard implements CustomS
                 switch (sockets.get(i)) {
                     case RED:
                         savedSockets.add(0);
+                        break;
+                    case GREEN:
+                        savedSockets.add(1);
+                        break;
+                    case ORANGE:
+                        savedSockets.add(2);
+                        break;
+                    case WHITE:
+                        savedSockets.add(3);
+                        break;
+                    case CYAN:
+                        savedSockets.add(4);
                         break;
                 }
             }
@@ -74,6 +86,18 @@ public abstract class AbstractGuardianCard extends CustomCard implements CustomS
                 switch (loadedSockets.get(i)) {
                     case 0:
                         sockets.add(GuardianMod.socketTypes.RED);
+                        break;
+                    case 1:
+                        sockets.add(GuardianMod.socketTypes.GREEN);
+                        break;
+                    case 2:
+                        sockets.add(GuardianMod.socketTypes.ORANGE);
+                        break;
+                    case 3:
+                        sockets.add(GuardianMod.socketTypes.WHITE);
+                        break;
+                    case 4:
+                        sockets.add(GuardianMod.socketTypes.CYAN);
                         break;
                 }
             }
@@ -105,6 +129,18 @@ public abstract class AbstractGuardianCard extends CustomCard implements CustomS
                 case RED:
                     Gem_Red.gemEffect(p, m);
                     break;
+                case GREEN:
+                    Gem_Green.gemEffect(p, m);
+                    break;
+                case ORANGE:
+                    Gem_Orange.gemEffect(p, m);
+                    break;
+                case WHITE:
+                    Gem_White.gemEffect(p, m);
+                    break;
+                case CYAN:
+                    Gem_Cyan.gemEffect(p, m);
+                    break;
             }
         }
     }
@@ -118,7 +154,19 @@ public abstract class AbstractGuardianCard extends CustomCard implements CustomS
                 if (after) addedDesc = addedDesc + " NL ";
                 switch (gem){
                     case RED:
-                        addedDesc = addedDesc + Gem_Red.DESCRIPTION;
+                        addedDesc = addedDesc + Gem_Red.UPGRADED_DESCRIPTION;
+                        break;
+                    case GREEN:
+                        addedDesc = addedDesc + Gem_Green.UPGRADED_DESCRIPTION;
+                        break;
+                    case ORANGE:
+                        addedDesc = addedDesc + Gem_Orange.UPGRADED_DESCRIPTION;
+                        break;
+                    case WHITE:
+                        addedDesc = addedDesc + Gem_White.UPGRADED_DESCRIPTION;
+                        break;
+                    case CYAN:
+                        addedDesc = addedDesc + Gem_Cyan.UPGRADED_DESCRIPTION;
                         break;
                 }
                 if (!after) addedDesc = addedDesc + " NL ";
@@ -154,15 +202,25 @@ public abstract class AbstractGuardianCard extends CustomCard implements CustomS
                         socketTexture = GuardianMod.socketTextures.get(1);
                      //   GuardianMod.logger.info("texture is " + socketTexture);
                         break;
-                    case BLUE:
+                    case GREEN:
                        // GuardianMod.logger.info("case BLUE");
                         socketTexture = GuardianMod.socketTextures.get(2);
                        // GuardianMod.logger.info("texture is " + socketTexture);
                         break;
-                    case GREEN:
+                    case ORANGE:
                       //  GuardianMod.logger.info("case GREEN");
                         socketTexture = GuardianMod.socketTextures.get(3);
                     //    GuardianMod.logger.info("texture is " + socketTexture);
+                        break;
+                    case WHITE:
+                        //  GuardianMod.logger.info("case GREEN");
+                        socketTexture = GuardianMod.socketTextures.get(4);
+                        //    GuardianMod.logger.info("texture is " + socketTexture);
+                        break;
+                    case CYAN:
+                        //  GuardianMod.logger.info("case GREEN");
+                        socketTexture = GuardianMod.socketTextures.get(5);
+                        //    GuardianMod.logger.info("texture is " + socketTexture);
                         break;
                 }
 
