@@ -104,5 +104,13 @@
 			"Place copies of the next ",
 			" cards you play into Stasis."
 		]
+	},
+	"Guardian:GemFinderPower": {
+		"NAME": "Gem Finder",
+		"DESCRIPTIONS": [
+			"At the end of combat, choose a Gem to add to your deck.",
+			"At the end of combat, choose ",
+			" Gems to add to your deck."
+		]
 	}
 }

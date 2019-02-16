@@ -4,10 +4,12 @@ guardian\cards\Gem_White.class
 guardian\cards\AbstractGuardianCard$2.class
 guardian\patches\PackageDiscoveryPatch.class
 guardian\cards\Incinerate.class
+guardian\rewards\GemReward.class
 guardian\cards\Clone.class
 guardian\actions\PlaceTopCardIntoStasisAction.class
 guardian\cards\SentryWave.class
 guardian\cards\FierceBash.class
+guardian\patches\RewardItemTypePatch.class
 guardian\summons\AbstractGuardianMinion.class
 guardian\cards\PackageSphere.class
 guardian\cards\AbstractGuardianCard.class
@@ -19,6 +21,7 @@ guardian\cards\Defend_Guardian.class
 guardian\powers\BronzeOrbExplodePower.class
 guardian\cards\ChargeUp.class
 guardian\patches\PackageDiscoveryPatch$Locator.class
+guardian\patches\SetupItemReward$Locator.class
 guardian\cards\BronzeArmor.class
 guardian\vfx\FloatingOrbsEffect.class
 guardian\cards\FloatingOrbs.class
@@ -33,6 +36,7 @@ guardian\cards\PackageSentry.class
 guardian\powers\FloatingOrbsPower.class
 guardian\helpers\MultihitVariable.class
 guardian\actions\SpawnBronzeOrbAction$1.class
+guardian\powers\GemFinderPower.class
 guardian\cards\Preprogram.class
 guardian\cards\GuardianWhirl.class
 guardian\GuardianMod$socketTypes.class
@@ -46,6 +50,7 @@ guardian\cards\OrbSlam.class
 guardian\cards\Harden.class
 guardian\cards\Gem_Green.class
 guardian\patches\CampfirePatch.class
+guardian\patches\SetupItemReward.class
 guardian\cards\Gem_Orange.class
 guardian\actions\ReturnStasisCardToHandAction.class
 guardian\cards\PackageShapes.class
@@ -58,6 +63,7 @@ guardian\cards\Orbwalk.class
 guardian\cards\GuardProtocol.class
 guardian\powers\BronzeOrbProtectionPower.class
 guardian\cards\AbstractGuardianCard$1.class
+guardian\cards\GemFinder.class
 guardian\patches\GuardianEnum.class
 guardian\cards\ExploderProtocol.class
 guardian\actions\SpawnBronzeOrbAction$powerTypes.class

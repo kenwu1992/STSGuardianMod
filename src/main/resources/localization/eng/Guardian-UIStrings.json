@@ -10,7 +10,9 @@
 },
   "Guardian:UIOptions": {
     "TEXT": [
-      "Choose a Card to place into Stasis."
+      "Choose a Card to place into Stasis.",
+      "Pick a Gem.",
+      "Add a Gem to your deck"
     ]
   }
 }

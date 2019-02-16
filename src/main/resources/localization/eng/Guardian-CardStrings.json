@@ -189,5 +189,9 @@
   "Guardian:Preprogram": {
     "NAME": "Preprogram",
     "DESCRIPTION": "Look at the top !M! cards of your draw pile. You may choose one to place into Stasis."
+  },
+  "Guardian:GemFinder": {
+    "NAME": "Gem Finder",
+    "DESCRIPTION": "At the end of combat, choose a Gem to add to your deck."
   }
 }

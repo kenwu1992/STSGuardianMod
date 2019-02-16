@@ -16,6 +16,8 @@ import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
+import com.megacrit.cardcrawl.rewards.RewardItem;
+import com.megacrit.cardcrawl.rewards.RewardSave;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import guardian.cards.*;
@@ -23,6 +25,8 @@ import guardian.helpers.MultihitVariable;
 import guardian.helpers.SecondaryMagicVariable;
 import guardian.orbs.StasisOrb;
 import guardian.patches.GuardianEnum;
+import guardian.patches.RewardItemTypePatch;
+import guardian.rewards.GemReward;
 import guardian.summons.BronzeOrb;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -30,6 +34,7 @@ import guardian.characters.GuardianCharacter;
 
 import guardian.patches.AbstractCardEnum;
 
+import java.lang.reflect.Array;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -63,6 +68,7 @@ public class GuardianMod implements OnStartBattleSubscriber, PreMonsterTurnSubsc
     public static boolean discoveryOverride = false;
 
     public static boolean discoveryOverrideUpgrade = false;
+
 
 
     private ModPanel settingsPanel;
@@ -303,7 +309,6 @@ public class GuardianMod implements OnStartBattleSubscriber, PreMonsterTurnSubsc
         //TODO - Cards here
         BaseMod.addCard(new Strike_Guardian());
         BaseMod.addCard(new Defend_Guardian());
-        BaseMod.addCard(new Gem_Red());
         BaseMod.addCard(new ChargeUp());
         BaseMod.addCard(new CurlUp());
         BaseMod.addCard(new DecasProtection());
@@ -335,6 +340,7 @@ public class GuardianMod implements OnStartBattleSubscriber, PreMonsterTurnSubsc
         BaseMod.addCard(new PackageShapes());
         BaseMod.addCard(new PackageSphere());
         BaseMod.addCard(new PackageWalker());
+        BaseMod.addCard(new Gem_Red());
         BaseMod.addCard(new Gem_Green());
         BaseMod.addCard(new Gem_Cyan());
         BaseMod.addCard(new Gem_Orange());
@@ -344,6 +350,8 @@ public class GuardianMod implements OnStartBattleSubscriber, PreMonsterTurnSubsc
         BaseMod.addCard(new Recover());
         BaseMod.addCard(new Planning());
         BaseMod.addCard(new Emergency());
+        BaseMod.addCard(new GemFinder());
+
 
 
 
@@ -622,10 +630,46 @@ public static void saveData() {
         logger.info("done editing strings");
     }
 
+    public static ArrayList<AbstractCard> getRewardGemCards(){
+        ArrayList<String> allGemCards = new ArrayList<>();
+        ArrayList<AbstractCard> rewardGemCards = new ArrayList<>();
+
+        allGemCards.add("RED");
+        allGemCards.add("GREEN");
+        allGemCards.add("ORANGE");
+        allGemCards.add("CYAN");
+        allGemCards.add("WHITE");
+
+        int rando;
+        String ID;
+        for (int i = 0; i < 3; i++) {
+            rando = AbstractDungeon.cardRng.random(0, allGemCards.size() - 1);
+            ID = allGemCards.get(rando);
+            switch(ID){
+                case "RED": rewardGemCards.add(new Gem_Red()); break;
+                case "GREEN": rewardGemCards.add(new Gem_Green()); break;
+                case "ORANGE": rewardGemCards.add(new Gem_Orange()); break;
+                case "CYAN": rewardGemCards.add(new Gem_Cyan()); break;
+                case "WHITE": rewardGemCards.add(new Gem_White()); break;
+            }
+            allGemCards.remove(rando);
+        }
+
+        return rewardGemCards;
+    }
+
 
     public void receivePostInitialize() {
 
         UIStrings configStrings = CardCrawlGame.languagePack.getUIString("slimeboundConfigMenuText");
+
+        BaseMod.registerCustomReward(
+                RewardItemTypePatch.GEM,
+                (rewardSave) -> { //on load
+                    return new GemReward();
+                }, (customReward) -> { //on save
+                    return new RewardSave(customReward.type.toString(), null);
+                });
 
         logger.info("Load Badge Image and mod options");
         // Load the Mod Badge

@@ -63,8 +63,6 @@ public class Preprogram extends AbstractGuardianCard {
             upgradeName();
 
             this.upgradeMagicNumber(UPGRADECOUNT);
-            this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
-            this.initializeDescription();
         }
     }
 
