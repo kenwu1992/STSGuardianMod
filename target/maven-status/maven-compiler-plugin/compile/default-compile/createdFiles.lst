@@ -23,7 +23,6 @@ guardian\cards\FuturePlans.class
 guardian\powers\BronzeOrbExplodePower.class
 guardian\cards\ChargeUp.class
 guardian\patches\PackageDiscoveryPatch$Locator.class
-guardian\patches\SetupItemReward$Locator.class
 guardian\cards\BronzeArmor.class
 guardian\vfx\FloatingOrbsEffect.class
 guardian\cards\FloatingOrbs.class

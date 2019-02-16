@@ -10,21 +10,11 @@ import javassist.CtBehavior;
 @SpirePatch(clz= CombatRewardScreen.class, method="setupItemReward")
 public class SetupItemReward {
 
-    @SpireInsertPatch(locator = Locator.class)
-    public static void gemFinderPatch(CombatRewardScreen rewardScreen) {
+    @SpirePrefixPatch
+    public static void Prefix(CombatRewardScreen rewardScreen) {
         if(AbstractDungeon.player.hasPower(GemFinderPower.POWER_ID) && AbstractDungeon.getCurrRoom() instanceof MonsterRoom) {
             ((GemFinderPower)AbstractDungeon.player.getPower(GemFinderPower.POWER_ID)).onTrigger();
         }
     }
 
-    public static class Locator extends SpireInsertLocator {
-        @Override
-        public int[] Locate(CtBehavior ctBehavior) throws Exception {
-
-            Matcher matcher = new Matcher.MethodCallMatcher(
-                    CombatRewardScreen.class, "positionRewards");
-
-            return LineFinder.findInOrder(ctBehavior, matcher);
-        }
-    }
 }
