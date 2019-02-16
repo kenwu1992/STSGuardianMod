@@ -28,10 +28,12 @@ guardian\cards\FloatingOrbs.class
 guardian\cards\SphericShield.class
 guardian\GuardianMod$1.class
 guardian\cards\Recover.class
+guardian\cards\StasisStrike.class
 guardian\powers\StunnedPower.class
 guardian\cards\Gem_Red.class
 guardian\ui\EnhanceBonfireOption.class
 guardian\cards\PackageAutomaton.class
+guardian\cards\StasisField.class
 guardian\cards\PackageSentry.class
 guardian\powers\FloatingOrbsPower.class
 guardian\helpers\MultihitVariable.class

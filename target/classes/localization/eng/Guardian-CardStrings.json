@@ -193,5 +193,13 @@
   "Guardian:GemFinder": {
     "NAME": "Gem Finder",
     "DESCRIPTION": "At the end of combat, choose a Gem to add to your deck."
+  },
+  "Guardian:StasisField": {
+    "NAME": "Stasis Field",
+    "DESCRIPTION": "Gain !B! Block. NL Place a copy of this card into Stasis, and increase the copy's cost by 1."
+  },
+  "Guardian:StasisStrike": {
+    "NAME": "Stasis Strike",
+    "DESCRIPTION": "Deal !D! damage. NL Place a copy of this card into Stasis, and increase the copy's cost by 1."
   }
 }

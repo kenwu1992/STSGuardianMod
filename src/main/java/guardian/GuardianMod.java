@@ -486,12 +486,14 @@ public class GuardianMod implements OnStartBattleSubscriber, PreMonsterTurnSubsc
 
     }
 
-public static void clearData() {
+/*
+    public static void clearData() {
     saveData();
 }
 
+
 public static void saveData() {
-        /*
+
     try {
         SpireConfig config = new SpireConfig("GuardianMod", "SlimeboundSaveData", slimeboundDefault);
         config.setBool(PROP_EVENT_SHARING, contentSharing_events);
@@ -503,11 +505,12 @@ public static void saveData() {
     } catch (Exception e) {
         e.printStackTrace();
     }
-    */
+
 }
 
+
     public void adjustRelics(){
-        /*
+
         // remove all shareable relics wherever they are, then re-add them.
         // assuming right now that there are no overheated expansion relics shared by other characters.
         for (AbstractRelic relic : shareableRelics){
@@ -516,14 +519,14 @@ public static void saveData() {
         }
 
         addSharedRelics();
-        */
+
 
 
     }
 
 
     public static void loadConfigData() {
-        /*
+
         try {
             logger.info("GuardianMod | Loading Config Preferences...");
             SpireConfig config = new SpireConfig("GuardianMod", "SlimeboundSaveData", slimeboundDefault);
@@ -537,8 +540,9 @@ public static void saveData() {
             e.printStackTrace();
             clearData();
         }
-        */
+
     }
+ */
 
     public void receiveEditKeywords() {
         final Gson gson = new Gson();
@@ -668,8 +672,11 @@ public static void saveData() {
                 (rewardSave) -> { //on load
                     return new GemReward();
                 }, (customReward) -> { //on save
+                    logger.info("Reward save test - " + customReward.type.toString());
                     return new RewardSave(customReward.type.toString(), null);
                 });
+
+
 
         logger.info("Load Badge Image and mod options");
         // Load the Mod Badge
