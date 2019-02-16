@@ -351,6 +351,13 @@ public class GuardianMod implements OnStartBattleSubscriber, PreMonsterTurnSubsc
         BaseMod.addCard(new Planning());
         BaseMod.addCard(new Emergency());
         BaseMod.addCard(new GemFinder());
+        BaseMod.addCard(new Accelerate());
+        BaseMod.addCard(new FuturePlans());
+        BaseMod.addCard(new Suspension());
+        BaseMod.addCard(new SyncronizedStrike());
+        BaseMod.addCard(new TimeCapacitor());
+        BaseMod.addCard(new StasisField());
+        BaseMod.addCard(new StasisStrike());
 
 
 
@@ -670,9 +677,10 @@ public static void saveData() {
         BaseMod.registerCustomReward(
                 RewardItemTypePatch.GEM,
                 (rewardSave) -> { //on load
+                    GuardianMod.logger.info("gems loaded");
                     return new GemReward();
                 }, (customReward) -> { //on save
-                    logger.info("Reward save test - " + customReward.type.toString());
+                    GuardianMod.logger.info("gems saved");
                     return new RewardSave(customReward.type.toString(), null);
                 });
 

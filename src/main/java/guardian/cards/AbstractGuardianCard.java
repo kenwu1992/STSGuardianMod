@@ -244,6 +244,12 @@ public abstract class AbstractGuardianCard extends CustomCard implements CustomS
     }
 
     @Override
+    public void triggerOnEndOfPlayerTurn() {
+        super.triggerOnEndOfPlayerTurn();
+        if (this.hasTag(GuardianMod.STASISGLOW)) this.tags.remove(GuardianMod.STASISGLOW);
+    }
+
+    @Override
     public AbstractCard makeStatEquivalentCopy() {
         AbstractCard card = this.makeCopy();
 

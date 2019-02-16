@@ -112,5 +112,13 @@
 			"At the end of combat, choose ",
 			" Gems to add to your deck."
 		]
+	},
+	"Guardian:FuturePlansPower": {
+		"NAME": "Future Plans",
+		"DESCRIPTIONS": [
+			"At the end of your turn, you may place #b",
+			" card into Stasis.",
+			" cards into Stasis."
+		]
 	}
 }

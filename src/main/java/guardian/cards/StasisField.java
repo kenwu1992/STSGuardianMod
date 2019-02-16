@@ -41,6 +41,11 @@ public class StasisField extends AbstractGuardianCard {
 
 
         this.baseBlock = BLOCK;
+
+        this.socketCount = SOCKETS;
+        this.updateDescription();
+
+        this.isEthereal = true;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
@@ -52,6 +57,8 @@ public class StasisField extends AbstractGuardianCard {
         newCard.modifyCostForTurn(1);
 
         AbstractDungeon.actionManager.addToBottom(new PlaceActualCardIntoStasis(newCard));
+        this.useGems(p, m);
+
     }
 
     public AbstractCard makeCopy() {

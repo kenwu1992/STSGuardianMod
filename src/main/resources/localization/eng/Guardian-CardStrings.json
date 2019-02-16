@@ -96,7 +96,8 @@
   },
   "Guardian:FloatingOrbs": {
     "NAME": "Floating Orbs",
-    "DESCRIPTION": "At the start of your turn, add an Orb Slam to your hand."
+    "DESCRIPTION": "At the start of your turn, add an Orb Slam to your hand.",
+    "UPGRADE_DESCRIPTION": "Innate. NL At the start of your turn, add an Orb Slam to your hand."
   },
   "Guardian:OrbSlam": {
     "NAME": "Orb Slam",
@@ -196,10 +197,32 @@
   },
   "Guardian:StasisField": {
     "NAME": "Stasis Field",
-    "DESCRIPTION": "Gain !B! Block. NL Place a copy of this card into Stasis, and increase the copy's cost by 1."
+    "DESCRIPTION": "Ethereal. NL Gain !B! Block. NL Place a 2-cost copy of this card into Stasis."
   },
   "Guardian:StasisStrike": {
     "NAME": "Stasis Strike",
-    "DESCRIPTION": "Deal !D! damage. NL Place a copy of this card into Stasis, and increase the copy's cost by 1."
+    "DESCRIPTION": "Ethereal. NL Deal !D! damage. NL Place a 2-cost copy of this card into Stasis."
+  },
+  "Guardian:FuturePlans": {
+    "NAME": "Future Plans",
+    "DESCRIPTION": "At the end of your turn, place up to !M! card in your hand in Stasis.",
+    "UPGRADE_DESCRIPTION": "Innate. NL At the end of your turn, place up to !M! card in your hand in Stasis."
+  },
+  "Guardian:Suspension": {
+    "NAME": "Suspension",
+    "DESCRIPTION": "Place up to X cards in your hand into Stasis.",
+    "UPGRADE_DESCRIPTION": "Place up to X+1 cards in your hand into Stasis."
+  },
+  "Guardian:Accelerate": {
+    "NAME": "Accelerate",
+    "DESCRIPTION": "Reduce the cost of all cards in Stasis by 1. NL If any cards in Stasis cost 0, return them to your hand."
+  },
+  "Guardian:SyncronizedStrike": {
+    "NAME": "Syncronized Strike",
+    "DESCRIPTION": "Deal !D! damage. NL If you have a Bronze Orb, heal !M! of its HP, then trigger its attack."
+  },
+  "Guardian:TimeCapacitor": {
+    "NAME": "Time Capacitor",
+    "DESCRIPTION": "Gain !M! Stasis Slots."
   }
 }

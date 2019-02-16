@@ -10,6 +10,7 @@ guardian\actions\PlaceTopCardIntoStasisAction.class
 guardian\cards\SentryWave.class
 guardian\cards\FierceBash.class
 guardian\patches\RewardItemTypePatch.class
+guardian\cards\TimeCapacitor.class
 guardian\summons\AbstractGuardianMinion.class
 guardian\cards\PackageSphere.class
 guardian\cards\AbstractGuardianCard.class
@@ -18,6 +19,7 @@ guardian\actions\DiscardPileToStasisAction.class
 guardian\powers\GuardianModePower.class
 guardian\powers\SearingPower.class
 guardian\cards\Defend_Guardian.class
+guardian\cards\FuturePlans.class
 guardian\powers\BronzeOrbExplodePower.class
 guardian\cards\ChargeUp.class
 guardian\patches\PackageDiscoveryPatch$Locator.class
@@ -28,6 +30,7 @@ guardian\cards\FloatingOrbs.class
 guardian\cards\SphericShield.class
 guardian\GuardianMod$1.class
 guardian\cards\Recover.class
+guardian\powers\FuturePlansPower.class
 guardian\cards\StasisStrike.class
 guardian\powers\StunnedPower.class
 guardian\cards\Gem_Red.class
@@ -58,8 +61,10 @@ guardian\actions\ReturnStasisCardToHandAction.class
 guardian\cards\PackageShapes.class
 guardian\actions\StasisEvokeIfRoomInHandAction.class
 guardian\actions\PlaceActualCardIntoStasis.class
+guardian\cards\Suspension.class
 guardian\cards\RepulsorProtocol.class
 guardian\cards\CompilePackage.class
+guardian\actions\PlaceCardsInHandIntoStasisAction.class
 guardian\screens\SocketGemScreen.class
 guardian\cards\Orbwalk.class
 guardian\cards\GuardProtocol.class
@@ -69,6 +74,7 @@ guardian\cards\GemFinder.class
 guardian\patches\GuardianEnum.class
 guardian\cards\ExploderProtocol.class
 guardian\actions\SpawnBronzeOrbAction$powerTypes.class
+guardian\cards\Accelerate.class
 guardian\vfx\AddCardToStasisEffect.class
 guardian\powers\AbstractGuardianTwoAmountPower.class
 guardian\cards\DecasProtection.class
@@ -78,6 +84,7 @@ guardian\cards\SpikerProtocol.class
 guardian\actions\SpawnBronzeOrbAction.class
 guardian\powers\OrbwalkPower.class
 guardian\cards\VentSteam.class
+guardian\patches\LibraryTypeEnum.class
 guardian\patches\StasisGlowPatch.class
 guardian\helpers\SecondaryMagicVariable.class
 guardian\cards\Gem_Cyan.class
@@ -86,6 +93,7 @@ guardian\actions\PreprogramAction.class
 guardian\orbs\StasisOrb.class
 guardian\patches\RenderStasisPreviewInFrontPatch.class
 guardian\cards\DonusPower.class
+guardian\cards\SyncronizedStrike.class
 guardian\vfx\SocketGemEffect.class
 guardian\cards\CurlUp.class
 guardian\characters\GuardianCharacter.class

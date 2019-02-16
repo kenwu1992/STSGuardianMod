@@ -38,7 +38,11 @@ public class StasisOrb extends AbstractOrb {
         if (card.cost < 1){
             this.basePassiveAmount = this.passiveAmount = 1;
         } else {
-            this.basePassiveAmount = this.passiveAmount = card.cost;
+            if (card.isCostModifiedForTurn){
+                this.basePassiveAmount = this.passiveAmount = card.costForTurn;
+            } else {
+                this.basePassiveAmount = this.passiveAmount = card.cost;
+            }
 
         }
         this.updateDescription();
@@ -46,7 +50,7 @@ public class StasisOrb extends AbstractOrb {
 
     @Override
     public void applyFocus() {
-        //Stasis orbs are not affected by Focus
+        //FuturePlans orbs are not affected by Focus
     }
 
     public void updateDescription() {
@@ -162,6 +166,7 @@ public class StasisOrb extends AbstractOrb {
             AbstractDungeon.effectsQueue.add(stasisStartEffect);
         }
         this.stasisCard.targetDrawScale = GuardianMod.stasisCardRenderScale;
+        this.stasisCard.retain = false;
     }
 
     public AbstractOrb makeCopy() {

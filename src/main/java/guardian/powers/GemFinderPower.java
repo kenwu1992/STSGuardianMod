@@ -44,6 +44,7 @@ public class GemFinderPower extends AbstractGuardianPower {
 
     public void onTrigger() {
         AbstractDungeon.combatRewardScreen.rewards.add(new GemReward());
+
     }
 }
 

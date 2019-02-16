@@ -48,6 +48,8 @@ public class StasisStrike extends AbstractGuardianCard {
         this.socketCount = SOCKETS;
         this.updateDescription();
 
+        this.isEthereal = true;
+
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
