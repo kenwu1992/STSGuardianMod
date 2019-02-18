@@ -73,6 +73,24 @@ public abstract class AbstractGuardianCard extends CustomCard implements CustomS
                     case CYAN:
                         savedSockets.add(4);
                         break;
+                    case BLUE:
+                        savedSockets.add(5);
+                        break;
+                    case CRIMSON:
+                        savedSockets.add(6);
+                        break;
+                    case FRAGMENTED:
+                        savedSockets.add(7);
+                        break;
+                    case PURPLE:
+                        savedSockets.add(8);
+                        break;
+                    case SYNTHETIC:
+                        savedSockets.add(9);
+                        break;
+                    case YELLOW:
+                        savedSockets.add(10);
+                        break;
                 }
             }
         }
@@ -102,6 +120,24 @@ public abstract class AbstractGuardianCard extends CustomCard implements CustomS
                         break;
                     case 4:
                         sockets.add(GuardianMod.socketTypes.CYAN);
+                        break;
+                    case 5:
+                        sockets.add(GuardianMod.socketTypes.BLUE);
+                        break;
+                    case 6:
+                        sockets.add(GuardianMod.socketTypes.CRIMSON);
+                        break;
+                    case 7:
+                        sockets.add(GuardianMod.socketTypes.FRAGMENTED);
+                        break;
+                    case 8:
+                        sockets.add(GuardianMod.socketTypes.PURPLE);
+                        break;
+                    case 9:
+                        sockets.add(GuardianMod.socketTypes.SYNTHETIC);
+                        break;
+                    case 10:
+                        sockets.add(GuardianMod.socketTypes.YELLOW);
                         break;
                 }
             }
@@ -145,6 +181,24 @@ public abstract class AbstractGuardianCard extends CustomCard implements CustomS
                 case CYAN:
                     Gem_Cyan.gemEffect(p, m);
                     break;
+                case BLUE:
+                    Gem_Blue.gemEffect(p, m);
+                    break;
+                case CRIMSON:
+                    Gem_Crimson.gemEffect(p, m);
+                    break;
+                case FRAGMENTED:
+                    Gem_Fragmented.gemEffect(p, m);
+                    break;
+                case PURPLE:
+                    Gem_Purple.gemEffect(p, m);
+                    break;
+                case SYNTHETIC:
+                    Gem_Synthetic.gemEffect(p, m);
+                    break;
+                case YELLOW:
+                    Gem_Yellow.gemEffect(p, m);
+                    break;
             }
         }
     }
@@ -171,6 +225,24 @@ public abstract class AbstractGuardianCard extends CustomCard implements CustomS
                         break;
                     case CYAN:
                         addedDesc = addedDesc + Gem_Cyan.UPGRADED_DESCRIPTION;
+                        break;
+                    case BLUE:
+                        addedDesc = addedDesc + Gem_Blue.UPGRADED_DESCRIPTION;
+                        break;
+                    case CRIMSON:
+                        addedDesc = addedDesc + Gem_Crimson.UPGRADED_DESCRIPTION;
+                        break;
+                    case FRAGMENTED:
+                        addedDesc = addedDesc + Gem_Fragmented.UPGRADED_DESCRIPTION;
+                        break;
+                    case PURPLE:
+                        addedDesc = addedDesc + Gem_Purple.UPGRADED_DESCRIPTION;
+                        break;
+                    case SYNTHETIC:
+                        addedDesc = addedDesc + Gem_Synthetic.UPGRADED_DESCRIPTION;
+                        break;
+                    case YELLOW:
+                        addedDesc = addedDesc + Gem_Yellow.UPGRADED_DESCRIPTION;
                         break;
                 }
                 if (!after) addedDesc = addedDesc + " NL ";
@@ -212,33 +284,88 @@ public abstract class AbstractGuardianCard extends CustomCard implements CustomS
                 switch (sockets.get(i)) {
                     case RED:
                      //   GuardianMod.logger.info("case RED");
-                        socketTexture = GuardianMod.socketTextures.get(1);
+                        if (i == 0) socketTexture = GuardianMod.socketTextures.get(1);
+                        else if (i == 1) socketTexture = GuardianMod.socketTextures2.get(1);
+                        else socketTexture = GuardianMod.socketTextures3.get(1);
                      //   GuardianMod.logger.info("texture is " + socketTexture);
                         break;
                     case GREEN:
                        // GuardianMod.logger.info("case BLUE");
-                        socketTexture = GuardianMod.socketTextures.get(2);
+                        if (i == 0) socketTexture = GuardianMod.socketTextures.get(2);
+                        else if (i == 1) socketTexture = GuardianMod.socketTextures2.get(2);
+                        else socketTexture = GuardianMod.socketTextures3.get(2);
                        // GuardianMod.logger.info("texture is " + socketTexture);
                         break;
                     case ORANGE:
                       //  GuardianMod.logger.info("case GREEN");
-                        socketTexture = GuardianMod.socketTextures.get(3);
+                        if (i == 0) socketTexture = GuardianMod.socketTextures.get(3);
+                        else if (i == 1) socketTexture = GuardianMod.socketTextures2.get(3);
+                        else socketTexture = GuardianMod.socketTextures3.get(3);
                     //    GuardianMod.logger.info("texture is " + socketTexture);
                         break;
                     case WHITE:
                         //  GuardianMod.logger.info("case GREEN");
-                        socketTexture = GuardianMod.socketTextures.get(4);
+                        if (i == 0) socketTexture = GuardianMod.socketTextures.get(4);
+                        else if (i == 1) socketTexture = GuardianMod.socketTextures2.get(4);
+                        else socketTexture = GuardianMod.socketTextures3.get(4);
                         //    GuardianMod.logger.info("texture is " + socketTexture);
                         break;
                     case CYAN:
                         //  GuardianMod.logger.info("case GREEN");
-                        socketTexture = GuardianMod.socketTextures.get(5);
+                        if (i == 0) socketTexture = GuardianMod.socketTextures.get(5);
+                        else if (i == 1) socketTexture = GuardianMod.socketTextures2.get(5);
+                        else socketTexture = GuardianMod.socketTextures3.get(5);
+                        //    GuardianMod.logger.info("texture is " + socketTexture);
+                        break;
+                    case BLUE:
+                        //  GuardianMod.logger.info("case GREEN");
+                        if (i == 0) socketTexture = GuardianMod.socketTextures.get(6);
+                        else if (i == 1) socketTexture = GuardianMod.socketTextures2.get(6);
+                        else socketTexture = GuardianMod.socketTextures3.get(6);
+                        //    GuardianMod.logger.info("texture is " + socketTexture);
+                        break;
+                    case CRIMSON:
+                        //  GuardianMod.logger.info("case GREEN");
+                        if (i == 0) socketTexture = GuardianMod.socketTextures.get(7);
+                        else if (i == 1) socketTexture = GuardianMod.socketTextures2.get(7);
+                        else socketTexture = GuardianMod.socketTextures3.get(7);
+                        //    GuardianMod.logger.info("texture is " + socketTexture);
+                        break;
+                    case FRAGMENTED:
+                        //  GuardianMod.logger.info("case GREEN");
+                        if (i == 0) socketTexture = GuardianMod.socketTextures.get(8);
+                        else if (i == 1) socketTexture = GuardianMod.socketTextures2.get(8);
+                        else socketTexture = GuardianMod.socketTextures3.get(8);
+                        //    GuardianMod.logger.info("texture is " + socketTexture);
+                        break;
+                    case PURPLE:
+                        //  GuardianMod.logger.info("case GREEN");
+                        if (i == 0) socketTexture = GuardianMod.socketTextures.get(9);
+                        else if (i == 1) socketTexture = GuardianMod.socketTextures2.get(9);
+                        else socketTexture = GuardianMod.socketTextures3.get(9);
+                        //    GuardianMod.logger.info("texture is " + socketTexture);
+                        break;
+                    case SYNTHETIC:
+                        //  GuardianMod.logger.info("case GREEN");
+                        if (i == 0) socketTexture = GuardianMod.socketTextures.get(10);
+                        else if (i == 1) socketTexture = GuardianMod.socketTextures2.get(10);
+                        else socketTexture = GuardianMod.socketTextures3.get(10);
+                        //    GuardianMod.logger.info("texture is " + socketTexture);
+                        break;
+                    case YELLOW:
+                        //  GuardianMod.logger.info("case GREEN");
+                        if (i == 0) socketTexture = GuardianMod.socketTextures.get(11);
+                        else if (i == 1) socketTexture = GuardianMod.socketTextures2.get(11);
+                        else socketTexture = GuardianMod.socketTextures3.get(11);
                         //    GuardianMod.logger.info("texture is " + socketTexture);
                         break;
                 }
 
                 } else {
-                    socketTexture = GuardianMod.socketTextures.get(0);
+
+                    if (i == 0) socketTexture = GuardianMod.socketTextures.get(0);
+                    else if (i == 1) socketTexture = GuardianMod.socketTextures2.get(0);
+                    else socketTexture = GuardianMod.socketTextures3.get(0);
                 }
 
                // GuardianMod.logger.info("reached socket texture call, texture is " + socketTexture);
@@ -252,7 +379,10 @@ public abstract class AbstractGuardianCard extends CustomCard implements CustomS
     private void renderSocket(SpriteBatch sb, Texture baseTexture, Integer i){
         //GuardianMod.logger.info("Attempting to render socket: " + baseTexture + " on " + this.name);
         float scale = this.drawScale * Settings.scale;
-        sb.draw(baseTexture, this.current_x - 150f * scale, this.current_y + (100f + (-50F * i)) * scale, 0F, 0F, baseTexture.getWidth(), baseTexture.getHeight(), scale, scale, this.angle, 0, 0, baseTexture.getWidth(), baseTexture.getHeight(), false, false);
+        float drawX = this.current_x - 256.0F;
+        float drawY = this.current_y - 256.0F;
+       // GuardianMod.logger.info(this.angle);
+        sb.draw(baseTexture, drawX, drawY, 256.0F, 256.0F, 512.0F, 512.0F, this.drawScale * Settings.scale, this.drawScale * Settings.scale, this.angle, 0, 0, 512, 512, false, false);
 
     }
 

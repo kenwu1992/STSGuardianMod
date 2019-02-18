@@ -53,5 +53,13 @@
     ],
     "PROPERNAME": "Protocol",
     "DESCRIPTION": "Skill that summons a Bronze Orb minion and enhances it with effects."
-  }
+  },
+  {
+  "NAMES": [
+    "ward",
+    "wards"
+  ],
+    "PROPERNAME": "Ward",
+  "DESCRIPTION": "Wards are #b0 cost Skill cards which provide Block, and Exhaust."
+}
 ]

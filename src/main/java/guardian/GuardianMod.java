@@ -5,6 +5,7 @@ import basemod.interfaces.*;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.evacipated.cardcrawl.modthespire.lib.SpireEnum;
 import com.google.gson.Gson;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -59,6 +60,8 @@ public class GuardianMod implements OnStartBattleSubscriber, PreMonsterTurnSubsc
     public static Color mainGuardianColor = new Color(0.58F, 0.49F, 0.33F, 1.0F);
 
     public static ArrayList<Texture> socketTextures = new ArrayList<>();
+    public static ArrayList<Texture> socketTextures2 = new ArrayList<>();
+    public static ArrayList<Texture> socketTextures3 = new ArrayList<>();
 
     public static final Float stasisCardRenderScale = 0.2F;
 
@@ -387,6 +390,12 @@ public class GuardianMod implements OnStartBattleSubscriber, PreMonsterTurnSubsc
         BaseMod.addCard(new Automayhem());
         BaseMod.addCard(new CrystalBeam());
         BaseMod.addCard(new Construct());
+        BaseMod.addCard(new Gem_Blue());
+        BaseMod.addCard(new Gem_Crimson());
+        BaseMod.addCard(new Gem_Fragmented());
+        BaseMod.addCard(new Gem_Yellow());
+        BaseMod.addCard(new Gem_Synthetic());
+        BaseMod.addCard(new Gem_Purple());
 
 
 
@@ -687,6 +696,12 @@ public static void saveData() {
         allGemCards.add("ORANGE");
         allGemCards.add("CYAN");
         allGemCards.add("WHITE");
+        allGemCards.add("BLUE");
+        allGemCards.add("CRIMSON");
+        allGemCards.add("FRAGMENTED");
+        allGemCards.add("PURPLE");
+        allGemCards.add("SYNTHETIC");
+        allGemCards.add("YELLOW");
 
         int rando;
         String ID;
@@ -699,6 +714,12 @@ public static void saveData() {
                 case "ORANGE": rewardGemCards.add(new Gem_Orange()); break;
                 case "CYAN": rewardGemCards.add(new Gem_Cyan()); break;
                 case "WHITE": rewardGemCards.add(new Gem_White()); break;
+                case "BLUE": rewardGemCards.add(new Gem_Blue()); break;
+                case "CRIMSON": rewardGemCards.add(new Gem_Crimson()); break;
+                case "FRAGMENTED": rewardGemCards.add(new Gem_Fragmented()); break;
+                case "PURPLE": rewardGemCards.add(new Gem_Purple()); break;
+                case "SYNTHETIC": rewardGemCards.add(new Gem_Synthetic()); break;
+                case "YELLOW": rewardGemCards.add(new Gem_Yellow()); break;
             }
             allGemCards.remove(rando);
         }
@@ -800,12 +821,42 @@ public static void saveData() {
     }
 
     public void initializeSocketTextures(){
-        socketTextures.add(ImageMaster.loadImage(getResourcePath("/cardIcons/emptysocket.png")));
-        socketTextures.add(ImageMaster.loadImage(getResourcePath("/cardIcons/redgem.png")));
-        socketTextures.add(ImageMaster.loadImage(getResourcePath("/cardIcons/greengem.png")));
-        socketTextures.add(ImageMaster.loadImage(getResourcePath("/cardIcons/orangegem.png")));
-        socketTextures.add(ImageMaster.loadImage(getResourcePath("/cardIcons/whitegem.png")));
-        socketTextures.add(ImageMaster.loadImage(getResourcePath("/cardIcons/cyangem.png")));
+        socketTextures.add(ImageMaster.loadImage(getResourcePath("/cardIcons/templated/512/emptysocket.png")));
+        socketTextures.add(ImageMaster.loadImage(getResourcePath("/cardIcons/templated/512/redgem.png")));
+        socketTextures.add(ImageMaster.loadImage(getResourcePath("/cardIcons/templated/512/greengem.png")));
+        socketTextures.add(ImageMaster.loadImage(getResourcePath("/cardIcons/templated/512/orangegem.png")));
+        socketTextures.add(ImageMaster.loadImage(getResourcePath("/cardIcons/templated/512/whitegem.png")));
+        socketTextures.add(ImageMaster.loadImage(getResourcePath("/cardIcons/templated/512/cyangem.png")));
+        socketTextures.add(ImageMaster.loadImage(getResourcePath("/cardIcons/templated/512/bluegem.png")));
+        socketTextures.add(ImageMaster.loadImage(getResourcePath("/cardIcons/templated/512/crimsongem.png")));
+        socketTextures.add(ImageMaster.loadImage(getResourcePath("/cardIcons/templated/512/fraggem.png")));
+        socketTextures.add(ImageMaster.loadImage(getResourcePath("/cardIcons/templated/512/purplegem.png")));
+        socketTextures.add(ImageMaster.loadImage(getResourcePath("/cardIcons/templated/512/blackgem.png")));
+        socketTextures.add(ImageMaster.loadImage(getResourcePath("/cardIcons/templated/512/yellowgem.png")));
+        socketTextures2.add(ImageMaster.loadImage(getResourcePath("/cardIcons/templated/512/emptysocket2.png")));
+        socketTextures2.add(ImageMaster.loadImage(getResourcePath("/cardIcons/templated/512/redgem2.png")));
+        socketTextures2.add(ImageMaster.loadImage(getResourcePath("/cardIcons/templated/512/greengem2.png")));
+        socketTextures2.add(ImageMaster.loadImage(getResourcePath("/cardIcons/templated/512/orangegem2.png")));
+        socketTextures2.add(ImageMaster.loadImage(getResourcePath("/cardIcons/templated/512/whitegem2.png")));
+        socketTextures2.add(ImageMaster.loadImage(getResourcePath("/cardIcons/templated/512/cyangem2.png")));
+        socketTextures2.add(ImageMaster.loadImage(getResourcePath("/cardIcons/templated/512/bluegem2.png")));
+        socketTextures2.add(ImageMaster.loadImage(getResourcePath("/cardIcons/templated/512/crimsongem2.png")));
+        socketTextures2.add(ImageMaster.loadImage(getResourcePath("/cardIcons/templated/512/fraggem2.png")));
+        socketTextures2.add(ImageMaster.loadImage(getResourcePath("/cardIcons/templated/512/purplegem2.png")));
+        socketTextures2.add(ImageMaster.loadImage(getResourcePath("/cardIcons/templated/512/blackgem2.png")));
+        socketTextures2.add(ImageMaster.loadImage(getResourcePath("/cardIcons/templated/512/yellowgem2.png")));
+        socketTextures3.add(ImageMaster.loadImage(getResourcePath("/cardIcons/templated/512/emptysocket3.png")));
+        socketTextures3.add(ImageMaster.loadImage(getResourcePath("/cardIcons/templated/512/redgem3.png")));
+        socketTextures3.add(ImageMaster.loadImage(getResourcePath("/cardIcons/templated/512/greengem3.png")));
+        socketTextures3.add(ImageMaster.loadImage(getResourcePath("/cardIcons/templated/512/orangegem3.png")));
+        socketTextures3.add(ImageMaster.loadImage(getResourcePath("/cardIcons/templated/512/whitegem3.png")));
+        socketTextures3.add(ImageMaster.loadImage(getResourcePath("/cardIcons/templated/512/cyangem3.png")));
+        socketTextures3.add(ImageMaster.loadImage(getResourcePath("/cardIcons/templated/512/bluegem3.png")));
+        socketTextures3.add(ImageMaster.loadImage(getResourcePath("/cardIcons/templated/512/crimsongem3.png")));
+        socketTextures3.add(ImageMaster.loadImage(getResourcePath("/cardIcons/templated/512/fraggem3.png")));
+        socketTextures3.add(ImageMaster.loadImage(getResourcePath("/cardIcons/templated/512/purplegem3.png")));
+        socketTextures3.add(ImageMaster.loadImage(getResourcePath("/cardIcons/templated/512/blackgem3.png")));
+        socketTextures3.add(ImageMaster.loadImage(getResourcePath("/cardIcons/templated/512/yellowgem3.png")));
 
     }
 
@@ -876,8 +927,13 @@ public static void saveData() {
         BLUE,
         GREEN,
         WHITE,
+        CYAN,
         ORANGE,
-        CYAN
+        CRIMSON,
+        FRAGMENTED,
+        SYNTHETIC,
+        PURPLE,
+        YELLOW
 
     }
 

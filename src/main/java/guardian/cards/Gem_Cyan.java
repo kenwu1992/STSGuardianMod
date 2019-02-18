@@ -3,6 +3,7 @@ package guardian.cards;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -57,7 +58,7 @@ public class Gem_Cyan extends AbstractGuardianCard {
     }
 
     public static void gemEffect(AbstractPlayer p, AbstractMonster m){
-        AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, BLOCK));
+        AbstractDungeon.actionManager.addToBottom(new MakeTempCardInHandAction(new CrystalWard(), 1));
 
     }
 

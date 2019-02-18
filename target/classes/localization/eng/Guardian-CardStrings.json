@@ -29,8 +29,8 @@
   },
   "Guardian:Gem_Cyan": {
     "NAME": "Aquamarine",
-    "DESCRIPTION": "Gem. NL Gain 4 Block.",
-    "UPGRADE_DESCRIPTION": "Gain 4 Block."
+    "DESCRIPTION": "Gem. NL Add a Crystal Ward to your hand.",
+    "UPGRADE_DESCRIPTION": "Add a Crystal Ward to your hand."
   },
   "Guardian:ChargeUp": {
     "NAME": "Charge Up",
@@ -330,5 +330,43 @@
   "Guardian:CrystalBeam": {
     "NAME": "Crystal Beam",
     "DESCRIPTION": "Deal !D! Damage. Damage is increased by !M! for each Gem in ALL of your socketed cards."
+  },
+  "Guardian:Gem_Synthetic": {
+    "NAME": "Synethic Diamond",
+    "DESCRIPTION": "Gem. NL Gain 1 Artifact.",
+    "UPGRADE_DESCRIPTION": "Gain 1 Artifact."
+  },
+  "Guardian:Gem_Yellow": {
+    "NAME": "Amber",
+    "DESCRIPTION": "Gem. NL Place the top card of your draw pile into Stasis.",
+    "UPGRADE_DESCRIPTION": "Place the top card of your draw pile into Stasis."
+  },
+  "Guardian:Gem_Purple": {
+    "NAME": "Amethyst",
+    "DESCRIPTION": "Gem. NL All enemies lose 3 Strength this turn.",
+    "UPGRADE_DESCRIPTION": "All enemies lose 3 Strength this turn."
+  },
+  "Guardian:Gem_Crimson": {
+    "NAME": "Garnet",
+    "DESCRIPTION": "Gem. NL All enemies gain 2 Vulnerable.",
+    "UPGRADE_DESCRIPTION": "All enemies gain 2 Vulnerable."
+  },
+  "Guardian:Gem_Blue": {
+    "NAME": "Sapphire",
+    "DESCRIPTION": "Gem. NL Enter Defensive Mode.",
+    "UPGRADE_DESCRIPTION": "Enter Defensive Mode."
+  },
+  "Guardian:Gem_Fragmented": {
+    "NAME": "Fragmented Gem",
+    "DESCRIPTION": "Gem. NL Add a Crystal Shiv to your hand.",
+    "UPGRADE_DESCRIPTION": "Add a Crystal Shiv to your hand."
+  },
+  "Guardian:CrystalShiv": {
+    "NAME": "Crystal Shiv",
+    "DESCRIPTION": "Deal !D! damage. NL Exhaust."
+  },
+  "Guardian:CrystalWard": {
+    "NAME": "Crystal Ward",
+    "DESCRIPTION": "Gain !B! Block. NL Exhaust."
   }
 }
