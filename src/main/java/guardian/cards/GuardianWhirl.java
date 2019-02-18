@@ -2,13 +2,10 @@ package guardian.cards;
 
 
 import basemod.helpers.BaseModCardTags;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
-import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -16,7 +13,6 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.CleaveEffect;
 import guardian.GuardianMod;
-import guardian.actions.GuardianSwitchModesAction;
 import guardian.patches.AbstractCardEnum;
 
 
@@ -47,13 +43,13 @@ public class GuardianWhirl extends AbstractGuardianCard {
         super(ID, NAME, GuardianMod.getResourcePath(IMG_PATH), COST, DESCRIPTION, TYPE, AbstractCardEnum.GUARDIAN, RARITY, TARGET);
 
         this.baseDamage = DAMAGE;
-        this.tags.add(BaseModCardTags.BASIC_STRIKE);
-        this.tags.add(CardTags.STRIKE);
+        this.tags.add(GuardianMod.MULTIHIT);
 
         //this.sockets.add(GuardianMod.socketTypes.RED);
 
         this.multihit = MULTICOUNT;
         this.socketCount = SOCKETS;
+
         this.updateDescription();
 
     }
@@ -70,7 +66,6 @@ public class GuardianWhirl extends AbstractGuardianCard {
             AbstractDungeon.actionManager.addToBottom(new VFXAction(p, new CleaveEffect(), 0.05F));
             AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(p, this.multiDamage, this.damageTypeForTurn, com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect.NONE));
         }
-        AbstractDungeon.actionManager.addToBottom(new GuardianSwitchModesAction(p,false));
         this.useGems(p, m);
     }
 

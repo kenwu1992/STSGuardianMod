@@ -98,11 +98,11 @@
 		]
 	},
 	"Guardian:ClonePower": {
-		"NAME": "Clone",
+		"NAME": "Reroute",
 		"DESCRIPTIONS": [
-			"Place a copy of the next card you play into Stasis.",
-			"Place copies of the next ",
-			" cards you play into Stasis."
+			"Place the next Attack or Skill you play this turn into Stasis.",
+			"Place the next ",
+			" Attacks or Skills you play this turn into Stasis."
 		]
 	},
 	"Guardian:GemFinderPower": {
@@ -119,6 +119,51 @@
 			"At the end of your turn, you may place #b",
 			" card into Stasis.",
 			" cards into Stasis."
+		]
+	},
+	"Guardian:DefenseModePower": {
+		"NAME": "Defensive Mode",
+		"DESCRIPTIONS": [
+			"Defensive Mode will remain active for ",
+			" turns. NL When Defensive Mode is removed, lose ",
+			" Thorns."
+		]
+	},
+	"Guardian:ConstructModePower": {
+		"NAME": "Construction Mode",
+		"DESCRIPTIONS": [
+			"You cannot lose HP or play Attacks this turn.",
+			"You cannot lose HP or play Attacks for ",
+			" turns."
+		]
+	},
+	"Guardian:MultiBoostPower": {
+		"NAME": "MultiBoost",
+		"DESCRIPTIONS": [
+			"Attacks that deal damage multiple times do so an additional time.",
+			"Attacks that deal damage multiple times do so ",
+			" additional times."
+		]
+	},
+	"Guardian:TargetedPower": {
+		"NAME": "Targeted",
+		"DESCRIPTIONS": [
+			"Each time this enemy takes damage, gain ",
+			" Strength for this turn."
+		]
+	},
+	"Guardian:LoseThornsPower": {
+		"NAME": "Thorns Down",
+		"DESCRIPTIONS": [
+			"Lose ",
+			" Thorns at the start of your next turn."
+		]
+	},
+	"Guardian:BeamBuffPower": {
+		"NAME": "Primed",
+		"DESCRIPTIONS": [
+			"Beam cards deal ",
+			" more damage."
 		]
 	}
 }

@@ -41,7 +41,7 @@ public class RepulsorProtocol extends AbstractGuardianCard {
 
     public RepulsorProtocol() {
         super(ID, NAME, GuardianMod.getResourcePath(IMG_PATH), COST, DESCRIPTION, TYPE, AbstractCardEnum.GUARDIAN, RARITY, TARGET);
-
+        this.tags.add(GuardianMod.PROTOCOL);
         this.secondaryM = DAMAGE;
         this.baseMagicNumber = this.magicNumber = DEBUFFCOUNT;
 

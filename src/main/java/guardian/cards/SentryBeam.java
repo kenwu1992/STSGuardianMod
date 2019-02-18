@@ -47,6 +47,7 @@ public class SentryBeam extends AbstractGuardianCard {
 
         super(ID, NAME, GuardianMod.getResourcePath(IMG_PATH), COST, DESCRIPTION, TYPE, AbstractCardEnum.GUARDIAN, RARITY, TARGET);
 
+        this.tags.add(GuardianMod.BEAM);
         this.baseDamage = DAMAGE;
         this.socketCount = SOCKETS;
         this.updateDescription();

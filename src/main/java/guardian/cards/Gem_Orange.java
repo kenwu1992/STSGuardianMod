@@ -56,7 +56,7 @@ public class Gem_Orange extends AbstractGuardianCard {
     }
 
     public static void gemEffect(AbstractPlayer p, AbstractMonster m){
-        AbstractDungeon.actionManager.addToTop(new GainEnergyAction(1));
+        AbstractDungeon.actionManager.addToBottom(new GainEnergyAction(1));
 
     }
 

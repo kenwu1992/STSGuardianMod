@@ -11,9 +11,8 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.BarricadePower;
 import guardian.GuardianMod;
-import guardian.actions.GuardianSwitchModesAction;
+import guardian.actions.SwitchToDefenseModeAction;
 import guardian.patches.AbstractCardEnum;
-import guardian.powers.OrbwalkPower;
 
 public class SphericShield extends AbstractGuardianCard {
     public static final String ID = GuardianMod.makeID("SphericShield");
@@ -46,7 +45,7 @@ public class SphericShield extends AbstractGuardianCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         super.use(p,m);
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new BarricadePower(p)));
-        AbstractDungeon.actionManager.addToBottom(new GuardianSwitchModesAction(p,true));
+        AbstractDungeon.actionManager.addToBottom(new SwitchToDefenseModeAction(p));
 
     }
 

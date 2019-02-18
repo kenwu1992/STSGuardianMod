@@ -45,6 +45,8 @@ public class StasisOrb extends AbstractOrb {
             }
 
         }
+        card.targetAngle = 0F;
+
         this.updateDescription();
     }
 
@@ -85,12 +87,11 @@ public class StasisOrb extends AbstractOrb {
         AbstractDungeon.actionManager.addToTop(new ReturnStasisCardToHandAction(this.stasisCard));
         this.stasisCard.superFlash(Color.GOLDENROD);
         if (!stasisCard.isCostModifiedForTurn) stasisCard.tags.remove(GuardianMod.STASISGLOW);
-
+        GuardianMod.updateStasisCount();
     }
 
 
     public void triggerEvokeAnimation() {
-
     }
 
     public void updateAnimation() {
@@ -167,6 +168,7 @@ public class StasisOrb extends AbstractOrb {
         }
         this.stasisCard.targetDrawScale = GuardianMod.stasisCardRenderScale;
         this.stasisCard.retain = false;
+        GuardianMod.updateStasisCount();
     }
 
     public AbstractOrb makeCopy() {

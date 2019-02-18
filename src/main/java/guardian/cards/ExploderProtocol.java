@@ -43,7 +43,7 @@ public class ExploderProtocol extends AbstractGuardianCard {
 
 
         this.baseMagicNumber = this.magicNumber = DAMAGE;
-
+        this.tags.add(GuardianMod.PROTOCOL);
         this.socketCount = SOCKETS;
         this.updateDescription();
     }

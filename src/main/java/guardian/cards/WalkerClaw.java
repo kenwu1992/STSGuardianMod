@@ -1,7 +1,6 @@
 package guardian.cards;
 
 
-import basemod.helpers.BaseModCardTags;
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
@@ -15,8 +14,6 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.ClawEffect;
 import guardian.GuardianMod;
-import guardian.actions.GuardianSwitchModesAction;
-import guardian.actions.PlaceTopCardIntoStasisAction;
 import guardian.patches.AbstractCardEnum;
 
 

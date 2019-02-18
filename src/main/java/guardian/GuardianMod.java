@@ -16,7 +16,6 @@ import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
-import com.megacrit.cardcrawl.rewards.RewardItem;
 import com.megacrit.cardcrawl.rewards.RewardSave;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
@@ -26,6 +25,7 @@ import guardian.helpers.SecondaryMagicVariable;
 import guardian.orbs.StasisOrb;
 import guardian.patches.GuardianEnum;
 import guardian.patches.RewardItemTypePatch;
+import guardian.powers.MultiBoostPower;
 import guardian.rewards.GemReward;
 import guardian.summons.BronzeOrb;
 import org.apache.logging.log4j.LogManager;
@@ -34,7 +34,6 @@ import guardian.characters.GuardianCharacter;
 
 import guardian.patches.AbstractCardEnum;
 
-import java.lang.reflect.Array;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -64,9 +63,9 @@ public class GuardianMod implements OnStartBattleSubscriber, PreMonsterTurnSubsc
     public static final Float stasisCardRenderScale = 0.2F;
 
     public static boolean stasisDelay = false;
+    public static int stasisCount;
 
     public static boolean discoveryOverride = false;
-
     public static boolean discoveryOverrideUpgrade = false;
 
 
@@ -79,6 +78,12 @@ public class GuardianMod implements OnStartBattleSubscriber, PreMonsterTurnSubsc
     public static AbstractCard.CardTags GEM;
     @SpireEnum
     public static AbstractCard.CardTags STASISGLOW;
+    @SpireEnum
+    public static AbstractCard.CardTags MULTIHIT;
+    @SpireEnum
+    public static AbstractCard.CardTags BEAM;
+    @SpireEnum
+    public static AbstractCard.CardTags PROTOCOL;
 
     //TODO - Unlock bundles
     /*
@@ -358,6 +363,24 @@ public class GuardianMod implements OnStartBattleSubscriber, PreMonsterTurnSubsc
         BaseMod.addCard(new TimeCapacitor());
         BaseMod.addCard(new StasisField());
         BaseMod.addCard(new StasisStrike());
+        BaseMod.addCard(new ConstructionForm());
+        BaseMod.addCard(new BlastProtocol());
+        BaseMod.addCard(new WeakpointTargeting());
+        BaseMod.addCard(new GemFire());
+        BaseMod.addCard(new RollAttack());
+        BaseMod.addCard(new Reroute());
+        BaseMod.addCard(new PrismaticBarrier());
+        BaseMod.addCard(new PrismaticBeam());
+        BaseMod.addCard(new ChargeCore());
+        BaseMod.addCard(new SharpenScales());
+        BaseMod.addCard(new PiercingHide());
+        BaseMod.addCard(new TemporalShield());
+        BaseMod.addCard(new ExploitGems());
+        BaseMod.addCard(new PrimingBeam());
+        BaseMod.addCard(new CallForBackup());
+        BaseMod.addCard(new BaubleBeam());
+        BaseMod.addCard(new MultiBeam());
+        BaseMod.addCard(new RefractedBeam());
 
 
 
@@ -587,7 +610,15 @@ public static void saveData() {
         }
     }
 
-
+    public static int getMultihitModifiers(){
+        int amount = 0;
+        if (AbstractDungeon.player != null){
+            if (AbstractDungeon.player.hasPower(MultiBoostPower.POWER_ID)){
+                amount += AbstractDungeon.player.getPower(MultiBoostPower.POWER_ID).amount;
+            }
+        }
+        return amount;
+    }
 
     public void receiveEditStrings() {
 
@@ -796,6 +827,24 @@ public static void saveData() {
         BaseMod.addPotion(SpawnSlimePotion.class, Color.GREEN, Color.FOREST, Color.BLACK, SpawnSlimePotion.POTION_ID, GuardianEnum.GUARDIAN);
         BaseMod.addPotion(SlimyTonguePotion.class, Color.PURPLE, Color.PURPLE, Color.MAROON, SlimyTonguePotion.POTION_ID, GuardianEnum.GUARDIAN);
 */
+    }
+
+    public static void updateStasisCount(){
+        int count = 0;
+        if (AbstractDungeon.player != null) {
+            for (AbstractOrb o : AbstractDungeon.player.orbs){
+                if (o instanceof StasisOrb){
+                    count++;
+                }
+            }
+        }
+        stasisCount = count;
+    }
+
+    public static int getStasisCount(){
+
+        //logger.info(count);
+        return stasisCount;
     }
 
     public boolean receivePreMonsterTurn(AbstractMonster abstractMonster) {

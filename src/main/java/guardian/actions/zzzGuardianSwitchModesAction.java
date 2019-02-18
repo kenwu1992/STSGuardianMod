@@ -2,30 +2,28 @@ package guardian.actions;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.EmptyDeckShuffleAction;
-import com.megacrit.cardcrawl.actions.defect.ChannelAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-import guardian.orbs.StasisOrb;
-import guardian.powers.GuardianModePower;
+import guardian.powers.zzzGuardianModePower;
 
 
-public class GuardianSwitchModesAction extends AbstractGameAction {
+public class zzzGuardianSwitchModesAction extends AbstractGameAction {
     private boolean toDefensive;
+    private boolean toShattered;
     private AbstractPlayer p;
 
-    public GuardianSwitchModesAction(AbstractPlayer p, boolean toDefensive) {
+    public zzzGuardianSwitchModesAction(AbstractPlayer p, boolean toDefensive, boolean toShattered) {
         this.toDefensive = toDefensive;
+        this.toShattered = toShattered;
         this.p = p;
         this.actionType = ActionType.DAMAGE;
     }
 
     public void update() {
 
-        if (p.hasPower(GuardianModePower.POWER_ID)){
-            GuardianModePower pG = (GuardianModePower)p.getPower(GuardianModePower.POWER_ID);
+        if (p.hasPower(zzzGuardianModePower.POWER_ID)){
+            zzzGuardianModePower pG = (zzzGuardianModePower)p.getPower(zzzGuardianModePower.POWER_ID);
 
             if (toDefensive){
                 if (!pG.inDefensive){
@@ -38,11 +36,11 @@ public class GuardianSwitchModesAction extends AbstractGameAction {
             }
 
         } else {
-            AbstractPower newPower = new GuardianModePower(p);
+            AbstractPower newPower = new zzzGuardianModePower(p);
             if (this.toDefensive){
-                ((GuardianModePower) newPower).switchToDefensiveMode();
+                ((zzzGuardianModePower) newPower).switchToDefensiveMode();
             }
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p,p,new GuardianModePower(p)));
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p,p,new zzzGuardianModePower(p)));
         }
 
         this.isDone = true;

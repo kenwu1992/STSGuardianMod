@@ -45,7 +45,7 @@ public class SpikerProtocol extends AbstractGuardianCard {
 
         this.baseMagicNumber = this.magicNumber = THORNS;
         this.secondaryM = DAMAGE;
-
+        this.tags.add(GuardianMod.PROTOCOL);
         this.socketCount = SOCKETS;
         this.updateDescription();
     }

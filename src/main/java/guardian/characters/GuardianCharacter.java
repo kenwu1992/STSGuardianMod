@@ -1,28 +1,16 @@
 package guardian.characters;
 
-import basemod.abstracts.CustomPlayer;
 import com.badlogic.gdx.graphics.Color;
-import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
-import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.MathUtils;
-import com.esotericsoftware.spine.AnimationState.TrackEntry;
-import com.evacipated.cardcrawl.modthespire.lib.SpireOverride;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
-import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.red.Strike_Red;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.EnergyManager;
-import com.megacrit.cardcrawl.core.Settings;
-import com.megacrit.cardcrawl.cutscenes.CutscenePanel;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.*;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
-import com.megacrit.cardcrawl.powers.AbstractPower;
-import com.megacrit.cardcrawl.powers.IntangiblePlayerPower;
 import com.megacrit.cardcrawl.relics.BronzeScales;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
@@ -32,13 +20,10 @@ import guardian.cards.Gem_Red;
 import guardian.cards.Strike_Guardian;
 import guardian.patches.AbstractCardEnum;
 import guardian.patches.GuardianEnum;
-import guardian.powers.GuardianModePower;
 import kobting.friendlyminions.characters.AbstractPlayerWithMinions;
 import kobting.friendlyminions.characters.CustomCharSelectInfo;
 
 import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
 
 
 public class GuardianCharacter extends AbstractPlayerWithMinions {
@@ -56,6 +41,7 @@ public class GuardianCharacter extends AbstractPlayerWithMinions {
      private String currentJson = jsonURL;
 
      private boolean inDefensive;
+     private boolean inShattered;
 
 
 
@@ -108,28 +94,52 @@ public class GuardianCharacter extends AbstractPlayerWithMinions {
     @Override
     public void applyStartOfCombatLogic() {
         super.applyStartOfCombatLogic();
-        this.powers.add(new GuardianModePower(this));
     }
 
     public void switchToDefensiveMode(){
-        if (!inDefensive) {
-            CardCrawlGame.sound.play("GUARDIAN_ROLL_UP");
-            this.stateData.setMix("idle", "defensive", 0.2F);
-            this.state.setTimeScale(.75F);
-            this.state.setAnimation(0, "defensive", true);
+        if (!inShattered) {
+            if (!inDefensive) {
+                CardCrawlGame.sound.play("GUARDIAN_ROLL_UP");
+                this.stateData.setMix("idle", "defensive", 0.2F);
+                this.state.setTimeScale(.75F);
+                this.state.setAnimation(0, "defensive", true);
 
-            inDefensive = true;
+                inDefensive = true;
+            }
         }
     }
 
     public void switchToOffensiveMode(){
-        if (inDefensive) {
-            CardCrawlGame.sound.playA("GUARDIAN_ROLL_UP", .25F);
-            this.stateData.setMix("defensive", "idle", 0.2F);
+        if (!inShattered) {
+            if (inDefensive) {
+                CardCrawlGame.sound.playA("GUARDIAN_ROLL_UP", .25F);
+                this.stateData.setMix("defensive", "idle", 0.2F);
+                this.state.setTimeScale(.75F);
+                this.state.setAnimation(0, "idle", true);
+
+                inDefensive = false;
+            }
+        } else {
+            this.stateData.setMix("transition", "idle", 0.2F);
             this.state.setTimeScale(.75F);
             this.state.setAnimation(0, "idle", true);
+            inShattered = false;
+        }
+    }
 
-            inDefensive = false;
+    public void switchToShatteredMode(){
+        if (!inShattered) {
+            if (inDefensive) {
+                this.stateData.setMix("defensive", "transition", 0.2F);
+                this.state.setTimeScale(.75F);
+                this.state.setAnimation(0, "transition", true);
+                inShattered = true;
+            } else {
+                    this.stateData.setMix("idle", "transition", 0.2F);
+                    this.state.setTimeScale(.75F);
+                    this.state.setAnimation(0, "transition", true);
+                    inShattered = true;
+            }
         }
     }
 

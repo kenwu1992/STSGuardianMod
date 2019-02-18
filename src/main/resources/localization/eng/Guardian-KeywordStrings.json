@@ -43,5 +43,12 @@
     ],
     "PROPERNAME": "Summon Bronze Orb",
     "DESCRIPTION": "Summon a Bronze Orb minion, who will perform actions at the end of each turn.  If a Bronze Orb is already in play, a new one is not created."
+  },
+  {
+    "NAMES": [
+      "protocol"
+    ],
+    "PROPERNAME": "Protocol",
+    "DESCRIPTION": "Skill that summons a Bronze Orb minion and enhances it with effects."
   }
 ]

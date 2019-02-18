@@ -39,12 +39,12 @@ public class BronzeOrb extends AbstractFriendlyMonster {
 
         this.powers.add(new BronzeOrbLocationPower(this));
 
-        if (AbstractDungeon.player.hasPower(GuardianModePower.POWER_ID)){
-            if (((GuardianModePower)AbstractDungeon.player.getPower(GuardianModePower.POWER_ID)).inDefensive) this.moveToFrontline();
-            else this.moveToBackline();
+        if (AbstractDungeon.player.hasPower(DefenseModePower.POWER_ID) || AbstractDungeon.player.hasPower(ConstructModePower.POWER_ID)) {
+            this.moveToBackline();
         } else {
-            this.moveToFrontline(); //SHOULD NEVER HAPPEN... but just in case.
+            this.moveToFrontline();
         }
+
 
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player,AbstractDungeon.player,new BronzeOrbProtectionPower(AbstractDungeon.player)));
         AbstractDungeon.actionManager.addToBottom(new SFXAction("AUTOMATON_ORB_SPAWN", MathUtils.random(-0.1F, 0.1F)));

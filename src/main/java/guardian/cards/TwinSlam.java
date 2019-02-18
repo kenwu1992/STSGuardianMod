@@ -12,8 +12,6 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import guardian.GuardianMod;
-import guardian.actions.GuardianSwitchModesAction;
-import guardian.actions.PlaceTopCardIntoStasisAction;
 import guardian.patches.AbstractCardEnum;
 
 
@@ -44,8 +42,7 @@ public class TwinSlam extends AbstractGuardianCard {
         super(ID, NAME, GuardianMod.getResourcePath(IMG_PATH), COST, DESCRIPTION, TYPE, AbstractCardEnum.GUARDIAN, RARITY, TARGET);
 
         this.baseDamage = DAMAGE;
-        this.tags.add(BaseModCardTags.BASIC_STRIKE);
-        this.tags.add(CardTags.STRIKE);
+        this.tags.add(GuardianMod.MULTIHIT);
 
 
 
@@ -65,7 +62,6 @@ public class TwinSlam extends AbstractGuardianCard {
             AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HEAVY));
 
         }
-        AbstractDungeon.actionManager.addToBottom(new GuardianSwitchModesAction(p,false));
 
     }
 

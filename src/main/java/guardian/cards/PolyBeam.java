@@ -53,6 +53,8 @@ public class PolyBeam extends AbstractGuardianCard {
         this.baseMagicNumber = this.magicNumber = COSTINSTASIS;
 
         this.multihit = MULTICOUNT;
+        this.tags.add(GuardianMod.MULTIHIT);
+        this.tags.add(GuardianMod.BEAM);
 
 
         this.socketCount = SOCKETS;

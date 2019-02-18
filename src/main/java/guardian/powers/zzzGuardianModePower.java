@@ -13,7 +13,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 
-public class GuardianModePower extends AbstractGuardianPower {
+public class zzzGuardianModePower extends AbstractGuardianPower {
     public static final String POWER_ID = "Guardian:GuardianModePowerOffense";
 
     public static PowerType POWER_TYPE = PowerType.BUFF;
@@ -24,7 +24,7 @@ public class GuardianModePower extends AbstractGuardianPower {
     public boolean inDefensive = false;
     private String IDdef = "Guardian:GuardianModePowerDefense";
 
-    public GuardianModePower(AbstractCreature owner) {
+    public zzzGuardianModePower(AbstractCreature owner) {
 
        this.ID = POWER_ID;
         this.IDdef = POWER_ID;

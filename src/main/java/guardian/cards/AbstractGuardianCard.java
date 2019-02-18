@@ -12,6 +12,7 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import guardian.GuardianMod;
+import guardian.powers.BeamBuffPower;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -24,7 +25,7 @@ public abstract class AbstractGuardianCard extends CustomCard implements CustomS
     public GuardianMod.socketTypes thisGemsType = null;
 
     public int multihit;
-    public boolean upgradeMulthit;
+    public int upgradeMulthit;
     public boolean isMultihitModified;
 
     public int secondaryM;
@@ -37,6 +38,9 @@ public abstract class AbstractGuardianCard extends CustomCard implements CustomS
         super(id, name, img, cost, rawDescription, type,
                 color, rarity, target);
 
+        if (AbstractDungeon.player != null){
+            upgradeMultihit();
+        }
 
     }
 
@@ -177,12 +181,21 @@ public abstract class AbstractGuardianCard extends CustomCard implements CustomS
             }
         }
 
+        if (this instanceof BaubleBeam && this.sockets.size() > 0) {
+            if (!((BaubleBeam) this).gemCostModified) {
+                GuardianMod.logger.info("Bauble sockets " + this.sockets.size());
+                this.modifyCostForCombat(this.sockets.size() * -1);
+                ((BaubleBeam) this).gemCostModified = true;
+            }
+        }
+
         if (after){
             return desc + addedDesc;
         } else {
             return addedDesc + desc;
 
         }
+
     }
 
     @Override
@@ -249,6 +262,29 @@ public abstract class AbstractGuardianCard extends CustomCard implements CustomS
         if (this.hasTag(GuardianMod.STASISGLOW)) this.tags.remove(GuardianMod.STASISGLOW);
     }
 
+    public void upgradeMultihit(){
+        if (GuardianMod.getMultihitModifiers() > 0){
+            this.upgradeMulthit = GuardianMod.getMultihitModifiers();
+            if (this.upgradeMulthit > 0) this.isMultihitModified = true;
+        }
+
+    }
+
+    public float calculateModifiedCardDamage(AbstractPlayer player, AbstractMonster mo, float tmp) {
+        int bonus = 0;
+        if (this.hasTag(GuardianMod.BEAM)) {
+            if (player.hasPower(BeamBuffPower.POWER_ID)) {
+                bonus = player.getPower(BeamBuffPower.POWER_ID).amount;
+            }
+            if (mo != null) {
+                if (mo.hasPower(BeamBuffPower.POWER_ID)) {
+                    bonus = bonus + mo.getPower(BeamBuffPower.POWER_ID).amount;
+                }
+            }
+        }
+        return tmp + bonus;
+    }
+
     @Override
     public AbstractCard makeStatEquivalentCopy() {
         AbstractCard card = this.makeCopy();
@@ -276,6 +312,10 @@ public abstract class AbstractGuardianCard extends CustomCard implements CustomS
         card.misc = this.misc;
         card.freeToPlayOnce = this.freeToPlayOnce;
         ((AbstractGuardianCard)card).sockets = this.sockets;
+        if (this instanceof BaubleBeam){
+            ((BaubleBeam) card).gemCostModified = ((BaubleBeam) this).gemCostModified;
+        }
+
        // GuardianMod.logger.info("SEcopy sockets this: " + this.sockets);
        // GuardianMod.logger.info("SEcopy sockets c: " + ((AbstractGuardianCard)card).sockets);
         ((AbstractGuardianCard)card).updateDescription();

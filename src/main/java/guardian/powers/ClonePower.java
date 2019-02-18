@@ -35,7 +35,7 @@ public class ClonePower extends AbstractGuardianPower {
     }
 
     public void updateDescription() {
-        if (this.amount == 1){
+        if (this.amount != 1){
             this.description = DESCRIPTIONS[1] + this.amount + DESCRIPTIONS[2];
         } else {
             this.description = DESCRIPTIONS[0];
@@ -46,14 +46,22 @@ public class ClonePower extends AbstractGuardianPower {
     @Override
     public void onUseCard(AbstractCard card, UseCardAction action) {
         super.onUseCard(card, action);
-        if (this.amount == 1){
-            AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(this.owner, this.owner, this));
+        if (card.type == AbstractCard.CardType.ATTACK || card.type == AbstractCard.CardType.SKILL) {
+            if (this.amount == 1) {
+                AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(this.owner, this.owner, this));
 
-        } else {
-            this.amount -= 1;
+            } else {
+                this.amount -= 1;
+            }
+
+            AbstractDungeon.actionManager.addToBottom(new PlaceActualCardIntoStasis(card));
         }
+    }
 
-        AbstractCard tmp = card.makeStatEquivalentCopy();
-        AbstractDungeon.actionManager.addToBottom(new PlaceActualCardIntoStasis(tmp));
+    @Override
+    public void atEndOfTurn(boolean isPlayer) {
+        super.atEndOfTurn(isPlayer);
+        AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(this.owner, this.owner, this));
+
     }
 }

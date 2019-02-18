@@ -3,7 +3,6 @@ package guardian.cards;
 
 
 import basemod.helpers.BaseModCardTags;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -12,8 +11,6 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import guardian.GuardianMod;
-import guardian.actions.GuardianSwitchModesAction;
-import guardian.actions.SpawnBronzeOrbAction;
 import guardian.patches.AbstractCardEnum;
 
 public class Defend_Guardian extends AbstractGuardianCard {

@@ -50,6 +50,7 @@ public class HyperBeam_Guardian extends AbstractGuardianCard {
 
         this.baseDamage = DAMAGE;
 
+        this.tags.add(GuardianMod.BEAM);
         this.isMultiDamage = true;
         this.exhaust = true;
 

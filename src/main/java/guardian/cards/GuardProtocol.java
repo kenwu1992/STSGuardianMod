@@ -41,7 +41,7 @@ public class GuardProtocol extends AbstractGuardianCard {
     public GuardProtocol() {
         super(ID, NAME, GuardianMod.getResourcePath(IMG_PATH), COST, DESCRIPTION, TYPE, AbstractCardEnum.GUARDIAN, RARITY, TARGET);
 
-
+        this.tags.add(GuardianMod.PROTOCOL);
         this.baseMagicNumber = this.magicNumber = BLOCK;
 
         this.socketCount = SOCKETS;
