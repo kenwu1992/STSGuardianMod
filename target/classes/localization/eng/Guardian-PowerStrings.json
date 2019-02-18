@@ -165,5 +165,29 @@
 			"Beam cards deal ",
 			" more damage."
 		]
+	},
+	"Guardian:DefensiveModeBuffsPower": {
+		"NAME": "Defensive Mode+",
+		"DESCRIPTIONS": [
+			"In addition to its normal effects, Defensive Mode will apply: NL ",
+			" Thorns.",
+			" Dexterity.",
+			" Block at the end of each turn."
+		]
+	},
+	"Guardian:AutomayhemPower": {
+		"NAME": "Automayhem",
+		"DESCRIPTIONS": [
+			"At the start of your turn, place a random 1-cost card into Stasis.",
+			"At the start of your turn, place ",
+			" random 1-cost cards into Stasis."
+		]
+	},
+	"Guardian:ConstructPower": {
+		"NAME": "Ancient Construct",
+		"DESCRIPTIONS": [
+			"Gain ",
+			" Strength when you lose an Artifact."
+		]
 	}
 }

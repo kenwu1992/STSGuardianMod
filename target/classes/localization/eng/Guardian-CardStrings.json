@@ -306,5 +306,29 @@
   "Guardian:PrimingBeam": {
     "NAME": "Priming Beam",
     "DESCRIPTION": "Deal !D! damage. NL Increase the damage dealt by Beam cards by !M! this combat."
+  },
+  "Guardian:SlickScales": {
+    "NAME": "Slick Scales",
+    "DESCRIPTION": "While in Defensive Mode, gain !M! Dexterity. NL Enter Defensive Mode."
+  },
+  "Guardian:SpikyScales": {
+    "NAME": "Spiky Scales",
+    "DESCRIPTION": "While in Defensive Mode, gain !M! Thorns. NL Enter Defensive Mode."
+  },
+  "Guardian:ArmoredScales": {
+    "NAME": "Armored Scales",
+    "DESCRIPTION": "While in Defensive Mode, gain !M! Block at the end of each turn. NL Enter Defensive Mode."
+  },
+  "Guardian:Automayhem": {
+    "NAME": "Automayhem",
+    "DESCRIPTION": "At the start of your turn, place a random 1-cost card into Stasis."
+  },
+  "Guardian:Construct": {
+    "NAME": "Ancient Construct",
+    "DESCRIPTION": "Gain !M! Artifact. NL When you lose an Artifact, gain 1 Strength."
+  },
+  "Guardian:CrystalBeam": {
+    "NAME": "Crystal Beam",
+    "DESCRIPTION": "Deal !D! Damage. Damage is increased by !M! for each Gem in ALL of your socketed cards."
   }
 }

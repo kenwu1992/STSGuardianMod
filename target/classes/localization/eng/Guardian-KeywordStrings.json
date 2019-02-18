@@ -1,7 +1,9 @@
 [
      {
       "NAMES": [
-        "socket"
+        "socket",
+        "sockets",
+        "socketed"
       ],
       "PROPERNAME": "Socket",
       "DESCRIPTION": "Gems can be placed into this Socket at a Rest Site to combine the Gem's effect with this card's effect."
@@ -15,7 +17,8 @@
   },
   {
     "NAMES": [
-      "gem"
+      "gem",
+      "gems"
     ],
     "PROPERNAME": "Gem",
     "DESCRIPTION": "Gems can be placed into Sockets in cards at a Rest Site."
