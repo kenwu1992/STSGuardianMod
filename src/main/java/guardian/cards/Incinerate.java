@@ -34,7 +34,7 @@ public class Incinerate extends AbstractGuardianCard {
     //TUNING CONSTANTS
 
     private static final int COST = 0;
-    private static final int DAMAGE = 8;
+    private static final int DAMAGE = 9;
     private static final int UPGRADE_DAMAGE = 2;
     private static final int SEAR = 2;
     private static final int UPGRADE_SEAR = 1;

@@ -25,7 +25,7 @@ public class PolyBeam extends AbstractGuardianCard {
     public static String UPGRADED_DESCRIPTION;
     public static final String IMG_PATH = "cards/polybeam.png";
     private static final CardType TYPE = CardType.ATTACK;
-    private static final CardRarity RARITY = CardRarity.UNCOMMON;
+    private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.ENEMY;
 
     private static final CardStrings cardStrings;
@@ -33,8 +33,8 @@ public class PolyBeam extends AbstractGuardianCard {
     //TUNING CONSTANTS
 
     private static final int COST = 0;
-    private static final int DAMAGE = 3;
-    private static final int UPGRADE_BONUS = 1;
+    private static final int DAMAGE = 4;
+    private static final int UPGRADE_BONUS = 2;
     private static final int MULTICOUNT = 2;
     private static final int COSTINSTASIS = 2;
     private static final int SOCKETS = 1;

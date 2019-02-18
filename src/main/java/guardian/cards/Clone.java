@@ -12,6 +12,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.DexterityPower;
 import guardian.GuardianMod;
+import guardian.actions.CloneAction;
 import guardian.patches.AbstractCardEnum;
 import guardian.powers.ClonePower;
 
@@ -24,7 +25,7 @@ public class Clone extends AbstractGuardianCard {
 
     private static final CardStrings cardStrings;
     private static final CardType TYPE = CardType.SKILL;
-    private static final CardRarity RARITY = CardRarity.COMMON;
+    private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
 
     //TUNING CONSTANTS
@@ -49,8 +50,8 @@ public class Clone extends AbstractGuardianCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         super.use(p,m);
 
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new ClonePower(p, this.magicNumber), this.magicNumber));
 
+        AbstractDungeon.actionManager.addToBottom(new CloneAction(p));
         super.useGems(p,m);
     }
 

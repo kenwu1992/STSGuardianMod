@@ -27,9 +27,9 @@ public class CurlUp extends AbstractGuardianCard {
 
     //TUNING CONSTANTS
 
-    private static final int COST = 1;
-    private static final int BLOCK = 3;
-    private static final int UPGRADE_BONUS = 2;
+    private static final int COST = 2;
+    private static final int BLOCK = 10;
+    private static final int UPGRADE_BONUS = 3;
     private static final int MULTICOUNT = 0;
     private static final int SOCKETS = 0;
     private static final boolean SOCKETSAREAFTER = true;

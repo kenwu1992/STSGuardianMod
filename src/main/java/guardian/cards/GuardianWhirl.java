@@ -31,7 +31,7 @@ public class GuardianWhirl extends AbstractGuardianCard {
     //TUNING CONSTANTS
 
     private static final int COST = 2;
-    private static final int DAMAGE = 3;
+    private static final int DAMAGE = 4;
     private static final int UPGRADE_BONUS = 1;
     private static final int MULTICOUNT = 4;
     private static final int SOCKETS = 1;

@@ -29,16 +29,16 @@ public class HyperBeam_Guardian extends AbstractGuardianCard {
     public static String UPGRADED_DESCRIPTION;
     public static final String IMG_PATH = "cards/hyper_beam.png";
     private static final CardType TYPE = CardType.ATTACK;
-    private static final CardRarity RARITY = CardRarity.SPECIAL;
+    private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.ALL_ENEMY;
 
     private static final CardStrings cardStrings;
 
     //TUNING CONSTANTS
 
-    private static final int COST = 2;
-    private static final int DAMAGE = 26;
-    private static final int UPGRADE_DAMAGE = 8;
+    private static final int COST = 3;
+    private static final int DAMAGE = 40;
+    private static final int UPGRADE_DAMAGE = 10;
     private static final int SOCKETS = 2;
     private static final boolean SOCKETSAREAFTER = false;
 
