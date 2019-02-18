@@ -24,7 +24,7 @@ public class Incinerate extends AbstractGuardianCard {
     public static final String NAME;
     public static String DESCRIPTION;
     public static String UPGRADED_DESCRIPTION;
-    public static final String IMG_PATH = "cards/polybeam.png";
+    public static final String IMG_PATH = "cards/incinerate.png";
     private static final CardType TYPE = CardType.ATTACK;
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.ENEMY;
@@ -33,7 +33,7 @@ public class Incinerate extends AbstractGuardianCard {
 
     //TUNING CONSTANTS
 
-    private static final int COST = 0;
+    private static final int COST = 1;
     private static final int DAMAGE = 9;
     private static final int UPGRADE_DAMAGE = 2;
     private static final int SEAR = 2;

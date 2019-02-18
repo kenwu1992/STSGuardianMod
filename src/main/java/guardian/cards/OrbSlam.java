@@ -22,7 +22,7 @@ public class OrbSlam extends AbstractGuardianCard {
     public static final String NAME;
     public static String DESCRIPTION;
     public static String UPGRADED_DESCRIPTION;
-    public static final String IMG_PATH = "cards/attackSlime.png";
+    public static final String IMG_PATH = "cards/orbSlam.png";
     private static final CardType TYPE = CardType.ATTACK;
     private static final CardRarity RARITY = CardRarity.SPECIAL;
     private static final CardTarget TARGET = CardTarget.ENEMY;
@@ -41,7 +41,7 @@ public class OrbSlam extends AbstractGuardianCard {
     //END TUNING CONSTANTS
 
     public OrbSlam() {
-        super(ID, NAME, GuardianMod.getResourcePath(IMG_PATH), COST, DESCRIPTION, TYPE, AbstractCardEnum.GUARDIAN, RARITY, TARGET);
+        super(ID, NAME, GuardianMod.getResourcePath(IMG_PATH), COST, DESCRIPTION, TYPE, CardColor.COLORLESS, RARITY, TARGET);
 
         this.baseDamage = DAMAGE;
         this.tags.add(GuardianMod.MULTIHIT);

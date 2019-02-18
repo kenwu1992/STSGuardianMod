@@ -68,7 +68,7 @@
   },
   "Guardian:CurlUp": {
     "NAME": "Curl Up",
-    "DESCRIPTION": "Gain !B! Block !GuardianMulti! times. NL Enter Defensive Mode."
+    "DESCRIPTION": "Gain !B! Block. NL Enter Defensive Mode."
   },
   "Guardian:ExploderProtocol": {
     "NAME": "Exploder Protocol",
@@ -165,7 +165,7 @@
     "UPGRADE_DESCRIPTION": "Add an Orbwalk, Walker Claw, and Incinerate to your hand, each of which is Upgraded. NL Exhaust."
   },
   "Guardian:PackageAutomaton": {
-    "NAME": "Package: Automaton",
+    "NAME": "Package: Bronze",
     "DESCRIPTION": "Add a Hyper Beam, Guard Protocol, and Bronze Armor to your hand. NL Exhaust.",
     "UPGRADE_DESCRIPTION": "Add a Hyper Beam, Guard Protocol, and Bronze Armor to your hand, each of which is Upgraded. NL Exhaust."
   },
@@ -332,7 +332,7 @@
     "DESCRIPTION": "Deal !D! Damage. Damage is increased by !M! for each Gem in ALL of your socketed cards."
   },
   "Guardian:Gem_Synthetic": {
-    "NAME": "Synethic Diamond",
+    "NAME": "Onyx",
     "DESCRIPTION": "Gem. NL Gain 1 Artifact.",
     "UPGRADE_DESCRIPTION": "Gain 1 Artifact."
   },

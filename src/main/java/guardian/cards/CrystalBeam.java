@@ -25,7 +25,7 @@ public class CrystalBeam extends AbstractGuardianCard {
     public static final String NAME;
     public static String DESCRIPTION;
     public static String UPGRADED_DESCRIPTION;
-    public static final String IMG_PATH = "cards/polybeam.png";
+    public static final String IMG_PATH = "cards/crystalBeam.png";
     private static final CardType TYPE = CardType.ATTACK;
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.ALL_ENEMY;

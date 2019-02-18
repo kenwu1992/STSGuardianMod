@@ -20,7 +20,7 @@ public class WeakpointTargeting extends AbstractGuardianCard {
     public static final String NAME;
     public static final String DESCRIPTION;
     public static String UPGRADED_DESCRIPTION;
-    public static final String IMG_PATH = "cards/chargeup.png";
+    public static final String IMG_PATH = "cards/weakpointTargeting.png";
 
     private static final CardStrings cardStrings;
     private static final CardType TYPE = CardType.SKILL;

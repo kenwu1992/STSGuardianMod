@@ -21,7 +21,7 @@ public class GemFire extends AbstractGuardianCard {
     public static final String NAME;
     public static String DESCRIPTION;
     public static String UPGRADED_DESCRIPTION;
-    public static final String IMG_PATH = "cards/attackSlime.png";
+    public static final String IMG_PATH = "cards/gemFire.png";
     private static final CardType TYPE = CardType.ATTACK;
     private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.ALL_ENEMY;

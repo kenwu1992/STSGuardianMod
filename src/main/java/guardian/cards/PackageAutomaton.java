@@ -21,7 +21,7 @@ public class PackageAutomaton extends AbstractGuardianCard {
     public static final String NAME;
     public static final String DESCRIPTION;
     public static String UPGRADED_DESCRIPTION;
-    public static final String IMG_PATH = "cards/chargeup.png";
+    public static final String IMG_PATH = "cards/packageAutomaton.png";
 
     private static final CardStrings cardStrings;
     private static final CardType TYPE = CardType.SKILL;
@@ -37,7 +37,7 @@ public class PackageAutomaton extends AbstractGuardianCard {
     //END TUNING CONSTANTS
 
     public PackageAutomaton() {
-        super(ID, NAME, GuardianMod.getResourcePath(IMG_PATH), COST, DESCRIPTION, TYPE, AbstractCardEnum.GUARDIAN, RARITY, TARGET);
+        super(ID, NAME, GuardianMod.getResourcePath(IMG_PATH), COST, DESCRIPTION, TYPE, CardColor.COLORLESS, RARITY, TARGET);
 
         this.exhaust = true;
     }

@@ -20,7 +20,7 @@ public class Strike_Guardian extends AbstractGuardianCard {
     public static final String NAME;
     public static String DESCRIPTION;
     public static String UPGRADED_DESCRIPTION;
-    public static final String IMG_PATH = "cards/attackSlime.png";
+    public static final String IMG_PATH = "cards/strikeGuardian.png";
     private static final AbstractCard.CardType TYPE = AbstractCard.CardType.ATTACK;
     private static final AbstractCard.CardRarity RARITY = AbstractCard.CardRarity.BASIC;
     private static final AbstractCard.CardTarget TARGET = AbstractCard.CardTarget.ENEMY;

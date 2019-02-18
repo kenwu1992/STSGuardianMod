@@ -378,6 +378,7 @@ public class GuardianMod implements OnStartBattleSubscriber, PreMonsterTurnSubsc
         BaseMod.addCard(new SharpenScales());
         BaseMod.addCard(new PiercingHide());
         BaseMod.addCard(new TemporalShield());
+        BaseMod.addCard(new TemporalStrike());
         BaseMod.addCard(new ExploitGems());
         BaseMod.addCard(new PrimingBeam());
         BaseMod.addCard(new CallForBackup());

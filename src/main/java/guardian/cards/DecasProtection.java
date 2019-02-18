@@ -22,7 +22,7 @@ public class DecasProtection extends AbstractGuardianCard {
     public static final String NAME;
     public static final String DESCRIPTION;
     public static String UPGRADED_DESCRIPTION;
-    public static final String IMG_PATH = "cards/squareofprotection.png";
+    public static final String IMG_PATH = "cards/ancientProtection.png";
 
     private static final CardType TYPE = CardType.SKILL;
     private static final CardRarity RARITY = CardRarity.UNCOMMON;

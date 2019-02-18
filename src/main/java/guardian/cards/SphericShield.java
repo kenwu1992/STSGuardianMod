@@ -19,7 +19,7 @@ public class SphericShield extends AbstractGuardianCard {
     public static final String NAME;
     public static final String DESCRIPTION;
     public static String UPGRADED_DESCRIPTION;
-    public static final String IMG_PATH = "cards/defendSlime.png";
+    public static final String IMG_PATH = "cards/sphereShield.png";
 
     private static final CardStrings cardStrings;
     private static final CardType TYPE = CardType.POWER;
