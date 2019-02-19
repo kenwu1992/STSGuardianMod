@@ -35,7 +35,7 @@ public class SentryWave extends AbstractGuardianCard {
     private static final int DEBUFFCOUNT = 1;
     private static final int UPGRADE_DEBUFF = 1;
     private static final int SOCKETS = 1;
-    private static final boolean SOCKETSAREAFTER = true;
+    private static final boolean SOCKETSAREAFTER = false;
 
     //END TUNING CONSTANTS
 
@@ -45,6 +45,7 @@ public class SentryWave extends AbstractGuardianCard {
         this.baseMagicNumber = this.magicNumber = DEBUFFCOUNT;
         this.socketCount = SOCKETS;
         this.updateDescription();
+        this.exhaust = true;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

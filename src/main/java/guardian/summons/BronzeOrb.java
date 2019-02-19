@@ -79,7 +79,7 @@ public class BronzeOrb extends AbstractFriendlyMonster {
     }
 
     public void moveToFrontline(){
-        this.targetX = 600F;
+        this.targetX = 600F * Settings.scale;
         if (this.hasPower(BronzeOrbLocationPower.POWER_ID)){
             ((BronzeOrbLocationPower)this.getPower(BronzeOrbLocationPower.POWER_ID)).moveToFrontline();
         }
@@ -99,7 +99,7 @@ public class BronzeOrb extends AbstractFriendlyMonster {
     }
 
     public void moveToBackline(){
-        this.targetX = 200F;
+        this.targetX = 200F * Settings.scale;
         if (this.hasPower(BronzeOrbLocationPower.POWER_ID)){
             ((BronzeOrbLocationPower)this.getPower(BronzeOrbLocationPower.POWER_ID)).moveToBackline();
         }

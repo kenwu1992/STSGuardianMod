@@ -27,6 +27,7 @@ import guardian.orbs.StasisOrb;
 import guardian.patches.GuardianEnum;
 import guardian.patches.RewardItemTypePatch;
 import guardian.powers.MultiBoostPower;
+import guardian.relics.ModeShifter;
 import guardian.rewards.GemReward;
 import guardian.summons.BronzeOrb;
 import org.apache.logging.log4j.LogManager;
@@ -273,7 +274,7 @@ public class GuardianMod implements OnStartBattleSubscriber, PreMonsterTurnSubsc
     public void receiveEditRelics() {
 
         //TODO - Relics here
-        //BaseMod.addRelicToCustomPool(new AbsorbEndCombat(), AbstractCardEnum.GUARDIAN);
+        BaseMod.addRelicToCustomPool(new ModeShifter(), AbstractCardEnum.GUARDIAN);
 
 
         //TODO - Part of unlocks and shared mechanics
@@ -888,6 +889,10 @@ public static void saveData() {
     }
 
     public static void updateStasisCount(){
+
+    }
+
+    public static int getStasisCount(){
         int count = 0;
         if (AbstractDungeon.player != null) {
             for (AbstractOrb o : AbstractDungeon.player.orbs){
@@ -897,12 +902,8 @@ public static void saveData() {
             }
         }
         stasisCount = count;
-    }
-
-    public static int getStasisCount(){
-
         //logger.info(count);
-        return stasisCount;
+        return count;
     }
 
     public boolean receivePreMonsterTurn(AbstractMonster abstractMonster) {

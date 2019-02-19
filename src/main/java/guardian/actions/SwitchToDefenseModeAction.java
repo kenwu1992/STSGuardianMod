@@ -22,7 +22,7 @@ public class SwitchToDefenseModeAction extends AbstractGameAction {
         if (p.hasPower(ConstructModePower.POWER_ID)) {
         }
             else {
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p,p,new DefenseModePower(p),2));
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p,p,new DefenseModePower(p),1));
 
         }
 

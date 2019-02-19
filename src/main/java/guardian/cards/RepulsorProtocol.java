@@ -44,7 +44,7 @@ public class RepulsorProtocol extends AbstractGuardianCard {
         this.tags.add(GuardianMod.PROTOCOL);
         this.secondaryM = DAMAGE;
         this.baseMagicNumber = this.magicNumber = DEBUFFCOUNT;
-
+        this.exhaust = true;
         this.socketCount = SOCKETS;
         this.updateDescription();
     }

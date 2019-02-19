@@ -2,8 +2,11 @@ package guardian.powers;
 
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
+import com.megacrit.cardcrawl.actions.utility.UseCardAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -33,7 +36,7 @@ public class DefenseModePower extends AbstractGuardianPower {
         this.DESCRIPTIONS = CardCrawlGame.languagePack.getPowerStrings(this.ID).DESCRIPTIONS;
 
         this.name = CardCrawlGame.languagePack.getPowerStrings(this.ID).NAME;
-        this.amount = 2;
+        this.amount = 1;
 
         updateDescription();
 
@@ -54,13 +57,13 @@ public class DefenseModePower extends AbstractGuardianPower {
             int extraThorns = ((DefensiveModeBuffsPower)this.owner.getPower(DefensiveModeBuffsPower.POWER_ID)).thorns;
             int extraMetallicize = ((DefensiveModeBuffsPower)this.owner.getPower(DefensiveModeBuffsPower.POWER_ID)).metallicize;
             if (extraDex > 0){
-                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.owner, this.owner, new DexterityPower(this.owner, extraDex)));
+                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.owner, this.owner, new DexterityPower(this.owner, extraDex), extraDex));
             }
             if (extraMetallicize > 0){
-                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.owner, this.owner, new MetallicizePower(this.owner, extraMetallicize)));
+                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.owner, this.owner, new MetallicizePower(this.owner, extraMetallicize), extraMetallicize));
             }
             if (extraThorns > 0){
-                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.owner, this.owner, new ThornsPower(this.owner, extraThorns)));
+                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.owner, this.owner, new ThornsPower(this.owner, extraThorns), extraThorns));
             }
         }
     }
@@ -93,6 +96,13 @@ public class DefenseModePower extends AbstractGuardianPower {
         if (GuardianMod.bronzeOrbInPlay != null) {
             GuardianMod.bronzeOrbInPlay.moveToFrontline();
         }
+    }
+
+    @Override
+    public void onUseCard(AbstractCard card, UseCardAction action) {
+        super.onUseCard(card, action);
+        AbstractDungeon.actionManager.addToBottom(new GainBlockAction(this.owner, this.owner, 2));
+
     }
 
     @Override
@@ -137,4 +147,9 @@ public class DefenseModePower extends AbstractGuardianPower {
 
     }
 
+    @Override
+    public void onVictory() {
+        super.onVictory();
+        switchToOffensiveMode();
+    }
 }

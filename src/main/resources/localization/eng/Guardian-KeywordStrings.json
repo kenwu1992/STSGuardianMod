@@ -25,26 +25,22 @@
   },
   {
     "NAMES": [
-      "offensive mode",
-      "offensive_mode"
-    ],
-    "PROPERNAME": "Offensive Mode",
-    "DESCRIPTION": "Does... stuff.."
-  },
-  {
-    "NAMES": [
       "defensive mode",
-      "defensive_mode"
+      "defensive_mode",
+      "Defensive Mode",
+      "Defensive_Mode"
     ],
     "PROPERNAME": "Defensive Mode",
-    "DESCRIPTION": "Does... stuff.."
+    "DESCRIPTION": "Deal 3 damage to attackers, and gain 2 Block when you play a card. Lasts 1 turn."
   },
   {
     "NAMES": [
       "bronze orb",
-      "bronze_orb"
+      "bronze_orb",
+      "Bronze Orb",
+      "Bronze_Orb"
     ],
-    "PROPERNAME": "Summon Bronze Orb",
+    "PROPERNAME": "Bronze Orb",
     "DESCRIPTION": "Summon a Bronze Orb minion, who will perform actions at the end of each turn.  If a Bronze Orb is already in play, a new one is not created."
   },
   {

@@ -71,7 +71,7 @@ public class StasisStrike extends AbstractGuardianCard {
     public void upgrade() {
         if (!this.upgraded) {
             upgradeName();
-            upgradeBlock(UPGRADE_BONUS);
+            upgradeDamage(UPGRADE_BONUS);
         }
     }
 

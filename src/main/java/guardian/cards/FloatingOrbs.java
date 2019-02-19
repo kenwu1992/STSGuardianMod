@@ -56,14 +56,14 @@ public class FloatingOrbs extends AbstractGuardianCard {
         if (!this.upgraded) {
             upgradeName();
             this.isInnate = true;
+            this.rawDescription = UPGRADED_DESCRIPTION;
+            this.initializeDescription();
         }
     }
 
     public void updateDescription() {
         if (SOCKETS > 0) this.rawDescription = this.updateGemDescription(cardStrings.DESCRIPTION, SOCKETSAREAFTER);
         //GuardianMod.logger.info(DESCRIPTION);
-        this.initializeDescription();
-        this.rawDescription = UPGRADED_DESCRIPTION;
         this.initializeDescription();
     }
 

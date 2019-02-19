@@ -33,6 +33,7 @@ public class StasisOrb extends AbstractOrb {
         this.stasisCard.tags.add(GuardianMod.STASISGLOW);
         this.stasisCard.beginGlowing();
         this.name = orbString.NAME + stasisCard.name;
+        this.baseEvokeAmount = 0;
 
         this.channelAnimTimer = 0.5F;
         if (card.cost < 1){
@@ -75,7 +76,8 @@ public class StasisOrb extends AbstractOrb {
         }
         if (this.passiveAmount > 0){
             this.passiveAmount -= 1;
-            this.stasisCard.modifyCostForTurn(-1);
+            this.evokeAmount++;
+            this.stasisCard.modifyCostForTurn(-this.evokeAmount);
         }
 
         if (this.passiveAmount <= 0) {
@@ -87,7 +89,7 @@ public class StasisOrb extends AbstractOrb {
         AbstractDungeon.actionManager.addToTop(new ReturnStasisCardToHandAction(this.stasisCard));
         this.stasisCard.superFlash(Color.GOLDENROD);
         if (!stasisCard.isCostModifiedForTurn) stasisCard.tags.remove(GuardianMod.STASISGLOW);
-        GuardianMod.updateStasisCount();
+        //GuardianMod.updateStasisCount();
     }
 
 
@@ -168,7 +170,7 @@ public class StasisOrb extends AbstractOrb {
         }
         this.stasisCard.targetDrawScale = GuardianMod.stasisCardRenderScale;
         this.stasisCard.retain = false;
-        GuardianMod.updateStasisCount();
+       // GuardianMod.updateStasisCount();
     }
 
     public AbstractOrb makeCopy() {

@@ -42,7 +42,7 @@ public class SpikerProtocol extends AbstractGuardianCard {
     public SpikerProtocol() {
         super(ID, NAME, GuardianMod.getResourcePath(IMG_PATH), COST, DESCRIPTION, TYPE, AbstractCardEnum.GUARDIAN, RARITY, TARGET);
 
-
+        this.exhaust = true;
         this.baseMagicNumber = this.magicNumber = THORNS;
         this.secondaryM = DAMAGE;
         this.tags.add(GuardianMod.PROTOCOL);

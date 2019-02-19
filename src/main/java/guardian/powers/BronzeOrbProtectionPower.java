@@ -66,6 +66,7 @@ public class BronzeOrbProtectionPower extends AbstractGuardianPower {
     public int onAttacked(DamageInfo info, int damageAmount) {
         if (this.isActive) {
             damageAmount = damageAmount / 2;
+            info.base = info.base /2;
             if (GuardianMod.bronzeOrbInPlay != null) {
                 AbstractDungeon.actionManager.addToBottom(new DamageAction(GuardianMod.bronzeOrbInPlay, new DamageInfo(info.owner, damageAmount, info.type), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
             } else {
@@ -73,6 +74,6 @@ public class BronzeOrbProtectionPower extends AbstractGuardianPower {
             }
         }
 
-        return super.onAttacked(info, damageAmount);
+        return damageAmount;
     }
 }

@@ -15,11 +15,10 @@ import com.megacrit.cardcrawl.relics.BronzeScales;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import guardian.GuardianMod;
-import guardian.cards.Defend_Guardian;
-import guardian.cards.Gem_Red;
-import guardian.cards.Strike_Guardian;
+import guardian.cards.*;
 import guardian.patches.AbstractCardEnum;
 import guardian.patches.GuardianEnum;
+import guardian.relics.ModeShifter;
 import kobting.friendlyminions.characters.AbstractPlayerWithMinions;
 import kobting.friendlyminions.characters.CustomCharSelectInfo;
 
@@ -156,8 +155,8 @@ public class GuardianCharacter extends AbstractPlayerWithMinions {
         retVal.add(Defend_Guardian.ID);
         retVal.add(Defend_Guardian.ID);
 
-        retVal.add(Gem_Red.ID);
-        retVal.add(Gem_Red.ID);
+        retVal.add(CurlUp.ID);
+        retVal.add(TwinSlam.ID);
 
         return retVal;
     }
@@ -165,8 +164,8 @@ public class GuardianCharacter extends AbstractPlayerWithMinions {
     public ArrayList<String> getStartingRelics() {
 
         ArrayList<String> retVal = new ArrayList();
-        retVal.add(BronzeScales.ID);
-        UnlockTracker.markRelicAsSeen(BronzeScales.ID);
+        retVal.add(ModeShifter.ID);
+        UnlockTracker.markRelicAsSeen(ModeShifter.ID);
         return retVal;
     }
 

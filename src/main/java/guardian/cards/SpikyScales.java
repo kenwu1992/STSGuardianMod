@@ -57,7 +57,7 @@ public class SpikyScales extends AbstractGuardianCard {
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DefensiveModeBuffsPower(p, p,this.magicNumber,0,0)));
         }
         if (p.hasPower(DefenseModePower.POWER_ID)){
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new ThornsPower(p, this.magicNumber)));
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new ThornsPower(p, this.magicNumber), this.magicNumber));
         }
         AbstractDungeon.actionManager.addToBottom(new SwitchToDefenseModeAction(p));
 

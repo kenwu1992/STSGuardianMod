@@ -76,11 +76,12 @@ public class MultiBeam extends AbstractGuardianCard {
                     beamCards.add(c);
                 }
             }
-            AbstractCard randoBeam;
-            randoBeam = beamCards.get(AbstractDungeon.cardRng.random(beamCards.size() - 1));
-
-            AbstractDungeon.actionManager.addToBottom(new QueueCardAction(randoBeam, AbstractDungeon.getMonsters().getRandomMonster(true)));
-
+            if (beamCards.size() > 0) {
+                AbstractCard randoBeam;
+                randoBeam = beamCards.get(AbstractDungeon.cardRng.random(beamCards.size() - 1));
+                randoBeam.freeToPlayOnce = true;
+                AbstractDungeon.actionManager.addToBottom(new QueueCardAction(randoBeam, AbstractDungeon.getMonsters().getRandomMonster(true)));
+            }
         }
 
         super.useGems(p,m);

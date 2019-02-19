@@ -44,6 +44,8 @@ public class GuardProtocol extends AbstractGuardianCard {
         this.tags.add(GuardianMod.PROTOCOL);
         this.baseMagicNumber = this.magicNumber = BLOCK;
 
+        this.exhaust = true;
+
         this.socketCount = SOCKETS;
         this.updateDescription();
     }

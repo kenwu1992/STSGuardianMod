@@ -19,6 +19,7 @@ guardian\cards\AbstractGuardianCard.class
 guardian\cards\PiercingHide.class
 guardian\cards\TemporalStrike.class
 guardian\actions\DiscardPileToStasisAction.class
+guardian\relics\ModeShifter.class
 guardian\cards\Defend_Guardian.class
 guardian\powers\BronzeOrbExplodePower.class
 guardian\cards\ChargeUp.class
@@ -107,6 +108,7 @@ guardian\cards\StasisStrike.class
 guardian\cards\Gem_Red.class
 guardian\cards\PackageAutomaton.class
 guardian\cards\ConstructionForm.class
+guardian\powers\ModeShiftPower.class
 guardian\helpers\MultihitVariable.class
 guardian\actions\SpawnBronzeOrbAction$1.class
 guardian\powers\GemFinderPower.class

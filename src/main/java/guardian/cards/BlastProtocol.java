@@ -40,6 +40,7 @@ public class BlastProtocol extends AbstractGuardianCard {
     public BlastProtocol() {
         super(ID, NAME, GuardianMod.getResourcePath(IMG_PATH), COST, DESCRIPTION, TYPE, AbstractCardEnum.GUARDIAN, RARITY, TARGET);
 
+        this.exhaust = true;
         this.baseMagicNumber = this.magicNumber = DAMAGE;
         this.tags.add(GuardianMod.PROTOCOL);
         this.socketCount = SOCKETS;

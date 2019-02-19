@@ -36,7 +36,7 @@ public class SentryBeam extends AbstractGuardianCard {
     private static final int DAMAGE = 5;
     private static final int UPGRADE_BONUS = 2;
     private static final int SOCKETS = 1;
-    private static final boolean SOCKETSAREAFTER = true;
+    private static final boolean SOCKETSAREAFTER = false;
 
     //END TUNING CONSTANTS
 
@@ -51,6 +51,8 @@ public class SentryBeam extends AbstractGuardianCard {
         this.baseDamage = DAMAGE;
         this.socketCount = SOCKETS;
         this.updateDescription();
+
+        this.exhaust = true;
     }
 
 

@@ -75,9 +75,11 @@ public class TemporalShield extends AbstractGuardianCard {
         super.update();
         if (this.lastKnownStasisCount != GuardianMod.getStasisCount()){
             this.lastKnownStasisCount = GuardianMod.getStasisCount();
-            upgradeBlock(this.lastKnownStasisCount * this.magicNumber);
+            this.baseBlock = BLOCK + this.lastKnownStasisCount * this.magicNumber;
             if (this.lastKnownStasisCount == 0) {
                 this.upgradedBlock = false;
+            } else {
+                this.upgradedBlock = true;
             }
         }
 

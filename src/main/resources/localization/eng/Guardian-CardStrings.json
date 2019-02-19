@@ -72,19 +72,19 @@
   },
   "Guardian:ExploderProtocol": {
     "NAME": "Exploder Protocol",
-    "DESCRIPTION": "Summon Bronze Orb. NL In 3 turns, your Bronze Orb will explode, dealing !M! damage to ALL enemies."
+    "DESCRIPTION": "Summon Bronze Orb. NL In 3 turns, your Bronze Orb will explode, dealing !M! damage to ALL enemies. NL Exhaust."
   },
   "Guardian:SpikerProtocol": {
     "NAME": "Spiker Protocol",
-    "DESCRIPTION": "Summon Bronze Orb. NL Your Bronze Orb attacks a random enemy for !GuardianSecondM! damage each turn, and deals !M! damage to attackers."
+    "DESCRIPTION": "Summon Bronze Orb. NL Your Bronze Orb attacks a random enemy for !GuardianSecondM! damage each turn, and deals !M! damage to attackers. NL Exhaust."
   },
   "Guardian:RepulsorProtocol": {
     "NAME": "Repulsor Protocol",
-    "DESCRIPTION": "Summon Bronze Orb. NL Your Bronze Orb attacks a random enemy for !GuardianSecondM! damage and applies !M! Weak each turn."
+    "DESCRIPTION": "Summon Bronze Orb. NL Your Bronze Orb attacks a random enemy for !GuardianSecondM! damage and applies !M! Weak each turn. NL Exhaust."
   },
   "Guardian:GuardProtocol": {
     "NAME": "Guard Protocol",
-    "DESCRIPTION": "Summon Bronze Orb. NL Your Bronze Orb grants you !M! Block each turn."
+    "DESCRIPTION": "Summon Bronze Orb. NL Your Bronze Orb grants you !M! Block each turn. NL Exhaust."
   },
   "Guardian:HyperBeam_Guardian": {
     "NAME": "Hyper Beam",
@@ -125,11 +125,11 @@
   },
   "Guardian:SentryBeam": {
     "NAME": "Sentry Beam",
-    "DESCRIPTION": "Deal !D! Damage. NL Place a Sentry Wave into Stasis with this card's Gems."
+    "DESCRIPTION": "Deal !D! Damage. NL Place a Sentry Wave into Stasis with this card's Gems. Exhaust."
   },
   "Guardian:SentryWave": {
     "NAME": "Sentry Wave",
-    "DESCRIPTION": "Apply !M! Weak to ALL enemies. NL Place a Sentry Beam into Stasis with this card's Gems."
+    "DESCRIPTION": "Apply !M! Weak to ALL enemies. NL Place a Sentry Beam into Stasis with this card's Gems. Exhaust."
   },
   "Guardian:CompilePackage": {
     "NAME": "Compile Package",
@@ -184,8 +184,8 @@
   },
   "Guardian:Clone": {
     "NAME": "Clone",
-    "DESCRIPTION": "Place a copy of the next card you play into Stasis.",
-    "UPGRADE_DESCRIPTION": "Place copies of the next 2 cards you play into Stasis."
+    "DESCRIPTION": "Choose a card. Place a copy of that card into Stasis.",
+    "UPGRADE_DESCRIPTION": "Choose a card. Place two copies of that card into Stasis."
   },
   "Guardian:Preprogram": {
     "NAME": "Preprogram",
@@ -231,7 +231,7 @@
   },
   "Guardian:BlastProtocol": {
     "NAME": "Blast Protocol",
-    "DESCRIPTION": "Summon Bronze Orb. NL Your Bronze Orb attacks a random enemy for !M! damage each turn."
+    "DESCRIPTION": "Summon Bronze Orb. NL Your Bronze Orb attacks a random enemy for !M! damage each turn. NL Exhaust."
   },
   "Guardian:MultiBoost": {
     "NAME": "MultiBoost",
@@ -251,7 +251,7 @@
   },
   "Guardian:ChargeCore": {
     "NAME": "Charge Core",
-    "DESCRIPTION": "Deal !D! damage. NL Gain [E]."
+    "DESCRIPTION": "Deal !D! damage. NL Gain [E] at the start of your next turn."
   },
   "Guardian:Reroute": {
     "NAME": "Reroute",

@@ -10,7 +10,7 @@ import guardian.rewards.GemReward;
 
 
 public class FuturePlansPower extends AbstractGuardianPower {
-    public static final String POWER_ID = "Guardian:GemFinderPower";
+    public static final String POWER_ID = "Guardian:FuturePlansPower";
     public static PowerType POWER_TYPE = PowerType.BUFF;
 
     public static String[] DESCRIPTIONS;
