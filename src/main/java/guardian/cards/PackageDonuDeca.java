@@ -56,7 +56,7 @@ public class PackageDonuDeca extends AbstractGuardianCard {
         if (upgraded) tmp.upgrade();
         derp.add(tmp);
 
-        tmp = new PolyBeam();
+        tmp = new Construct();
         if (upgraded) tmp.upgrade();
         derp.add(tmp);
 

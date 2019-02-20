@@ -3,6 +3,7 @@ package guardian.cards;
 
 
 import basemod.helpers.BaseModCardTags;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -29,9 +30,9 @@ public class Suspension extends AbstractGuardianCard {
 
     //TUNING CONSTANTS
 
-    private static final int COST = -1;
+    private static final int COST = 0;
     private static final int SOCKETS = 0;
-    private static final boolean SOCKETSAREAFTER = false;
+    private static final boolean SOCKETSAREAFTER = true;
 
     //END TUNING CONSTANTS
 
@@ -42,22 +43,9 @@ public class Suspension extends AbstractGuardianCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         super.use(p,m);
 
-        if (this.energyOnUse < EnergyPanel.totalCount) {
-            this.energyOnUse = EnergyPanel.totalCount;
-        }
-        if (upgraded) this.energyOnUse++;
-        if (p.hasRelic("Chemical X")) {
-            this.energyOnUse += 2;
-            p.getRelic("Chemical X").flash();
-        }
+        AbstractDungeon.actionManager.addToBottom(new PlaceCardsInHandIntoStasisAction(p, 1));
+        if (upgraded) AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, 1));
 
-        if (!AbstractDungeon.player.hand.isEmpty()) {
-            AbstractDungeon.actionManager.addToBottom(new PlaceCardsInHandIntoStasisAction(p, this.energyOnUse));
-        }
-
-        if (!this.freeToPlayOnce) {
-            p.energy.use(EnergyPanel.totalCount);
-        }
     }
 
     public AbstractCard makeCopy() {

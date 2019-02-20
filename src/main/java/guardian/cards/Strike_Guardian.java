@@ -33,7 +33,7 @@ public class Strike_Guardian extends AbstractGuardianCard {
     private static final int DAMAGE = 6;
     private static final int UPGRADE_BONUS = 3;
     private static final int SOCKETS = 0;
-    private static final boolean SOCKETSAREAFTER = false;
+    private static final boolean SOCKETSAREAFTER = true;
 
     //END TUNING CONSTANTS
 

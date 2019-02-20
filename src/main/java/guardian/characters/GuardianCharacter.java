@@ -1,5 +1,6 @@
 package guardian.characters;
 
+import basemod.abstracts.CustomPlayer;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.math.MathUtils;
@@ -19,13 +20,11 @@ import guardian.cards.*;
 import guardian.patches.AbstractCardEnum;
 import guardian.patches.GuardianEnum;
 import guardian.relics.ModeShifter;
-import kobting.friendlyminions.characters.AbstractPlayerWithMinions;
-import kobting.friendlyminions.characters.CustomCharSelectInfo;
 
 import java.util.ArrayList;
 
 
-public class GuardianCharacter extends AbstractPlayerWithMinions {
+public class GuardianCharacter extends CustomPlayer {
     public static Color cardRenderColor = GuardianMod.mainGuardianColor;
     public float renderscale = 2.5F;
 
@@ -57,8 +56,8 @@ public class GuardianCharacter extends AbstractPlayerWithMinions {
 
     }
 
-    public CustomCharSelectInfo getInfo() {
-        return (CustomCharSelectInfo) getLoadout ();
+    public CharSelectInfo getInfo() {
+        return (CharSelectInfo) getLoadout ();
     }
 
     //TODO - Victory screens
@@ -171,7 +170,7 @@ public class GuardianCharacter extends AbstractPlayerWithMinions {
 
 
     public CharSelectInfo getLoadout() {
-        return new CustomCharSelectInfo(NAME, DESCRIPTION, 80, 80, 4, 1, 99, 5, this,
+        return new CharSelectInfo(NAME, DESCRIPTION, 80, 80, 3, 99, 5, this,
 
                 getStartingRelics(), getStartingDeck(), false);
 

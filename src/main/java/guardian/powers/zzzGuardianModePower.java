@@ -70,9 +70,9 @@ public class zzzGuardianModePower extends AbstractGuardianPower {
         this.inDefensive = true;
         this.setImage("DefenseModePower84.png", "DefenseModePower32.png");
         this.name = CardCrawlGame.languagePack.getPowerStrings(this.IDdef).NAME;
-        if (GuardianMod.bronzeOrbInPlay != null) {
-            GuardianMod.bronzeOrbInPlay.moveToFrontline();
-        }
+       // if (GuardianMod.bronzeOrbInPlay != null) {
+        //    GuardianMod.bronzeOrbInPlay.moveToFrontline();
+       // }
         updateDescription();
     }
 
@@ -84,9 +84,9 @@ public class zzzGuardianModePower extends AbstractGuardianPower {
         this.inDefensive = false;
         this.setImage("OffenseModePower84.png", "OffenseModePower32.png");
         this.name = CardCrawlGame.languagePack.getPowerStrings(this.ID).NAME;
-        if (GuardianMod.bronzeOrbInPlay != null) {
-            GuardianMod.bronzeOrbInPlay.moveToBackline();
-        }
+       // if (GuardianMod.bronzeOrbInPlay != null) {
+       //     GuardianMod.bronzeOrbInPlay.moveToBackline();
+       // }
         updateDescription();
     }
 

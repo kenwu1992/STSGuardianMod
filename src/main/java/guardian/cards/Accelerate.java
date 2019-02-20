@@ -30,10 +30,10 @@ public class Accelerate extends AbstractGuardianCard {
 
     //TUNING CONSTANTS
 
-    private static final int COST = 1;
+    private static final int COST = 0;
     private static final int UPGRADE_COST = 0;
     private static final int SOCKETS = 0;
-    private static final boolean SOCKETSAREAFTER = false;
+    private static final boolean SOCKETSAREAFTER = true;
 
     //END TUNING CONSTANTS
 
@@ -51,6 +51,8 @@ public class Accelerate extends AbstractGuardianCard {
             }
         }
 
+        this.exhaust = true;
+
     }
 
     public AbstractCard makeCopy() {
@@ -60,7 +62,9 @@ public class Accelerate extends AbstractGuardianCard {
     public void upgrade() {
         if (!this.upgraded) {
             upgradeName();
-            upgradeBaseCost(UPGRADE_COST);
+            this.exhaust = false;
+            this.rawDescription = UPGRADED_DESCRIPTION;
+            this.initializeDescription();
         }
     }
 

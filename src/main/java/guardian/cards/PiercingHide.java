@@ -70,6 +70,8 @@ public class PiercingHide extends AbstractGuardianCard {
             upgradeName();
             upgradeBlock(UPGRADE_BLOCK);
             upgradeMagicNumber(UPGRADE_THORNS);
+            this.socketCount++;
+            this.updateDescription();
         }
     }
 

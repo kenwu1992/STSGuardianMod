@@ -31,40 +31,10 @@
 		]
 	},
 	"Guardian:NextTurnGainStrengthPower": {
-	"NAME": "Charging Up",
-	"DESCRIPTIONS": [
-		"Gain ",
-		" Strength on your next turn."
-	]
-	},
-	"Guardian:BronzeOrbExplodePower": {
-		"NAME": "Explosive",
+		"NAME": "Charging Up",
 		"DESCRIPTIONS": [
-			"Explodes next turn, dealing ",
-			" damage to ALL enemies.",
-			"Explodes in ",
-			" turns, dealing "
-		]
-	},
-	"Guardian:BronzeOrbDamagePower": {
-		"NAME": "Orb Laser",
-		"DESCRIPTIONS": [
-			"Attacks a random enemy for ",
-			" damage at the end of your turn."
-		]
-	},
-	"Guardian:BronzeOrbWeakenPower": {
-		"NAME": "Repulse",
-		"DESCRIPTIONS": [
-			"Orb Laser also applies ",
-			" Weak."
-		]
-	},
-	"Guardian:BronzeOrbBlockPower": {
-		"NAME": "Guard",
-		"DESCRIPTIONS": [
-			"Grants ",
-			" Block to you each turn."
+			"Gain ",
+			" Strength on your next turn."
 		]
 	},
 	"Guardian:StunnedPower": {
@@ -100,9 +70,9 @@
 	"Guardian:ClonePower": {
 		"NAME": "Reroute",
 		"DESCRIPTIONS": [
-			"Place the next Attack or Skill you play this turn into Stasis.",
+			"Place the next non-Exhausting Attack or Skill you play this turn into Stasis.",
 			"Place the next ",
-			" Attacks or Skills you play this turn into Stasis."
+			" non-Exhausting Attacks or Skills you play this turn into Stasis."
 		]
 	},
 	"Guardian:GemFinderPower": {
@@ -172,15 +142,19 @@
 			"In addition to its normal effects, Defensive Mode will apply: NL ",
 			" Thorns.",
 			" Dexterity.",
-			" Block at the end of each turn."
+			" Block at the end of each turn.",
+			"Exhaust the first Status or Curse drawn each turn",
+			"Exhaust the first ",
+			" Status or Curse cards drawn each turn ",
+			"Gain ",
+			" Strength until the end of your turn whenever your Block is broken."
 		]
 	},
 	"Guardian:AutomayhemPower": {
-		"NAME": "Automayhem",
+		"NAME": "Time Sifter",
 		"DESCRIPTIONS": [
-			"At the start of your turn, place a random 1-cost card into Stasis.",
-			"At the start of your turn, place ",
-			" random 1-cost cards into Stasis."
+			"At the end of your turn, reduce the turn counter of the right-most card in Stasis with a counter of 2 or more by 1",
+			" times, at the end of your turn, reduce the turn counter of the right-most card in Stasis with a counter of 2 or more by 1"
 		]
 	},
 	"Guardian:ConstructPower": {
@@ -196,6 +170,31 @@
 			"When you lose ",
 			" HP in a single turn, gain 10 Block, then gain Defensive Mode and extend its duration by 1 turn. NL The amount required to activate increases each time Mode Shift is activated.",
 			"Mode Shift already activated this turn."
+		]
+	},
+		"Guardian:ExhaustStatusesPower": {
+			"NAME": "Repulse",
+			"DESCRIPTIONS": [
+				"Exhaust the first Status or Curse card drawn each turn.",
+				"Exhaust the first ",
+				" Status or Curse cards drawn each turn."
+			]
+		},
+	"Guardian:RevengePower": {
+		"NAME": "Revenge",
+		"DESCRIPTIONS": [
+			"Gain ",
+			" Strength until the end of your turn whenever your Block is broken."
+		]
+	},
+	"Guardian:StasisEngine": {
+		"NAME": "Stasis Engine",
+		"DESCRIPTIONS": [
+			"Gain ",
+			" [E] and draw ",
+			" card ",
+			" cards ",
+			" whenever you play 3 0-cost cards in a single turn."
 		]
 	}
 }

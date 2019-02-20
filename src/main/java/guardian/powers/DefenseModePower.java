@@ -56,6 +56,8 @@ public class DefenseModePower extends AbstractGuardianPower {
             int extraDex = ((DefensiveModeBuffsPower)this.owner.getPower(DefensiveModeBuffsPower.POWER_ID)).dexterity;
             int extraThorns = ((DefensiveModeBuffsPower)this.owner.getPower(DefensiveModeBuffsPower.POWER_ID)).thorns;
             int extraMetallicize = ((DefensiveModeBuffsPower)this.owner.getPower(DefensiveModeBuffsPower.POWER_ID)).metallicize;
+            int extraStatusNegation = ((DefensiveModeBuffsPower)this.owner.getPower(DefensiveModeBuffsPower.POWER_ID)).statusNegation;
+            int extraEnrage = ((DefensiveModeBuffsPower)this.owner.getPower(DefensiveModeBuffsPower.POWER_ID)).enrage;
             if (extraDex > 0){
                 AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.owner, this.owner, new DexterityPower(this.owner, extraDex), extraDex));
             }
@@ -64,6 +66,12 @@ public class DefenseModePower extends AbstractGuardianPower {
             }
             if (extraThorns > 0){
                 AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.owner, this.owner, new ThornsPower(this.owner, extraThorns), extraThorns));
+            }
+            if (extraStatusNegation > 0){
+                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.owner, this.owner, new ExhaustStatusesPower(this.owner, this.owner, extraStatusNegation), extraStatusNegation));
+            }
+            if (extraEnrage > 0){
+                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.owner, this.owner, new RevengePower(this.owner, this.owner, extraEnrage), extraEnrage));
             }
         }
     }
@@ -82,9 +90,9 @@ public class DefenseModePower extends AbstractGuardianPower {
         if (this.owner instanceof GuardianCharacter){
             ((GuardianCharacter)this.owner).switchToDefensiveMode();
         }
-        if (GuardianMod.bronzeOrbInPlay != null) {
-            GuardianMod.bronzeOrbInPlay.moveToBackline();
-        }
+       // if (GuardianMod.bronzeOrbInPlay != null) {
+       //     GuardianMod.bronzeOrbInPlay.moveToBackline();
+      //  }
         updateDescription();
     }
 
@@ -93,9 +101,9 @@ public class DefenseModePower extends AbstractGuardianPower {
         if (this.owner instanceof GuardianCharacter){
             ((GuardianCharacter)this.owner).switchToOffensiveMode();
         }
-        if (GuardianMod.bronzeOrbInPlay != null) {
-            GuardianMod.bronzeOrbInPlay.moveToFrontline();
-        }
+       // if (GuardianMod.bronzeOrbInPlay != null) {
+       //     GuardianMod.bronzeOrbInPlay.moveToFrontline();
+      //  }
     }
 
     @Override
@@ -126,7 +134,7 @@ public class DefenseModePower extends AbstractGuardianPower {
             trueDex += ((DefensiveModeBuffsPower)this.owner.getPower(DefensiveModeBuffsPower.POWER_ID)).dexterity;
         }
         if (this.owner.hasPower(DexterityPower.POWER_ID)){
-            if (this.owner.getPower(DexterityPower.POWER_ID).amount <= trueThorns) {
+            if (this.owner.getPower(DexterityPower.POWER_ID).amount <= trueDex) {
                 AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(this.owner, this.owner, DexterityPower.POWER_ID));
             } else {
                 AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(this.owner, this.owner, DexterityPower.POWER_ID, trueDex));
@@ -138,10 +146,34 @@ public class DefenseModePower extends AbstractGuardianPower {
             trueMetallicize += ((DefensiveModeBuffsPower)this.owner.getPower(DefensiveModeBuffsPower.POWER_ID)).metallicize;
         }
         if (this.owner.hasPower(MetallicizePower.POWER_ID)){
-            if (this.owner.getPower(MetallicizePower.POWER_ID).amount <= trueThorns) {
+            if (this.owner.getPower(MetallicizePower.POWER_ID).amount <= trueMetallicize) {
                 AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(this.owner, this.owner, MetallicizePower.POWER_ID));
             } else {
                 AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(this.owner, this.owner, MetallicizePower.POWER_ID, trueMetallicize));
+            }
+        }
+
+        int trueExhausts = 0;
+        if (this.owner.hasPower(DefensiveModeBuffsPower.POWER_ID)){
+            trueExhausts += ((DefensiveModeBuffsPower)this.owner.getPower(DefensiveModeBuffsPower.POWER_ID)).statusNegation;
+        }
+        if (this.owner.hasPower(ExhaustStatusesPower.POWER_ID)){
+            if (this.owner.getPower(ExhaustStatusesPower.POWER_ID).amount <= trueExhausts) {
+                AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(this.owner, this.owner, ExhaustStatusesPower.POWER_ID));
+            } else {
+                AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(this.owner, this.owner, ExhaustStatusesPower.POWER_ID, trueExhausts));
+            }
+        }
+
+        int trueEnrage = 0;
+        if (this.owner.hasPower(DefensiveModeBuffsPower.POWER_ID)){
+            trueEnrage += ((DefensiveModeBuffsPower)this.owner.getPower(DefensiveModeBuffsPower.POWER_ID)).enrage;
+        }
+        if (this.owner.hasPower(RevengePower.POWER_ID)){
+            if (this.owner.getPower(RevengePower.POWER_ID).amount <= trueEnrage) {
+                AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(this.owner, this.owner, RevengePower.POWER_ID));
+            } else {
+                AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(this.owner, this.owner, RevengePower.POWER_ID, trueEnrage));
             }
         }
 

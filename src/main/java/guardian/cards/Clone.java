@@ -25,16 +25,16 @@ public class Clone extends AbstractGuardianCard {
 
     private static final CardStrings cardStrings;
     private static final CardType TYPE = CardType.SKILL;
-    private static final CardRarity RARITY = CardRarity.UNCOMMON;
+    private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.SELF;
 
     //TUNING CONSTANTS
 
-    private static final int COST = 0;
+    private static final int COST = 1;
     private static final int COUNT = 1;
-    private static final int UPGRADECOUNT = 1;
+    private static final int UPGRADECOST = 0;
     private static final int SOCKETS = 1;
-    private static final boolean SOCKETSAREAFTER = false;
+    private static final boolean SOCKETSAREAFTER = true;
 
     //END TUNING CONSTANTS
 
@@ -62,9 +62,7 @@ public class Clone extends AbstractGuardianCard {
     public void upgrade() {
         if (!this.upgraded) {
             upgradeName();
-            this.upgradeMagicNumber(UPGRADECOUNT);
-            this.rawDescription = UPGRADED_DESCRIPTION;
-            this.initializeDescription();
+            this.upgradeBaseCost(UPGRADECOST);
         }
     }
 

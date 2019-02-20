@@ -29,10 +29,9 @@ public class TemporalStrike extends AbstractGuardianCard {
     //TUNING CONSTANTS
 
     private static final int COST = 1;
-    private static final int DAMAGE = 6;
-    private static final int DAMAGEPERSTASIS = 3;
-    private static final int UPGRADE_DAMAGEPERSTASIS = 3;
-    private static final int SOCKETS = 1;
+    private static final int DAMAGE = 9;
+    private static final int UPGRADE_DAMAGE = 3;
+    private static final int SOCKETS = 0;
     private static final boolean SOCKETSAREAFTER = true;
 
     //END TUNING CONSTANTS
@@ -42,8 +41,6 @@ public class TemporalStrike extends AbstractGuardianCard {
 
         this.baseDamage = DAMAGE;
 
-
-        this.magicNumber = this.baseMagicNumber = DAMAGEPERSTASIS;
 
         //this.sockets.add(GuardianMod.socketTypes.RED);
         this.socketCount = SOCKETS;
@@ -63,8 +60,14 @@ public class TemporalStrike extends AbstractGuardianCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
+
+
+        AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
+        if (this.hasTag(GuardianMod.STASISGLOW)){
+            AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_VERTICAL));
+
+        }
         super.use(p, m);
-        AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HEAVY));
         this.useGems(p, m);
 
     }
@@ -77,7 +80,7 @@ public class TemporalStrike extends AbstractGuardianCard {
     public void upgrade() {
         if (!this.upgraded) {
             upgradeName();
-            upgradeMagicNumber(UPGRADE_DAMAGEPERSTASIS);
+            upgradeMagicNumber(UPGRADE_DAMAGE);
         }
 
 

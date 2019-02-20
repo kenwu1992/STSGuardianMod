@@ -60,7 +60,7 @@ public class DecasProtection extends AbstractGuardianCard {
     public void upgrade() {
         if (!this.upgraded) {
             upgradeName();
-            upgradeBaseCost(0);
+
 
             this.rawDescription = UPGRADED_DESCRIPTION;
             this.initializeDescription();

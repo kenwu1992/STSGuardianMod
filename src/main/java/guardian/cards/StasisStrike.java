@@ -26,7 +26,7 @@ public class StasisStrike extends AbstractGuardianCard {
 
     private static final CardStrings cardStrings;
     private static final CardType TYPE = CardType.SKILL;
-    private static final CardRarity RARITY = CardRarity.COMMON;
+    private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.ENEMY;
 
     //TUNING CONSTANTS
@@ -55,11 +55,8 @@ public class StasisStrike extends AbstractGuardianCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         super.use(p,m);
         AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
-        AbstractGuardianCard newCard = new StasisStrike();
-        newCard.sockets = this.sockets;
-        newCard.modifyCostForTurn(1);
 
-        AbstractDungeon.actionManager.addToBottom(new PlaceActualCardIntoStasis(newCard));
+        AbstractDungeon.actionManager.addToBottom(new PlaceActualCardIntoStasis(this));
         this.useGems(p, m);
 
     }

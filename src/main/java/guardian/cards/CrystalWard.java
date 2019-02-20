@@ -34,7 +34,7 @@ public class CrystalWard extends AbstractGuardianCard {
     private static final int UPGRADE_BONUS = 2;
 
     private static final int SOCKETS = 0;
-    private static final boolean SOCKETSAREAFTER = false;
+    private static final boolean SOCKETSAREAFTER = true;
 
     //END TUNING CONSTANTS
 

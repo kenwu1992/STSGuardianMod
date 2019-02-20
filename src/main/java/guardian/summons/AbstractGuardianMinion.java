@@ -1,3 +1,5 @@
+/*
+
 package guardian.summons;
 
    import com.badlogic.gdx.graphics.Texture;
@@ -11,3 +13,4 @@ public class AbstractGuardianMinion extends AbstractFriendlyMonster {
         this.slotOne = slotOne;
     }
 }
+*/

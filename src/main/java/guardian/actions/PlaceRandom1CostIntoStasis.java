@@ -33,7 +33,7 @@ public class PlaceRandom1CostIntoStasis extends AbstractGameAction {
 
         while(var3.hasNext()) {
             Map.Entry<String, AbstractCard> c = (Map.Entry) var3.next();
-            if (c.getValue().cost > 0 && c.getValue().color == AbstractDungeon.player.getCardColor()) {
+            if (c.getValue().cost == 1 && c.getValue().color == AbstractDungeon.player.getCardColor()) {
                 tmp.add(c.getKey());
             }
         }

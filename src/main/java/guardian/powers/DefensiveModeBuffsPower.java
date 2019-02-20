@@ -13,9 +13,11 @@ public class DefensiveModeBuffsPower extends AbstractGuardianPower {
     public int thorns;
     public int dexterity;
     public int metallicize;
+    public int statusNegation;
+    public int enrage;
 
 
-    public DefensiveModeBuffsPower(AbstractCreature owner, AbstractCreature source, int thorns, int dexterity, int metallicize) {
+    public DefensiveModeBuffsPower(AbstractCreature owner, AbstractCreature source, int thorns, int dexterity, int metallicize, int statusNegation, int enrage) {
 
         this.ID = POWER_ID;
         this.owner = owner;
@@ -26,6 +28,8 @@ public class DefensiveModeBuffsPower extends AbstractGuardianPower {
         this.thorns = thorns;
         this.dexterity = dexterity;
         this.metallicize = metallicize;
+        this.statusNegation = statusNegation;
+        this.enrage = enrage;
 
         updateDescription();
 
@@ -36,18 +40,35 @@ public class DefensiveModeBuffsPower extends AbstractGuardianPower {
         desc = DESCRIPTIONS[0];
         if (this.thorns > 0){
             desc += this.thorns + DESCRIPTIONS[1];
-            if (this.dexterity > 0 || this.metallicize > 0) {
+            if (this.dexterity > 0 || this.metallicize > 0 || this.statusNegation > 0 || this.enrage > 0) {
                 desc += " NL ";
             }
         }
         if (this.dexterity > 0){
             desc += this.dexterity + DESCRIPTIONS[2];
-            if (this.metallicize > 0) {
+            if (this.metallicize > 0 || this.statusNegation > 0 || this.enrage > 0) {
                 desc += " NL ";
             }
         }
         if (this.metallicize > 0){
             desc += this.metallicize + DESCRIPTIONS[3];
+            if (this.statusNegation > 0 || this.enrage > 0) {
+                desc += " NL ";
+            }
+        }
+        if (this.statusNegation > 0){
+            if (this.statusNegation == 1){
+                desc += DESCRIPTIONS[4];
+            } else {
+                desc += DESCRIPTIONS[5] + this.statusNegation + DESCRIPTIONS[6];
+
+            }
+            if (this.enrage > 0) {
+                desc += " NL ";
+            }
+        }
+        if (this.enrage > 0){
+            desc += DESCRIPTIONS[7] + this.enrage + DESCRIPTIONS[8];
         }
 
             this.description = desc;

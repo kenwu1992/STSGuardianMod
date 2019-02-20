@@ -2,6 +2,8 @@ package guardian.orbs;
 
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -9,10 +11,16 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.OrbStrings;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
+import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 import guardian.GuardianMod;
+import guardian.actions.DestroyOrbSlotForDamageAction;
 import guardian.actions.ReturnStasisCardToHandAction;
 import guardian.actions.StasisEvokeIfRoomInHandAction;
+import guardian.cards.FierceBash;
+import guardian.cards.Orbwalk;
+import guardian.cards.SpacetimeBattery;
+import guardian.cards.TimeBomb;
 import guardian.vfx.AddCardToStasisEffect;
 
 
@@ -33,18 +41,21 @@ public class StasisOrb extends AbstractOrb {
         this.stasisCard.tags.add(GuardianMod.STASISGLOW);
         this.stasisCard.beginGlowing();
         this.name = orbString.NAME + stasisCard.name;
-        this.baseEvokeAmount = 0;
 
         this.channelAnimTimer = 0.5F;
-        if (card.cost < 1){
+        if (card.freeToPlayOnce){
             this.basePassiveAmount = this.passiveAmount = 1;
         } else {
             if (card.isCostModifiedForTurn){
-                this.basePassiveAmount = this.passiveAmount = card.costForTurn;
-            } else {
-                this.basePassiveAmount = this.passiveAmount = card.cost;
+                this.basePassiveAmount = this.passiveAmount = card.costForTurn + 1;
+            }
+            else {
+                this.basePassiveAmount = this.passiveAmount = card.cost + 1;
             }
 
+        }
+        if (this.basePassiveAmount < 1){
+            this.basePassiveAmount = this.passiveAmount = 1;
         }
         card.targetAngle = 0F;
 
@@ -74,10 +85,20 @@ public class StasisOrb extends AbstractOrb {
             AbstractDungeon.actionManager.addToTop(new WaitAction(1.4F));
             GuardianMod.stasisDelay = false;
         }
+        if (this.stasisCard instanceof FierceBash){
+            ((FierceBash)this.stasisCard).turnsInStasis++;
+        }
+        if (this.stasisCard instanceof Orbwalk){
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new StrengthPower(AbstractDungeon.player, 1), 1));
+
+        }
+        if (this.stasisCard instanceof SpacetimeBattery){
+            AbstractDungeon.actionManager.addToBottom(new GainBlockAction(AbstractDungeon.player, AbstractDungeon.player, ((SpacetimeBattery)this.stasisCard).magicNumber));
+
+        }
+
         if (this.passiveAmount > 0){
             this.passiveAmount -= 1;
-            this.evokeAmount++;
-            this.stasisCard.modifyCostForTurn(-this.evokeAmount);
         }
 
         if (this.passiveAmount <= 0) {
@@ -86,9 +107,14 @@ public class StasisOrb extends AbstractOrb {
     }
 
     public void onEvoke() {
-        AbstractDungeon.actionManager.addToTop(new ReturnStasisCardToHandAction(this.stasisCard));
-        this.stasisCard.superFlash(Color.GOLDENROD);
-        if (!stasisCard.isCostModifiedForTurn) stasisCard.tags.remove(GuardianMod.STASISGLOW);
+        if (this.stasisCard instanceof TimeBomb){
+            AbstractDungeon.player.exhaustPile.addToTop(this.stasisCard);
+            AbstractDungeon.actionManager.addToBottom(new DestroyOrbSlotForDamageAction(this.stasisCard.magicNumber, this));
+        } else {
+            stasisCard.freeToPlayOnce = true;
+            AbstractDungeon.actionManager.addToTop(new ReturnStasisCardToHandAction(this.stasisCard));
+            this.stasisCard.superFlash(Color.GOLDENROD);
+        }
         //GuardianMod.updateStasisCount();
     }
 

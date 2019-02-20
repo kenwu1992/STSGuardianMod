@@ -14,7 +14,8 @@
       "Pick a Gem.",
       "Add a Gem to your deck",
       "place into Stasis.",
-      "~ERROR:~ Cannot #rAttack in Construction Mode."
+      "~ERROR:~ Cannot #rAttack in Construction Mode.",
+      "~ERROR:~ #rStasis in progress."
     ]
   }
 }

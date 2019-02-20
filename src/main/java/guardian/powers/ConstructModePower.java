@@ -71,9 +71,11 @@ public class ConstructModePower extends AbstractGuardianPower {
         if (this.owner instanceof GuardianCharacter){
             ((GuardianCharacter)this.owner).switchToShatteredMode();
         }
+        /*
         if (GuardianMod.bronzeOrbInPlay != null) {
             GuardianMod.bronzeOrbInPlay.moveToBackline();
         }
+        */
 
     }
 
@@ -82,9 +84,11 @@ public class ConstructModePower extends AbstractGuardianPower {
         if (this.owner instanceof GuardianCharacter){
             ((GuardianCharacter)this.owner).switchToOffensiveMode();
         }
+        /*
         if (GuardianMod.bronzeOrbInPlay != null) {
             GuardianMod.bronzeOrbInPlay.moveToFrontline();
         }
+        */
     }
 
     @Override

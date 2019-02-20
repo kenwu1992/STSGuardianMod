@@ -5,6 +5,7 @@ package guardian.cards;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -14,6 +15,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
 import com.megacrit.cardcrawl.powers.WeakPower;
 import guardian.GuardianMod;
+import guardian.actions.CardToTopOfDrawPileAction;
 import guardian.actions.PlaceActualCardIntoStasis;
 import guardian.patches.AbstractCardEnum;
 
@@ -26,16 +28,16 @@ public class SentryWave extends AbstractGuardianCard {
 
     private static final CardStrings cardStrings;
     private static final CardType TYPE = CardType.SKILL;
-    private static final CardRarity RARITY = CardRarity.COMMON;
+    private static final CardRarity RARITY = CardRarity.SPECIAL;
     private static final CardTarget TARGET = CardTarget.ALL_ENEMY;
 
     //TUNING CONSTANTS
 
-    private static final int COST = 1;
+    private static final int COST = 0;
     private static final int DEBUFFCOUNT = 1;
     private static final int UPGRADE_DEBUFF = 1;
-    private static final int SOCKETS = 1;
-    private static final boolean SOCKETSAREAFTER = false;
+    private static final int SOCKETS = 0;
+    private static final boolean SOCKETSAREAFTER = true;
 
     //END TUNING CONSTANTS
 
@@ -56,11 +58,10 @@ public class SentryWave extends AbstractGuardianCard {
                 AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m2, p, new WeakPower(m2, this.magicNumber, false), this.magicNumber));
             }
         }
-
+        AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, 1));
         AbstractGuardianCard newCard = new SentryBeam();
-        newCard.sockets = this.sockets;
 
-        AbstractDungeon.actionManager.addToBottom(new PlaceActualCardIntoStasis(newCard));
+        AbstractDungeon.actionManager.addToBottom(new CardToTopOfDrawPileAction(newCard));
 
         super.useGems(p,m);
     }

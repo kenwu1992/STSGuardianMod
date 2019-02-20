@@ -36,7 +36,7 @@ public class ChargeCore extends AbstractGuardianCard {
     private static final int DAMAGE = 7;
     private static final int UPGRADE_BONUS = 3;
     private static final int SOCKETS = 1;
-    private static final boolean SOCKETSAREAFTER = false;
+    private static final boolean SOCKETSAREAFTER = true;
 
     //END TUNING CONSTANTS
 

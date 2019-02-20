@@ -39,6 +39,23 @@ public class EnhanceBonfireOption extends AbstractCampfireOption
 
         }
     }
+
+    public void reCheck(){
+        if (GuardianMod.getSocketableCards().size() == 0){
+            this.usable = false;
+        }
+        if (GuardianMod.getGemCards().size() == 0){
+            this.usable = false;
+        }
+        if (this.usable) {
+            this.description = DESCRIPTIONS[1];
+            this.img = ImageMaster.loadImage(GuardianMod.getResourcePath("ui/scrapcampfire.png"));
+        } else {
+            this.description = DESCRIPTIONS[2];
+            this.img = ImageMaster.loadImage(GuardianMod.getResourcePath("ui/scrapcampfiredisabled.png"));
+        }
+    }
+
     static {
         UI_STRINGS = CardCrawlGame.languagePack.getUIString("Guardian:EnhanceBonfireOptions");
         DESCRIPTIONS = UI_STRINGS.TEXT;

@@ -14,6 +14,8 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.UIStrings;
+import guardian.GuardianMod;
+
 import java.util.Iterator;
 
 public class PreprogramAction extends AbstractGameAction {
@@ -47,7 +49,10 @@ public class PreprogramAction extends AbstractGameAction {
 
             while(var3.hasNext()) {
                 AbstractCard c = (AbstractCard)var3.next();
-                AbstractDungeon.actionManager.addToBottom(new PlaceActualCardIntoStasis(c));
+                if (GuardianMod.canSpawnStasisOrb()) {
+
+                    AbstractDungeon.actionManager.addToBottom(new PlaceActualCardIntoStasis(c));
+                }
             }
 
             AbstractDungeon.gridSelectScreen.selectedCards.clear();

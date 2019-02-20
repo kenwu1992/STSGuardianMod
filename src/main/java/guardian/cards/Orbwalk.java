@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.StrengthPower;
 import guardian.GuardianMod;
 import guardian.patches.AbstractCardEnum;
 import guardian.powers.FloatingOrbsPower;
@@ -31,7 +32,7 @@ public class Orbwalk extends AbstractGuardianCard {
     private static final int COST = 2;
     private static final int UPGRADENEWCOST = 1;
     private static final int SOCKETS = 0;
-    private static final boolean SOCKETSAREAFTER = false;
+    private static final boolean SOCKETSAREAFTER = true;
 
     //END TUNING CONSTANTS
 
@@ -43,7 +44,7 @@ public class Orbwalk extends AbstractGuardianCard {
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         super.use(p,m);
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new OrbwalkPower(p,p,this.magicNumber), this.magicNumber));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new StrengthPower(p,this.magicNumber), this.magicNumber));
     }
 
     public AbstractCard makeCopy() {
@@ -53,7 +54,7 @@ public class Orbwalk extends AbstractGuardianCard {
     public void upgrade() {
         if (!this.upgraded) {
             upgradeName();
-            upgradeBaseCost(UPGRADENEWCOST);
+            upgradeMagicNumber(1);
         }
     }
 

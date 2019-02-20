@@ -54,7 +54,7 @@ public class ArmoredScales extends AbstractGuardianCard {
             ((DefensiveModeBuffsPower)p.getPower(DefensiveModeBuffsPower.POWER_ID)).metallicize += this.magicNumber;
             p.getPower(DefensiveModeBuffsPower.POWER_ID).flash();
         } else {
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DefensiveModeBuffsPower(p, p, 0,0,this.magicNumber)));
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DefensiveModeBuffsPower(p, p, 0,0,this.magicNumber,0,0)));
         }
         if (p.hasPower(DefenseModePower.POWER_ID)){
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new MetallicizePower(p, this.magicNumber) , this.magicNumber));

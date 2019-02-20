@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import guardian.actions.PlaceActualCardIntoStasis;
+import guardian.cards.TimeBomb;
 
 
 public class ClonePower extends AbstractGuardianPower {
@@ -46,7 +47,7 @@ public class ClonePower extends AbstractGuardianPower {
     @Override
     public void onUseCard(AbstractCard card, UseCardAction action) {
         super.onUseCard(card, action);
-        if (card.type == AbstractCard.CardType.ATTACK || card.type == AbstractCard.CardType.SKILL) {
+        if (!(card instanceof TimeBomb) && !card.exhaust && (card.type == AbstractCard.CardType.ATTACK || card.type == AbstractCard.CardType.SKILL)) {
             if (this.amount == 1) {
                 AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(this.owner, this.owner, this));
 
@@ -54,7 +55,8 @@ public class ClonePower extends AbstractGuardianPower {
                 this.amount -= 1;
             }
 
-            AbstractDungeon.actionManager.addToBottom(new PlaceActualCardIntoStasis(card));
+                AbstractDungeon.actionManager.addToBottom(new PlaceActualCardIntoStasis(card));
+
         }
     }
 

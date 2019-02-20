@@ -105,6 +105,7 @@ public class SocketGemEffect extends AbstractGameEffect {
             if (CampfireUI.hidden) {
                 AbstractRoom.waitTimer = 0.0F;
                 if (AbstractDungeon.getCurrRoom() instanceof RestRoom) {
+                    GuardianMod.socketBonfireOption.reCheck();
                     ((RestRoom) AbstractDungeon.getCurrRoom()).campfireUI.reopen();
                     // there was a bug with the fire sound persisting and I'm not sure why,
                     // so this is basically a randomly thrown out preventative measure.

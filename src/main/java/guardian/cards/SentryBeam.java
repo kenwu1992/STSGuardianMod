@@ -14,6 +14,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.SmallLaserEffect;
 import guardian.GuardianMod;
+import guardian.actions.CardToTopOfDrawPileAction;
 import guardian.actions.PlaceActualCardIntoStasis;
 import guardian.patches.AbstractCardEnum;
 
@@ -32,11 +33,11 @@ public class SentryBeam extends AbstractGuardianCard {
 
     //TUNING CONSTANTS
 
-    private static final int COST = 1;
+    private static final int COST = 0;
     private static final int DAMAGE = 5;
     private static final int UPGRADE_BONUS = 2;
-    private static final int SOCKETS = 1;
-    private static final boolean SOCKETSAREAFTER = false;
+    private static final int SOCKETS = 0;
+    private static final boolean SOCKETSAREAFTER = true;
 
     //END TUNING CONSTANTS
 
@@ -66,7 +67,8 @@ public class SentryBeam extends AbstractGuardianCard {
         AbstractGuardianCard newCard = new SentryWave();
         newCard.sockets = this.sockets;
 
-        AbstractDungeon.actionManager.addToBottom(new PlaceActualCardIntoStasis(newCard));
+        AbstractDungeon.actionManager.addToBottom(new CardToTopOfDrawPileAction(newCard));
+
 
         super.useGems(p,m);
 

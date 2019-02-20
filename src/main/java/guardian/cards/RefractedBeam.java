@@ -32,7 +32,7 @@ public class RefractedBeam extends AbstractGuardianCard {
     private static final int DAMAGE = 4;
     private static final int MULTICOUNT = 3;
     private static final int SOCKETS = 0;
-    private static final boolean SOCKETSAREAFTER = false;
+    private static final boolean SOCKETSAREAFTER = true;
 
     //END TUNING CONSTANTS
 

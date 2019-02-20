@@ -5,9 +5,11 @@ import basemod.interfaces.*;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.evacipated.cardcrawl.modthespire.lib.SpireEnum;
 import com.google.gson.Gson;
+import com.megacrit.cardcrawl.actions.animations.ShoutAction;
+import com.megacrit.cardcrawl.actions.animations.TalkAction;
+import com.megacrit.cardcrawl.actions.common.ExhaustSpecificCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -20,16 +22,18 @@ import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.rewards.RewardSave;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
+import com.megacrit.cardcrawl.vfx.ThoughtBubble;
 import guardian.cards.*;
 import guardian.helpers.MultihitVariable;
 import guardian.helpers.SecondaryMagicVariable;
 import guardian.orbs.StasisOrb;
 import guardian.patches.GuardianEnum;
 import guardian.patches.RewardItemTypePatch;
+import guardian.powers.ExhaustStatusesPower;
 import guardian.powers.MultiBoostPower;
 import guardian.relics.ModeShifter;
 import guardian.rewards.GemReward;
-import guardian.summons.BronzeOrb;
+import guardian.ui.EnhanceBonfireOption;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import guardian.characters.GuardianCharacter;
@@ -42,7 +46,7 @@ import java.util.Iterator;
 
 
 @com.evacipated.cardcrawl.modthespire.lib.SpireInitializer
-public class GuardianMod implements OnStartBattleSubscriber, PreMonsterTurnSubscriber, SetUnlocksSubscriber, PostDungeonInitializeSubscriber, PostInitializeSubscriber, basemod.interfaces.EditCharactersSubscriber, basemod.interfaces.EditRelicsSubscriber, basemod.interfaces.EditCardsSubscriber, basemod.interfaces.EditKeywordsSubscriber, EditStringsSubscriber {
+public class GuardianMod implements PostDrawSubscriber, PreMonsterTurnSubscriber, SetUnlocksSubscriber, PostDungeonInitializeSubscriber, PostInitializeSubscriber, basemod.interfaces.EditCharactersSubscriber, basemod.interfaces.EditRelicsSubscriber, basemod.interfaces.EditCardsSubscriber, basemod.interfaces.EditKeywordsSubscriber, EditStringsSubscriber {
     private static final com.badlogic.gdx.graphics.Color GUARDIAN_COLOR = com.megacrit.cardcrawl.helpers.CardHelper.getColor(25.0F, 95.0F, 25.0F);
 
     private static final String ATTACK_CARD = "512/bg_attack_guardian.png";
@@ -72,11 +76,13 @@ public class GuardianMod implements OnStartBattleSubscriber, PreMonsterTurnSubsc
     public static boolean discoveryOverride = false;
     public static boolean discoveryOverrideUpgrade = false;
 
+    public static EnhanceBonfireOption socketBonfireOption;
+
 
 
     private ModPanel settingsPanel;
 
-    public static BronzeOrb bronzeOrbInPlay;
+    //public static BronzeOrb bronzeOrbInPlay;
 
     @SpireEnum
     public static AbstractCard.CardTags GEM;
@@ -327,10 +333,8 @@ public class GuardianMod implements OnStartBattleSubscriber, PreMonsterTurnSubsc
         BaseMod.addCard(new PolyBeam());
         BaseMod.addCard(new TwinSlam());
         BaseMod.addCard(new VentSteam());
-        BaseMod.addCard(new ExploderProtocol());
-        BaseMod.addCard(new SpikerProtocol());
-        BaseMod.addCard(new RepulsorProtocol());
-        BaseMod.addCard(new GuardProtocol());
+        BaseMod.addCard(new TimeBomb());
+        BaseMod.addCard(new Repulse());
         BaseMod.addCard(new HyperBeam_Guardian());
         BaseMod.addCard(new BronzeArmor());
         BaseMod.addCard(new FloatingOrbs());
@@ -363,12 +367,10 @@ public class GuardianMod implements OnStartBattleSubscriber, PreMonsterTurnSubsc
         BaseMod.addCard(new Accelerate());
         BaseMod.addCard(new FuturePlans());
         BaseMod.addCard(new Suspension());
-        BaseMod.addCard(new SyncronizedStrike());
         BaseMod.addCard(new TimeCapacitor());
         BaseMod.addCard(new StasisField());
         BaseMod.addCard(new StasisStrike());
         BaseMod.addCard(new ConstructionForm());
-        BaseMod.addCard(new BlastProtocol());
         BaseMod.addCard(new WeakpointTargeting());
         BaseMod.addCard(new GemFire());
         BaseMod.addCard(new RollAttack());
@@ -382,7 +384,6 @@ public class GuardianMod implements OnStartBattleSubscriber, PreMonsterTurnSubsc
         BaseMod.addCard(new TemporalStrike());
         BaseMod.addCard(new ExploitGems());
         BaseMod.addCard(new PrimingBeam());
-        BaseMod.addCard(new CallForBackup());
         BaseMod.addCard(new BaubleBeam());
         BaseMod.addCard(new MultiBeam());
         BaseMod.addCard(new RefractedBeam());
@@ -397,7 +398,11 @@ public class GuardianMod implements OnStartBattleSubscriber, PreMonsterTurnSubsc
         BaseMod.addCard(new Gem_Fragmented());
         BaseMod.addCard(new Gem_Yellow());
         BaseMod.addCard(new Gem_Synthetic());
-        BaseMod.addCard(new Gem_Purple());
+        BaseMod.addCard(new guardian.cards.BronzeOrb());
+        BaseMod.addCard(new GatlingBeam());
+        BaseMod.addCard(new RevengeProtocol());
+        BaseMod.addCard(new SpacetimeBattery());
+        BaseMod.addCard(new StasisEngine());
 
 
 
@@ -920,8 +925,39 @@ public static void saveData() {
     }
 
     @Override
-    public void receiveOnBattleStart(AbstractRoom abstractRoom) {
-        bronzeOrbInPlay = null;
+    public void receivePostDraw(AbstractCard abstractCard) {
+        if (abstractCard.type == AbstractCard.CardType.STATUS || abstractCard.type == AbstractCard.CardType.CURSE){
+            if (AbstractDungeon.player.hasPower(ExhaustStatusesPower.POWER_ID)){
+                ExhaustStatusesPower e = (ExhaustStatusesPower)AbstractDungeon.player.getPower(ExhaustStatusesPower.POWER_ID);
+                if (e.usedThisTurn < e.amount){
+                    AbstractDungeon.actionManager.addToBottom(new ExhaustSpecificCardAction(abstractCard, AbstractDungeon.player.hand));
+                    e.usedThisTurn++;
+                    e.flash();
+                }
+            }
+        }
+    }
+
+
+    public static boolean canSpawnStasisOrb(){
+        boolean result = AbstractDungeon.player.hasEmptyOrb();
+        if (!result) {
+            UIStrings UI_STRINGS = CardCrawlGame.languagePack.getUIString("Guardian:UIOptions");
+            AbstractDungeon.effectList.add(new ThoughtBubble(AbstractDungeon.player.dialogX, AbstractDungeon.player.dialogY, 2.0F, UI_STRINGS.TEXT[5], true));
+
+        }
+        return result;
+
+    }
+
+    public static boolean isStasisOrbInPlay(){
+        for (AbstractOrb o : AbstractDungeon.player.orbs){
+            if (o instanceof StasisOrb){
+                return true;
+            }
+        }
+        return false;
+
     }
 
     public enum socketTypes {

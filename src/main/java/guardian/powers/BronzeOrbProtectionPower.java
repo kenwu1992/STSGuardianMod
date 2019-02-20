@@ -67,11 +67,13 @@ public class BronzeOrbProtectionPower extends AbstractGuardianPower {
         if (this.isActive) {
             damageAmount = damageAmount / 2;
             info.base = info.base /2;
+            /*
             if (GuardianMod.bronzeOrbInPlay != null) {
                 AbstractDungeon.actionManager.addToBottom(new DamageAction(GuardianMod.bronzeOrbInPlay, new DamageInfo(info.owner, damageAmount, info.type), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
             } else {
                 GuardianMod.logger.info("ERROR - Bronze Orb power cut damage in half but there is no Bronze Orb in play");
             }
+            */
         }
 
         return damageAmount;

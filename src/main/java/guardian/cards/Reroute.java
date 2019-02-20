@@ -35,7 +35,7 @@ public class Reroute extends AbstractGuardianCard {
     private static final int DAMAGE = 9;
     private static final int UPGRADE_BONUS = 3;
     private static final int SOCKETS = 1;
-    private static final boolean SOCKETSAREAFTER = false;
+    private static final boolean SOCKETSAREAFTER = true;
 
     //END TUNING CONSTANTS
 
@@ -45,6 +45,8 @@ public class Reroute extends AbstractGuardianCard {
         this.baseDamage = DAMAGE;
 
         this.socketCount = SOCKETS;
+
+        this.magicNumber = this.baseMagicNumber = 1;
         //this.sockets.add(GuardianMod.socketTypes.RED);
 
         this.updateDescription();
@@ -56,7 +58,7 @@ public class Reroute extends AbstractGuardianCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         super.use(p, m);
         AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new ClonePower(p, this.magicNumber), this.magicNumber));
+        AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(p, p, new ClonePower(p, this.magicNumber), this.magicNumber));
 
         this.useGems(p, m);
     }

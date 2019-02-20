@@ -24,7 +24,7 @@ public class Gem_Crimson extends AbstractGuardianCard {
     public static String UPGRADED_DESCRIPTION;
     public static final String IMG_PATH = "cards/gemCrimson.png";
     private static final CardType TYPE = CardType.SKILL;
-    private static final CardRarity RARITY = CardRarity.RARE;
+    private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
 
     private static final CardStrings cardStrings;
@@ -34,7 +34,7 @@ public class Gem_Crimson extends AbstractGuardianCard {
     private static final int COST = 0;
     private static final int VULN = 2;  //HARDCODED IN DESCRIPTION
     private static final int SOCKETS = 0;
-    private static final boolean SOCKETSAREAFTER = false;
+    private static final boolean SOCKETSAREAFTER = true;
 
     //END TUNING CONSTANTS
 

@@ -23,7 +23,7 @@ public class StasisField extends AbstractGuardianCard {
 
     private static final CardStrings cardStrings;
     private static final CardType TYPE = CardType.SKILL;
-    private static final CardRarity RARITY = CardRarity.COMMON;
+    private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
 
     //TUNING CONSTANTS
@@ -52,11 +52,7 @@ public class StasisField extends AbstractGuardianCard {
         super.use(p,m);
         AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, this.block));
 
-        AbstractGuardianCard newCard = new StasisField();
-        newCard.sockets = this.sockets;
-        newCard.modifyCostForTurn(1);
-
-        AbstractDungeon.actionManager.addToBottom(new PlaceActualCardIntoStasis(newCard));
+        AbstractDungeon.actionManager.addToBottom(new PlaceActualCardIntoStasis(this));
         this.useGems(p, m);
 
     }

@@ -143,6 +143,9 @@ public abstract class AbstractGuardianCard extends CustomCard implements CustomS
             }
         }
         }
+        if (this instanceof BaubleBeam){
+            ((BaubleBeam) this).updateCost();
+        }
         updateDescription();
     }
 
@@ -250,14 +253,6 @@ public abstract class AbstractGuardianCard extends CustomCard implements CustomS
                 if (after) addedDesc = addedDesc + " NL ";
                 addedDesc = addedDesc + "Empty Socket";
                 if (!after) addedDesc = addedDesc + " NL ";
-            }
-        }
-
-        if (this instanceof BaubleBeam && this.sockets.size() > 0) {
-            if (!((BaubleBeam) this).gemCostModified) {
-                GuardianMod.logger.info("Bauble sockets " + this.sockets.size());
-                this.modifyCostForCombat(this.sockets.size() * -1);
-                ((BaubleBeam) this).gemCostModified = true;
             }
         }
 
@@ -389,7 +384,7 @@ public abstract class AbstractGuardianCard extends CustomCard implements CustomS
     @Override
     public void triggerOnEndOfPlayerTurn() {
         super.triggerOnEndOfPlayerTurn();
-        if (this.hasTag(GuardianMod.STASISGLOW)) this.tags.remove(GuardianMod.STASISGLOW);
+        //if (this.hasTag(GuardianMod.STASISGLOW)) this.tags.remove(GuardianMod.STASISGLOW);
     }
 
     public void upgradeMultihit(){
@@ -443,7 +438,7 @@ public abstract class AbstractGuardianCard extends CustomCard implements CustomS
         card.freeToPlayOnce = this.freeToPlayOnce;
         ((AbstractGuardianCard)card).sockets = this.sockets;
         if (this instanceof BaubleBeam){
-            ((BaubleBeam) card).gemCostModified = ((BaubleBeam) this).gemCostModified;
+            ((BaubleBeam) this).updateCost();
         }
 
        // GuardianMod.logger.info("SEcopy sockets this: " + this.sockets);

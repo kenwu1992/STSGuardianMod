@@ -38,7 +38,7 @@ public class Incinerate extends AbstractGuardianCard {
     private static final int UPGRADE_DAMAGE = 2;
     private static final int SEAR = 2;
     private static final int UPGRADE_SEAR = 1;
-    private static final int SOCKETS = 1;
+    private static final int SOCKETS = 0;
     private static final boolean SOCKETSAREAFTER = true;
 
     //END TUNING CONSTANTS
@@ -89,6 +89,8 @@ public class Incinerate extends AbstractGuardianCard {
             upgradeName();
             upgradeDamage(UPGRADE_DAMAGE);
             upgradeMagicNumber(UPGRADE_SEAR);
+            this.socketCount++;
+            this.updateDescription();
 
         }
 

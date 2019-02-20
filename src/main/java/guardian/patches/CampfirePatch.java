@@ -31,7 +31,8 @@ public class CampfirePatch {
                 active = false;
             }
 
-            campfireButtons.add(new EnhanceBonfireOption(active));
+            GuardianMod.socketBonfireOption = new EnhanceBonfireOption(active);
+            campfireButtons.add(GuardianMod.socketBonfireOption);
 
 
         }

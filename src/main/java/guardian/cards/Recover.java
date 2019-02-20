@@ -30,7 +30,7 @@ public class Recover extends AbstractGuardianCard {
 
     private static final int COST = 1;
     private static final int CARDS = 1;
-    private static final int UPGRADECARDS = 1;
+    private static final int UPGRADEBLOCK = 3;
     private static final int BLOCK = 5;
     private static final int SOCKETS = 0;
     private static final boolean SOCKETSAREAFTER = true;
@@ -63,9 +63,7 @@ public class Recover extends AbstractGuardianCard {
     public void upgrade() {
         if (!this.upgraded) {
             upgradeName();
-            upgradeMagicNumber(UPGRADECARDS);
-            this.rawDescription = UPGRADED_DESCRIPTION;
-            this.initializeDescription();
+            upgradeBlock(UPGRADEBLOCK);
         }
     }
 

@@ -34,7 +34,7 @@ public class GuardianWhirl extends AbstractGuardianCard {
     private static final int DAMAGE = 4;
     private static final int UPGRADE_BONUS = 1;
     private static final int MULTICOUNT = 4;
-    private static final int SOCKETS = 1;
+    private static final int SOCKETS = 0;
     private static final boolean SOCKETSAREAFTER = true;
 
     //END TUNING CONSTANTS
@@ -78,6 +78,8 @@ public class GuardianWhirl extends AbstractGuardianCard {
         if (!this.upgraded) {
             upgradeName();
             upgradeDamage(UPGRADE_BONUS);
+            this.socketCount++;
+            this.updateDescription();
         }
 
 

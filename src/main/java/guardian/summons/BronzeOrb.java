@@ -1,3 +1,5 @@
+/*
+
 package guardian.summons;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.math.MathUtils;
@@ -153,3 +155,5 @@ public class BronzeOrb extends AbstractFriendlyMonster {
         AbstractDungeon.actionManager.addToTop(new RemoveSpecificPowerAction(AbstractDungeon.player,AbstractDungeon.player,BronzeOrbProtectionPower.POWER_ID));
     }
 }
+
+*/

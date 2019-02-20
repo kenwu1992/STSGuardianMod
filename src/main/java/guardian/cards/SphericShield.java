@@ -31,7 +31,7 @@ public class SphericShield extends AbstractGuardianCard {
     private static final int COST = 3;
     private static final int UPGRADENEWCOST = 2;
     private static final int SOCKETS = 0;
-    private static final boolean SOCKETSAREAFTER = false;
+    private static final boolean SOCKETSAREAFTER = true;
 
     //END TUNING CONSTANTS
 

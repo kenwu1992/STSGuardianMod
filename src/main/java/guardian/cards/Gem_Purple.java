@@ -1,6 +1,7 @@
 package guardian.cards;
 
 
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -15,6 +16,8 @@ import com.megacrit.cardcrawl.powers.VulnerablePower;
 import guardian.GuardianMod;
 import guardian.patches.AbstractCardEnum;
 
+import java.util.Iterator;
+
 import static guardian.GuardianMod.socketTypes.CYAN;
 import static guardian.GuardianMod.socketTypes.PURPLE;
 
@@ -26,7 +29,7 @@ public class Gem_Purple extends AbstractGuardianCard {
     public static String UPGRADED_DESCRIPTION;
     public static final String IMG_PATH = "cards/gemPurple.png";
     private static final CardType TYPE = CardType.SKILL;
-    private static final CardRarity RARITY = CardRarity.RARE;
+    private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
 
     private static final CardStrings cardStrings;
@@ -36,7 +39,7 @@ public class Gem_Purple extends AbstractGuardianCard {
     private static final int COST = 0;
     private static final int STRENGTHLOSS = 3;  //HARDCODED IN DESCRIPTION
     private static final int SOCKETS = 0;
-    private static final boolean SOCKETSAREAFTER = false;
+    private static final boolean SOCKETSAREAFTER = true;
 
     //END TUNING CONSTANTS
 
@@ -58,12 +61,20 @@ public class Gem_Purple extends AbstractGuardianCard {
     }
 
     public static void gemEffect(AbstractPlayer p, AbstractMonster m){
-        for (AbstractMonster monster : AbstractDungeon.getMonsters().monsters) {
-            if ((!monster.isDead) && (!monster.isDying)) {
-                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(monster, p, new StrengthPower(m, STRENGTHLOSS * -1), STRENGTHLOSS * -1));
-                if (m != null && !m.hasPower("Artifact")) {
-                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(monster, p, new GainStrengthPower(m, STRENGTHLOSS), STRENGTHLOSS));
-                }
+        Iterator var3 = AbstractDungeon.getCurrRoom().monsters.monsters.iterator();
+
+        AbstractMonster mo;
+        while(var3.hasNext()) {
+            mo = (AbstractMonster)var3.next();
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mo, p, new StrengthPower(mo, -STRENGTHLOSS), -STRENGTHLOSS, true, AbstractGameAction.AttackEffect.NONE));
+        }
+
+        var3 = AbstractDungeon.getCurrRoom().monsters.monsters.iterator();
+
+        while(var3.hasNext()) {
+            mo = (AbstractMonster)var3.next();
+            if (!mo.hasPower("Artifact")) {
+                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mo, p, new GainStrengthPower(mo, STRENGTHLOSS), STRENGTHLOSS, true, AbstractGameAction.AttackEffect.NONE));
             }
         }
     }

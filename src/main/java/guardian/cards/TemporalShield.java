@@ -30,10 +30,9 @@ public class TemporalShield extends AbstractGuardianCard {
     //TUNING CONSTANTS
 
     private static final int COST = 1;
-    private static final int BLOCK = 4;
-    private static final int BLOCKPERSTASIS = 2;
-    private static final int UPGRADE_BLOCKPERSTASIS = 2;
-    private static final int SOCKETS = 1;
+    private static final int BLOCK = 8;
+    private static final int UPGRADE_BLOCK = 3;
+    private static final int SOCKETS = 0;
     private static final boolean SOCKETSAREAFTER = true;
 
     private int lastKnownStasisCount = 0;
@@ -43,7 +42,6 @@ public class TemporalShield extends AbstractGuardianCard {
     public TemporalShield() {
         super(ID, NAME, GuardianMod.getResourcePath(IMG_PATH), COST, DESCRIPTION, TYPE, AbstractCardEnum.GUARDIAN, RARITY, TARGET);
 
-        this.magicNumber = this.baseMagicNumber = BLOCKPERSTASIS;
         this.baseBlock = BLOCK;
         this.socketCount = SOCKETS;
         this.updateDescription();
@@ -53,8 +51,14 @@ public class TemporalShield extends AbstractGuardianCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        super.use(p,m);
+
+
         AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, this.block));
+        if (this.hasTag(GuardianMod.STASISGLOW)){
+            AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, this.block));
+
+        }
+        super.use(p,m);
         this.useGems(p, m);
 
     }
@@ -66,7 +70,7 @@ public class TemporalShield extends AbstractGuardianCard {
     public void upgrade() {
         if (!this.upgraded) {
             upgradeName();
-            upgradeMagicNumber(UPGRADE_BLOCKPERSTASIS);
+            upgradeBlock(UPGRADE_BLOCK);
         }
     }
 

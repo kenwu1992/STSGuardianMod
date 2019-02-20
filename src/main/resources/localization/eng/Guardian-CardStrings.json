@@ -48,11 +48,11 @@
   },
   "Guardian:FierceBash": {
     "NAME": "Fierce Bash",
-    "DESCRIPTION": "Deal !D! damage."
+    "DESCRIPTION": "Deal !D! damage. NL Increase this card's damage by !M! for each turn it is in Stasis."
   },
   "Guardian:PolyBeam": {
     "NAME": "Poly Beam",
-    "DESCRIPTION": "Deal !D! damage !GuardianMulti! times. NL Set this card's cost to 2, then place it into Stasis."
+    "DESCRIPTION": "Deal !D! damage to a random enemy !M! times."
   },
   "Guardian:TwinSlam": {
     "NAME": "Twin Slam",
@@ -70,13 +70,9 @@
     "NAME": "Curl Up",
     "DESCRIPTION": "Gain !B! Block. NL Enter Defensive Mode."
   },
-  "Guardian:ExploderProtocol": {
-    "NAME": "Exploder Protocol",
-    "DESCRIPTION": "Summon Bronze Orb. NL In 3 turns, your Bronze Orb will explode, dealing !M! damage to ALL enemies. NL Exhaust."
-  },
-  "Guardian:SpikerProtocol": {
-    "NAME": "Spiker Protocol",
-    "DESCRIPTION": "Summon Bronze Orb. NL Your Bronze Orb attacks a random enemy for !GuardianSecondM! damage each turn, and deals !M! damage to attackers. NL Exhaust."
+  "Guardian:TimeBomb": {
+    "NAME": "Time Bomb",
+    "DESCRIPTION": "Place this card into Stasis. NL When this card would leave Stasis, Exhaust it and deal !M! damage to ALL enemies."
   },
   "Guardian:RepulsorProtocol": {
     "NAME": "Repulsor Protocol",
@@ -109,11 +105,11 @@
   },
   "Guardian:Orbwalk": {
     "NAME": "Orbwalk",
-    "DESCRIPTION": "Gain !M! Strength at the start of each turn."
+    "DESCRIPTION": "Gain !M! Strength. NL If this is in Stasis at the start of your turn, gain 1 Strength."
   },
   "Guardian:WalkerClaw": {
     "NAME": "Walker Claw",
-    "DESCRIPTION": "Deal !D! damage."
+    "DESCRIPTION": "Deal !D! damage. NL Strength affects this card !M! times."
   },
   "Guardian:SphericShield": {
     "NAME": "Spheric Shield",
@@ -125,11 +121,11 @@
   },
   "Guardian:SentryBeam": {
     "NAME": "Sentry Beam",
-    "DESCRIPTION": "Deal !D! Damage. NL Place a Sentry Wave into Stasis with this card's Gems. Exhaust."
+    "DESCRIPTION": "Deal !D! Damage. NL Place a Sentry Wave on top of your draw pile. NL Exhaust."
   },
   "Guardian:SentryWave": {
     "NAME": "Sentry Wave",
-    "DESCRIPTION": "Apply !M! Weak to ALL enemies. NL Place a Sentry Beam into Stasis with this card's Gems. Exhaust."
+    "DESCRIPTION": "Apply !M! Weak to ALL enemies. NL Draw a card. NL Place a Sentry Beam on top of your draw pile. NL Exhaust."
   },
   "Guardian:CompilePackage": {
     "NAME": "Compile Package",
@@ -141,13 +137,13 @@
   },
   "Guardian:PackageShapes": {
     "NAME": "Package: Shapes",
-    "DESCRIPTION": "Add an Exploder Protocol, Spiker Protocol, and Repulsor Protocol to your hand. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Add an Exploder Protocol, Spiker Protocol, and Repulsor Protocol to your hand, each of which is Upgraded. NL Exhaust."
+    "DESCRIPTION": "Add a Time Bomb, Spiker Protocol, and Repulsor Protocol to your hand. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Add a Time Bomb, Spiker Protocol, and Repulsor Protocol to your hand, each of which is Upgraded. NL Exhaust."
   },
   "Guardian:PackageDonuDeca": {
     "NAME": "Package: Ancients",
     "DESCRIPTION": "Add an Ancient Power, Ancient Protection, and Poly Beam to your hand. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Add an Ancient Power, Ancient Protection, and Poly Beam to your hand, each of which is Upgraded. NL Exhaust."
+    "UPGRADE_DESCRIPTION": "Add an Ancient Power, Ancient Protection, and Ancient Construct to your hand, each of which is Upgraded. NL Exhaust."
   },
   "Guardian:PackageSphere": {
     "NAME": "Package: Spheric",
@@ -180,7 +176,7 @@
   },
   "Guardian:Emergency": {
     "NAME": "Emergency",
-    "DESCRIPTION": "Return all cards in Stasis to your hand."
+    "DESCRIPTION": "Return your right-most card in Stasis to your hand and reduce it's cost to 0. NL Exhaust."
   },
   "Guardian:Clone": {
     "NAME": "Clone",
@@ -197,11 +193,11 @@
   },
   "Guardian:StasisField": {
     "NAME": "Stasis Field",
-    "DESCRIPTION": "Ethereal. NL Gain !B! Block. NL Place a 2-cost copy of this card into Stasis."
+    "DESCRIPTION": "Ethereal. NL Gain !B! Block. NL Place this card into Stasis."
   },
   "Guardian:StasisStrike": {
     "NAME": "Stasis Strike",
-    "DESCRIPTION": "Ethereal. NL Deal !D! damage. NL Place a 2-cost copy of this card into Stasis."
+    "DESCRIPTION": "Ethereal. NL Deal !D! damage. NL Place this card into Stasis."
   },
   "Guardian:FuturePlans": {
     "NAME": "Future Plans",
@@ -210,12 +206,13 @@
   },
   "Guardian:Suspension": {
     "NAME": "Suspension",
-    "DESCRIPTION": "Place up to X cards in your hand into Stasis.",
-    "UPGRADE_DESCRIPTION": "Place up to X+1 cards in your hand into Stasis."
+    "DESCRIPTION": "Place a card in your hand into Stasis.",
+    "UPGRADE_DESCRIPTION": "Place a card in your hand into Stasis. NL Draw a card."
   },
   "Guardian:Accelerate": {
     "NAME": "Accelerate",
-    "DESCRIPTION": "Reduce the cost of all cards in Stasis by 1. NL If any cards in Stasis cost 0, return them to your hand."
+    "DESCRIPTION": "Reduce the turn counter of all cards in Stasis by 1. NL Returning any cards in Stasis with a turn counter of 0 to your hand. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Reduce the turn counter of all cards in Stasis by 1. NL Returning any cards in Stasis with a turn counter of 0 to your hand."
   },
   "Guardian:SyncronizedStrike": {
     "NAME": "Syncronized Strike",
@@ -255,7 +252,7 @@
   },
   "Guardian:Reroute": {
     "NAME": "Reroute",
-    "DESCRIPTION": "Deal !D! damage. NL Place the next Attack or Skill you play this turn into Stasis."
+    "DESCRIPTION": "Deal !D! damage. NL Place the next non-Exhausting Attack or Skill you play this turn into Stasis."
   },
   "Guardian:PiercingHide": {
   "NAME": "Piercing Hide",
@@ -275,21 +272,16 @@
   },
   "Guardian:TemporalStrike": {
     "NAME": "Temporal Strike",
-    "DESCRIPTION": "Deal !D! damage. Damage is increased by !M! for each card in Stasis."
+    "DESCRIPTION": "Deal !D! damage. NL Deal !D! damage if this card's cost has been modified by Stasis."
   },
   "Guardian:TemporalShield": {
     "NAME": "Temporal Shield",
-    "DESCRIPTION": "Gain !B! Block. Block is increased by !M! for each card in Stasis."
+    "DESCRIPTION": "Gain !B! Block. NL Gain !B! Block if this card's cost has been modified by Stasis."
   },
   "Guardian:ExploitGems": {
     "NAME": "Exploit Gems",
     "DESCRIPTION": "Perform the following X times: NL Gain [E].",
     "UPGRADE_DESCRIPTION": "Perform the following X+1 times: NL Gain [E]."
-  },
-  "Guardian:CallForBackup": {
-    "NAME": "Call for Backup",
-    "DESCRIPTION": "Add X random Protocol cards to your hand. They cost 0. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Add X random Upgraded Protocol cards to your hand. They cost 0. NL Exhaust."
   },
   "Guardian:RefractedBeam": {
     "NAME": "Refracted Beam",
@@ -308,20 +300,20 @@
     "DESCRIPTION": "Deal !D! damage. NL Increase the damage dealt by Beam cards by !M! this combat."
   },
   "Guardian:SlickScales": {
-    "NAME": "Slick Scales",
-    "DESCRIPTION": "While in Defensive Mode, gain !M! Dexterity. NL Enter Defensive Mode."
+    "NAME": "Evasive Protocol",
+    "DESCRIPTION": "Gain !M! Dexterity while in Defensive Mode. NL Enter Defensive Mode."
   },
   "Guardian:SpikyScales": {
-    "NAME": "Spiky Scales",
-    "DESCRIPTION": "While in Defensive Mode, gain !M! Thorns. NL Enter Defensive Mode."
+    "NAME": "Spiker Protocol",
+    "DESCRIPTION": "Gain !M! Thorns while in Defensive Mode. NL Enter Defensive Mode."
   },
   "Guardian:ArmoredScales": {
-    "NAME": "Armored Scales",
-    "DESCRIPTION": "While in Defensive Mode, gain !M! Block at the end of each turn. NL Enter Defensive Mode."
+    "NAME": "Armored Protocol",
+    "DESCRIPTION": "Gain !M! Block at the end of each turn while in Defensive Mode. NL Enter Defensive Mode."
   },
   "Guardian:Automayhem": {
-    "NAME": "Automayhem",
-    "DESCRIPTION": "At the start of your turn, place a random 1-cost card into Stasis."
+    "NAME": "Time Sifter",
+    "DESCRIPTION": "At the end of your turn, reduce the cost of the right-most card in Stasis with a turn counter of 2 or more by 1."
   },
   "Guardian:Construct": {
     "NAME": "Ancient Construct",
@@ -368,5 +360,31 @@
   "Guardian:CrystalWard": {
     "NAME": "Crystal Ward",
     "DESCRIPTION": "Gain !B! Block. NL Exhaust."
+  },
+  "Guardian:Repulse": {
+    "NAME": "Repulsor Protocol",
+    "DESCRIPTION": "Exhaust the first Status or Curse drawn each turn while in Defensive Mode. NL Enter Defensive Mode.",
+    "UPGRADE_DESCRIPTION": "Exhaust the first 2 Status or Curse cards drawn each turn while in Defensive Mode. NL Enter Defensive Mode."
+  },
+  "Guardian:BronzeOrb": {
+    "NAME": "Bronze Orb",
+    "DESCRIPTION": "Place a random card from your draw pile into Stasis. NL Deal !D! Damage. NL Gain !B! Block."
+  },
+  "Guardian:RevengeProtocol": {
+    "NAME": "Revenge Protocol",
+    "DESCRIPTION": "Gain !M! Strength until the end of your turn whenever your Block is broken while in Defensive Mode. NL Enter Defensive Mode."
+  },
+  "Guardian:GatlingBeam": {
+    "NAME": "Gatling Beam",
+    "DESCRIPTION": "Deal !D! damage to a random enemy !M! times. NL Increase the damage dealt by Beam cards by !M! this combat. NL Exhaust."
+  },
+  "Guardian:SpacetimeBattery": {
+    "NAME": "Spacetime Battery",
+    "DESCRIPTION": "Gain !B! Block. NL If this card is in Stasis at the start of your turn, gain !M! Block."
+  },
+  "Guardian:StasisEngine": {
+    "NAME": "Stasis Engine",
+    "DESCRIPTION": "Gain [E] and draw a card whenever you play 3 0-cost cards in a single turn.",
+    "UPGRADE_DESCRIPTION": "Innate. NL Gain [E] and draw a card whenever you play 3 0-cost cards in a single turn."
   }
 }

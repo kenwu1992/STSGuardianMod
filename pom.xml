@@ -38,13 +38,6 @@
             <scope>system</scope>
             <systemPath>${basedir}/../lib/STSLib.jar</systemPath>
         </dependency>
-        <dependency>
-            <groupId>Friendly_Minions_0987678</groupId>
-            <artifactId>Friendly_Minions_0987678</artifactId>
-            <version>0.1.2</version>
-            <scope>system</scope>
-            <systemPath>${basedir}/../lib/FriendlyMinions.jar</systemPath>
-        </dependency>
     </dependencies>
 
     <build>

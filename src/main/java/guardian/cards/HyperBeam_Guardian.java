@@ -36,11 +36,11 @@ public class HyperBeam_Guardian extends AbstractGuardianCard {
 
     //TUNING CONSTANTS
 
-    private static final int COST = 3;
+    private static final int COST = 4;
     private static final int DAMAGE = 40;
     private static final int UPGRADE_DAMAGE = 10;
-    private static final int SOCKETS = 2;
-    private static final boolean SOCKETSAREAFTER = false;
+    private static final int SOCKETS = 0;
+    private static final boolean SOCKETSAREAFTER = true;
 
     //END TUNING CONSTANTS
 

@@ -35,7 +35,7 @@ public class VentSteam extends AbstractGuardianCard {
     private static final int COST = 1;
     private static final int DEBUFFCOUNT = 2;
     private static final int UPGRADE_DEBUFF = 1;
-    private static final int SOCKETS = 2;
+    private static final int SOCKETS = 1;
     private static final boolean SOCKETSAREAFTER = true;
 
     //END TUNING CONSTANTS
@@ -64,6 +64,8 @@ public class VentSteam extends AbstractGuardianCard {
         if (!this.upgraded) {
             upgradeName();
             upgradeMagicNumber(UPGRADE_DEBUFF);
+            this.socketCount++;
+            this.updateDescription();
         }
     }
 

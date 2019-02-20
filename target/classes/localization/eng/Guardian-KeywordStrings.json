@@ -13,7 +13,7 @@
       "stasis"
     ],
     "PROPERNAME": "Stasis",
-    "DESCRIPTION": "A card in Stasis reduces its cost by 1 at the start of each turn. When the cost reaches 0, it is returned to your hand, keeping its modified cost for one turn."
+    "DESCRIPTION": "A card in Stasis gains a turn counter equal to its cost plus 1. NL Turn counter is reduced by 1 at the start of your turn. NL When the counter reaches 0, it is returned to your hand and becomes 0-cost until played."
   },
   {
     "NAMES": [
@@ -25,23 +25,13 @@
   },
   {
     "NAMES": [
-      "defensive mode",
-      "defensive_mode",
-      "Defensive Mode",
-      "Defensive_Mode"
+      "defensive",
+      "defensive",
+      "Defensive",
+      "Defensive"
     ],
     "PROPERNAME": "Defensive Mode",
     "DESCRIPTION": "Deal 3 damage to attackers, and gain 2 Block when you play a card. Lasts 1 turn."
-  },
-  {
-    "NAMES": [
-      "bronze orb",
-      "bronze_orb",
-      "Bronze Orb",
-      "Bronze_Orb"
-    ],
-    "PROPERNAME": "Bronze Orb",
-    "DESCRIPTION": "Summon a Bronze Orb minion, who will perform actions at the end of each turn.  If a Bronze Orb is already in play, a new one is not created."
   },
   {
     "NAMES": [

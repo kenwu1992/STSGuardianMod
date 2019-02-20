@@ -11,8 +11,6 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndAddToHandEffect;
 import guardian.GuardianMod;
-import guardian.actions.CompilePackageAction;
-import guardian.patches.AbstractCardEnum;
 
 import java.util.ArrayList;
 
@@ -48,15 +46,15 @@ public class PackageShapes extends AbstractGuardianCard {
         ArrayList derp = new ArrayList();
         AbstractCard tmp;
 
-        tmp = new ExploderProtocol();
+        tmp = new TimeBomb();
         if (upgraded) tmp.upgrade();
         derp.add(tmp);
 
-        tmp = new SpikerProtocol();
+        tmp = new SpikyScales();
         if (upgraded) tmp.upgrade();
         derp.add(tmp);
 
-        tmp = new RepulsorProtocol();
+        tmp = new Repulse();
         if (upgraded) tmp.upgrade();
         derp.add(tmp);
 

@@ -5,8 +5,10 @@ package guardian.cards;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.unique.SwordBoomerangAction;
 import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -15,6 +17,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.SmallLaserEffect;
 import guardian.GuardianMod;
 import guardian.actions.PlaceActualCardIntoStasis;
+import guardian.actions.PolyBeamAction;
 import guardian.patches.AbstractCardEnum;
 
 
@@ -33,11 +36,11 @@ public class PolyBeam extends AbstractGuardianCard {
     //TUNING CONSTANTS
 
     private static final int COST = 1;
-    private static final int DAMAGE = 4;
-    private static final int UPGRADE_BONUS = 2;
-    private static final int MULTICOUNT = 2;
-    private static final int COSTINSTASIS = 2;
-    private static final int SOCKETS = 1;
+    private static final int DAMAGE = 2;
+    private static final int UPGRADE_BONUS = 1;
+    private static final int MULTICOUNT = 4;
+    private static final int UPGRADE_MULTICOUNT = 0;
+    private static final int SOCKETS = 0;
     private static final boolean SOCKETSAREAFTER = true;
 
     //END TUNING CONSTANTS
@@ -50,12 +53,10 @@ public class PolyBeam extends AbstractGuardianCard {
         super(ID, NAME, GuardianMod.getResourcePath(IMG_PATH), COST, DESCRIPTION, TYPE, AbstractCardEnum.GUARDIAN, RARITY, TARGET);
 
         this.baseDamage = DAMAGE;
-        this.baseMagicNumber = this.magicNumber = COSTINSTASIS;
+        this.baseMagicNumber = this.magicNumber = MULTICOUNT;
 
-        this.multihit = MULTICOUNT;
         this.tags.add(GuardianMod.MULTIHIT);
         this.tags.add(GuardianMod.BEAM);
-
 
         this.socketCount = SOCKETS;
         this.updateDescription();
@@ -63,19 +64,10 @@ public class PolyBeam extends AbstractGuardianCard {
 
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new SFXAction("ATTACK_MAGIC_BEAM_SHORT", 0.5F));
-        AbstractDungeon.actionManager.addToBottom(new VFXAction(new SmallLaserEffect(m.hb.cX, m.hb.cY, p.hb.cX, p.hb.cY), 0.3F));
+        super.use(p,m);
+        AbstractDungeon.actionManager.addToBottom(new PolyBeamAction(AbstractDungeon.getMonsters().getRandomMonster((AbstractMonster)null, true, AbstractDungeon.cardRandomRng), new DamageInfo(p, this.baseDamage), this.magicNumber));
 
-        for (int i = 0; i < this.multihit; i++) {
-            AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new com.megacrit.cardcrawl.cards.DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.FIRE));
-
-        }
-
-        this.cost = this.magicNumber;
-        AbstractDungeon.actionManager.addToBottom(new PlaceActualCardIntoStasis(this));
-
-
-
+        super.useGems(p,m);
     }
 
 
@@ -92,6 +84,9 @@ public class PolyBeam extends AbstractGuardianCard {
 
             upgradeName();
             upgradeDamage(UPGRADE_BONUS);
+            upgradeMagicNumber(UPGRADE_MULTICOUNT);
+            this.socketCount++;
+            this.updateDescription();
 
         }
 

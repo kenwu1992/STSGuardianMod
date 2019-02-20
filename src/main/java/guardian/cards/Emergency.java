@@ -4,6 +4,7 @@ package guardian.cards;
 
 import com.megacrit.cardcrawl.actions.defect.DiscardPileToHandAction;
 import com.megacrit.cardcrawl.actions.defect.EvokeAllOrbsAction;
+import com.megacrit.cardcrawl.actions.defect.EvokeOrbAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -30,8 +31,8 @@ public class Emergency extends AbstractGuardianCard {
 
     private static final int COST = 1;
     private static final int UPGRADECOST = 0;
-    private static final int SOCKETS = 2;
-    private static final boolean SOCKETSAREAFTER = false;
+    private static final int SOCKETS = 0;
+    private static final boolean SOCKETSAREAFTER = true;
 
     //END TUNING CONSTANTS
 
@@ -40,12 +41,13 @@ public class Emergency extends AbstractGuardianCard {
 
         this.socketCount = SOCKETS;
         this.updateDescription();
+        this.exhaust = true;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         super.use(p,m);
 
-        AbstractDungeon.actionManager.addToBottom(new EvokeAllOrbsAction());
+        AbstractDungeon.actionManager.addToBottom(new EvokeOrbAction(1));
 
         super.useGems(p,m);
     }

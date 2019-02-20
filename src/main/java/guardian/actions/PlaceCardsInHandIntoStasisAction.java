@@ -13,6 +13,8 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.UIStrings;
+import guardian.GuardianMod;
+
 import java.util.Iterator;
 
 public class PlaceCardsInHandIntoStasisAction extends AbstractGameAction {
@@ -25,7 +27,7 @@ public class PlaceCardsInHandIntoStasisAction extends AbstractGameAction {
 
     public void update() {
         if (this.duration == 0.5F) {
-            AbstractDungeon.handCardSelectScreen.open(TEXT[3], this.amount, false, true, false, false, true);
+            AbstractDungeon.handCardSelectScreen.open(TEXT[3], this.amount, false, false, false, false, true);
             AbstractDungeon.actionManager.addToBottom(new WaitAction(0.25F));
             this.tickDuration();
         } else {
@@ -33,9 +35,12 @@ public class PlaceCardsInHandIntoStasisAction extends AbstractGameAction {
                 AbstractCard c;
                 for(Iterator var1 = AbstractDungeon.handCardSelectScreen.selectedCards.group.iterator(); var1.hasNext(); AbstractDungeon.player.hand.addToTop(c)) {
                     c = (AbstractCard)var1.next();
-                    c.retain = true;
-                    AbstractDungeon.actionManager.addToBottom(new PlaceActualCardIntoStasis(c));
-                    AbstractDungeon.actionManager.addToBottom(new WaitAction(0.1F));
+                    if (GuardianMod.canSpawnStasisOrb()) {
+
+                        c.retain = true;
+                        AbstractDungeon.actionManager.addToBottom(new PlaceActualCardIntoStasis(c));
+                        AbstractDungeon.actionManager.addToBottom(new WaitAction(0.1F));
+                    }
 
                 }
 

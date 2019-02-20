@@ -36,8 +36,6 @@ public class BaubleBeam extends AbstractGuardianCard {
 
     //END TUNING CONSTANTS
 
-    public boolean gemCostModified;
-
     public BaubleBeam() {
         super(ID, NAME, GuardianMod.getResourcePath(IMG_PATH), COST, DESCRIPTION, TYPE, AbstractCardEnum.GUARDIAN, RARITY, TARGET);
 
@@ -66,15 +64,20 @@ public class BaubleBeam extends AbstractGuardianCard {
 
     }
 
+    @Override
+    public void addGemToSocket(AbstractGuardianCard gem) {
+        super.addGemToSocket(gem);
+        updateCost();
+    }
+
+    public void updateCost(){
+        this.upgradeBaseCost(3 - this.sockets.size());
+    }
+
+
 
     public AbstractCard makeCopy() {
         return new BaubleBeam();
-    }
-
-    @Override
-    public void triggerWhenDrawn() {
-        super.triggerWhenDrawn();
-
     }
 
     public void upgrade() {

@@ -28,19 +28,32 @@ public class FierceBash extends AbstractGuardianCard {
 
     //TUNING CONSTANTS
 
-    private static final int COST = 3;
+    private static final int COST = 5;
     private static final int DAMAGE = 30;
-    private static final int UPGRADE_BONUS = 10;
-    private static final int SOCKETS = 3;
+    private static final int UPGRADE_BONUS = 0;
+    private static final int DAMAGEPERTURNINSTASIS = 3;
+    private static final int UPGRADE_DAMAGEPERTURNINSTASIS = 3;
+    private static final int SOCKETS = 0;
     private static final boolean SOCKETSAREAFTER = true;
 
     //END TUNING CONSTANTS
+
+    public int turnsInStasis = 0;
+
+    public float calculateModifiedCardDamage(AbstractPlayer player, AbstractMonster mo, float tmp) {
+        super.calculateModifiedCardDamage(player, mo, tmp);
+        int bonus;
+
+        bonus = this.turnsInStasis * this.magicNumber;
+        return tmp + bonus;
+
+    }
 
     public FierceBash() {
         super(ID, NAME, GuardianMod.getResourcePath(IMG_PATH), COST, DESCRIPTION, TYPE, AbstractCardEnum.GUARDIAN, RARITY, TARGET);
 
         this.baseDamage = DAMAGE;
-
+        this.baseMagicNumber = this.magicNumber = DAMAGEPERTURNINSTASIS;
         //this.sockets.add(GuardianMod.socketTypes.RED);
         this.socketCount = SOCKETS;
         this.updateDescription();
@@ -65,6 +78,7 @@ public class FierceBash extends AbstractGuardianCard {
         if (!this.upgraded) {
             upgradeName();
             upgradeDamage(UPGRADE_BONUS);
+            upgradeMagicNumber(UPGRADE_DAMAGEPERTURNINSTASIS);
         }
 
 

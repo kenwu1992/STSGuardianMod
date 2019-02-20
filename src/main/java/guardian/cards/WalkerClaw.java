@@ -12,6 +12,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.vfx.combat.ClawEffect;
 import guardian.GuardianMod;
 import guardian.patches.AbstractCardEnum;
@@ -34,7 +35,7 @@ public class WalkerClaw extends AbstractGuardianCard {
     private static final int COST = 2;
     private static final int DAMAGE = 16;
     private static final int UPGRADE_BONUS = 4;
-    private static final int SOCKETS = 3;
+    private static final int SOCKETS = 0;
     private static final boolean SOCKETSAREAFTER = true;
 
     //END TUNING CONSTANTS
@@ -44,12 +45,21 @@ public class WalkerClaw extends AbstractGuardianCard {
 
         this.baseDamage = DAMAGE;
 
+        this.baseMagicNumber = 2;
         this.socketCount = SOCKETS;
         this.updateDescription();
 
     }
 
+    public float calculateModifiedCardDamage(AbstractPlayer player, AbstractMonster mo, float tmp) {
+        super.calculateModifiedCardDamage(player, mo, tmp);
+        int bonus = 0;
+        if (player.hasPower(StrengthPower.POWER_ID)){
+            bonus = player.getPower(StrengthPower.POWER_ID).amount;
+        }
+        return tmp + bonus;
 
+    }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         super.use(p, m);
@@ -69,6 +79,8 @@ public class WalkerClaw extends AbstractGuardianCard {
         if (!this.upgraded) {
             upgradeName();
             upgradeDamage(UPGRADE_BONUS);
+            this.socketCount++;
+            this.updateDescription();
         }
 
 
