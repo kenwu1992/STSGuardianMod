@@ -31,8 +31,8 @@ public class GemFire extends AbstractGuardianCard {
     //TUNING CONSTANTS
 
     private static final int COST = 2;
-    private static final int DAMAGE = 10;
-    private static final int UPGRADE_BONUS = 3;
+    private static final int DAMAGE = 15;
+    private static final int UPGRADE_BONUS = 5;
     private static final int SOCKETS = 0;
     private static final boolean SOCKETSAREAFTER = true;
 
@@ -72,7 +72,7 @@ public class GemFire extends AbstractGuardianCard {
     }
 
     public void updateDescription() {
-        if (SOCKETS > 0) this.rawDescription = this.updateGemDescription(cardStrings.DESCRIPTION, SOCKETSAREAFTER);
+        if (this.socketCount > 0) this.rawDescription = this.updateGemDescription(cardStrings.DESCRIPTION, SOCKETSAREAFTER);
         //GuardianMod.logger.info(DESCRIPTION);
         this.initializeDescription();
     }

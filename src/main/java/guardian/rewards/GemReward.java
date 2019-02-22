@@ -15,8 +15,8 @@ public class GemReward extends CustomReward {
 
     public GemReward() {
         super(TEXTURE, TEXT[2], RewardItemTypePatch.GEM);
-        GuardianMod.logger.info("New Gem Reward created, " + GuardianMod.getRewardGemCards().size() + "cards");
-        this.cards = GuardianMod.getRewardGemCards();
+        GuardianMod.logger.info("New Gem Reward created, " + GuardianMod.getRewardGemCards(true).size() + "cards");
+        this.cards = GuardianMod.getRewardGemCards(true);
     }
 
     @Override

@@ -58,7 +58,7 @@ public class Gem_Crimson extends AbstractGuardianCard {
     public static void gemEffect(AbstractPlayer p, AbstractMonster m) {
         for (AbstractMonster monster : AbstractDungeon.getMonsters().monsters) {
             if ((!monster.isDead) && (!monster.isDying)) {
-                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(monster, p, new VulnerablePower(AbstractDungeon.player, VULN, false), VULN));
+                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(monster, p, new VulnerablePower(monster, VULN, false), VULN));
 
             }
         }
@@ -72,7 +72,7 @@ public class Gem_Crimson extends AbstractGuardianCard {
     }
 
     public void updateDescription() {
-        if (SOCKETS > 0) this.rawDescription = this.updateGemDescription(cardStrings.DESCRIPTION, SOCKETSAREAFTER);
+        if (this.socketCount > 0) this.rawDescription = this.updateGemDescription(cardStrings.DESCRIPTION, SOCKETSAREAFTER);
         //GuardianMod.logger.info(DESCRIPTION);
         this.initializeDescription();
     }

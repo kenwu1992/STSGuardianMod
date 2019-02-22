@@ -29,7 +29,7 @@ public class PolyBeam extends AbstractGuardianCard {
     public static final String IMG_PATH = "cards/polybeam.png";
     private static final CardType TYPE = CardType.ATTACK;
     private static final CardRarity RARITY = CardRarity.COMMON;
-    private static final CardTarget TARGET = CardTarget.ENEMY;
+    private static final CardTarget TARGET = CardTarget.ALL_ENEMY;
 
     private static final CardStrings cardStrings;
 
@@ -93,7 +93,7 @@ public class PolyBeam extends AbstractGuardianCard {
     }
 
     public void updateDescription() {
-        if (SOCKETS > 0) this.rawDescription = this.updateGemDescription(cardStrings.DESCRIPTION, SOCKETSAREAFTER);
+        if (this.socketCount > 0) this.rawDescription = this.updateGemDescription(cardStrings.DESCRIPTION, SOCKETSAREAFTER);
         //GuardianMod.logger.info(DESCRIPTION);
         this.initializeDescription();
     }

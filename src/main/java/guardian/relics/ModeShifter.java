@@ -11,8 +11,8 @@ import guardian.powers.ModeShiftPower;
 
 public class ModeShifter extends CustomRelic {
     public static final String ID = "Guardian:ModeShifter";
-    public static final String IMG_PATH = "relics/minion.png";
-    public static final String OUTLINE_IMG_PATH = "relics/minionOutline.png";
+    public static final String IMG_PATH = "relics/modeShifter.png";
+    public static final String OUTLINE_IMG_PATH = "relics/modeShifterOutline.png";
     private static final int HP_PER_CARD = 1;
 
     public ModeShifter() {

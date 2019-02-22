@@ -40,7 +40,7 @@ public class FuturePlansPower extends AbstractGuardianPower {
     }
 
     public void atEndOfTurn(boolean isPlayer) {
-        if (isPlayer && !AbstractDungeon.player.hand.isEmpty()) {
+        if (isPlayer && !AbstractDungeon.player.hand.isEmpty() && AbstractDungeon.player.hasEmptyOrb()) {
             AbstractDungeon.actionManager.addToBottom(new PlaceCardsInHandIntoStasisAction(this.owner, this.amount));
         }
 

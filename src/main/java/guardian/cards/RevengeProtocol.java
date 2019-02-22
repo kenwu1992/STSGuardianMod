@@ -33,7 +33,7 @@ public class RevengeProtocol extends AbstractGuardianCard {
 
     private static final int COST = 1;
     private static final int STRENGTHFORTURN = 4;
-    private static final int UPGRADE_STRENGTHFORTURN = 6;
+    private static final int UPGRADE_STRENGTHFORTURN = 2;
     private static final int SOCKETS = 0;
     private static final boolean SOCKETSAREAFTER = true;
 
@@ -75,7 +75,7 @@ public class RevengeProtocol extends AbstractGuardianCard {
     }
 
     public void updateDescription() {
-        if (SOCKETS > 0) this.rawDescription = this.updateGemDescription(cardStrings.DESCRIPTION, SOCKETSAREAFTER);
+        if (this.socketCount > 0) this.rawDescription = this.updateGemDescription(cardStrings.DESCRIPTION, SOCKETSAREAFTER);
         //GuardianMod.logger.info(DESCRIPTION);
         this.initializeDescription();
     }

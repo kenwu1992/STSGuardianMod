@@ -13,6 +13,7 @@ import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.FlashAtkImgEffect;
@@ -43,18 +44,19 @@ public class PolyBeamAction extends AbstractGameAction {
             if (this.target.currentHealth > 0) {
                 this.target.damageFlash = true;
                 this.target.damageFlashFrames = 4;
-                AbstractDungeon.actionManager.addToTop(new SFXAction("ATTACK_MAGIC_BEAM_SHORT", 0.5F));
-                AbstractDungeon.actionManager.addToTop(new VFXAction(new SmallLaserEffect(this.target.hb.cX, this.target.hb.cY, info.owner.hb.cX, info.owner.hb.cY), 0.3F));
+                CardCrawlGame.sound.play("ATTACK_MAGIC_BEAM_SHORT", 0.5F);
 
-                AbstractDungeon.effectList.add(new FlashAtkImgEffect(this.target.hb.cX, this.target.hb.cY, this.attackEffect));
+
+                AbstractDungeon.topLevelEffects.add(new SmallLaserEffect(this.target.hb.cX, this.target.hb.cY, info.owner.hb.cX, info.owner.hb.cY));
+                AbstractDungeon.topLevelEffects.add(new FlashAtkImgEffect(this.target.hb.cX, this.target.hb.cY, this.attackEffect));
+
                 this.info.applyPowers(this.info.owner, this.target);
                 this.target.damage(this.info);
                 if (this.numTimes > 1 && !AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
                     --this.numTimes;
-                    AbstractDungeon.actionManager.addToTop(new PolyBeamAction(AbstractDungeon.getMonsters().getRandomMonster((AbstractMonster)null, true, AbstractDungeon.cardRandomRng), this.info, this.numTimes));
+                    AbstractDungeon.actionManager.addToBottom(new PolyBeamAction(AbstractDungeon.getMonsters().getRandomMonster((AbstractMonster)null, true, AbstractDungeon.cardRandomRng), this.info, this.numTimes));
                 }
 
-                AbstractDungeon.actionManager.addToTop(new WaitAction(0.2F));
             }
 
             this.isDone = true;

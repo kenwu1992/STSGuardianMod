@@ -40,13 +40,8 @@ public class FierceBash extends AbstractGuardianCard {
 
     public int turnsInStasis = 0;
 
-    public float calculateModifiedCardDamage(AbstractPlayer player, AbstractMonster mo, float tmp) {
-        super.calculateModifiedCardDamage(player, mo, tmp);
-        int bonus;
-
-        bonus = this.turnsInStasis * this.magicNumber;
-        return tmp + bonus;
-
+    public void stasisBonus(){
+        this.upgradeDamage(this.magicNumber);
     }
 
     public FierceBash() {
@@ -85,7 +80,7 @@ public class FierceBash extends AbstractGuardianCard {
     }
 
     public void updateDescription() {
-        if (SOCKETS > 0) this.rawDescription = this.updateGemDescription(cardStrings.DESCRIPTION, SOCKETSAREAFTER);
+        if (this.socketCount > 0) this.rawDescription = this.updateGemDescription(cardStrings.DESCRIPTION, SOCKETSAREAFTER);
         //GuardianMod.logger.info(DESCRIPTION);
         this.initializeDescription();
     }

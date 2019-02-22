@@ -44,7 +44,7 @@ package guardian.actions;
                                this.cannotDuplicate.add(c);
                              }
                        }
-            
+
             
                    if (this.cannotDuplicate.size() == this.p.hand.group.size()) {
                          this.isDone = true;
@@ -54,29 +54,21 @@ package guardian.actions;
                    if (this.p.hand.group.size() - this.cannotDuplicate.size() == 1) {
                          for (AbstractCard c : this.p.hand.group) {
                                if (isDualWieldable(c)) {
-                                     for ( i = 0; i < this.dupeAmount; i++) {
-                                           AbstractDungeon.actionManager.addToTop(new MakeTempCardInHandAction(c
-                 .makeStatEquivalentCopy()));
-                                         }
+                                   AbstractDungeon.actionManager.addToTop(new PlaceActualCardIntoStasis(c
+                                           .makeStatEquivalentCopy()));
                                      this.isDone = true;
                                      return;
                                    }
                              }
                        }
             
-            
-            
-                   this.p.hand.group.removeAll(this.cannotDuplicate);
-            
                    if (this.p.hand.group.size() > 1) {
                          AbstractDungeon.handCardSelectScreen.open(TEXT[0], 1, false, false, false, false);
                          tickDuration();
                          return; }
                    if (this.p.hand.group.size() == 1) {
-                         for (i = 0; i < this.dupeAmount; i++) {
-                               AbstractDungeon.actionManager.addToTop(new PlaceActualCardIntoStasis(this.p.hand
-             .getTopCard().makeStatEquivalentCopy()));
-                             }
+                       AbstractDungeon.actionManager.addToTop(new PlaceActualCardIntoStasis(this.p.hand
+                               .getTopCard().makeStatEquivalentCopy()));
                          returnCards();
                          this.isDone = true;
                        }
@@ -86,9 +78,6 @@ package guardian.actions;
              if (!AbstractDungeon.handCardSelectScreen.wereCardsRetrieved) {
                    for (AbstractCard c : AbstractDungeon.handCardSelectScreen.selectedCards.group) {
                          AbstractDungeon.actionManager.addToTop(new PlaceActualCardIntoStasis(c.makeStatEquivalentCopy()));
-                         for ( i = 0; i < this.dupeAmount; i++) {
-                               AbstractDungeon.actionManager.addToTop(new PlaceActualCardIntoStasis(c.makeStatEquivalentCopy()));
-                             }
                        }
             
                    returnCards();
@@ -102,7 +91,7 @@ package guardian.actions;
            }
     
        private void returnCards() {
-             for (AbstractCard c : this.cannotDuplicate) {
+             for (AbstractCard c : AbstractDungeon.handCardSelectScreen.selectedCards.group) {
                    this.p.hand.addToTop(c);
                  }
              this.p.hand.refreshHandLayout();

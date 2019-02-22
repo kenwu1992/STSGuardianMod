@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import guardian.GuardianMod;
 import guardian.actions.PlaceTopCardIntoStasisAction;
+import guardian.actions.ReduceRightMostStasisAction;
 import guardian.patches.AbstractCardEnum;
 
 import static guardian.GuardianMod.socketTypes.CYAN;
@@ -55,7 +56,7 @@ public class Gem_Yellow extends AbstractGuardianCard {
     }
 
     public static void gemEffect(AbstractPlayer p, AbstractMonster m){
-        AbstractDungeon.actionManager.addToBottom(new PlaceTopCardIntoStasisAction(1));
+        AbstractDungeon.actionManager.addToBottom(new ReduceRightMostStasisAction());
 
     }
 
@@ -68,7 +69,7 @@ public class Gem_Yellow extends AbstractGuardianCard {
     }
 
     public void updateDescription() {
-        if (SOCKETS > 0) this.rawDescription = this.updateGemDescription(cardStrings.DESCRIPTION, SOCKETSAREAFTER);
+        if (this.socketCount > 0) this.rawDescription = this.updateGemDescription(cardStrings.DESCRIPTION, SOCKETSAREAFTER);
         //GuardianMod.logger.info(DESCRIPTION);
         this.initializeDescription();
     }

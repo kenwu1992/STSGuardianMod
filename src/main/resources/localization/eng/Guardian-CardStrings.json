@@ -142,7 +142,7 @@
   },
   "Guardian:PackageDonuDeca": {
     "NAME": "Package: Ancients",
-    "DESCRIPTION": "Add an Ancient Power, Ancient Protection, and Poly Beam to your hand. NL Exhaust.",
+    "DESCRIPTION": "Add an Ancient Power, Ancient Protection, and Ancient Construct to your hand. NL Exhaust.",
     "UPGRADE_DESCRIPTION": "Add an Ancient Power, Ancient Protection, and Ancient Construct to your hand, each of which is Upgraded. NL Exhaust."
   },
   "Guardian:PackageSphere": {
@@ -162,8 +162,8 @@
   },
   "Guardian:PackageAutomaton": {
     "NAME": "Package: Bronze",
-    "DESCRIPTION": "Add a Hyper Beam, Guard Protocol, and Bronze Armor to your hand. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Add a Hyper Beam, Guard Protocol, and Bronze Armor to your hand, each of which is Upgraded. NL Exhaust."
+    "DESCRIPTION": "Add a Hyper Beam, Bronze Orb, and Bronze Armor to your hand. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Add a Hyper Beam, Bronze Orb, and Bronze Armor to your hand, each of which is Upgraded. NL Exhaust."
   },
   "Guardian:Planning": {
     "NAME": "Planning",
@@ -189,7 +189,7 @@
   },
   "Guardian:GemFinder": {
     "NAME": "Gem Finder",
-    "DESCRIPTION": "At the end of combat, choose a Gem to add to your deck."
+    "DESCRIPTION": "At the end of combat, choose a Common Gem to add to your deck."
   },
   "Guardian:StasisField": {
     "NAME": "Stasis Field",
@@ -210,9 +210,9 @@
     "UPGRADE_DESCRIPTION": "Place a card in your hand into Stasis. NL Draw a card."
   },
   "Guardian:Accelerate": {
-    "NAME": "Accelerate",
-    "DESCRIPTION": "Reduce the turn counter of all cards in Stasis by 1. NL Returning any cards in Stasis with a turn counter of 0 to your hand. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Reduce the turn counter of all cards in Stasis by 1. NL Returning any cards in Stasis with a turn counter of 0 to your hand."
+    "NAME": "Fast Forward",
+    "DESCRIPTION": "Accelerate all cards in Stasis. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Accelerate all cards in Stasis."
   },
   "Guardian:SyncronizedStrike": {
     "NAME": "Syncronized Strike",
@@ -313,7 +313,7 @@
   },
   "Guardian:Automayhem": {
     "NAME": "Time Sifter",
-    "DESCRIPTION": "At the end of your turn, reduce the cost of the right-most card in Stasis with a turn counter of 2 or more by 1."
+    "DESCRIPTION": "At the end of your turn, Accelerate the right-most card in Stasis with a turn counter of 2 or more."
   },
   "Guardian:Construct": {
     "NAME": "Ancient Construct",
@@ -330,8 +330,8 @@
   },
   "Guardian:Gem_Yellow": {
     "NAME": "Amber",
-    "DESCRIPTION": "Gem. NL Place the top card of your draw pile into Stasis.",
-    "UPGRADE_DESCRIPTION": "Place the top card of your draw pile into Stasis."
+    "DESCRIPTION": "Gem. NL Accelerate the right-most card in Stasis.",
+    "UPGRADE_DESCRIPTION": "Accelerate the right-most card in Stasis."
   },
   "Guardian:Gem_Purple": {
     "NAME": "Amethyst",
@@ -368,7 +368,7 @@
   },
   "Guardian:BronzeOrb": {
     "NAME": "Bronze Orb",
-    "DESCRIPTION": "Place a random card from your draw pile into Stasis. NL Deal !D! Damage. NL Gain !B! Block."
+    "DESCRIPTION": "Innate. NL Place a random card from your draw pile into Stasis. NL Deal !D! Damage. NL Gain !B! Block. NL Exhaust."
   },
   "Guardian:RevengeProtocol": {
     "NAME": "Revenge Protocol",

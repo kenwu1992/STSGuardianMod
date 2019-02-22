@@ -6,4 +6,6 @@ import com.megacrit.cardcrawl.rewards.RewardItem;
 public class RewardItemTypePatch {
     @SpireEnum
     public static RewardItem.RewardType GEM;
+    @SpireEnum
+    public static RewardItem.RewardType GEMALLRARITIES;
 }

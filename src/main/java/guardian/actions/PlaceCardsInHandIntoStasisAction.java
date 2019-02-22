@@ -27,7 +27,7 @@ public class PlaceCardsInHandIntoStasisAction extends AbstractGameAction {
 
     public void update() {
         if (this.duration == 0.5F) {
-            AbstractDungeon.handCardSelectScreen.open(TEXT[3], this.amount, false, false, false, false, true);
+            AbstractDungeon.handCardSelectScreen.open(TEXT[3], this.amount, false, true, false, false, true);
             AbstractDungeon.actionManager.addToBottom(new WaitAction(0.25F));
             this.tickDuration();
         } else {

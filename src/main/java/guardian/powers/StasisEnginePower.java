@@ -61,4 +61,10 @@ public class StasisEnginePower extends AbstractGuardianTwoAmountPower {
             }
         }
     }
+
+    @Override
+    public void atStartOfTurn() {
+        super.atStartOfTurn();
+        this.amount2 = 0;
+    }
 }

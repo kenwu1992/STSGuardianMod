@@ -78,9 +78,9 @@
 	"Guardian:GemFinderPower": {
 		"NAME": "Gem Finder",
 		"DESCRIPTIONS": [
-			"At the end of combat, choose a Gem to add to your deck.",
+			"At the end of combat, choose a Common Gem to add to your deck.",
 			"At the end of combat, choose ",
-			" Gems to add to your deck."
+			" Common Gems to add to your deck."
 		]
 	},
 	"Guardian:FuturePlansPower": {
@@ -187,7 +187,7 @@
 			" Strength until the end of your turn whenever your Block is broken."
 		]
 	},
-	"Guardian:StasisEngine": {
+	"Guardian:StasisEnginePower": {
 		"NAME": "Stasis Engine",
 		"DESCRIPTIONS": [
 			"Gain ",

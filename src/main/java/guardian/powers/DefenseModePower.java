@@ -16,6 +16,7 @@ import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.powers.ThornsPower;
 import guardian.GuardianMod;
 import guardian.characters.GuardianCharacter;
+import guardian.relics.DefensiveModeMoreBlock;
 
 
 public class DefenseModePower extends AbstractGuardianPower {
@@ -109,7 +110,9 @@ public class DefenseModePower extends AbstractGuardianPower {
     @Override
     public void onUseCard(AbstractCard card, UseCardAction action) {
         super.onUseCard(card, action);
-        AbstractDungeon.actionManager.addToBottom(new GainBlockAction(this.owner, this.owner, 2));
+        int block = 2;
+        if (AbstractDungeon.player.hasRelic(DefensiveModeMoreBlock.ID)) block++;
+        AbstractDungeon.actionManager.addToBottom(new GainBlockAction(this.owner, this.owner, block));
 
     }
 

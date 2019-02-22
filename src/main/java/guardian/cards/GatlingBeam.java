@@ -24,13 +24,13 @@ public class GatlingBeam extends AbstractGuardianCard {
     public static final String IMG_PATH = "cards/polybeam.png";
     private static final CardType TYPE = CardType.ATTACK;
     private static final CardRarity RARITY = CardRarity.RARE;
-    private static final CardTarget TARGET = CardTarget.ENEMY;
+    private static final CardTarget TARGET = CardTarget.ALL_ENEMY;
 
     private static final CardStrings cardStrings;
 
     //TUNING CONSTANTS
 
-    private static final int COST = 1;
+    private static final int COST = 5;
     private static final int DAMAGE = 5;
     private static final int MULTICOUNT = 5;
     private static final int SOCKETS = 0;
@@ -86,7 +86,7 @@ public class GatlingBeam extends AbstractGuardianCard {
     }
 
     public void updateDescription() {
-        if (SOCKETS > 0) this.rawDescription = this.updateGemDescription(cardStrings.DESCRIPTION, SOCKETSAREAFTER);
+        if (this.socketCount > 0) this.rawDescription = this.updateGemDescription(cardStrings.DESCRIPTION, SOCKETSAREAFTER);
         //GuardianMod.logger.info(DESCRIPTION);
         this.initializeDescription();
     }

@@ -31,8 +31,9 @@ import guardian.patches.GuardianEnum;
 import guardian.patches.RewardItemTypePatch;
 import guardian.powers.ExhaustStatusesPower;
 import guardian.powers.MultiBoostPower;
-import guardian.relics.ModeShifter;
+import guardian.relics.*;
 import guardian.rewards.GemReward;
+import guardian.rewards.GemRewardAllRarities;
 import guardian.ui.EnhanceBonfireOption;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -281,6 +282,15 @@ public class GuardianMod implements PostDrawSubscriber, PreMonsterTurnSubscriber
 
         //TODO - Relics here
         BaseMod.addRelicToCustomPool(new ModeShifter(), AbstractCardEnum.GUARDIAN);
+        BaseMod.addRelicToCustomPool(new ModeShifterPlus(), AbstractCardEnum.GUARDIAN);
+        BaseMod.addRelicToCustomPool(new BottledStasis(), AbstractCardEnum.GUARDIAN);
+        BaseMod.addRelicToCustomPool(new DefensiveModeMoreBlock(), AbstractCardEnum.GUARDIAN);
+        BaseMod.addRelicToCustomPool(new PocketSentry(), AbstractCardEnum.GUARDIAN);
+        BaseMod.addRelicToCustomPool(new SackOfGems(), AbstractCardEnum.GUARDIAN);
+        BaseMod.addRelicToCustomPool(new StasisCodex(), AbstractCardEnum.GUARDIAN);
+        BaseMod.addRelicToCustomPool(new StasisSlotIncreaseRelic(), AbstractCardEnum.GUARDIAN);
+        BaseMod.addRelicToCustomPool(new StasisSlotReductionRelic(), AbstractCardEnum.GUARDIAN);
+        BaseMod.addRelicToCustomPool(new StasisUpgradeRelic(), AbstractCardEnum.GUARDIAN);
 
 
         //TODO - Part of unlocks and shared mechanics
@@ -694,25 +704,30 @@ public static void saveData() {
         logger.info("done editing strings");
     }
 
-    public static ArrayList<AbstractCard> getRewardGemCards(){
+
+    public static ArrayList<AbstractCard> getRewardGemCards(boolean onlyCommon) {
+        return getRewardGemCards(onlyCommon,3);
+    }
+
+    public static ArrayList<AbstractCard> getRewardGemCards(boolean onlyCommon, int count){
         ArrayList<String> allGemCards = new ArrayList<>();
         ArrayList<AbstractCard> rewardGemCards = new ArrayList<>();
 
         allGemCards.add("RED");
         allGemCards.add("GREEN");
-        allGemCards.add("ORANGE");
+        if (!onlyCommon)allGemCards.add("ORANGE");
         allGemCards.add("CYAN");
         allGemCards.add("WHITE");
-        allGemCards.add("BLUE");
-        allGemCards.add("CRIMSON");
+        if (!onlyCommon)allGemCards.add("BLUE");
+        if (!onlyCommon)allGemCards.add("CRIMSON");
         allGemCards.add("FRAGMENTED");
-        allGemCards.add("PURPLE");
-        allGemCards.add("SYNTHETIC");
-        allGemCards.add("YELLOW");
+        if (!onlyCommon)allGemCards.add("PURPLE");
+        if (!onlyCommon)allGemCards.add("SYNTHETIC");
+        if (!onlyCommon)allGemCards.add("YELLOW");
 
         int rando;
         String ID;
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < count; i++) {
             rando = AbstractDungeon.cardRng.random(0, allGemCards.size() - 1);
             ID = allGemCards.get(rando);
             switch(ID){
@@ -749,6 +764,15 @@ public static void saveData() {
                     return new RewardSave(customReward.type.toString(), null);
                 });
 
+        BaseMod.registerCustomReward(
+                RewardItemTypePatch.GEMALLRARITIES,
+                (rewardSave) -> { //on load
+                    GuardianMod.logger.info("gems loaded");
+                    return new GemRewardAllRarities();
+                }, (customReward) -> { //on save
+                    GuardianMod.logger.info("gems saved");
+                    return new RewardSave(customReward.type.toString(), null);
+                });
 
 
         logger.info("Load Badge Image and mod options");

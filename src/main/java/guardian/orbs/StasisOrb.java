@@ -21,6 +21,7 @@ import guardian.cards.FierceBash;
 import guardian.cards.Orbwalk;
 import guardian.cards.SpacetimeBattery;
 import guardian.cards.TimeBomb;
+import guardian.relics.StasisUpgradeRelic;
 import guardian.vfx.AddCardToStasisEffect;
 
 
@@ -43,9 +44,6 @@ public class StasisOrb extends AbstractOrb {
         this.name = orbString.NAME + stasisCard.name;
 
         this.channelAnimTimer = 0.5F;
-        if (card.freeToPlayOnce){
-            this.basePassiveAmount = this.passiveAmount = 1;
-        } else {
             if (card.isCostModifiedForTurn){
                 this.basePassiveAmount = this.passiveAmount = card.costForTurn + 1;
             }
@@ -53,11 +51,16 @@ public class StasisOrb extends AbstractOrb {
                 this.basePassiveAmount = this.passiveAmount = card.cost + 1;
             }
 
-        }
         if (this.basePassiveAmount < 1){
             this.basePassiveAmount = this.passiveAmount = 1;
         }
         card.targetAngle = 0F;
+
+        if (AbstractDungeon.player != null){
+            if (AbstractDungeon.player.hasRelic(StasisUpgradeRelic.ID)){
+                card.upgrade();
+            }
+        }
 
         this.updateDescription();
     }
@@ -86,7 +89,7 @@ public class StasisOrb extends AbstractOrb {
             GuardianMod.stasisDelay = false;
         }
         if (this.stasisCard instanceof FierceBash){
-            ((FierceBash)this.stasisCard).turnsInStasis++;
+            ((FierceBash)this.stasisCard).stasisBonus();
         }
         if (this.stasisCard instanceof Orbwalk){
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new StrengthPower(AbstractDungeon.player, 1), 1));

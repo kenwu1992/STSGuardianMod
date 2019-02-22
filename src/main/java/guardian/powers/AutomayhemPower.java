@@ -5,8 +5,10 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
+import guardian.actions.PlaceActualCardIntoStasis;
 import guardian.actions.PlaceRandom1CostIntoStasis;
 import guardian.actions.PlaceTopCardIntoStasisAction;
+import guardian.actions.ReduceRightMostStasisAction;
 import guardian.orbs.StasisOrb;
 
 
@@ -49,16 +51,10 @@ public class AutomayhemPower extends AbstractGuardianPower {
         super.atEndOfTurn(isPlayer);
         if (isPlayer){
             if (AbstractDungeon.player.orbs.size() > 0){
+                this.flash();
                 for (int i = 0; i < this.amount; i++) {
-                    for (AbstractOrb o:AbstractDungeon.player.orbs){
-                        if (o instanceof StasisOrb){
-                            if (((StasisOrb)o).passiveAmount > 1){
-                                ((StasisOrb)o).passiveAmount--;
-                                this.flash();
-                                break;
-                            }
-                        }
-                    }
+                    AbstractDungeon.actionManager.addToBottom(new ReduceRightMostStasisAction());
+
                 }
 
             }

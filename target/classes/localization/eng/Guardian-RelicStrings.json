@@ -5,5 +5,78 @@
     "DESCRIPTIONS": [
       "When you lose 10 HP, gain 10 Block and Defensive Mode for 2 turns. NL Each activation increases the amount of HP required to activate again."
     ]
+  },
+  "Guardian:ModeShifterPlus": {
+    "NAME": "Guardian Gear",
+    "FLAVOR": "Replace every 3,000 floors.",
+    "DESCRIPTIONS": [
+      "Begin each combat in Defensive Mode and extend its duration to 3 turns."
+    ]
+  },
+  "Guardian:DefensiveModeMoreBlock": {
+    "NAME": "Bronze Armor Plate",
+    "FLAVOR": "One can never have enough armor.",
+    "DESCRIPTIONS": [
+      "When you use a card while in Defensive Mode, gain 1 more Block."
+    ]
+  },
+  "Guardian:GemCopier": {
+    "NAME": "Gem Tumbler",
+    "FLAVOR": "Only the most pristine will do.",
+    "DESCRIPTIONS": [
+      "When you play a Gem card, play a copy of it."
+    ]
+  },
+  "Guardian:PocketSentry": {
+    "NAME": "Pocket Sentry",
+    "FLAVOR": "Sentry Mode active. Target acquired. No hard feelings.",
+    "DESCRIPTIONS": [
+      "Begin each combat with a Sentry Wave."
+    ]
+  },
+  "Guardian:SackOfGems": {
+    "NAME": "Sack of Gems",
+    "FLAVOR": "Ooh... shiny!",
+    "DESCRIPTIONS": [
+      "Upon pickup, choose and add 5 Gems to your deck."
+    ]
+  },
+  "Guardian:StasisCodex": {
+    "NAME": "Construct's Codex",
+    "FLAVOR": "Designs and diagrams of the Spire's earliest prototypes.",
+    "DESCRIPTIONS": [
+      "If you end your turn with no cards in Stasis, choose 1 of 3 cards to place into Stasis."
+    ]
+  },
+  "Guardian:StasisSlotIncreaseRelic": {
+    "NAME": "Tiny Police Box",
+    "FLAVOR": "It's bigger on the inside...",
+    "DESCRIPTIONS": [
+      "Gain 2 Stasis slots."
+    ]
+  },
+  "Guardian:StasisSlotReductionRelic": {
+    "NAME": "Evacuation Plans",
+    "FLAVOR": "Instructions for escaping the Spire.  Best not to let them fall into the wrong hands.",
+    "DESCRIPTIONS": [
+      "On pickup, lose 2 Stasis slots. NL Gain [E] at the start of your turn."
+    ]
+  },
+  "Guardian:StasisUpgradeRelic": {
+    "NAME": "Cryo Chamber",
+    "FLAVOR": "Things always seem better coming out than they did going in.",
+    "DESCRIPTIONS": [
+      "When a card enters Stasis, Upgrade it."
+    ]
+  },
+  "Guardian:BottledStasis": {
+    "NAME": "Bottled Black Hole",
+    "FLAVOR": "Somewhere, something incredible is waiting to be known.",
+    "DESCRIPTIONS": [
+      "Upon pickup, choose a #Card. Start each combat with this card in Stasis.",
+      "Choose a card for ",
+      "Start each combat with ",
+      " in Stasis."
+    ]
   }
 }

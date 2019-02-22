@@ -4,7 +4,9 @@ package guardian.ui;
 
         import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
         import com.megacrit.cardcrawl.helpers.ImageMaster;
+        import com.megacrit.cardcrawl.helpers.ModHelper;
         import com.megacrit.cardcrawl.localization.UIStrings;
+        import com.megacrit.cardcrawl.rooms.AbstractRoom;
         import com.megacrit.cardcrawl.ui.campfire.AbstractCampfireOption;
         import guardian.GuardianMod;
         import guardian.vfx.SocketGemEffect;
@@ -54,6 +56,7 @@ public class EnhanceBonfireOption extends AbstractCampfireOption
             this.description = DESCRIPTIONS[2];
             this.img = ImageMaster.loadImage(GuardianMod.getResourcePath("ui/scrapcampfiredisabled.png"));
         }
+
     }
 
     static {

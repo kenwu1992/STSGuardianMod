@@ -47,5 +47,12 @@
   ],
     "PROPERNAME": "Ward",
   "DESCRIPTION": "Wards are #b0 cost Skill cards which provide Block, and Exhaust."
-}
+},
+  {
+    "NAMES": [
+      "accelerate"
+    ],
+    "PROPERNAME": "Accelerate",
+    "DESCRIPTION": "Reduce the turn counter of a card in Stasis by 1. If the card now costs 0, return it to your hand."
+  }
 ]

@@ -3,6 +3,7 @@ guardian\actions\CardToTopOfDrawPileAction.class
 guardian\powers\BronzeOrbDamagePower.class
 guardian\cards\Gem_White.class
 guardian\cards\AbstractGuardianCard$2.class
+guardian\relics\DefensiveModeMoreBlock.class
 guardian\actions\RandomProtocolAction.class
 guardian\cards\Repulse.class
 guardian\cards\RollAttack.class
@@ -22,9 +23,11 @@ guardian\powers\LoseThornsPower.class
 guardian\cards\Clone.class
 guardian\actions\PlaceTopCardIntoStasisAction.class
 guardian\cards\SpikyScales.class
+guardian\patches\BottledStasisPatch$MakeStatEquivalentCopy.class
 guardian\cards\SentryWave.class
 guardian\cards\Automayhem.class
 guardian\cards\FierceBash.class
+guardian\relics\PocketSentry.class
 guardian\patches\RewardItemTypePatch.class
 guardian\cards\RevengeProtocol.class
 guardian\cards\TimeCapacitor.class
@@ -48,6 +51,8 @@ guardian\powers\MultiBoostPower.class
 guardian\cards\BronzeArmor.class
 guardian\actions\DestroyOrbSlotForDamageAction.class
 guardian\actions\zzzGuardianSwitchModesAction.class
+guardian\relics\SackOfGems.class
+guardian\relics\StasisSlotIncreaseRelic.class
 guardian\cards\SharpenScales.class
 guardian\vfx\FloatingOrbsEffect.class
 guardian\cards\zzzSpikerProtocol.class
@@ -64,6 +69,7 @@ guardian\ui\EnhanceBonfireOption.class
 guardian\cards\PackageAutomaton.class
 guardian\cards\ConstructionForm.class
 guardian\cards\StasisField.class
+guardian\relics\GemCopier.class
 guardian\cards\PackageSentry.class
 guardian\powers\ModeShiftPower.class
 guardian\powers\FloatingOrbsPower.class
@@ -82,6 +88,7 @@ guardian\cards\Strike_Guardian.class
 guardian\powers\BronzeOrbLocationPower.class
 guardian\cards\PackageDonuDeca.class
 guardian\cards\zzzCallForBackup.class
+guardian\relics\StasisUpgradeRelic.class
 guardian\powers\ConstructModePower.class
 guardian\cards\Gem_Purple.class
 guardian\cards\zzzSyncronizedStrike.class
@@ -97,6 +104,7 @@ guardian\patches\CampfirePatch.class
 guardian\powers\DefenseModePower.class
 guardian\cards\PrimingBeam.class
 guardian\actions\SwitchToDefenseModeAction.class
+guardian\rewards\GemRewardAllRarities.class
 guardian\patches\SetupItemReward.class
 guardian\cards\Gem_Orange.class
 guardian\cards\TimeBomb.class
@@ -110,8 +118,10 @@ guardian\cards\Suspension.class
 guardian\cards\CompilePackage.class
 guardian\actions\PlaceCardsInHandIntoStasisAction.class
 guardian\screens\SocketGemScreen.class
+guardian\relics\ModeShifterPlus.class
 guardian\actions\PlaceRandom1CostIntoStasis.class
 guardian\cards\zzzBlastProtocol.class
+guardian\relics\BottledStasis.class
 guardian\actions\CloneAction.class
 guardian\cards\ChargeCore.class
 guardian\cards\BronzeOrb.class
@@ -119,6 +129,7 @@ guardian\cards\Orbwalk.class
 guardian\powers\ExhaustStatusesPower.class
 guardian\powers\StasisEnginePower.class
 guardian\powers\BronzeOrbProtectionPower.class
+guardian\relics\StasisSlotReductionRelic.class
 guardian\cards\AbstractGuardianCard$1.class
 guardian\cards\GemFinder.class
 guardian\patches\GuardianEnum.class
@@ -146,10 +157,13 @@ guardian\cards\Gem_Cyan.class
 guardian\cards\SentryBeam.class
 guardian\actions\PreprogramAction.class
 guardian\orbs\StasisOrb.class
+guardian\actions\ReduceRightMostStasisAction.class
+guardian\relics\StasisCodex.class
 guardian\cards\CrystalBeam.class
 guardian\patches\RenderStasisPreviewInFrontPatch.class
 guardian\cards\DonusPower.class
 guardian\vfx\SocketGemEffect.class
+guardian\actions\StasisCodexAction.class
 guardian\cards\CurlUp.class
 guardian\actions\PolyBeamAction.class
 guardian\cards\GatlingBeam.class
@@ -165,4 +179,5 @@ guardian\cards\PolyBeam.class
 guardian\patches\AbstractCardEnum.class
 guardian\cards\Emergency.class
 guardian\powers\ClonePower.class
+guardian\patches\BottledStasisPatch.class
 guardian\cards\SpacetimeBattery.class
