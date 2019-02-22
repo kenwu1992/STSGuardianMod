@@ -3,6 +3,8 @@ package guardian.patches;
 import com.evacipated.cardcrawl.modthespire.lib.SpireField;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import guardian.cards.AbstractGuardianCard;
+import guardian.cards.BaubleBeam;
 
 @SpirePatch(
         clz= AbstractCard.class,
@@ -21,6 +23,15 @@ public class BottledStasisPatch
         public static AbstractCard Postfix(AbstractCard __result, AbstractCard __instance)
         {
             inBottledStasis.set(__result, inBottledStasis.get(__instance));
+            if (__instance instanceof AbstractGuardianCard){
+                ((AbstractGuardianCard)__result).sockets = ((AbstractGuardianCard)__instance).sockets;
+                if (__result instanceof BaubleBeam){
+                    ((BaubleBeam)__result).updateCost();
+                }
+
+            }
+
+            ((AbstractGuardianCard)__result).updateDescription();
             return __result;
         }
     }

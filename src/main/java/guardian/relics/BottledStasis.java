@@ -115,6 +115,7 @@ public class BottledStasis extends CustomRelic implements CustomBottleRelic, Cus
             cardSelected = true;
             card = AbstractDungeon.gridSelectScreen.selectedCards.get(0);
             BottledStasisPatch.inBottledStasis.set(card, true);
+            GuardianMod.logger.info("card's bottle state: " + isOnCard());
             AbstractDungeon.getCurrRoom().phase = AbstractRoom.RoomPhase.COMPLETE;
 
             AbstractDungeon.gridSelectScreen.selectedCards.clear();

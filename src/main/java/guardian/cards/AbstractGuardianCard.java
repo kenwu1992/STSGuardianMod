@@ -410,40 +410,4 @@ public abstract class AbstractGuardianCard extends CustomCard implements CustomS
         return tmp + bonus;
     }
 
-    @Override
-    public AbstractCard makeStatEquivalentCopy() {
-        AbstractCard card = this.makeCopy();
-
-        for(int i = 0; i < this.timesUpgraded; ++i) {
-            card.upgrade();
-        }
-
-        card.name = this.name;
-        card.target = this.target;
-        card.upgraded = this.upgraded;
-        card.timesUpgraded = this.timesUpgraded;
-        card.baseDamage = this.baseDamage;
-        card.baseBlock = this.baseBlock;
-        card.baseMagicNumber = this.baseMagicNumber;
-        card.cost = this.cost;
-        card.costForTurn = this.costForTurn;
-        card.isCostModified = this.isCostModified;
-        card.isCostModifiedForTurn = this.isCostModifiedForTurn;
-        card.inBottleLightning = this.inBottleLightning;
-        card.inBottleFlame = this.inBottleFlame;
-        card.inBottleTornado = this.inBottleTornado;
-        card.isSeen = this.isSeen;
-        card.isLocked = this.isLocked;
-        card.misc = this.misc;
-        card.freeToPlayOnce = this.freeToPlayOnce;
-        ((AbstractGuardianCard)card).sockets = this.sockets;
-        if (this instanceof BaubleBeam){
-            ((BaubleBeam) this).updateCost();
-        }
-
-       // GuardianMod.logger.info("SEcopy sockets this: " + this.sockets);
-       // GuardianMod.logger.info("SEcopy sockets c: " + ((AbstractGuardianCard)card).sockets);
-        ((AbstractGuardianCard)card).updateDescription();
-        return card;
-    }
 }
