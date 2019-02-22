@@ -2,7 +2,6 @@ package guardian.cards;
 
 
 
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -12,7 +11,6 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import guardian.GuardianMod;
 import guardian.actions.PlaceActualCardIntoStasis;
 import guardian.patches.AbstractCardEnum;
-import guardian.powers.BronzeOrbExplodePower;
 
 public class TimeBomb extends AbstractGuardianCard {
     public static final String ID = GuardianMod.makeID("TimeBomb");

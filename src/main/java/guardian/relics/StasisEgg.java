@@ -27,7 +27,7 @@ public class StasisEgg extends CustomRelic implements CustomBottleRelic, CustomS
     public StasisEgg()
     {
         super(ID, new Texture(GuardianMod.getResourcePath(IMG_PATH)), new Texture(GuardianMod.getResourcePath(OUTLINE_IMG_PATH)),
-                RelicTier.SHOP, LandingSound.FLAT);    }
+                RelicTier.SPECIAL, LandingSound.FLAT);    }
 
 
 
@@ -150,18 +150,21 @@ public class StasisEgg extends CustomRelic implements CustomBottleRelic, CustomS
                 this.flash();
                 card.current_x = this.currentX;
                 card.current_y = this.currentY;
-                AbstractDungeon.player.hand.addToTop(card);
 
                 AbstractCard copy = card.makeStatEquivalentCopy();
                 AbstractCard copy2 = card.makeStatEquivalentCopy();
+                AbstractCard copy3 = card.makeStatEquivalentCopy();
 
                 copy.current_x = card.current_x;
                 copy.current_y = card.current_y;
                 copy2.current_x = card.current_x;
                 copy2.current_y = card.current_y;
+                copy3.current_x = card.current_x;
+                copy3.current_y = card.current_y;
 
                 AbstractDungeon.player.hand.addToTop(copy);
                 AbstractDungeon.player.hand.addToTop(copy2);
+                AbstractDungeon.player.hand.addToTop(copy3);
             }
         }
 

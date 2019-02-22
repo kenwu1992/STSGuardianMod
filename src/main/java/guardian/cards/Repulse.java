@@ -49,17 +49,10 @@ public class Repulse extends AbstractGuardianCard {
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         super.use(p,m);
-        if (p.hasPower(DefensiveModeBuffsPower.POWER_ID)){
-            ((DefensiveModeBuffsPower)p.getPower(DefensiveModeBuffsPower.POWER_ID)).statusNegation += this.magicNumber;
-            p.getPower(DefensiveModeBuffsPower.POWER_ID).flash();
-        } else {
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DefensiveModeBuffsPower(p, p, 0,0,0, this.magicNumber, 0)));
-        }
-        if (p.hasPower(DefenseModePower.POWER_ID)){
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new ExhaustStatusesPower(p, p, this.magicNumber), this.magicNumber));
-        }
+
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new ExhaustStatusesPower(p, p, this.magicNumber), this.magicNumber));
+
        
-        AbstractDungeon.actionManager.addToBottom(new SwitchToDefenseModeAction(p));
 
     }
 

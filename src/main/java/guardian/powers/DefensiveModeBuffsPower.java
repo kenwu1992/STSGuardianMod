@@ -21,7 +21,7 @@ public class DefensiveModeBuffsPower extends AbstractGuardianPower {
 
         this.ID = POWER_ID;
         this.owner = owner;
-        this.setImage("Orbwalk84.png", "Orbwalk32.png");
+        this.setImage("DefensiveModeBuffsPower84.png", "DefensiveModeBuffsPower32.png");
         this.type = POWER_TYPE;
         this.DESCRIPTIONS = CardCrawlGame.languagePack.getPowerStrings(this.ID).DESCRIPTIONS;
         this.name = CardCrawlGame.languagePack.getPowerStrings(this.ID).NAME;
@@ -52,10 +52,11 @@ public class DefensiveModeBuffsPower extends AbstractGuardianPower {
         }
         if (this.metallicize > 0){
             desc += this.metallicize + DESCRIPTIONS[3];
-            if (this.statusNegation > 0 || this.enrage > 0) {
+            if (/*this.statusNegation > 0 || */this.enrage > 0) {
                 desc += " NL ";
             }
         }
+        /*
         if (this.statusNegation > 0){
             if (this.statusNegation == 1){
                 desc += DESCRIPTIONS[4];
@@ -67,6 +68,7 @@ public class DefensiveModeBuffsPower extends AbstractGuardianPower {
                 desc += " NL ";
             }
         }
+        */
         if (this.enrage > 0){
             desc += DESCRIPTIONS[7] + this.enrage + DESCRIPTIONS[8];
         }

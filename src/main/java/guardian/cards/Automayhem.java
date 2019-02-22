@@ -22,7 +22,7 @@ public class Automayhem extends AbstractGuardianCard {
     public static final String NAME;
     public static final String DESCRIPTION;
     public static String UPGRADED_DESCRIPTION;
-    public static final String IMG_PATH = "cards/automayhem.png";
+    public static final String IMG_PATH = "cards/hourglass.png";
 
     private static final CardStrings cardStrings;
     private static final CardType TYPE = CardType.POWER;

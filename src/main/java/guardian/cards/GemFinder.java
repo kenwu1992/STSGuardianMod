@@ -12,7 +12,6 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import guardian.GuardianMod;
 import guardian.patches.AbstractCardEnum;
 import guardian.powers.GemFinderPower;
-import guardian.powers.OrbwalkPower;
 
 public class GemFinder extends AbstractGuardianCard {
     public static final String ID = GuardianMod.makeID("GemFinder");

@@ -68,9 +68,11 @@ public class DefenseModePower extends AbstractGuardianPower {
             if (extraThorns > 0){
                 AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.owner, this.owner, new ThornsPower(this.owner, extraThorns), extraThorns));
             }
+            /*
             if (extraStatusNegation > 0){
                 AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.owner, this.owner, new ExhaustStatusesPower(this.owner, this.owner, extraStatusNegation), extraStatusNegation));
             }
+            */
             if (extraEnrage > 0){
                 AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.owner, this.owner, new RevengePower(this.owner, this.owner, extraEnrage), extraEnrage));
             }
@@ -156,6 +158,7 @@ public class DefenseModePower extends AbstractGuardianPower {
             }
         }
 
+        /*
         int trueExhausts = 0;
         if (this.owner.hasPower(DefensiveModeBuffsPower.POWER_ID)){
             trueExhausts += ((DefensiveModeBuffsPower)this.owner.getPower(DefensiveModeBuffsPower.POWER_ID)).statusNegation;
@@ -167,6 +170,7 @@ public class DefenseModePower extends AbstractGuardianPower {
                 AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(this.owner, this.owner, ExhaustStatusesPower.POWER_ID, trueExhausts));
             }
         }
+        */
 
         int trueEnrage = 0;
         if (this.owner.hasPower(DefensiveModeBuffsPower.POWER_ID)){

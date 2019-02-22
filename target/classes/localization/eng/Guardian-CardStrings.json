@@ -129,11 +129,13 @@
   },
   "Guardian:SentryBeam": {
     "NAME": "Sentry Beam",
-    "DESCRIPTION": "Deal !D! Damage. NL Place a Sentry Wave on top of your draw pile. NL Exhaust."
+    "DESCRIPTION": "Deal !D! Damage. NL Place a Sentry Wave on top of your draw pile. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Deal !D! Damage. NL Place an Upgraded Sentry Wave on top of your draw pile. NL Exhaust."
   },
   "Guardian:SentryWave": {
     "NAME": "Sentry Wave",
-    "DESCRIPTION": "Apply !M! Weak to ALL enemies. NL Draw a card. NL Place a Sentry Beam on top of your draw pile. NL Exhaust."
+    "DESCRIPTION": "Apply !M! Weak to ALL enemies. NL Draw a card. NL Place a Sentry Beam on top of your draw pile. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Apply !M! Weak to ALL enemies. NL Draw a card. NL Place an Upgraded Sentry Beam on top of your draw pile. NL Exhaust."
   },
   "Guardian:CompilePackage": {
     "NAME": "Compile Package",
@@ -288,8 +290,8 @@
   },
   "Guardian:ExploitGems": {
     "NAME": "Exploit Gems",
-    "DESCRIPTION": "Perform the following X times: NL Gain [E].",
-    "UPGRADE_DESCRIPTION": "Perform the following X+1 times: NL Gain [E]."
+    "DESCRIPTION": "Draw a card.",
+    "UPGRADE_DESCRIPTION": "Gain [E]. NL Draw a card."
   },
   "Guardian:RefractedBeam": {
     "NAME": "Refracted Beam",
@@ -370,9 +372,9 @@
     "DESCRIPTION": "Gain !B! Block. NL Exhaust."
   },
   "Guardian:Repulse": {
-    "NAME": "Repulsor Protocol",
-    "DESCRIPTION": "Exhaust the first Status or Curse drawn each turn while in Defensive Mode. NL Enter Defensive Mode.",
-    "UPGRADE_DESCRIPTION": "Exhaust the first 2 Status or Curse cards drawn each turn while in Defensive Mode. NL Enter Defensive Mode."
+    "NAME": "Repulsor",
+    "DESCRIPTION": "Exhaust the first Status or Curse drawn each turn.",
+    "UPGRADE_DESCRIPTION": "Exhaust the first 2 Status or Curse cards drawn each turn."
   },
   "Guardian:BronzeOrb": {
     "NAME": "Bronze Orb",
@@ -387,7 +389,7 @@
     "DESCRIPTION": "Deal !D! damage to a random enemy !M! times. NL Increase the damage dealt by Beam cards by !M! this combat. NL Exhaust."
   },
   "Guardian:SpacetimeBattery": {
-    "NAME": "Spacetime Battery",
+    "NAME": "Shield Charger",
     "DESCRIPTION": "Gain !B! Block. NL If this card is in Stasis at the start of your turn, gain !M! Block."
   },
   "Guardian:StasisEngine": {

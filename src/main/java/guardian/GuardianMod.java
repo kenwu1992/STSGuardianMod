@@ -8,8 +8,6 @@ import com.badlogic.gdx.graphics.Texture;
 import com.evacipated.cardcrawl.modthespire.Loader;
 import com.evacipated.cardcrawl.modthespire.lib.SpireEnum;
 import com.google.gson.Gson;
-import com.megacrit.cardcrawl.actions.animations.ShoutAction;
-import com.megacrit.cardcrawl.actions.animations.TalkAction;
 import com.megacrit.cardcrawl.actions.common.ExhaustSpecificCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
@@ -24,7 +22,6 @@ import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.rewards.RewardSave;
-import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import com.megacrit.cardcrawl.vfx.ThoughtBubble;
 import guardian.cards.*;
@@ -39,7 +36,7 @@ import guardian.patches.BottledStasisPatch;
 import guardian.patches.GuardianEnum;
 import guardian.patches.RewardItemTypePatch;
 import guardian.powers.ExhaustStatusesPower;
-import guardian.powers.MultiBoostPower;
+import guardian.powers.zzz.MultiBoostPower;
 import guardian.relics.*;
 import guardian.rewards.GemReward;
 import guardian.rewards.GemRewardAllRarities;
@@ -77,6 +74,7 @@ public class GuardianMod implements PostDrawSubscriber, PreMonsterTurnSubscriber
     public static ArrayList<Texture> socketTextures = new ArrayList<>();
     public static ArrayList<Texture> socketTextures2 = new ArrayList<>();
     public static ArrayList<Texture> socketTextures3 = new ArrayList<>();
+    public static ArrayList<Texture> socketTextures4 = new ArrayList<>();
 
     public static final Float stasisCardRenderScale = 0.2F;
 
@@ -861,10 +859,9 @@ public static void saveData() {
 
         //TODO - Events here
 
-        BaseMod.addEvent(GemMine.ID, GemMine.class, TheCity.ID);
-        BaseMod.addEvent(GemMine.ID, GemMine.class, TheBeyond.ID);
-        BaseMod.addEvent(StasisEgg.ID, StasisEgg.class, Exordium.ID);
-        BaseMod.addEvent(StasisEgg.ID, StasisEgg.class, TheCity.ID);
+        BaseMod.addEvent(GemMine.ID, GemMine.class, Exordium.ID);
+        BaseMod.addEvent(StasisEgg.ID, StasisEgg.class, TheBeyond.ID);
+
         BaseMod.addEvent(BackToBasicsGuardian.ID, BackToBasicsGuardian.class, TheCity.ID);
         BaseMod.addEvent(AccursedBlacksmithGuardian.ID, AccursedBlacksmithGuardian.class, TheCity.ID);
 
@@ -920,6 +917,18 @@ public static void saveData() {
         socketTextures3.add(ImageMaster.loadImage(getResourcePath("/cardIcons/templated/512/purplegem3.png")));
         socketTextures3.add(ImageMaster.loadImage(getResourcePath("/cardIcons/templated/512/blackgem3.png")));
         socketTextures3.add(ImageMaster.loadImage(getResourcePath("/cardIcons/templated/512/yellowgem3.png")));
+        socketTextures4.add(ImageMaster.loadImage(getResourcePath("/cardIcons/templated/512/emptysocket4.png")));
+        socketTextures4.add(ImageMaster.loadImage(getResourcePath("/cardIcons/templated/512/redgem4.png")));
+        socketTextures4.add(ImageMaster.loadImage(getResourcePath("/cardIcons/templated/512/greengem4.png")));
+        socketTextures4.add(ImageMaster.loadImage(getResourcePath("/cardIcons/templated/512/orangegem4.png")));
+        socketTextures4.add(ImageMaster.loadImage(getResourcePath("/cardIcons/templated/512/whitegem4.png")));
+        socketTextures4.add(ImageMaster.loadImage(getResourcePath("/cardIcons/templated/512/cyangem4.png")));
+        socketTextures4.add(ImageMaster.loadImage(getResourcePath("/cardIcons/templated/512/bluegem4.png")));
+        socketTextures4.add(ImageMaster.loadImage(getResourcePath("/cardIcons/templated/512/crimsongem4.png")));
+        socketTextures4.add(ImageMaster.loadImage(getResourcePath("/cardIcons/templated/512/fraggem4.png")));
+        socketTextures4.add(ImageMaster.loadImage(getResourcePath("/cardIcons/templated/512/purplegem4.png")));
+        socketTextures4.add(ImageMaster.loadImage(getResourcePath("/cardIcons/templated/512/blackgem4.png")));
+        socketTextures4.add(ImageMaster.loadImage(getResourcePath("/cardIcons/templated/512/yellowgem3.png")));
 
     }
 

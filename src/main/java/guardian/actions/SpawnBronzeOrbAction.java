@@ -14,10 +14,10 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.ThornsPower;
 import guardian.GuardianMod;
 import guardian.orbs.StasisOrb;
-import guardian.powers.BronzeOrbBlockPower;
-import guardian.powers.BronzeOrbDamagePower;
-import guardian.powers.BronzeOrbExplodePower;
-import guardian.powers.BronzeOrbWeakenPower;
+import guardian.powers.zzzGuardianModePower.BronzeOrbBlockPower;
+import guardian.powers.zzzGuardianModePower.BronzeOrbDamagePower;
+import guardian.powers.zzzGuardianModePower.BronzeOrbExplodePower;
+import guardian.powers.zzzGuardianModePower.BronzeOrbWeakenPower;
 
 import kobting.friendlyminions.characters.AbstractPlayerWithMinions;
 

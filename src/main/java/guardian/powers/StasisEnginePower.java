@@ -26,7 +26,7 @@ public class StasisEnginePower extends AbstractGuardianTwoAmountPower {
 
         this.ID = POWER_ID;
         this.owner = owner;
-        this.setImage("Orbwalk84.png", "Orbwalk32.png");
+        this.setImage("StasisEngine84.png", "StasisEngine32.png");
         this.type = POWER_TYPE;
         this.amount = 1;
         this.amount2 = 0;

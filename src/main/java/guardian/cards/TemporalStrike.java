@@ -49,16 +49,6 @@ public class TemporalStrike extends AbstractGuardianCard {
     }
 
 
-
-    @Override
-    public float calculateModifiedCardDamage(AbstractPlayer player, AbstractMonster mo, float tmp) {
-        super.calculateModifiedCardDamage(player, mo, tmp);
-        tmp += + GuardianMod.getStasisCount() * this.magicNumber;
-
-        return tmp;
-
-    }
-
     public void use(AbstractPlayer p, AbstractMonster m) {
 
 

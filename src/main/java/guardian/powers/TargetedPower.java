@@ -27,7 +27,7 @@ public class TargetedPower extends AbstractGuardianPower {
         this.owner = owner;
         this.source = source;
 
-        this.setImage("Burning84.png", "Burning32.png");
+        this.setImage("Targeted84.png", "Targeted32.png");
 
         this.type = POWER_TYPE;
         this.amount = amount;

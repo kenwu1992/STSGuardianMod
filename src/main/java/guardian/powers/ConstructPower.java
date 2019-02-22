@@ -18,7 +18,7 @@ public class ConstructPower extends AbstractGuardianPower {
         this.ID = POWER_ID;
         this.owner = owner;
         this.source = source;
-        this.setImage("Orbwalk84.png", "Orbwalk32.png");
+        this.setImage("Construct84.png", "Construct32.png");
         this.type = POWER_TYPE;
         this.amount = amount;
         this.DESCRIPTIONS = CardCrawlGame.languagePack.getPowerStrings(this.ID).DESCRIPTIONS;

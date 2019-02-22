@@ -12,8 +12,6 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import guardian.GuardianMod;
 import guardian.patches.AbstractCardEnum;
-import guardian.powers.FloatingOrbsPower;
-import guardian.powers.OrbwalkPower;
 
 public class Orbwalk extends AbstractGuardianCard {
     public static final String ID = GuardianMod.makeID("Orbwalk");

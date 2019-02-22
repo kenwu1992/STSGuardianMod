@@ -74,21 +74,6 @@ public class TemporalShield extends AbstractGuardianCard {
         }
     }
 
-    @Override
-    public void update() {
-        super.update();
-        if (this.lastKnownStasisCount != GuardianMod.getStasisCount()){
-            this.lastKnownStasisCount = GuardianMod.getStasisCount();
-            this.baseBlock = BLOCK + this.lastKnownStasisCount * this.magicNumber;
-            if (this.lastKnownStasisCount == 0) {
-                this.upgradedBlock = false;
-            } else {
-                this.upgradedBlock = true;
-            }
-        }
-
-    }
-
     public void updateDescription() {
         if (this.socketCount > 0) this.rawDescription = this.updateGemDescription(cardStrings.DESCRIPTION, SOCKETSAREAFTER);
         //GuardianMod.logger.info(DESCRIPTION);

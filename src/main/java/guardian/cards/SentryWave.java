@@ -60,6 +60,7 @@ public class SentryWave extends AbstractGuardianCard {
         }
         AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, 1));
         AbstractGuardianCard newCard = new SentryBeam();
+        if (this.upgraded) newCard.upgrade();
 
         AbstractDungeon.actionManager.addToBottom(new CardToTopOfDrawPileAction(newCard));
 
@@ -74,6 +75,8 @@ public class SentryWave extends AbstractGuardianCard {
         if (!this.upgraded) {
             upgradeName();
             upgradeMagicNumber(UPGRADE_DEBUFF);
+            this.rawDescription = UPGRADED_DESCRIPTION;
+            this.initializeDescription();
         }
     }
 
