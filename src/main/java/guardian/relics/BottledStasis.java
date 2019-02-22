@@ -4,13 +4,11 @@ import basemod.abstracts.CustomBottleRelic;
 import basemod.abstracts.CustomRelic;
 import basemod.abstracts.CustomSavable;
 import com.badlogic.gdx.graphics.Texture;
-import com.megacrit.cardcrawl.actions.utility.QueueCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.PowerTip;
-import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import guardian.GuardianMod;
@@ -19,6 +17,8 @@ import guardian.patches.BottledStasisPatch;
 
 import java.util.function.Predicate;
 
+import static guardian.GuardianMod.logger;
+
 public class BottledStasis extends CustomRelic implements CustomBottleRelic, CustomSavable<Integer> {
     public static final String ID = "Guardian:BottledStasis";
     public static final String IMG_PATH = "relics/bottledStasis.png";
@@ -26,20 +26,26 @@ public class BottledStasis extends CustomRelic implements CustomBottleRelic, Cus
     private boolean cardSelected = true;
     private AbstractCard card = null;
 
-    public BottledStasis() {
+    public BottledStasis()
+    {
         super(ID, new Texture(GuardianMod.getResourcePath(IMG_PATH)), new Texture(GuardianMod.getResourcePath(OUTLINE_IMG_PATH)),
-                RelicTier.SHOP, LandingSound.FLAT);
-    }
+                RelicTier.SHOP, LandingSound.FLAT);    }
 
     @Override
-    public void atBattleStartPreDraw() {
-        super.atBattleStartPreDraw();
-        AbstractDungeon.actionManager.addToBottom(new PlaceActualCardIntoStasis(card));
-    }
+    public Predicate<AbstractCard> isOnCard()
+    {
 
-    @Override
-    public Predicate<AbstractCard> isOnCard() {
         return BottledStasisPatch.inBottledStasis::get;
+    }
+
+    @Override
+    public String getUpdatedDescription() {
+        return DESCRIPTIONS[0];
+    }
+
+    public AbstractCard getCard()
+    {
+        return card.makeCopy();
     }
 
     @Override
@@ -64,19 +70,6 @@ public class BottledStasis extends CustomRelic implements CustomBottleRelic, Cus
     }
 
     @Override
-    public String getUpdatedDescription() {
-        return this.DESCRIPTIONS[0];
-    }
-
-    public void setDescriptionAfterLoading() {
-        this.description = this.DESCRIPTIONS[2] + FontHelper.colorString(this.card.name, "y") + this.DESCRIPTIONS[3];
-        this.tips.clear();
-        this.tips.add(new PowerTip(this.name, this.description));
-        this.initializeTips();
-    }
-
-
-    @Override
     public void onEquip()
     {
         cardSelected = false;
@@ -88,7 +81,7 @@ public class BottledStasis extends CustomRelic implements CustomBottleRelic, Cus
         AbstractDungeon.getCurrRoom().phase = AbstractRoom.RoomPhase.INCOMPLETE;
         CardGroup tmp = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
         for (AbstractCard c : CardGroup.getGroupWithoutBottledCards(AbstractDungeon.player.masterDeck).group) {
-            tmp.addToTop(c);
+                tmp.addToTop(c);
         }
         AbstractDungeon.gridSelectScreen.open(tmp,
                 1, DESCRIPTIONS[1] + name + ".",
@@ -115,7 +108,6 @@ public class BottledStasis extends CustomRelic implements CustomBottleRelic, Cus
             cardSelected = true;
             card = AbstractDungeon.gridSelectScreen.selectedCards.get(0);
             BottledStasisPatch.inBottledStasis.set(card, true);
-            GuardianMod.logger.info("card's bottle state: " + isOnCard());
             AbstractDungeon.getCurrRoom().phase = AbstractRoom.RoomPhase.COMPLETE;
 
             AbstractDungeon.gridSelectScreen.selectedCards.clear();
@@ -123,8 +115,24 @@ public class BottledStasis extends CustomRelic implements CustomBottleRelic, Cus
         }
     }
 
+    private void setDescriptionAfterLoading()
+    {
+        this.description = this.DESCRIPTIONS[2] + FontHelper.colorString(this.card.name, "y") + this.DESCRIPTIONS[3];
+        tips.clear();
+        tips.add(new PowerTip(name, description));
+        initializeTips();
+    }
+
     @Override
-    public AbstractRelic makeCopy() {
+    public AbstractRelic makeCopy()
+    {
         return new BottledStasis();
     }
+
+    @Override
+    public void atBattleStartPreDraw() {
+        super.atBattleStartPreDraw();
+        AbstractDungeon.actionManager.addToBottom(new PlaceActualCardIntoStasis(card));
+    }
+
 }

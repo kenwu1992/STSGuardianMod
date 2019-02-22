@@ -27,6 +27,7 @@ import guardian.cards.*;
 import guardian.helpers.MultihitVariable;
 import guardian.helpers.SecondaryMagicVariable;
 import guardian.orbs.StasisOrb;
+import guardian.patches.BottledStasisPatch;
 import guardian.patches.GuardianEnum;
 import guardian.patches.RewardItemTypePatch;
 import guardian.powers.ExhaustStatusesPower;
@@ -284,6 +285,7 @@ public class GuardianMod implements PostDrawSubscriber, PreMonsterTurnSubscriber
         BaseMod.addRelicToCustomPool(new ModeShifter(), AbstractCardEnum.GUARDIAN);
         BaseMod.addRelicToCustomPool(new ModeShifterPlus(), AbstractCardEnum.GUARDIAN);
         BaseMod.addRelicToCustomPool(new BottledStasis(), AbstractCardEnum.GUARDIAN);
+        BaseMod.registerBottleRelic(BottledStasisPatch.inBottledStasis, new BottledStasis());
         BaseMod.addRelicToCustomPool(new DefensiveModeMoreBlock(), AbstractCardEnum.GUARDIAN);
         BaseMod.addRelicToCustomPool(new PocketSentry(), AbstractCardEnum.GUARDIAN);
         BaseMod.addRelicToCustomPool(new SackOfGems(), AbstractCardEnum.GUARDIAN);
