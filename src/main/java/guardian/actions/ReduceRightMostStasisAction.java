@@ -15,13 +15,17 @@ import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.vfx.combat.FlashAtkImgEffect;
 import com.megacrit.cardcrawl.vfx.combat.SmallLaserEffect;
 import guardian.orbs.StasisOrb;
+import guardian.powers.AutomayhemPower;
 
 public class ReduceRightMostStasisAction extends AbstractGameAction {
 
-    public ReduceRightMostStasisAction() {
+    private boolean fromRelic;
+
+    public ReduceRightMostStasisAction(boolean fromRelic) {
         this.actionType = ActionType.DAMAGE;
         this.attackEffect = AttackEffect.SLASH_HORIZONTAL;
         this.duration = 0.01F;
+        this.fromRelic = fromRelic;
 
     }
 
@@ -32,6 +36,7 @@ public class ReduceRightMostStasisAction extends AbstractGameAction {
                     if (o instanceof StasisOrb){
                         if (((StasisOrb)o).passiveAmount > 1){
                             ((StasisOrb)o).passiveAmount--;
+                            if (this.fromRelic) AbstractDungeon.player.getPower(AutomayhemPower.POWER_ID).flash();
                             break;
                         }
                     }

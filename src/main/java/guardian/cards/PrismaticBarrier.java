@@ -44,7 +44,6 @@ public class PrismaticBarrier extends AbstractGuardianCard {
 
 
         this.baseBlock = BLOCK;
-        //this.tags.add(BaseModCardTags.BASIC_DEFEND);
         this.socketCount = SOCKETS;
         this.updateDescription();
 

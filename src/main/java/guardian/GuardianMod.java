@@ -5,6 +5,7 @@ import basemod.interfaces.*;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
+import com.evacipated.cardcrawl.modthespire.Loader;
 import com.evacipated.cardcrawl.modthespire.lib.SpireEnum;
 import com.google.gson.Gson;
 import com.megacrit.cardcrawl.actions.animations.ShoutAction;
@@ -15,6 +16,9 @@ import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.dungeons.Exordium;
+import com.megacrit.cardcrawl.dungeons.TheBeyond;
+import com.megacrit.cardcrawl.dungeons.TheCity;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -24,6 +28,10 @@ import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import com.megacrit.cardcrawl.vfx.ThoughtBubble;
 import guardian.cards.*;
+import guardian.events.AccursedBlacksmithGuardian;
+import guardian.events.BackToBasicsGuardian;
+import guardian.events.GemMine;
+import guardian.events.StasisEgg;
 import guardian.helpers.MultihitVariable;
 import guardian.helpers.SecondaryMagicVariable;
 import guardian.orbs.StasisOrb;
@@ -186,6 +194,23 @@ public class GuardianMod implements PostDrawSubscriber, PreMonsterTurnSubscriber
         return retVal;
     }
 
+    public static CardGroup getCardsWithSockets() {
+        CardGroup retVal = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
+        Iterator var2 = AbstractDungeon.player.masterDeck.group.iterator();
+
+        while(var2.hasNext()) {
+            AbstractCard c = (AbstractCard)var2.next();
+            if (c instanceof AbstractGuardianCard) {
+                AbstractGuardianCard cg = (AbstractGuardianCard) c;
+                if (cg.socketCount > 0){
+                    retVal.group.add(c);
+                }
+            }
+        }
+
+        return retVal;
+    }
+
     public static CardGroup getGemCards() {
         CardGroup retVal = new CardGroup(CardGroup.CardGroupType.MASTER_DECK);
         Iterator var2 = AbstractDungeon.player.masterDeck.group.iterator();
@@ -293,6 +318,8 @@ public class GuardianMod implements PostDrawSubscriber, PreMonsterTurnSubscriber
         BaseMod.addRelicToCustomPool(new StasisSlotIncreaseRelic(), AbstractCardEnum.GUARDIAN);
         BaseMod.addRelicToCustomPool(new StasisSlotReductionRelic(), AbstractCardEnum.GUARDIAN);
         BaseMod.addRelicToCustomPool(new StasisUpgradeRelic(), AbstractCardEnum.GUARDIAN);
+        BaseMod.addRelicToCustomPool(new guardian.relics.StasisEgg(), AbstractCardEnum.GUARDIAN);
+        BaseMod.registerBottleRelic(BottledStasisPatch.inStasisEgg, new guardian.relics.StasisEgg());
 
 
         //TODO - Part of unlocks and shared mechanics
@@ -833,19 +860,22 @@ public static void saveData() {
         //Dungeon patch contains the content sharing event logic
 
         //TODO - Events here
-        /*
-        BaseMod.addEvent(Hunted.ID, Hunted.class, TheCity.ID);
-        BaseMod.addEvent(Hunted.ID, Hunted.class, TheBeyond.ID);
-        BaseMod.addEvent(ArtOfSlimeWar.ID, ArtOfSlimeWar.class, TheCity.ID);
+
+        BaseMod.addEvent(GemMine.ID, GemMine.class, TheCity.ID);
+        BaseMod.addEvent(GemMine.ID, GemMine.class, TheBeyond.ID);
+        BaseMod.addEvent(StasisEgg.ID, StasisEgg.class, Exordium.ID);
+        BaseMod.addEvent(StasisEgg.ID, StasisEgg.class, TheCity.ID);
+        BaseMod.addEvent(BackToBasicsGuardian.ID, BackToBasicsGuardian.class, TheCity.ID);
+        BaseMod.addEvent(AccursedBlacksmithGuardian.ID, AccursedBlacksmithGuardian.class, TheCity.ID);
+
 
         if (Loader.isModLoaded("TheJungle")){
-            BaseMod.addEvent(Hunted.ID, Hunted.class, Jungle.ID);
-            BaseMod.addEvent(ArtOfSlimeWar.ID, ArtOfSlimeWar.class, Jungle.ID);
+            BaseMod.addEvent(GemMine.ID, GemMine.class, "TheJungle");
+            BaseMod.addEvent(StasisEgg.ID, StasisEgg.class, "TheJungle");
         }
 
-        BaseMod.addEvent(WorldOfGoopSlimebound.ID, WorldOfGoopSlimebound.class, Exordium.ID);
 
-        */
+
 
         //BaseMod.addEvent(ArtOfSlimeWar.ID, ArtOfSlimeWar.class, Exordium.ID);
 

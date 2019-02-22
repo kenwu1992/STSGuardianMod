@@ -32,6 +32,8 @@ public abstract class AbstractGuardianCard extends CustomCard implements CustomS
     public boolean upgradesecondaryM;
     public boolean isSecondaryMModified;
 
+    public int eventSockets;
+
     public AbstractGuardianCard(String id, String name, String img, int cost, String rawDescription, CardType type, CardColor color,
                                 CardRarity rarity, CardTarget target) {
 
@@ -53,11 +55,14 @@ public abstract class AbstractGuardianCard extends CustomCard implements CustomS
     @Override
     public ArrayList<Integer> onSave()
     {
-        if (sockets.size() > 0){
+        if (sockets.size() > 0 || eventSockets > 0){
+
         ArrayList<Integer> savedSockets = new ArrayList<>();
-        for (int i = 0; i < socketCount; i++) {
-            if (sockets.size() > i) {
-                switch (sockets.get(i)) {
+        savedSockets.add(this.eventSockets);
+
+            for (int i = 1; i < socketCount + 1; i++) {
+            if (sockets.size() > i - 1) {
+                switch (sockets.get(i - 1)) {
                     case RED:
                         savedSockets.add(0);
                         break;
@@ -103,7 +108,11 @@ public abstract class AbstractGuardianCard extends CustomCard implements CustomS
     @Override
     public void onLoad(ArrayList<Integer> loadedSockets) {
         if (loadedSockets != null){
-        for (int i = 0; i < socketCount; i++) {
+
+            if (loadedSockets.get(0) > 0){
+                this.socketCount += loadedSockets.get(0);
+            }
+        for (int i = 1; i < socketCount + 1; i++) {
             if (loadedSockets.size() > i) {
                 switch (loadedSockets.get(i)) {
                     case 0:

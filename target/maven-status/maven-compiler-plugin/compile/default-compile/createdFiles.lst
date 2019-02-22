@@ -74,11 +74,14 @@ guardian\cards\PackageSentry.class
 guardian\powers\ModeShiftPower.class
 guardian\powers\FloatingOrbsPower.class
 guardian\helpers\MultihitVariable.class
+guardian\events\AccursedBlacksmithGuardian.class
 guardian\powers\TargetedPower.class
+guardian\events\BackToBasicsGuardian$1.class
 guardian\powers\GemFinderPower.class
 guardian\cards\zzzMultiBoost.class
 guardian\cards\Preprogram.class
 guardian\powers\BeamBuffPower.class
+guardian\events\BackToBasicsGuardian.class
 guardian\cards\GuardianWhirl.class
 guardian\GuardianMod$socketTypes.class
 guardian\actions\CompilePackageAction.class
@@ -92,6 +95,7 @@ guardian\relics\StasisUpgradeRelic.class
 guardian\powers\ConstructModePower.class
 guardian\cards\Gem_Purple.class
 guardian\cards\zzzSyncronizedStrike.class
+guardian\events\BackToBasicsGuardian$CUR_SCREEN.class
 guardian\cards\HyperBeam_Guardian.class
 guardian\cards\OrbSlam.class
 guardian\cards\Harden.class
@@ -115,6 +119,8 @@ guardian\actions\StasisEvokeIfRoomInHandAction.class
 guardian\powers\DefensiveModeBuffsPower.class
 guardian\actions\PlaceActualCardIntoStasis.class
 guardian\cards\Suspension.class
+guardian\relics\StasisEgg.class
+guardian\patches\EventOverridePatch.class
 guardian\cards\CompilePackage.class
 guardian\actions\PlaceCardsInHandIntoStasisAction.class
 guardian\screens\SocketGemScreen.class
@@ -128,6 +134,7 @@ guardian\cards\BronzeOrb.class
 guardian\cards\Orbwalk.class
 guardian\powers\ExhaustStatusesPower.class
 guardian\powers\StasisEnginePower.class
+guardian\cards\StrikeTwo.class
 guardian\powers\BronzeOrbProtectionPower.class
 guardian\relics\StasisSlotReductionRelic.class
 guardian\cards\AbstractGuardianCard$1.class
@@ -162,6 +169,7 @@ guardian\relics\StasisCodex.class
 guardian\cards\CrystalBeam.class
 guardian\patches\RenderStasisPreviewInFrontPatch.class
 guardian\cards\DonusPower.class
+guardian\events\GemMine.class
 guardian\vfx\SocketGemEffect.class
 guardian\actions\StasisCodexAction.class
 guardian\cards\CurlUp.class
@@ -169,9 +177,11 @@ guardian\actions\PolyBeamAction.class
 guardian\cards\GatlingBeam.class
 guardian\characters\GuardianCharacter.class
 guardian\powers\AbstractGuardianPower.class
+guardian\cards\DefendTwo.class
 guardian\powers\ConstructPower.class
 guardian\powers\BronzeOrbWeakenPower.class
 guardian\powers\NextTurnGainStrengthPower.class
+guardian\events\StasisEgg.class
 guardian\cards\WalkerClaw.class
 guardian\powers\BronzeOrbBlockPower.class
 guardian\patches\ArtifactPatch.class

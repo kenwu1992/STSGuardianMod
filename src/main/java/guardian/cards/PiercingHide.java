@@ -46,7 +46,6 @@ public class PiercingHide extends AbstractGuardianCard {
 
         this.baseBlock = BLOCK;
         this.baseMagicNumber = this.magicNumber = THORNS;
-        //this.tags.add(BaseModCardTags.BASIC_DEFEND);
         this.socketCount = SOCKETS;
         this.updateDescription();
 

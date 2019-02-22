@@ -51,9 +51,9 @@ public class AutomayhemPower extends AbstractGuardianPower {
         super.atEndOfTurn(isPlayer);
         if (isPlayer){
             if (AbstractDungeon.player.orbs.size() > 0){
-                this.flash();
+
                 for (int i = 0; i < this.amount; i++) {
-                    AbstractDungeon.actionManager.addToBottom(new ReduceRightMostStasisAction());
+                    AbstractDungeon.actionManager.addToBottom(new ReduceRightMostStasisAction(true));
 
                 }
 

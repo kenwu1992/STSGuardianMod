@@ -3,9 +3,17 @@
     "NAME": "Strike",
     "DESCRIPTION": "Deal !D! damage."
   },
+  "Guardian:StrikeTwo": {
+    "NAME": "Double Strike",
+    "DESCRIPTION": "Deal !D! damage twice."
+  },
   "Guardian:Defend_Guardian": {
     "NAME": "Defend",
     "DESCRIPTION": "Gain !B! Block."
+  },
+  "Guardian:DefendTwo": {
+    "NAME": "Double Defend",
+    "DESCRIPTION": "Gain !B! Block twice."
   },
   "Guardian:Gem_Red": {
     "NAME": "Ruby",
