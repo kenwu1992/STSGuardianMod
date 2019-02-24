@@ -30,7 +30,7 @@ public class GemFire extends AbstractGuardianCard {
 
     //TUNING CONSTANTS
 
-    private static final int COST = 2;
+    private static final int COST = 0;
     private static final int DAMAGE = 15;
     private static final int UPGRADE_BONUS = 5;
     private static final int SOCKETS = 0;

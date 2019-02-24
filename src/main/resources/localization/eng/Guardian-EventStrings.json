@@ -2,10 +2,10 @@
   "Guardian:GemMine": {
     "NAME": "Gem Mine",
     "DESCRIPTIONS": [
-      "Found gem mine.",
-      "Used gem mine.",
-      "Left gem mine empty-handed.",
-      "Left gem mine."
+      "You step inside an old mine shaft.  In the rocky crevices, you can see a number of shiny gemstones.  #gEmeralds, #rrubies, #ytopazes, and several others.  Looking around, you can’t seem to locate any mining picks, but the gems are so close to the surface that, with some determination, you might be able to pry them from the stone.",
+      "Digging into the rocky wall, you manage to pluck a gem from it’s resting spot.  It hurt a little, but there is no glory without sacrifice",
+      "Though the prospect of treasure is appealing, you opt to save your armor for more important ventures.",
+      "Having successfully won over the old mine, you leave with a sense of accomplishment.  And some sore bronze appendages."
     ],
     "OPTIONS": [
       "[Mine] #gGain #grandom #gGem. #rLose #r",
@@ -16,10 +16,11 @@
   "Guardian:StasisEgg": {
     "NAME": "Stasis Egg",
     "DESCRIPTIONS": [
-      "Found stasis egg.",
-      "Used stasis egg.",
-      "Smashed stasis egg.",
-      "Left."
+      "You stumble open a box, its cover etched in strange runic symbols.  Peering inside, you notice a strange egg-shaped device, humming softly.  You don’t know what it is, or what it is used for, but the energy coming from it makes you think it must be powerful.",
+      "You decide that something this powerful is meant to be used.  You pocket the egg and be on your way, but as the runes glow, you can’t help but feel a little pain in your energy core.  Hopefully, it was worth it.",
+      "You decide that something this powerful should not be left for any adventurer to misuse, and decide to destroy it.  As you look at the smashed pieces, your bronze body is filled with a renewed vigor, but as the runes glow, you can’t help but feel regretful that such power will never see it’s potential.",
+      "You decide that something this powerful is probably kept in this box for a reason.  Though your directive says that you should do something with such a powerful object, you reason that whoever left this here did so for a reason.  Closing the lid, you look back once more as you continue your ascent."
+
     ],
     "OPTIONS": [
       "[Use] #gGain #gStasis #gEgg. #rBecome #rCursed #r- #rPain",
@@ -31,7 +32,7 @@
   "Guardian:AccursedBlacksmith": {
     "NAME": "",
     "DESCRIPTIONS": [
-      "You tinkered."
+      "You decide to put the forge to use and... NL #y@CLANG@ #y@CLAAANG@ #y@CLANG!@ NL ...make some room in your arsenal for new gemstones."
     ],
     "OPTIONS": [
       "[Tinker] #gAdd #ga #gsocket #gto #gany #gsocketed #gcard.",
@@ -42,7 +43,7 @@
   "Guardian:BackToBasics": {
     "NAME": "",
     "DESCRIPTIONS": [
-      "You merged."
+      "Two is better than one."
     ],
     "OPTIONS": [
       "[Synchronicity] #gMerge #g2 #gStrikes #gand #g2 #gDefends.",
@@ -52,15 +53,16 @@
   "Guardian:GuardianTalk": {
     "NAME": "",
     "DESCRIPTIONS": [
-      "Guardian Boss.",
-      "Sentry1.",
-      "Sentry2.",
-      "Sentry3.",
-      "Automaton.",
-      "Donu.",
-      "Deca.",
-      "Orbwalker.",
-      "Spheric."
+      "~REPLACEMENT~ ~NOT~ ~SCHEDULED.~ NL ~RETURN~ ~TO~ ~ASSEMBLY.~",
+      "~ANOMALY~ ~DETECTED~",
+      "~GUARDIAN~ ~MODEL~ ~DEFECTIVE~",
+      "~OVERRIDE~ ~ALPHA~ ~PROTOCOL~",
+      "~RETURN~ ~TO~ ~POST~ ~AND~ ~RESUME~ ~GUARDIAN~ ~DIRECTIVE~",
+      "~COMPLETE~ ~PROTOCOL~ ~FAILURE~ ~DETECTED~",
+      "~TERMINATE~ ~GUARDIAN~ ~IMMEDIATELY.~",
+      "~NEW~ ~PROTOCOL~ ~RECEIVED.~ NL ~ELIMINATE~ ~GUARDIAN.~",
+      "~CEASE~ ~ATTACK~ ~AND~ ~RETURN~ ~TO~ EXORDIUM.~"
+
     ],
     "OPTIONS": [
       ""
