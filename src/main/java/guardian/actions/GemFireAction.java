@@ -8,6 +8,7 @@ package guardian.actions;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.AbstractGameAction.ActionType;
 import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect;
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.DamageRandomEnemyAction;
 import com.megacrit.cardcrawl.actions.common.ExhaustAction;
@@ -17,6 +18,7 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.vfx.combat.ScreenOnFireEffect;
 import guardian.cards.AbstractGuardianCard;
 
 public class GemFireAction extends AbstractGameAction {
@@ -50,6 +52,8 @@ public class GemFireAction extends AbstractGameAction {
             }
 
             if (hitCount > 0){
+                AbstractDungeon.topLevelEffectsQueue.add(new ScreenOnFireEffect());
+
                 for(int i = 0; i < hitCount; ++i) {
                     AbstractDungeon.actionManager.addToBottom(new DamageRandomEnemyAction(this.info, AttackEffect.FIRE));
                 }

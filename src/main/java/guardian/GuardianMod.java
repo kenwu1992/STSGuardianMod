@@ -35,6 +35,7 @@ import guardian.orbs.StasisOrb;
 import guardian.patches.BottledStasisPatch;
 import guardian.patches.GuardianEnum;
 import guardian.patches.RewardItemTypePatch;
+import guardian.potions.AcceleratePotion;
 import guardian.powers.ExhaustStatusesPower;
 import guardian.powers.zzz.MultiBoostPower;
 import guardian.relics.*;
@@ -86,7 +87,15 @@ public class GuardianMod implements PostDrawSubscriber, PreMonsterTurnSubscriber
 
     public static EnhanceBonfireOption socketBonfireOption;
 
-
+    public static boolean talked1 = false;
+    public static boolean talked2 = false;
+    public static boolean talked3 = false;
+    public static boolean talked4 = false;
+    public static boolean talked5 = false;
+    public static boolean talked6 = false;
+    public static boolean talked7 = false;
+    public static boolean talked8 = false;
+    public static boolean talked9 = false;
 
     private ModPanel settingsPanel;
 
@@ -401,7 +410,7 @@ public class GuardianMod implements PostDrawSubscriber, PreMonsterTurnSubscriber
         BaseMod.addCard(new Planning());
         BaseMod.addCard(new Emergency());
         BaseMod.addCard(new GemFinder());
-        BaseMod.addCard(new Accelerate());
+        BaseMod.addCard(new FastForward());
         BaseMod.addCard(new FuturePlans());
         BaseMod.addCard(new Suspension());
         BaseMod.addCard(new TimeCapacitor());
@@ -427,7 +436,7 @@ public class GuardianMod implements PostDrawSubscriber, PreMonsterTurnSubscriber
         BaseMod.addCard(new SpikyScales());
         BaseMod.addCard(new ArmoredScales());
         BaseMod.addCard(new SlickScales());
-        BaseMod.addCard(new Automayhem());
+        BaseMod.addCard(new TimeSifter());
         BaseMod.addCard(new CrystalBeam());
         BaseMod.addCard(new Construct());
         BaseMod.addCard(new Gem_Blue());
@@ -934,7 +943,7 @@ public static void saveData() {
 
     public void refreshPotions(){
         /*
-        BaseMod.removePotion(ThreeZeroPotion.POTION_ID);
+        BaseMod.removePotion(AcceleratePotion.POTION_ID);
         BaseMod.removePotion(SlimedPotion.POTION_ID);
         BaseMod.removePotion(SpawnSlimePotion.POTION_ID);
         BaseMod.removePotion(SlimyTonguePotion.POTION_ID);
@@ -944,18 +953,9 @@ public static void saveData() {
     }
 
     public void addPotions(){
-        /*
-        if (contentSharing_potions){
-            BaseMod.addPotion(ThreeZeroPotion.class, Color.FOREST, Color.BLACK, Color.BLACK, ThreeZeroPotion.POTION_ID);
-            BaseMod.addPotion(SlimedPotion.class, Color.PURPLE, Color.PURPLE, Color.MAROON, SlimedPotion.POTION_ID);
-        } else {
-            BaseMod.addPotion(ThreeZeroPotion.class, Color.FOREST, Color.BLACK, Color.BLACK, ThreeZeroPotion.POTION_ID, GuardianEnum.GUARDIAN);
-            BaseMod.addPotion(SlimedPotion.class, Color.PURPLE, Color.PURPLE, Color.MAROON, SlimedPotion.POTION_ID, GuardianEnum.GUARDIAN);
 
-        }
-        BaseMod.addPotion(SpawnSlimePotion.class, Color.GREEN, Color.FOREST, Color.BLACK, SpawnSlimePotion.POTION_ID, GuardianEnum.GUARDIAN);
-        BaseMod.addPotion(SlimyTonguePotion.class, Color.PURPLE, Color.PURPLE, Color.MAROON, SlimyTonguePotion.POTION_ID, GuardianEnum.GUARDIAN);
-*/
+        BaseMod.addPotion(AcceleratePotion.class, Color.GOLDENROD, Color.GOLD, Color.YELLOW, AcceleratePotion.POTION_ID, GuardianEnum.GUARDIAN);
+
     }
 
     public static void updateStasisCount(){

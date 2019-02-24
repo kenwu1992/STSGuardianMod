@@ -48,5 +48,22 @@
       "[Synchronicity] #gMerge #g2 #gStrikes #gand #g2 #gDefends.",
       "[Locked] Requires 2 Strikes and 2 Defends."
     ]
+  },
+  "Guardian:GuardianTalk": {
+    "NAME": "",
+    "DESCRIPTIONS": [
+      "Guardian Boss.",
+      "Sentry1.",
+      "Sentry2.",
+      "Sentry3.",
+      "Automaton.",
+      "Donu.",
+      "Deca.",
+      "Orbwalker.",
+      "Spheric."
+    ],
+    "OPTIONS": [
+      ""
+    ]
   }
 }

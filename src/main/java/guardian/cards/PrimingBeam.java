@@ -1,9 +1,12 @@
 package guardian.cards;
 
 
+import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -15,6 +18,7 @@ import guardian.GuardianMod;
 import guardian.patches.AbstractCardEnum;
 import guardian.powers.BeamBuffPower;
 import guardian.powers.ClonePower;
+import guardian.vfx.SmallLaserEffectColored;
 
 
 public class PrimingBeam extends AbstractGuardianCard {
@@ -33,8 +37,8 @@ public class PrimingBeam extends AbstractGuardianCard {
 
     private static final int COST = 1;
     private static final int DAMAGE = 8;
-    private static final int UPGRADE_DAMAGE = 2;
-    private static final int BEAMBUFF = 2;
+    private static final int UPGRADE_DAMAGE = 3;
+    private static final int BEAMBUFF = 1;
     private static final int UPGRADE_BEAMBUFF = 1;
     private static final int SOCKETS = 0;
     private static final boolean SOCKETSAREAFTER = true;
@@ -57,7 +61,10 @@ public class PrimingBeam extends AbstractGuardianCard {
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         super.use(p, m);
-        AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HEAVY));
+        AbstractDungeon.actionManager.addToBottom(new SFXAction("ATTACK_MAGIC_BEAM_SHORT", 0.5F));
+        AbstractDungeon.actionManager.addToBottom(new VFXAction(new SmallLaserEffectColored(m.hb.cX, m.hb.cY, p.hb.cX, p.hb.cY, Color.WHITE), 0.3F));
+
+        AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.NONE));
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new BeamBuffPower(p, p, this.magicNumber), this.magicNumber));
 
     }
@@ -71,7 +78,7 @@ public class PrimingBeam extends AbstractGuardianCard {
         if (!this.upgraded) {
             upgradeName();
             upgradeDamage(UPGRADE_DAMAGE);
-            upgradeMagicNumber(UPGRADE_BEAMBUFF);
+           // upgradeMagicNumber(UPGRADE_BEAMBUFF);
         }
 
 

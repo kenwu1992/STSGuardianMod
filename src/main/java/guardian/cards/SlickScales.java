@@ -32,7 +32,7 @@ public class SlickScales extends AbstractGuardianCard {
     //TUNING CONSTANTS
 
     private static final int COST = 1;
-    private static final int DEX = 2;
+    private static final int DEX = 3;
     private static final int UPGRADE_DEX = 1;
     private static final int SOCKETS = 0;
     private static final boolean SOCKETSAREAFTER = true;

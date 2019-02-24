@@ -21,7 +21,7 @@ public class DefensiveModeBuffsPower extends AbstractGuardianPower {
 
         this.ID = POWER_ID;
         this.owner = owner;
-        this.setImage("DefensiveModeBuffsPower84.png", "DefensiveModeBuffsPower32.png");
+        this.setImage("DefenseModeBuffsPower84.png", "DefenseModeBuffsPower32.png");
         this.type = POWER_TYPE;
         this.DESCRIPTIONS = CardCrawlGame.languagePack.getPowerStrings(this.ID).DESCRIPTIONS;
         this.name = CardCrawlGame.languagePack.getPowerStrings(this.ID).NAME;

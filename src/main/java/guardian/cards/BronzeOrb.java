@@ -2,6 +2,7 @@ package guardian.cards;
 
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -14,6 +15,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import guardian.GuardianMod;
 import guardian.actions.PlaceRandomCardIntoStasisAction;
 import guardian.patches.AbstractCardEnum;
+import guardian.vfx.BronzeOrbEffect;
 
 
 public class BronzeOrb extends AbstractGuardianCard {
@@ -21,7 +23,7 @@ public class BronzeOrb extends AbstractGuardianCard {
     public static final String NAME;
     public static String DESCRIPTION;
     public static String UPGRADED_DESCRIPTION;
-    public static final String IMG_PATH = "cards/harden.png";
+    public static final String IMG_PATH = "cards/BronzeOrb.png";
     private static final CardType TYPE = CardType.ATTACK;
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.ENEMY;
@@ -59,6 +61,8 @@ public class BronzeOrb extends AbstractGuardianCard {
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         super.use(p, m);
+        AbstractDungeon.actionManager.addToBottom(new VFXAction(new BronzeOrbEffect(p,m), 0.5F));
+
         AbstractDungeon.actionManager.addToBottom(new PlaceRandomCardIntoStasisAction(1));
         AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
         AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, this.block));

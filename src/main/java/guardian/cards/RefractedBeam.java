@@ -1,17 +1,24 @@
 package guardian.cards;
 
 
+import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.vfx.combat.SmallLaserEffect;
 import guardian.GuardianMod;
 import guardian.patches.AbstractCardEnum;
+import guardian.vfx.SmallLaserEffectColored;
 
 
 public class RefractedBeam extends AbstractGuardianCard {
@@ -57,6 +64,12 @@ public class RefractedBeam extends AbstractGuardianCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         super.use(p, m);
         for (int i = 0; i < this.magicNumber; i++) {
+            AbstractDungeon.actionManager.addToBottom(new SFXAction("ATTACK_MAGIC_BEAM_SHORT", 0.5F));
+            float randoX = MathUtils.random(-80,80);
+            float randoY = MathUtils.random(-80,80);
+
+            AbstractDungeon.actionManager.addToBottom(new VFXAction(new SmallLaserEffectColored(m.hb.cX + (randoX * Settings.scale), m.hb.cY + (randoY * Settings.scale), p.hb.cX, p.hb.cY, Color.CYAN), 0.3F));
+
             AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HEAVY));
 
         }

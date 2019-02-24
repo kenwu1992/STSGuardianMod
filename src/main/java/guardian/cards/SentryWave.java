@@ -2,7 +2,9 @@ package guardian.cards;
 
 
 
+import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
@@ -14,6 +16,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
 import com.megacrit.cardcrawl.powers.WeakPower;
+import com.megacrit.cardcrawl.vfx.combat.ShockWaveEffect;
 import guardian.GuardianMod;
 import guardian.actions.CardToTopOfDrawPileAction;
 import guardian.actions.PlaceActualCardIntoStasis;
@@ -52,6 +55,7 @@ public class SentryWave extends AbstractGuardianCard {
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         super.use(p,m);
+        AbstractDungeon.actionManager.addToBottom(new VFXAction(AbstractDungeon.player, new ShockWaveEffect(p.hb.cX, p.hb.cY, Color.ROYAL, ShockWaveEffect.ShockWaveType.ADDITIVE), 0.1F));
 
         for (AbstractMonster m2: AbstractDungeon.getMonsters().monsters) {
             if (!m2.isDead && !m2.isDying) {

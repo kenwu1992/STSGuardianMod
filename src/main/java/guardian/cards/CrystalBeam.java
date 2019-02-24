@@ -2,6 +2,7 @@ package guardian.cards;
 
 
 
+import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
@@ -18,6 +19,7 @@ import com.megacrit.cardcrawl.vfx.combat.SmallLaserEffect;
 import com.megacrit.cardcrawl.vfx.combat.SweepingBeamEffect;
 import guardian.GuardianMod;
 import guardian.patches.AbstractCardEnum;
+import guardian.vfx.SmallLaserEffectColored;
 
 import java.util.ArrayList;
 
@@ -102,7 +104,7 @@ public class CrystalBeam extends AbstractGuardianCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         super.use(p,m);
         AbstractDungeon.actionManager.addToBottom(new SFXAction("ATTACK_MAGIC_BEAM_SHORT", 0.5F));
-        AbstractDungeon.actionManager.addToBottom(new VFXAction(new SmallLaserEffect(m.hb.cX, m.hb.cY, p.hb.cX, p.hb.cY), 0.3F));
+        AbstractDungeon.actionManager.addToBottom(new VFXAction(new SmallLaserEffectColored(m.hb.cX, m.hb.cY, p.hb.cX, p.hb.cY, Color.BLUE), 0.3F));
 
         AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new com.megacrit.cardcrawl.cards.DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.FIRE));
 

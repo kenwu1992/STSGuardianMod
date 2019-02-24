@@ -32,7 +32,7 @@ public class Gem_Crimson extends AbstractGuardianCard {
     //TUNING CONSTANTS
 
     private static final int COST = 0;
-    private static final int VULN = 2;  //HARDCODED IN DESCRIPTION
+    private static final int VULN = 1;  //HARDCODED IN DESCRIPTION
     private static final int SOCKETS = 0;
     private static final boolean SOCKETSAREAFTER = true;
 

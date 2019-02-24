@@ -43,6 +43,7 @@ public class Gem_White extends AbstractGuardianCard {
     public Gem_White() {
         super(ID, NAME, GuardianMod.getResourcePath(IMG_PATH), COST, DESCRIPTION, TYPE, AbstractCardEnum.GUARDIAN, RARITY, TARGET);
 
+
         this.tags.add(GuardianMod.GEM);
         this.thisGemsType = WHITE;
         this.socketCount = SOCKETS;

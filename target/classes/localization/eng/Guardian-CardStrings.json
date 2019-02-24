@@ -219,14 +219,10 @@
     "DESCRIPTION": "Place a card in your hand into Stasis.",
     "UPGRADE_DESCRIPTION": "Place a card in your hand into Stasis. NL Draw a card."
   },
-  "Guardian:Accelerate": {
+  "Guardian:FastForward": {
     "NAME": "Fast Forward",
     "DESCRIPTION": "Accelerate all cards in Stasis. NL Exhaust.",
     "UPGRADE_DESCRIPTION": "Accelerate all cards in Stasis."
-  },
-  "Guardian:SyncronizedStrike": {
-    "NAME": "Syncronized Strike",
-    "DESCRIPTION": "Deal !D! damage. NL If you have a Bronze Orb, heal !M! of its HP, then trigger its attack."
   },
   "Guardian:TimeCapacitor": {
     "NAME": "Time Capacitor",
@@ -236,17 +232,13 @@
     "NAME": "Construction Form",
     "DESCRIPTION": "For !M! turns, you cannot lose HP or play Attacks."
   },
-  "Guardian:BlastProtocol": {
-    "NAME": "Blast Protocol",
-    "DESCRIPTION": "Summon Bronze Orb. NL Your Bronze Orb attacks a random enemy for !M! damage each turn. NL Exhaust."
-  },
   "Guardian:MultiBoost": {
     "NAME": "MultiBoost",
     "DESCRIPTION": "Attacks that deal damage multiple times do so an additional time."
   },
   "Guardian:WeakpointTargeting": {
     "NAME": "Spot Weakpoint",
-    "DESCRIPTION": "Each time the enemy takes damage this combat, gain 1 Strength for the turn."
+    "DESCRIPTION": "Each time the enemy takes damage this combat, gain 1 Strength for the turn. NL Exhaust."
   },
   "Guardian:RollAttack": {
     "NAME": "Roll Attack",
@@ -269,7 +261,7 @@
   "DESCRIPTION": "Gain !B! Block and !M! Thorns for this turn. NL Enter Defensive Mode."
 },
   "Guardian:SharpenScales": {
-    "NAME": "Sharpen Scales",
+    "NAME": "Protruding Spikes",
     "DESCRIPTION": "Gain !B! Block. NL Gain !M! Thorns for this turn if you are in Defensive Mode."
   },
   "Guardian:PrismaticBeam": {
@@ -321,7 +313,7 @@
     "NAME": "Armored Protocol",
     "DESCRIPTION": "Gain !M! Block at the end of each turn while in Defensive Mode. NL Enter Defensive Mode."
   },
-  "Guardian:Automayhem": {
+  "Guardian:TimeSifter": {
     "NAME": "Time Sifter",
     "DESCRIPTION": "At the end of your turn, Accelerate the right-most card in Stasis with a turn counter of 2 or more."
   },
@@ -350,8 +342,8 @@
   },
   "Guardian:Gem_Crimson": {
     "NAME": "Garnet",
-    "DESCRIPTION": "Gem. NL All enemies gain 2 Vulnerable.",
-    "UPGRADE_DESCRIPTION": "All enemies gain 2 Vulnerable."
+    "DESCRIPTION": "Gem. NL All enemies gain 1 Vulnerable.",
+    "UPGRADE_DESCRIPTION": "All enemies gain 1 Vulnerable."
   },
   "Guardian:Gem_Blue": {
     "NAME": "Sapphire",

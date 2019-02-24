@@ -44,6 +44,8 @@ public class SphericShield extends AbstractGuardianCard {
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         super.use(p,m);
+        AbstractDungeon.effectsQueue.add(new com.megacrit.cardcrawl.vfx.BorderFlashEffect(com.badlogic.gdx.graphics.Color.GOLD, true));
+
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new BarricadePower(p)));
         AbstractDungeon.actionManager.addToBottom(new SwitchToDefenseModeAction(p));
 

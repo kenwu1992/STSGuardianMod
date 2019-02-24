@@ -32,8 +32,8 @@ public class ArmoredScales extends AbstractGuardianCard {
     //TUNING CONSTANTS
 
     private static final int COST = 1;
-    private static final int METALLICIZE = 3;
-    private static final int UPGRADE_METALLICIZE = 1;
+    private static final int METALLICIZE = 4;
+    private static final int UPGRADE_METALLICIZE = 2;
     private static final int SOCKETS = 0;
     private static final boolean SOCKETSAREAFTER = true;
 

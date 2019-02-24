@@ -2,6 +2,7 @@ package guardian.characters;
 
 import basemod.abstracts.CustomPlayer;
 import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -10,6 +11,7 @@ import com.megacrit.cardcrawl.cards.red.Strike_Red;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.EnergyManager;
+import com.megacrit.cardcrawl.cutscenes.CutscenePanel;
 import com.megacrit.cardcrawl.helpers.*;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
 import com.megacrit.cardcrawl.relics.BronzeScales;
@@ -22,6 +24,7 @@ import guardian.patches.GuardianEnum;
 import guardian.relics.ModeShifter;
 
 import java.util.ArrayList;
+import java.util.List;
 
 
 public class GuardianCharacter extends CustomPlayer {
@@ -61,7 +64,9 @@ public class GuardianCharacter extends CustomPlayer {
     }
 
     //TODO - Victory screens
-    /*
+
+
+
     @Override
     public Texture getCutsceneBg() {
         return ImageMaster.loadImage("images/scenes/greenBg.jpg");
@@ -72,12 +77,12 @@ public class GuardianCharacter extends CustomPlayer {
     @Override
     public List<CutscenePanel> getCutscenePanels() {
         List<CutscenePanel> panels = new ArrayList();
-        panels.add(new CutscenePanel("GuardianImages/scenes/slimebound1.png", "VO_SLIMEBOSS_1A"));
-        panels.add(new CutscenePanel("GuardianImages/scenes/slimebound2.png"));
-        panels.add(new CutscenePanel("GuardianImages/scenes/slimebound3.png"));
+        panels.add(new CutscenePanel("GuardianImages/scenes/guardian1.png", "MONSTER_GUARDIAN_DESTROY"));
+        panels.add(new CutscenePanel("GuardianImages/scenes/guardian2.png", "GUARDIAN_ROLL_UP"));
+        panels.add(new CutscenePanel("GuardianImages/scenes/guardian3.png"));
         return panels;
     }
-    */
+
 
 
 

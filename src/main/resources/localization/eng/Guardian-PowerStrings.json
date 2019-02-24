@@ -196,5 +196,14 @@
 			" cards ",
 			" whenever you play 3 0-cost cards in a single turn."
 		]
+	},
+	"Guardian:EnergizedGuardianPower": {
+		"NAME": "Energized",
+		"DESCRIPTIONS": [
+			"Gain #b",
+			" additional [E] next turn.",
+			" additional [E] next turn.",
+			" - TRANSLATOR NOTE: - The above line is for plural if needed to distinguish from singular."
+		]
 	}
 }
