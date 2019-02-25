@@ -10,7 +10,7 @@
     "NAME": "Guardian Gear",
     "FLAVOR": "Replace every 3,000 floors.",
     "DESCRIPTIONS": [
-      "Begin each combat in Defensive Mode and extend its duration to 3 turns."
+      "Begin each combat with 5 Defensive Mode."
     ]
   },
   "Guardian:DefensiveModeMoreBlock": {
@@ -38,7 +38,7 @@
     "NAME": "Sack of Gems",
     "FLAVOR": "Ooh... shiny!",
     "DESCRIPTIONS": [
-      "Upon pickup, choose and add 5 Gems to your deck."
+      "Upon pickup, add 5 random Gems to your deck."
     ]
   },
   "Guardian:StasisCodex": {

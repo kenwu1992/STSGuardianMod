@@ -129,13 +129,13 @@
   },
   "Guardian:SentryBeam": {
     "NAME": "Sentry Beam",
-    "DESCRIPTION": "Deal !D! Damage. NL Place a Sentry Wave on top of your draw pile. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Deal !D! Damage. NL Place an Upgraded Sentry Wave on top of your draw pile. NL Exhaust."
+    "DESCRIPTION": "Deal !D! Damage. NL Place a Sentry_Wave on top of your draw pile. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Deal !D! Damage. NL Place an Upgraded Sentry_Wave on top of your draw pile. NL Exhaust."
   },
   "Guardian:SentryWave": {
     "NAME": "Sentry Wave",
-    "DESCRIPTION": "Apply !M! Weak to ALL enemies. NL Draw a card. NL Place a Sentry Beam on top of your draw pile. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Apply !M! Weak to ALL enemies. NL Draw a card. NL Place an Upgraded Sentry Beam on top of your draw pile. NL Exhaust."
+    "DESCRIPTION": "Apply !M! Weak to ALL enemies. NL Draw a card. NL Place a Sentry_Beam on top of your draw pile. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Apply !M! Weak to ALL enemies. NL Draw a card. NL Place an Upgraded Sentry_Beam on top of your draw pile. NL Exhaust."
   },
   "Guardian:CompilePackage": {
     "NAME": "Compile Package",
@@ -261,7 +261,7 @@
   "DESCRIPTION": "Gain !B! Block and !M! Thorns for this turn. NL Gain Defensive_Mode."
 },
   "Guardian:SharpenScales": {
-    "NAME": "Protruding Spikes",
+    "NAME": "Shield Spikes",
     "DESCRIPTION": "Gain !B! Block. NL Gain !M! Thorns for this turn if you are in Defensive_Mode."
   },
   "Guardian:PrismaticBeam": {
@@ -319,7 +319,7 @@
   },
   "Guardian:Construct": {
     "NAME": "Ancient Construct",
-    "DESCRIPTION": "Gain !M! Artifact. NL When you lose an Artifact, gain 1 Strength."
+    "DESCRIPTION": "At the start of your turn, if you have no Artifact, gain 1 Artifact."
   },
   "Guardian:CrystalBeam": {
     "NAME": "Crystal Beam",
@@ -342,8 +342,8 @@
   },
   "Guardian:Gem_Crimson": {
     "NAME": "Garnet",
-    "DESCRIPTION": "Gem. NL All enemies gain 1 Vulnerable.",
-    "UPGRADE_DESCRIPTION": "All enemies gain 1 Vulnerable."
+    "DESCRIPTION": "Gem. NL Apply 1 Vulnerable to ALL enemies.",
+    "UPGRADE_DESCRIPTION": "Apply 1 Vulnerable to ALL enemies."
   },
   "Guardian:Gem_Blue": {
     "NAME": "Sapphire",

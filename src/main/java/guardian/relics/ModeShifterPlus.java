@@ -30,7 +30,7 @@ public class ModeShifterPlus extends CustomRelic {
     public void atBattleStartPreDraw() {
         this.flash();
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player,AbstractDungeon.player,new DefenseModePower(AbstractDungeon.player),1));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player,AbstractDungeon.player,new DefenseModePower(AbstractDungeon.player),2));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player,AbstractDungeon.player,new DefenseModePower(AbstractDungeon.player),4));
 
     }
 

@@ -783,7 +783,9 @@ public static void saveData() {
                 case "FRAGMENTED": rewardGemCards.add(new Gem_Fragmented()); break;
                 case "PURPLE": rewardGemCards.add(new Gem_Purple()); break;
                 case "SYNTHETIC": rewardGemCards.add(new Gem_Synthetic()); break;
-                case "YELLOW": rewardGemCards.add(new Gem_Yellow()); break;
+                case "YELLOW": if (!UnlockTracker.isCardLocked(Gem_Yellow.ID)){
+                    rewardGemCards.add(new Gem_Yellow());
+                } break;
             }
             allGemCards.remove(rando);
         }
