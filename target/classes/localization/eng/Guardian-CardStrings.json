@@ -56,7 +56,7 @@
   },
   "Guardian:FierceBash": {
     "NAME": "Fierce Bash",
-    "DESCRIPTION": "Deal !D! damage. NL Increase this card's damage by !M! for each turn it is in Stasis."
+    "DESCRIPTION": "Deal !D! damage. NL While in Stasis, when this card's turn counter is reduced, increase damage by !M!."
   },
   "Guardian:PolyBeam": {
     "NAME": "Poly Beam",
@@ -113,7 +113,7 @@
   },
   "Guardian:Orbwalk": {
     "NAME": "Orbwalk",
-    "DESCRIPTION": "Gain !M! Strength. NL If this is in Stasis at the start of your turn, gain 1 Strength."
+    "DESCRIPTION": "Gain !M! Strength. NL While in Stasis, when this card's turn counter is reduced, gain 1 Strength."
   },
   "Guardian:WalkerClaw": {
     "NAME": "Walker Claw",
@@ -382,7 +382,7 @@
   },
   "Guardian:SpacetimeBattery": {
     "NAME": "Shield Charger",
-    "DESCRIPTION": "Gain !B! Block. NL If this card is in Stasis at the start of your turn, gain !M! Block."
+    "DESCRIPTION": "Gain !B! Block. NL While in Stasis, when this card's turn counter is reduced, gain !M! Block."
   },
   "Guardian:StasisEngine": {
     "NAME": "Stasis Engine",

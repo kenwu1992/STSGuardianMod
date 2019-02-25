@@ -3,7 +3,9 @@ package guardian.cards;
 
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.EmptyDeckShuffleAction;
 import com.megacrit.cardcrawl.actions.unique.ReprogramAction;
+import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -49,7 +51,16 @@ public class Preprogram extends AbstractGuardianCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         super.use(p,m);
 
-        AbstractDungeon.actionManager.addToBottom(new PreprogramAction(this.magicNumber));
+        if (AbstractDungeon.player.drawPile.isEmpty() && AbstractDungeon.player.discardPile.isEmpty()) {
+
+        } else {
+            if (AbstractDungeon.player.drawPile.isEmpty()) {
+                AbstractDungeon.actionManager.addToBottom(new EmptyDeckShuffleAction());
+                AbstractDungeon.actionManager.addToBottom(new WaitAction(0.1F));
+            }
+
+            AbstractDungeon.actionManager.addToBottom(new PreprogramAction(this.magicNumber));
+        }
 
         super.useGems(p,m);
     }

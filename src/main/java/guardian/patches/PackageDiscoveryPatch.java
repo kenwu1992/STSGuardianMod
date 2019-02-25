@@ -21,7 +21,7 @@ public class PackageDiscoveryPatch {
 
 
         if (GuardianMod.discoveryOverride) {
-
+            GuardianMod.discoveryOverride = false;
             GuardianMod.logger.info("Discovery patch override hit");
             derp.clear();
 

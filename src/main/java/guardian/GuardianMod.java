@@ -1,6 +1,7 @@
 package guardian;
 
 import basemod.*;
+import basemod.abstracts.CustomUnlockBundle;
 import basemod.interfaces.*;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
@@ -22,6 +23,7 @@ import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.rewards.RewardSave;
+import com.megacrit.cardcrawl.unlock.AbstractUnlock;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import com.megacrit.cardcrawl.vfx.ThoughtBubble;
 import guardian.cards.*;
@@ -113,13 +115,13 @@ public class GuardianMod implements PostDrawSubscriber, PreMonsterTurnSubscriber
     public static AbstractCard.CardTags PROTOCOL;
 
     //TODO - Unlock bundles
-    /*
+
     private CustomUnlockBundle unlocks0;
     private CustomUnlockBundle unlocks1;
     private CustomUnlockBundle unlocks2;
     private CustomUnlockBundle unlocks3;
     private CustomUnlockBundle unlocks4;
-    */
+
 
     //TODO - content sharing if needed
     /*
@@ -246,8 +248,8 @@ public class GuardianMod implements PostDrawSubscriber, PreMonsterTurnSubscriber
     @Override
     public void receiveSetUnlocks() {
         //TODO - Part of unlocks
-        /*
-        if (!unlockEverything) {
+
+
 
             BaseMod.addUnlockBundle(unlocks0, GuardianEnum.GUARDIAN, 0);
 
@@ -260,42 +262,42 @@ public class GuardianMod implements PostDrawSubscriber, PreMonsterTurnSubscriber
             BaseMod.addUnlockBundle(unlocks4, GuardianEnum.GUARDIAN, 4);
 
 
-            UnlockTracker.addCard(RollThrough.ID);
-            UnlockTracker.addCard(Chomp.ID);
-            UnlockTracker.addCard(CheckThePlaybook.ID);
+            UnlockTracker.addCard(SpacetimeBattery.ID);
+            UnlockTracker.addCard(Orbwalk.ID);
+            UnlockTracker.addCard(FierceBash.ID);
 
 
-            UnlockTracker.addCard(Dissolve.ID);
-            UnlockTracker.addCard(Repurpose.ID);
-            UnlockTracker.addCard(MassRepurpose.ID);
+            UnlockTracker.addCard(Gem_Yellow.ID);
+            UnlockTracker.addCard(GemFire.ID);
+            UnlockTracker.addCard(GemFinder.ID);
 
 
-            UnlockTracker.addCard(HungryTackle.ID);
-            UnlockTracker.addCard(Recollect.ID);
-            UnlockTracker.addCard(Recycling.ID);
+            UnlockTracker.addCard(StasisEngine.ID);
+            UnlockTracker.addCard(FuturePlans.ID);
+            UnlockTracker.addCard(CompilePackage.ID);
 
-            UnlockTracker.addRelic(AggressiveSlimeRelic.ID);
-            UnlockTracker.addRelic(PotencyRelic.ID);
-            UnlockTracker.addRelic(MaxSlimesRelic.ID);
+            UnlockTracker.addRelic(StasisUpgradeRelic.ID);
+            UnlockTracker.addRelic(StasisCodex.ID);
+            UnlockTracker.addRelic(GemCopier.ID);
 
-            UnlockTracker.addRelic(PreparedRelic.ID);
-            UnlockTracker.addRelic(SlimedTailRelic.ID);
-            UnlockTracker.addRelic(SlimedSkullRelic.ID);
-        }
-    */
+            UnlockTracker.addRelic(StasisSlotIncreaseRelic.ID);
+            UnlockTracker.addRelic(PocketSentry.ID);
+            UnlockTracker.addRelic(DefensiveModeMoreBlock.ID);
+
+
     }
 
     public void clearUnlockBundles(){
 
         //TODO - Part of unlocks
-        /*
+
         BaseMod.removeUnlockBundle(GuardianEnum.GUARDIAN,0);
         BaseMod.removeUnlockBundle(GuardianEnum.GUARDIAN,1);
         BaseMod.removeUnlockBundle(GuardianEnum.GUARDIAN,2);
         BaseMod.removeUnlockBundle(GuardianEnum.GUARDIAN,3);
         BaseMod.removeUnlockBundle(GuardianEnum.GUARDIAN,4);
         receiveSetUnlocks();
-        */
+
     }
 
 
@@ -330,20 +332,19 @@ public class GuardianMod implements PostDrawSubscriber, PreMonsterTurnSubscriber
 
 
         //TODO - Part of unlocks and shared mechanics
-        /*
-        shareableRelics.add(new PreparedRelic());
+
+        //shareableRelics.add(new PreparedRelic());
 
         if (unlocks2 == null){
         unlocks2 = new CustomUnlockBundle(AbstractUnlock.UnlockType.RELIC,
-                AggressiveSlimeRelic.ID, PotencyRelic.ID, MaxSlimesRelic.ID
+                StasisSlotIncreaseRelic.ID, PocketSentry.ID, DefensiveModeMoreBlock.ID
         );
 
         unlocks4 = new CustomUnlockBundle(AbstractUnlock.UnlockType.RELIC,
-                PreparedRelic.ID, SlimedTailRelic.ID, SlimedSkullRelic.ID
+                StasisUpgradeRelic.ID, StasisCodex.ID, GemCopier.ID
         );}
 
-        addSharedRelics();
-        */
+
 
     }
 
@@ -455,19 +456,19 @@ public class GuardianMod implements PostDrawSubscriber, PreMonsterTurnSubscriber
 
 
         //TODO - Part of unlocks
-        /*
+
         unlocks0 = new CustomUnlockBundle(
-                RollThrough.ID, Chomp.ID, CheckThePlaybook.ID
+                SpacetimeBattery.ID, Orbwalk.ID, FierceBash.ID
         );
 
         unlocks1 = new CustomUnlockBundle(
-                Dissolve.ID, Repurpose.ID, MassRepurpose.ID
+                Gem_Yellow.ID, GemFire.ID, GemFinder.ID
         );
 
         unlocks3 = new CustomUnlockBundle(
-                HungryTackle.ID, Recollect.ID, Recycling.ID
+                FuturePlans.ID, StasisEngine.ID, CompilePackage.ID
         );
-        */
+
 
 
 

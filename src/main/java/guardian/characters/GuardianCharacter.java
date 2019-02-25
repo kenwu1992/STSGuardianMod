@@ -196,8 +196,8 @@ public class GuardianCharacter extends CustomPlayer {
 
 
     public AbstractCard getStartCardForEvent() {
-        //TODO - Strike goes here
-        return new Strike_Red();
+        //TODO - Note card goes here
+        return new Gem_Red();
     }
 
     public Color getCardTrailColor() {

@@ -6,7 +6,9 @@ import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.helpers.GameDictionary;
 import com.megacrit.cardcrawl.helpers.PowerTip;
+import com.megacrit.cardcrawl.helpers.TipHelper;
 import com.megacrit.cardcrawl.localization.PotionStrings;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import guardian.orbs.StasisOrb;
@@ -25,6 +27,8 @@ public class AcceleratePotion extends CustomPotion {
         this.isThrown = false;
         this.targetRequired = false;
         this.tips.add(new PowerTip(this.name, this.description));
+        this.tips.add(new PowerTip(TipHelper.capitalize("accelerate"), GameDictionary.keywords.get("accelerate")));
+
     }
 
     public void use(AbstractCreature target) {

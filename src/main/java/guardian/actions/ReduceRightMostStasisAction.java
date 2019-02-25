@@ -5,6 +5,7 @@
 
 package guardian.actions;
 
+import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -34,8 +35,8 @@ public class ReduceRightMostStasisAction extends AbstractGameAction {
 
                 for (AbstractOrb o:AbstractDungeon.player.orbs){
                     if (o instanceof StasisOrb){
-                        if (((StasisOrb)o).passiveAmount > 1){
-                            ((StasisOrb)o).passiveAmount--;
+                        if ((!this.fromRelic || (this.fromRelic && ((StasisOrb)o).passiveAmount > 1))){
+                            o.onStartOfTurn();
                             if (this.fromRelic) AbstractDungeon.player.getPower(AutomayhemPower.POWER_ID).flash();
                             break;
                         }
