@@ -54,7 +54,6 @@ public class GatlingBeam extends AbstractGuardianCard {
         this.socketCount = SOCKETS;
         this.updateDescription();
 
-        this.exhaust = true;
     }
 
 

@@ -71,8 +71,9 @@ public class ModeShiftPower extends AbstractGuardianPower {
     @Override
     public void atStartOfTurn() {
         super.atStartOfTurn();
-        this.active = true;
-        this.amount = this.STARTINGAMOUNT + (this.activations * AMOUNTGAINPERACTIVATION);
-
+        if (!this.active) {
+            this.active = true;
+            this.amount = this.STARTINGAMOUNT + (this.activations * AMOUNTGAINPERACTIVATION);
+        }
     }
 }

@@ -106,7 +106,7 @@
 		]
 	},
 	"Guardian:DefensiveModeBuffsPower": {
-		"NAME": "Defensive_Mode+",
+		"NAME": "Defensive Mode+",
 		"DESCRIPTIONS": [
 			"In addition to its normal effects, Defensive Mode will apply: NL ",
 			" Thorns.",

@@ -42,9 +42,9 @@ public class Suspension extends AbstractGuardianCard {
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         super.use(p,m);
+        if (upgraded) AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, 1));
 
         AbstractDungeon.actionManager.addToBottom(new PlaceCardsInHandIntoStasisAction(p, 1));
-        if (upgraded) AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, 1));
 
     }
 

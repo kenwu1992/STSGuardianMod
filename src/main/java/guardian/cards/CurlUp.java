@@ -51,7 +51,7 @@ public class CurlUp extends AbstractGuardianCard {
         super.use(p,m);
         AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, this.block));
         AbstractDungeon.actionManager.addToBottom(new SwitchToDefenseModeAction(p));
-
+        super.useGems(p,m);
     }
 
     public AbstractCard makeCopy() {

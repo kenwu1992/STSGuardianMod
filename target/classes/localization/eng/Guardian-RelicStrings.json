@@ -3,7 +3,7 @@
     "NAME": "Mode Shifter",
     "FLAVOR": "Protection where you need it most.",
     "DESCRIPTIONS": [
-      "When you lose 10 HP, gain 10 Block and Defensive Mode for 2 turns. NL Each activation increases the amount of HP required to activate again."
+      "When you lose 10 HP, gain 10 Block and 2 Defensive Mode. NL Each activation increases the amount of HP loss required to activate again."
     ]
   },
   "Guardian:ModeShifterPlus": {
