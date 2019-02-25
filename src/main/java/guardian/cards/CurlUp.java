@@ -62,6 +62,8 @@ public class CurlUp extends AbstractGuardianCard {
         if (!this.upgraded) {
             upgradeName();
             upgradeBlock(UPGRADE_BONUS);
+            this.socketCount++;
+            this.updateDescription();
         }
     }
 

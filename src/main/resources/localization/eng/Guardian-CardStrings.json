@@ -76,7 +76,7 @@
   },
   "Guardian:CurlUp": {
     "NAME": "Curl Up",
-    "DESCRIPTION": "Gain !B! Block. NL Enter Defensive Mode."
+    "DESCRIPTION": "Gain !B! Block. NL Gain Defensive_Mode."
   },
   "Guardian:TimeBomb": {
     "NAME": "Time Bomb",
@@ -121,7 +121,7 @@
   },
   "Guardian:SphericShield": {
     "NAME": "Spheric Shield",
-    "DESCRIPTION": "Block is not removed at the start of your turn. NL Enter Defensive Mode."
+    "DESCRIPTION": "Block is not removed at the start of your turn. NL Gain Defensive_Mode."
   },
   "Guardian:Harden": {
     "NAME": "Harden",
@@ -242,7 +242,7 @@
   },
   "Guardian:RollAttack": {
     "NAME": "Roll Attack",
-    "DESCRIPTION": "Deal !D! damage. NL Deal !D! damage if you are in Defensive Mode."
+    "DESCRIPTION": "Deal !D! damage. NL Deal !D! damage if you are in Defensive_Mode."
   },
   "Guardian:GemFire": {
     "NAME": "Gem Cannon",
@@ -250,7 +250,7 @@
   },
   "Guardian:ChargeCore": {
     "NAME": "Charge Core",
-    "DESCRIPTION": "Deal !D! damage. NL Gain [E] at the start of your next turn."
+    "DESCRIPTION": "Deal !D! damage. NL Draw a card at the start of your next turn."
   },
   "Guardian:Reroute": {
     "NAME": "Reroute",
@@ -258,11 +258,11 @@
   },
   "Guardian:PiercingHide": {
   "NAME": "Piercing Hide",
-  "DESCRIPTION": "Gain !B! Block and !M! Thorns for this turn. NL Enter Defensive Mode."
+  "DESCRIPTION": "Gain !B! Block and !M! Thorns for this turn. NL Gain Defensive_Mode."
 },
   "Guardian:SharpenScales": {
     "NAME": "Protruding Spikes",
-    "DESCRIPTION": "Gain !B! Block. NL Gain !M! Thorns for this turn if you are in Defensive Mode."
+    "DESCRIPTION": "Gain !B! Block. NL Gain !M! Thorns for this turn if you are in Defensive_Mode."
   },
   "Guardian:PrismaticBeam": {
     "NAME": "Prismatic Beam",
@@ -303,15 +303,15 @@
   },
   "Guardian:SlickScales": {
     "NAME": "Evasive Protocol",
-    "DESCRIPTION": "Gain !M! Dexterity while in Defensive Mode. NL Enter Defensive Mode."
+    "DESCRIPTION": "Gain !M! Dexterity while in Defensive_Mode. NL Gain Defensive_Mode."
   },
   "Guardian:SpikyScales": {
     "NAME": "Spiker Protocol",
-    "DESCRIPTION": "Gain !M! Thorns while in Defensive Mode. NL Enter Defensive Mode."
+    "DESCRIPTION": "Gain !M! Thorns while in Defensive_Mode. NL Gain Defensive_Mode."
   },
   "Guardian:ArmoredScales": {
     "NAME": "Armored Protocol",
-    "DESCRIPTION": "Gain !M! Block at the end of each turn while in Defensive Mode. NL Enter Defensive Mode."
+    "DESCRIPTION": "Gain !M! Block at the end of each turn while in Defensive_Mode. NL Gain Defensive_Mode."
   },
   "Guardian:TimeSifter": {
     "NAME": "Time Sifter",
@@ -347,8 +347,8 @@
   },
   "Guardian:Gem_Blue": {
     "NAME": "Sapphire",
-    "DESCRIPTION": "Gem. NL Enter Defensive Mode.",
-    "UPGRADE_DESCRIPTION": "Enter Defensive Mode."
+    "DESCRIPTION": "Gem. NL Gain Defensive_Mode.",
+    "UPGRADE_DESCRIPTION": "Gain Defensive_Mode."
   },
   "Guardian:Gem_Fragmented": {
     "NAME": "Fragmented Gem",
@@ -374,7 +374,7 @@
   },
   "Guardian:RevengeProtocol": {
     "NAME": "Revenge Protocol",
-    "DESCRIPTION": "Gain !M! Strength until the end of your turn whenever your Block is broken while in Defensive Mode. NL Enter Defensive Mode."
+    "DESCRIPTION": "Gain !M! Strength until the end of your turn whenever your Block is broken while in Defensive_Mode. NL Gain Defensive_Mode."
   },
   "Guardian:GatlingBeam": {
     "NAME": "Gatling Beam",

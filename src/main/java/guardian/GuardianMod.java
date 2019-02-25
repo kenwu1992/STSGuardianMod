@@ -6,6 +6,7 @@ import basemod.interfaces.*;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
+import com.evacipated.cardcrawl.mod.stslib.Keyword;
 import com.evacipated.cardcrawl.modthespire.Loader;
 import com.evacipated.cardcrawl.modthespire.lib.SpireEnum;
 import com.google.gson.Gson;
@@ -671,9 +672,13 @@ public static void saveData() {
         logger.info("begin editing strings");
         final String json = Gdx.files.internal("localization/" + language + "/Guardian-KeywordStrings.json").readString(String.valueOf(StandardCharsets.UTF_8));
 
-        final com.evacipated.cardcrawl.mod.stslib.Keyword[] keywords = (com.evacipated.cardcrawl.mod.stslib.Keyword[])gson.fromJson(json, (Class) com.evacipated.cardcrawl.mod.stslib.Keyword[].class);
+        com.evacipated.cardcrawl.mod.stslib.Keyword[] keywords = gson.fromJson(json, com.evacipated.cardcrawl.mod.stslib.Keyword[].class);
         if (keywords != null) {
-            for (final com.evacipated.cardcrawl.mod.stslib.Keyword keyword : keywords) {
+            com.evacipated.cardcrawl.mod.stslib.Keyword[] var6 = keywords;
+            int var7 = keywords.length;
+
+            for(int var8 = 0; var8 < var7; ++var8) {
+                Keyword keyword = var6[var8];
                 BaseMod.addKeyword(keyword.PROPER_NAME, keyword.NAMES, keyword.DESCRIPTION);
             }
         }
@@ -859,7 +864,7 @@ public static void saveData() {
         settingsPanel.addUIElement(contentSharingBtnRelics);
 */
 
-        BaseMod.registerModBadge(badgeTexture, "Slimebound", "Michael Mayhem", "Adds the Slimebound character to the game.", settingsPanel);
+        BaseMod.registerModBadge(badgeTexture, "The Guardian", "Michael Mayhem, zwolfiez", "Adds the Guardian character to the game.", settingsPanel);
 
         logger.info("Done loading badge Image and mod options");
 
