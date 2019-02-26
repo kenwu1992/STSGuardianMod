@@ -14,7 +14,7 @@
     ]
   },
   "Guardian:StasisEgg": {
-    "NAME": "Stasis Egg",
+    "NAME": "Quantum Chamber",
     "DESCRIPTIONS": [
       "You stumble open a box, its cover etched in strange runic symbols.  Peering inside, you notice a strange egg-shaped device, humming softly.  You don’t know what it is, or what it is used for, but the energy coming from it makes you think it must be powerful.",
       "You decide that something this powerful is meant to be used.  You pocket the egg and be on your way, but as the runes glow, you can’t help but feel a little pain in your energy core.  Hopefully, it was worth it.",
@@ -23,7 +23,7 @@
 
     ],
     "OPTIONS": [
-      "[Use] #gGain #gStasis #gEgg. #rBecome #rCursed #r- #rPain",
+      "[Use] #gGain #Quantum #gChamber. #rBecome #rCursed #r- #rPain",
       "[Smash] #gGain #g",
       " #gMax #gHP. #rBecome #rCursed #r- #rRegret",
       "[Leave]"

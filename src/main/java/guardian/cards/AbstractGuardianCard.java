@@ -260,7 +260,7 @@ public abstract class AbstractGuardianCard extends CustomCard implements CustomS
                 if (!after) addedDesc = addedDesc + " NL ";
             } else {
                 if (after) addedDesc = addedDesc + " NL ";
-                addedDesc = addedDesc + "Empty Socket";
+                addedDesc = addedDesc + "[Socket]";
                 if (!after) addedDesc = addedDesc + " NL ";
             }
         }

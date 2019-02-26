@@ -37,7 +37,7 @@ public class Gem_Purple extends AbstractGuardianCard {
     //TUNING CONSTANTS
 
     private static final int COST = 0;
-    private static final int STRENGTHLOSS = 3;  //HARDCODED IN DESCRIPTION
+    private static final int STRENGTHLOSS = 2;  //HARDCODED IN DESCRIPTION
     private static final int SOCKETS = 0;
     private static final boolean SOCKETSAREAFTER = true;
 

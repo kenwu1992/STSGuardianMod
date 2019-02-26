@@ -451,6 +451,7 @@ public class GuardianMod implements PostDrawSubscriber, PreMonsterTurnSubscriber
         BaseMod.addCard(new RevengeProtocol());
         BaseMod.addCard(new SpacetimeBattery());
         BaseMod.addCard(new StasisEngine());
+        BaseMod.addCard(new Gem_Purple());
 
 
 

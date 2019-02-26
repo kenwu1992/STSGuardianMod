@@ -30,7 +30,7 @@ public class TemporalShield extends AbstractGuardianCard {
     //TUNING CONSTANTS
 
     private static final int COST = 1;
-    private static final int BLOCK = 8;
+    private static final int BLOCK = 7;
     private static final int UPGRADE_BLOCK = 3;
     private static final int SOCKETS = 0;
     private static final boolean SOCKETSAREAFTER = true;
@@ -54,7 +54,7 @@ public class TemporalShield extends AbstractGuardianCard {
 
 
         AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, this.block));
-        if (this.hasTag(GuardianMod.STASISGLOW)){
+        if (GuardianMod.isStasisOrbInPlay()){
             AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, this.block));
 
         }
