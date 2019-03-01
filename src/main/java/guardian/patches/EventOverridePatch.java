@@ -19,17 +19,13 @@ public class EventOverridePatch {
         if (AbstractDungeon.player instanceof GuardianCharacter) {
             if (AbstractDungeon.specialOneTimeEventList.contains("Accursed Blacksmith")){
                 AbstractDungeon.specialOneTimeEventList.add(AccursedBlacksmithGuardian.ID);
+                AbstractDungeon.specialOneTimeEventList.remove(AccursedBlacksmith.ID);
             }
             dungeon_instance.eventList.remove(BackToBasics.ID);
         } else {
             dungeon_instance.eventList.remove(BackToBasicsGuardian.ID);
             dungeon_instance.eventList.remove(GemMine.ID);
             dungeon_instance.eventList.remove(StasisEgg.ID);
-
-        }
-
-        if (AbstractDungeon.player instanceof GuardianCharacter) {
-        } else {
 
         }
 

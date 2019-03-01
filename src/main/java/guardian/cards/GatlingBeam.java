@@ -59,14 +59,10 @@ public class GatlingBeam extends AbstractGuardianCard {
     public float calculateModifiedCardDamage(AbstractPlayer player, AbstractMonster mo, float tmp) {
         return tmp + calculateBeamDamage();
     }
-    @Override
-    public float calculateModifiedCardDamage(AbstractPlayer player, float tmp) {
-        return tmp + calculateBeamDamage();
-    }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         super.use(p,m);
-        AbstractDungeon.actionManager.addToBottom(new PolyBeamAction(AbstractDungeon.getMonsters().getRandomMonster((AbstractMonster)null, true, AbstractDungeon.cardRandomRng), new DamageInfo(p, this.baseDamage), this.magicNumber));
+        AbstractDungeon.actionManager.addToBottom(new PolyBeamAction(AbstractDungeon.getMonsters().getRandomMonster((AbstractMonster)null, true, AbstractDungeon.cardRandomRng), new DamageInfo(p, this.baseDamage + (int)calculateBeamDamage()), this.magicNumber));
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new BeamBuffPower(p, p, this.magicNumber), this.magicNumber));
 
         super.useGems(p,m);

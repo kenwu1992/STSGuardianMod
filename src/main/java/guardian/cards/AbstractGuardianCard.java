@@ -8,6 +8,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.google.gson.reflect.TypeToken;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -260,7 +261,7 @@ public abstract class AbstractGuardianCard extends CustomCard implements CustomS
                 if (!after) addedDesc = addedDesc + " NL ";
             } else {
                 if (after) addedDesc = addedDesc + " NL ";
-                addedDesc = addedDesc + "[ Socket ]";
+                addedDesc = addedDesc + CardCrawlGame.languagePack.getCharacterString("Guardian").TEXT[2];
                 if (!after) addedDesc = addedDesc + " NL ";
             }
         }

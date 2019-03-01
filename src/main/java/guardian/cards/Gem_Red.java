@@ -33,7 +33,7 @@ public class Gem_Red extends AbstractGuardianCard {
     //TUNING CONSTANTS
 
     private static final int COST = 0;
-    private static final int DAMAGEBUFF = 2;  //HARDCODED IN DESCRIPTION
+    private static final int DAMAGEBUFF = 1;  //HARDCODED IN DESCRIPTION
     private static final int SOCKETS = 0;
     private static final boolean SOCKETSAREAFTER = true;
 

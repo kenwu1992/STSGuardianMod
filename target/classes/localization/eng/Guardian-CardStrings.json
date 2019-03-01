@@ -17,13 +17,13 @@
   },
   "Guardian:Gem_Red": {
     "NAME": "Ruby",
-    "DESCRIPTION": "Gem. NL Gain 2 Fleeting Strength.",
-    "UPGRADE_DESCRIPTION": "Gain 2 Fleeting Strength."
+    "DESCRIPTION": "Gem. NL Gain 1 Fleeting Strength.",
+    "UPGRADE_DESCRIPTION": "Gain 1 Fleeting Strength."
   },
   "Guardian:Gem_Green": {
     "NAME": "Emerald",
-    "DESCRIPTION": "Gem. NL Gain 2 Fleeting Dexterity.",
-    "UPGRADE_DESCRIPTION": "Gain 2 Fleeting Dexterity."
+    "DESCRIPTION": "Gem. NL Gain 1 Fleeting Dexterity.",
+    "UPGRADE_DESCRIPTION": "Gain 1 Fleeting Dexterity."
   },
   "Guardian:Gem_White": {
     "NAME": "Quartz",
@@ -68,7 +68,7 @@
   },
   "Guardian:GuardianWhirl": {
     "NAME": "Guardian Whirl",
-    "DESCRIPTION": "Deal !D! damage !GuardianMulti! times."
+    "DESCRIPTION": "Deal !D! damage !GuardianMulti! times to ALL enemies."
   },
   "Guardian:VentSteam": {
     "NAME": "Vent Steam",

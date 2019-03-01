@@ -65,7 +65,7 @@ public class PolyBeam extends AbstractGuardianCard {
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         super.use(p,m);
-        AbstractDungeon.actionManager.addToBottom(new PolyBeamAction(AbstractDungeon.getMonsters().getRandomMonster((AbstractMonster)null, true, AbstractDungeon.cardRandomRng), new DamageInfo(p, this.baseDamage), this.magicNumber));
+        AbstractDungeon.actionManager.addToBottom(new PolyBeamAction(AbstractDungeon.getMonsters().getRandomMonster((AbstractMonster)null, true, AbstractDungeon.cardRandomRng), new DamageInfo(p, this.baseDamage + (int)calculateBeamDamage()), this.magicNumber));
 
         super.useGems(p,m);
     }
@@ -78,9 +78,9 @@ public class PolyBeam extends AbstractGuardianCard {
     }
 
     @Override
-    public float calculateModifiedCardDamage(AbstractPlayer player, float tmp) {
-        return tmp + calculateBeamDamage();
-    }
+    public float calculateModifiedCardDamage(AbstractPlayer player, AbstractMonster mo, float tmp) {
+        return tmp + calculateBeamDamage();    }
+
 
     public void upgrade() {
 

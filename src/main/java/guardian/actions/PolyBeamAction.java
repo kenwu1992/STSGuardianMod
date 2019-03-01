@@ -58,6 +58,7 @@ public class PolyBeamAction extends AbstractGameAction {
                 if (this.numTimes > 1 && !AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
                     --this.numTimes;
                     AbstractDungeon.actionManager.addToBottom(new PolyBeamAction(AbstractDungeon.getMonsters().getRandomMonster((AbstractMonster)null, true, AbstractDungeon.cardRandomRng), this.info, this.numTimes));
+                    AbstractDungeon.actionManager.addToBottom(new WaitAction(0.1F));
                 }
 
             }
