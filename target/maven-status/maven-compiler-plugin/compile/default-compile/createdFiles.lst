@@ -196,7 +196,6 @@ guardian\powers\ConstructPower.class
 guardian\powers\NextTurnGainStrengthPower.class
 guardian\events\StasisEgg.class
 guardian\cards\WalkerClaw.class
-guardian\patches\ArtifactPatch.class
 guardian\cards\PolyBeam.class
 guardian\patches\AbstractCardEnum.class
 guardian\cards\Emergency.class

@@ -58,7 +58,6 @@ import java.util.Iterator;
 
 @com.evacipated.cardcrawl.modthespire.lib.SpireInitializer
 public class GuardianMod implements PostDrawSubscriber, PreMonsterTurnSubscriber, SetUnlocksSubscriber, PostDungeonInitializeSubscriber, PostInitializeSubscriber, basemod.interfaces.EditCharactersSubscriber, basemod.interfaces.EditRelicsSubscriber, basemod.interfaces.EditCardsSubscriber, basemod.interfaces.EditKeywordsSubscriber, EditStringsSubscriber {
-    private static final com.badlogic.gdx.graphics.Color GUARDIAN_COLOR = com.megacrit.cardcrawl.helpers.CardHelper.getColor(25.0F, 95.0F, 25.0F);
 
     private static final String ATTACK_CARD = "512/bg_attack_guardian.png";
     private static final String SKILL_CARD = "512/bg_skill_guardian.png";
@@ -74,6 +73,9 @@ public class GuardianMod implements PostDrawSubscriber, PreMonsterTurnSubscriber
     public static GuardianCharacter guardianCharacter;
 
     public static Color mainGuardianColor = new Color(0.58F, 0.49F, 0.33F, 1.0F);
+
+    private static final com.badlogic.gdx.graphics.Color GUARDIAN_COLOR = mainGuardianColor;
+
 
     public static ArrayList<Texture> socketTextures = new ArrayList<>();
     public static ArrayList<Texture> socketTextures2 = new ArrayList<>();
@@ -766,7 +768,9 @@ public static void saveData() {
         allGemCards.add("FRAGMENTED");
         if (!onlyCommon)allGemCards.add("PURPLE");
         if (!onlyCommon)allGemCards.add("SYNTHETIC");
-        if (!onlyCommon)allGemCards.add("YELLOW");
+        if (!UnlockTracker.isCardLocked(Gem_Yellow.ID)) {
+            if (!onlyCommon) allGemCards.add("YELLOW");
+        }
 
         int rando;
         String ID;
@@ -784,9 +788,7 @@ public static void saveData() {
                 case "FRAGMENTED": rewardGemCards.add(new Gem_Fragmented()); break;
                 case "PURPLE": rewardGemCards.add(new Gem_Purple()); break;
                 case "SYNTHETIC": rewardGemCards.add(new Gem_Synthetic()); break;
-                case "YELLOW": if (!UnlockTracker.isCardLocked(Gem_Yellow.ID)){
-                    rewardGemCards.add(new Gem_Yellow());
-                } break;
+                case "YELLOW": rewardGemCards.add(new Gem_Yellow()); break;
             }
             allGemCards.remove(rando);
         }

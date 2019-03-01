@@ -59,7 +59,14 @@ public class HyperBeam_Guardian extends AbstractGuardianCard {
         this.updateDescription();
 
     }
-
+    @Override
+    public float calculateModifiedCardDamage(AbstractPlayer player, AbstractMonster mo, float tmp) {
+        return tmp + calculateBeamDamage();
+    }
+    @Override
+    public float calculateModifiedCardDamage(AbstractPlayer player, float tmp) {
+        return tmp + calculateBeamDamage();
+    }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         super.use(p,m);

@@ -260,7 +260,7 @@ public abstract class AbstractGuardianCard extends CustomCard implements CustomS
                 if (!after) addedDesc = addedDesc + " NL ";
             } else {
                 if (after) addedDesc = addedDesc + " NL ";
-                addedDesc = addedDesc + "[Socket]";
+                addedDesc = addedDesc + "[ Socket ]";
                 if (!after) addedDesc = addedDesc + " NL ";
             }
         }
@@ -416,19 +416,15 @@ public abstract class AbstractGuardianCard extends CustomCard implements CustomS
 
     }
 
-    public float calculateModifiedCardDamage(AbstractPlayer player, AbstractMonster mo, float tmp) {
+    public float calculateBeamDamage() {
         int bonus = 0;
-        if (this.hasTag(GuardianMod.BEAM)) {
-            if (player.hasPower(BeamBuffPower.POWER_ID)) {
-                bonus = player.getPower(BeamBuffPower.POWER_ID).amount;
-            }
-            if (mo != null) {
-                if (mo.hasPower(BeamBuffPower.POWER_ID)) {
-                    bonus = bonus + mo.getPower(BeamBuffPower.POWER_ID).amount;
+
+            if (AbstractDungeon.player != null) {
+                if (AbstractDungeon.player.hasPower(BeamBuffPower.POWER_ID)) {
+                    bonus = AbstractDungeon.player.getPower(BeamBuffPower.POWER_ID).amount;
                 }
             }
-        }
-        return tmp + bonus;
+        return bonus;
     }
 
 }

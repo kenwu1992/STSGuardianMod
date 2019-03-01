@@ -66,35 +66,9 @@ public class ConstructModePower extends AbstractGuardianPower {
 
     }
 
-    public void switchToConstructMode(){
-
-        if (this.owner instanceof GuardianCharacter){
-            ((GuardianCharacter)this.owner).switchToShatteredMode();
-        }
-        /*
-        if (GuardianMod.bronzeOrbInPlay != null) {
-            GuardianMod.bronzeOrbInPlay.moveToBackline();
-        }
-        */
-
-    }
-
-    public void switchToOffensiveMode(){
-
-        if (this.owner instanceof GuardianCharacter){
-            ((GuardianCharacter)this.owner).switchToOffensiveMode();
-        }
-        /*
-        if (GuardianMod.bronzeOrbInPlay != null) {
-            GuardianMod.bronzeOrbInPlay.moveToFrontline();
-        }
-        */
-    }
-
     @Override
     public void onRemove() {
         super.onRemove();
-      //  switchToOffensiveMode();
     }
 
     @Override
@@ -102,10 +76,4 @@ public class ConstructModePower extends AbstractGuardianPower {
         return 0;
     }
 
-    @Override
-    public int onAttacked(DamageInfo info, int damageAmount) {
-        info.base = 0;
-        info.output = 0;
-        return 0;
-    }
 }

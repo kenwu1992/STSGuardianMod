@@ -33,7 +33,7 @@ public class BaubleBeam extends AbstractGuardianCard {
 
     private static final int COST = 3;
     private static final int DAMAGE = 12;
-    private static final int UPGRADE_DAMAGE = 3;
+    private static final int UPGRADE_DAMAGE = 6;
     private static final int SOCKETS = 2;
     private static final boolean SOCKETSAREAFTER = true;
 
@@ -56,7 +56,14 @@ public class BaubleBeam extends AbstractGuardianCard {
 
     }
 
-
+    @Override
+    public float calculateModifiedCardDamage(AbstractPlayer player, AbstractMonster mo, float tmp) {
+        return tmp + calculateBeamDamage();
+    }
+    @Override
+    public float calculateModifiedCardDamage(AbstractPlayer player, float tmp) {
+        return tmp + calculateBeamDamage();
+    }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         super.use(p, m);

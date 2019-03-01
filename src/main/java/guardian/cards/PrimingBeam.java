@@ -69,6 +69,15 @@ public class PrimingBeam extends AbstractGuardianCard {
 
     }
 
+    @Override
+    public float calculateModifiedCardDamage(AbstractPlayer player, AbstractMonster mo, float tmp) {
+        return tmp + calculateBeamDamage();
+    }
+
+    @Override
+    public float calculateModifiedCardDamage(AbstractPlayer player, float tmp) {
+        return tmp + calculateBeamDamage();
+    }
 
     public AbstractCard makeCopy() {
         return new PrimingBeam();

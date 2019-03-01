@@ -2,6 +2,7 @@ package guardian.cards;
 
 
 
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.defect.DiscardPileToHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -48,6 +49,8 @@ public class Recover extends AbstractGuardianCard {
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         super.use(p,m);
+
+        AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, this.block));
 
         if (AbstractDungeon.player.discardPile.size() > 0) {
             AbstractDungeon.actionManager.addToBottom(new DiscardPileToStasisAction(this.magicNumber));

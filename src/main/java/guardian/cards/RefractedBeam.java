@@ -28,7 +28,7 @@ public class RefractedBeam extends AbstractGuardianCard {
     public static String UPGRADED_DESCRIPTION;
     public static final String IMG_PATH = "cards/refractedBeam.png";
     private static final CardType TYPE = CardType.ATTACK;
-    private static final CardRarity RARITY = CardRarity.BASIC;
+    private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.ENEMY;
 
     private static final CardStrings cardStrings;
@@ -59,7 +59,14 @@ public class RefractedBeam extends AbstractGuardianCard {
 
     }
 
-
+    @Override
+    public float calculateModifiedCardDamage(AbstractPlayer player, AbstractMonster mo, float tmp) {
+        return tmp + calculateBeamDamage();
+    }
+    @Override
+    public float calculateModifiedCardDamage(AbstractPlayer player, float tmp) {
+        return tmp + calculateBeamDamage();
+    }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         super.use(p, m);

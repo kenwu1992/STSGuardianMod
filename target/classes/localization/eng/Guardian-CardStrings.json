@@ -17,13 +17,13 @@
   },
   "Guardian:Gem_Red": {
     "NAME": "Ruby",
-    "DESCRIPTION": "Gem. NL Gain 2 Strength for this turn.",
-    "UPGRADE_DESCRIPTION": "Gain 2 Strength for this turn."
+    "DESCRIPTION": "Gem. NL Gain 2 Fleeting Strength.",
+    "UPGRADE_DESCRIPTION": "Gain 2 Fleeting Strength."
   },
   "Guardian:Gem_Green": {
     "NAME": "Emerald",
-    "DESCRIPTION": "Gem. NL Gain 2 Dexterity for this turn.",
-    "UPGRADE_DESCRIPTION": "Gain 2 Dexterity for this turn."
+    "DESCRIPTION": "Gem. NL Gain 2 Fleeting Dexterity.",
+    "UPGRADE_DESCRIPTION": "Gain 2 Fleeting Dexterity."
   },
   "Guardian:Gem_White": {
     "NAME": "Quartz",
@@ -56,7 +56,7 @@
   },
   "Guardian:FierceBash": {
     "NAME": "Fierce Bash",
-    "DESCRIPTION": "Deal !D! damage. NL While in Stasis, when this card's turn counter is reduced, increase damage by !M!."
+    "DESCRIPTION": "Deal !D! damage. NL While in Stasis, when this card's turn counter is reduced, increase its damage by !M!."
   },
   "Guardian:PolyBeam": {
     "NAME": "Poly Beam",
@@ -100,8 +100,8 @@
   },
   "Guardian:FloatingOrbs": {
     "NAME": "Floating Orbs",
-    "DESCRIPTION": "At the start of your turn, add an Orb Slam to your hand.",
-    "UPGRADE_DESCRIPTION": "Innate. NL At the start of your turn, add an Orb Slam to your hand."
+    "DESCRIPTION": "At the start of your turn, add an Orb_Slam to your hand.",
+    "UPGRADE_DESCRIPTION": "Innate. NL At the start of your turn, add an Orb_Slam to your hand."
   },
   "Guardian:OrbSlam": {
     "NAME": "Orb Slam",
@@ -232,13 +232,9 @@
     "NAME": "Construction Form",
     "DESCRIPTION": "For !M! turns, you cannot lose HP or play Attacks."
   },
-  "Guardian:MultiBoost": {
-    "NAME": "MultiBoost",
-    "DESCRIPTION": "Attacks that deal damage multiple times do so an additional time."
-  },
   "Guardian:WeakpointTargeting": {
     "NAME": "Spot Weakpoint",
-    "DESCRIPTION": "Each time the enemy takes damage this combat, gain 1 Strength for the turn. NL Exhaust."
+    "DESCRIPTION": "Whenever targeted enemy takes damage, gain 1 Fleeting Strength. NL Exhaust."
   },
   "Guardian:RollAttack": {
     "NAME": "Roll Attack",
@@ -262,7 +258,7 @@
 },
   "Guardian:SharpenScales": {
     "NAME": "Shield Spikes",
-    "DESCRIPTION": "Gain !B! Block. NL Gain !M! Thorns for this turn if you are in Defensive_Mode."
+    "DESCRIPTION": "Gain !B! Block. NL Gain !M! Fleeting Thorns if you are in Defensive_Mode."
   },
   "Guardian:PrismaticBeam": {
     "NAME": "Prismatic Beam",
@@ -374,7 +370,7 @@
   },
   "Guardian:RevengeProtocol": {
     "NAME": "Revenge Protocol",
-    "DESCRIPTION": "Gain !M! Strength until the end of your turn whenever your Block is broken while in Defensive_Mode. NL Gain Defensive_Mode."
+    "DESCRIPTION": "Gain !M! Fleeting Strength whenever your Block is broken while in Defensive_Mode. NL Gain Defensive_Mode."
   },
   "Guardian:GatlingBeam": {
     "NAME": "Gatling Beam",

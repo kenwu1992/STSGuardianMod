@@ -77,6 +77,10 @@ public class PolyBeam extends AbstractGuardianCard {
 
     }
 
+    @Override
+    public float calculateModifiedCardDamage(AbstractPlayer player, float tmp) {
+        return tmp + calculateBeamDamage();
+    }
 
     public void upgrade() {
 

@@ -70,7 +70,7 @@ public class TemporalStrike extends AbstractGuardianCard {
     public void upgrade() {
         if (!this.upgraded) {
             upgradeName();
-            upgradeMagicNumber(UPGRADE_DAMAGE);
+            upgradeDamage(UPGRADE_DAMAGE);
         }
 
 

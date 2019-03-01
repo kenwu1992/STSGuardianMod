@@ -1,3 +1,4 @@
+/*
 package guardian.patches;
 
 import basemod.ReflectionHacks;
@@ -35,7 +36,7 @@ public class ArtifactPatch {
 
 
 }
-
+*/
 
 
 

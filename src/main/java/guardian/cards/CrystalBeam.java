@@ -63,11 +63,10 @@ public class CrystalBeam extends AbstractGuardianCard {
     }
 
     public float calculateModifiedCardDamage(AbstractPlayer player, AbstractMonster mo, float tmp) {
-        super.calculateModifiedCardDamage(player, mo, tmp);
         int bonus = 0;
         int cards = countCards();
         bonus = cards * this.magicNumber;
-        return tmp + bonus;
+        return tmp + bonus + calculateBeamDamage();
 
     }
 
