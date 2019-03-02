@@ -701,10 +701,10 @@ public static void saveData() {
 
         String language;
         switch (Settings.language) {
-            /*
             case KOR:
                 language = "kor";
                 break;
+            /*
             case ZHS:
                 language = "zhs";
                 break;

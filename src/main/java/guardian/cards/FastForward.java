@@ -54,8 +54,6 @@ public class FastForward extends AbstractGuardianCard {
             }
         }
 
-        this.exhaust = true;
-
     }
 
     public AbstractCard makeCopy() {
