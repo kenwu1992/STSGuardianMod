@@ -37,8 +37,8 @@
   },
   "Guardian:Gem_Cyan": {
     "NAME": "Aquamarine",
-    "DESCRIPTION": "Gem. NL Gain a Crystal Ward.",
-    "UPGRADE_DESCRIPTION": "Gain a Crystal Ward."
+    "DESCRIPTION": "Gem. NL Add a Ward to your hand.",
+    "UPGRADE_DESCRIPTION": "Add a Ward to your hand."
   },
   "Guardian:ChargeUp": {
     "NAME": "Charge Up",
@@ -349,8 +349,8 @@
   },
   "Guardian:Gem_Fragmented": {
     "NAME": "Fragmented Gem",
-    "DESCRIPTION": "Gem. NL Gain a Crystal Shiv.",
-    "UPGRADE_DESCRIPTION": "Gain a Crystal Shiv."
+    "DESCRIPTION": "Gem. NL Add a Shiv to your hand.",
+    "UPGRADE_DESCRIPTION": "Add a Shiv to your hand."
   },
   "Guardian:CrystalShiv": {
     "NAME": "Crystal Shiv",

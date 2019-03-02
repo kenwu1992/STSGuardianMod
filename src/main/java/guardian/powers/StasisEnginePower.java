@@ -51,7 +51,7 @@ public class StasisEnginePower extends AbstractGuardianTwoAmountPower {
     @Override
     public void onUseCard(AbstractCard card, UseCardAction action) {
         super.onUseCard(card, action);
-        if (card.cost == 0 || card.freeToPlayOnce || card.costForTurn >= card.cost){
+        if (card.cost == 0 || card.freeToPlayOnce || (card.isCostModifiedForTurn && card.costForTurn == 0)){
             this.amount2++;
             if (this.amount2 >= 3){
                 this.amount2 = 0;
