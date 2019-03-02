@@ -3,7 +3,7 @@
   "name": "Guardian Mod",
   "author_list": ["Michael Mayhem", "zwolfiez"],
   "description": "Adds a new playable enemy character: The Guardian. \n \n If you like the mod and want to support me, check out my multiplayer party game, Sumo, in Early Access on Steam! - https://store.steampowered.com/app/858960/Sumo/  \n \n Extra thanks to the creators of Mod the Spire and the Discord modding community.  \n \n Credit: @FreshBoneArt for Guardian fanart used in character select. kiooeht - The god.   Blank the Evil, Evil Pickle, JohnnyDevo, Reina, Skyson, Chronometrics, kobting, moocowgoesmoo for all the help.  Shoutout to Rhapsody (YouTube) for all the modded content creation! \n \n Localization Credit: KOR - Dalamzi & Tokbum",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "sts_version": "01-03-2019",
   "mts_version": "3.6.3",
   "dependencies": ["basemod", "stslib"],

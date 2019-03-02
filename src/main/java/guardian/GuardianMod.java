@@ -651,10 +651,11 @@ public static void saveData() {
         final Gson gson = new Gson();
         String language;
         switch (Settings.language) {
-            /*
+
             case KOR:
                 language = "kor";
                 break;
+                /*
             case ZHS:
                 language = "zhs";
                 break;
