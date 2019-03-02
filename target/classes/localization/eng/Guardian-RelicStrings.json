@@ -10,7 +10,7 @@
     "NAME": "Guardian Gear",
     "FLAVOR": "Replace every 3,000 floors.",
     "DESCRIPTIONS": [
-      "Begin each combat with 5 Defensive Mode."
+      "Replaces #rMode #rShifter. NL Begin each combat with 5 Defensive Mode."
     ]
   },
   "Guardian:DefensiveModeMoreBlock": {

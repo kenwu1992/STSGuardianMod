@@ -44,7 +44,7 @@
       "accelerate"
     ],
     "PROPER_NAME": "Accelerate",
-    "DESCRIPTION": "Reduce the turn counter of a card in Stasis by 1. If the card now costs 0, return it to your hand."
+    "DESCRIPTION": "Reduce the turn counter of a card in Stasis by 1. If the card's turn counter is now 0, return it to your hand at 0-cost."
   },
   {
     "NAMES": [
@@ -84,5 +84,19 @@
     ],
     "PROPER_NAME": "Fleeting",
     "DESCRIPTION": "A Fleeting buff effect also adds a debuff effect which causes you to lose the buff's effect at the end of the turn."
+  },
+  {
+    "NAMES": [
+      "volatile"
+    ],
+    "PROPER_NAME": "Volatile",
+    "DESCRIPTION": "When this card leaves Stasis, Exhaust it instead of returning it to your hand."
+  },
+  {
+    "NAMES": [
+      "tick"
+    ],
+    "PROPER_NAME": "Tick",
+    "DESCRIPTION": "This effect is triggered whenever this card's turn counter is reduced while in Stasis."
   }
 ]

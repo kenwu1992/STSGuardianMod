@@ -52,7 +52,9 @@ public class Orbwalk extends AbstractGuardianCard {
     public void upgrade() {
         if (!this.upgraded) {
             upgradeName();
-            upgradeMagicNumber(1);
+            this.rawDescription = UPGRADED_DESCRIPTION;
+            this.initializeDescription();
+
         }
     }
 

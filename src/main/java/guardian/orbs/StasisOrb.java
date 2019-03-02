@@ -2,14 +2,19 @@ package guardian.orbs;
 
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.OrbStrings;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
@@ -17,12 +22,11 @@ import guardian.GuardianMod;
 import guardian.actions.DestroyOrbSlotForDamageAction;
 import guardian.actions.ReturnStasisCardToHandAction;
 import guardian.actions.StasisEvokeIfRoomInHandAction;
-import guardian.cards.FierceBash;
-import guardian.cards.Orbwalk;
-import guardian.cards.SpacetimeBattery;
-import guardian.cards.TimeBomb;
+import guardian.cards.*;
+import guardian.powers.BeamBuffPower;
 import guardian.relics.StasisUpgradeRelic;
 import guardian.vfx.AddCardToStasisEffect;
+import guardian.vfx.SmallLaserEffectColored;
 
 
 public class StasisOrb extends AbstractOrb {
@@ -99,6 +103,17 @@ public class StasisOrb extends AbstractOrb {
             AbstractDungeon.actionManager.addToBottom(new GainBlockAction(AbstractDungeon.player, AbstractDungeon.player, ((SpacetimeBattery)this.stasisCard).magicNumber));
 
         }
+        if (this.stasisCard instanceof GatlingBeam){
+            AbstractMonster m = AbstractDungeon.getMonsters().getRandomMonster(true);
+            for (int i = 0; i < ((GatlingBeam)stasisCard).turnsInStasis + 1; i++) {
+
+                AbstractDungeon.actionManager.addToBottom(new SFXAction("ATTACK_MAGIC_BEAM_SHORT", 0.5F));
+                AbstractDungeon.actionManager.addToBottom(new VFXAction(new SmallLaserEffectColored(m.hb.cX, m.hb.cY, AbstractDungeon.player.hb.cX, AbstractDungeon.player.hb.cY, Color.BLUE), 0.1F));
+                AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new com.megacrit.cardcrawl.cards.DamageInfo(AbstractDungeon.player, stasisCard.damage, stasisCard.damageTypeForTurn), AbstractGameAction.AttackEffect.FIRE));
+            }
+            ((GatlingBeam)stasisCard).turnsInStasis++;
+
+        }
 
         if (this.passiveAmount > 0){
             this.passiveAmount -= 1;
@@ -113,10 +128,14 @@ public class StasisOrb extends AbstractOrb {
         if (this.stasisCard instanceof TimeBomb){
             AbstractDungeon.player.exhaustPile.addToTop(this.stasisCard);
             AbstractDungeon.actionManager.addToBottom(new DestroyOrbSlotForDamageAction(this.stasisCard.magicNumber, this));
+        } else if (this.stasisCard instanceof GatlingBeam || (this.stasisCard instanceof Orbwalk && !this.stasisCard.upgraded)){
+            AbstractDungeon.player.exhaustPile.addToTop(this.stasisCard);
+
         } else {
             stasisCard.freeToPlayOnce = true;
             AbstractDungeon.actionManager.addToTop(new ReturnStasisCardToHandAction(this.stasisCard));
             this.stasisCard.superFlash(Color.GOLDENROD);
+
         }
         //GuardianMod.updateStasisCount();
     }
