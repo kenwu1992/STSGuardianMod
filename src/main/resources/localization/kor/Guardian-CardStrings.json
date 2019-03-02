@@ -22,8 +22,8 @@
   },
   "Guardian:Gem_Green": {
     "NAME": "에메랄드",
-    "DESCRIPTION": "보석. NL 임시 민첩을 1 얻습니다.",
-    "UPGRADE_DESCRIPTION": "임시 민첩을 1 얻습니다."
+    "DESCRIPTION": "보석. NL 임시 민첩 을 1 얻습니다.",
+    "UPGRADE_DESCRIPTION": "임시 민첩 을 1 얻습니다."
   },
   "Guardian:Gem_White": {
     "NAME": "석영",
@@ -109,7 +109,7 @@
   },
   "Guardian:Incinerate": {
     "NAME": "잿더미",
-    "DESCRIPTION": "피해를 !D! 주고, 이번 전투에서 지난 턴 마다 피해량이 !M! 증가합니다."
+    "DESCRIPTION": "피해를 !D! 줍니다. 이 공격에 맞은 적은 턴 시작시 피해를 !M! 입습니다. "
   },
   "Guardian:Orbwalk": {
     "NAME": "구체방랑",
