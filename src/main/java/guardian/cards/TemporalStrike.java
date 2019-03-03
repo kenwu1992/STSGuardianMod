@@ -29,8 +29,8 @@ public class TemporalStrike extends AbstractGuardianCard {
     //TUNING CONSTANTS
 
     private static final int COST = 1;
-    private static final int DAMAGE = 8;
-    private static final int UPGRADE_DAMAGE = 3;
+    private static final int DAMAGE = 6;
+    private static final int UPGRADE_DAMAGE = 8;
     private static final int SOCKETS = 0;
     private static final boolean SOCKETSAREAFTER = true;
 

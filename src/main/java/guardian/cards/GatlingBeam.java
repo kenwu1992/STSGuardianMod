@@ -50,6 +50,7 @@ public class GatlingBeam extends AbstractGuardianCard {
         this.baseDamage = DAMAGE;
 
         this.tags.add(GuardianMod.BEAM);
+        this.tags.add(GuardianMod.TICK);
 
         this.socketCount = SOCKETS;
         this.updateDescription();

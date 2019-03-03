@@ -123,6 +123,7 @@ guardian\actions\StasisEvokeIfRoomInHandAction.class
 guardian\powers\DefensiveModeBuffsPower.class
 guardian\actions\PlaceActualCardIntoStasis.class
 guardian\cards\Suspension.class
+guardian\relics\TickHelperRelic.class
 guardian\patches\GuardianTalkSentries.class
 guardian\relics\StasisEgg.class
 guardian\patches\EventOverridePatch.class
@@ -195,6 +196,7 @@ guardian\cards\DefendTwo.class
 guardian\powers\ConstructPower.class
 guardian\powers\NextTurnGainStrengthPower.class
 guardian\events\StasisEgg.class
+guardian\events\CrystalForge.class
 guardian\cards\WalkerClaw.class
 guardian\cards\PolyBeam.class
 guardian\patches\AbstractCardEnum.class

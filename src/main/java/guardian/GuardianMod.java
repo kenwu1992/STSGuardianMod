@@ -28,9 +28,7 @@ import com.megacrit.cardcrawl.unlock.AbstractUnlock;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import com.megacrit.cardcrawl.vfx.ThoughtBubble;
 import guardian.cards.*;
-import guardian.events.AccursedBlacksmithGuardian;
-import guardian.events.BackToBasicsGuardian;
-import guardian.events.GemMine;
+import guardian.events.*;
 import guardian.events.StasisEgg;
 import guardian.helpers.MultihitVariable;
 import guardian.helpers.SecondaryMagicVariable;
@@ -116,6 +114,8 @@ public class GuardianMod implements PostDrawSubscriber, PreMonsterTurnSubscriber
     public static AbstractCard.CardTags BEAM;
     @SpireEnum
     public static AbstractCard.CardTags PROTOCOL;
+    @SpireEnum
+    public static AbstractCard.CardTags TICK;
 
     //TODO - Unlock bundles
 
@@ -223,6 +223,26 @@ public class GuardianMod implements PostDrawSubscriber, PreMonsterTurnSubscriber
         return retVal;
     }
 
+    public static CardGroup getCardsWithFilledSockets() {
+        CardGroup retVal = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
+        Iterator var2 = AbstractDungeon.player.masterDeck.group.iterator();
+
+        while(var2.hasNext()) {
+            AbstractCard c = (AbstractCard)var2.next();
+            if (c instanceof AbstractGuardianCard) {
+                AbstractGuardianCard cg = (AbstractGuardianCard) c;
+                if (cg.socketCount > 0) {
+                    if (cg.sockets.size() > 0) {
+                        retVal.group.add(c);
+                    }
+                }
+
+            }
+        }
+
+        return retVal;
+    }
+
     public static CardGroup getGemCards() {
         CardGroup retVal = new CardGroup(CardGroup.CardGroupType.MASTER_DECK);
         Iterator var2 = AbstractDungeon.player.masterDeck.group.iterator();
@@ -285,7 +305,7 @@ public class GuardianMod implements PostDrawSubscriber, PreMonsterTurnSubscriber
 
             UnlockTracker.addRelic(StasisSlotIncreaseRelic.ID);
             UnlockTracker.addRelic(PocketSentry.ID);
-            UnlockTracker.addRelic(DefensiveModeMoreBlock.ID);
+            UnlockTracker.addRelic(TickHelperRelic.ID);
 
 
     }
@@ -329,6 +349,7 @@ public class GuardianMod implements PostDrawSubscriber, PreMonsterTurnSubscriber
         BaseMod.addRelicToCustomPool(new StasisCodex(), AbstractCardEnum.GUARDIAN);
         BaseMod.addRelicToCustomPool(new StasisSlotIncreaseRelic(), AbstractCardEnum.GUARDIAN);
         BaseMod.addRelicToCustomPool(new StasisSlotReductionRelic(), AbstractCardEnum.GUARDIAN);
+        BaseMod.addRelicToCustomPool(new TickHelperRelic(), AbstractCardEnum.GUARDIAN);
         BaseMod.addRelicToCustomPool(new StasisUpgradeRelic(), AbstractCardEnum.GUARDIAN);
         BaseMod.addRelicToCustomPool(new guardian.relics.StasisEgg(), AbstractCardEnum.GUARDIAN);
         BaseMod.registerBottleRelic(BottledStasisPatch.inStasisEgg, new guardian.relics.StasisEgg());
@@ -340,7 +361,7 @@ public class GuardianMod implements PostDrawSubscriber, PreMonsterTurnSubscriber
 
         if (unlocks2 == null){
         unlocks2 = new CustomUnlockBundle(AbstractUnlock.UnlockType.RELIC,
-                StasisSlotIncreaseRelic.ID, PocketSentry.ID, DefensiveModeMoreBlock.ID
+                StasisSlotIncreaseRelic.ID, PocketSentry.ID, TickHelperRelic.ID
         );
 
         unlocks4 = new CustomUnlockBundle(AbstractUnlock.UnlockType.RELIC,
@@ -885,11 +906,13 @@ public static void saveData() {
 
         BaseMod.addEvent(BackToBasicsGuardian.ID, BackToBasicsGuardian.class, TheCity.ID);
         BaseMod.addEvent(AccursedBlacksmithGuardian.ID, AccursedBlacksmithGuardian.class, TheCity.ID);
+        BaseMod.addEvent(CrystalForge.ID, CrystalForge.class, TheCity.ID);
 
 
         if (Loader.isModLoaded("TheJungle")){
-            BaseMod.addEvent(GemMine.ID, GemMine.class, "TheJungle");
-            BaseMod.addEvent(StasisEgg.ID, StasisEgg.class, "TheJungle");
+            BaseMod.addEvent(BackToBasicsGuardian.ID, BackToBasicsGuardian.class, "TheJungle");
+            BaseMod.addEvent(AccursedBlacksmithGuardian.ID, AccursedBlacksmithGuardian.class, "TheJungle");
+            BaseMod.addEvent(CrystalForge.ID, CrystalForge.class, "TheJungle");
         }
 
 

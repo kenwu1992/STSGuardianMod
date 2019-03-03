@@ -25,6 +25,7 @@ import guardian.actions.StasisEvokeIfRoomInHandAction;
 import guardian.cards.*;
 import guardian.powers.BeamBuffPower;
 import guardian.relics.StasisUpgradeRelic;
+import guardian.relics.TickHelperRelic;
 import guardian.vfx.AddCardToStasisEffect;
 import guardian.vfx.SmallLaserEffectColored;
 
@@ -40,6 +41,7 @@ public class StasisOrb extends AbstractOrb {
 
     public AbstractCard stasisCard;
     private AbstractGameEffect stasisStartEffect;
+    private boolean initialized;
 
     public StasisOrb(AbstractCard card) {
         this.stasisCard = card;
@@ -57,6 +59,11 @@ public class StasisOrb extends AbstractOrb {
 
         if (this.basePassiveAmount < 1){
             this.basePassiveAmount = this.passiveAmount = 1;
+        }
+        if (this.stasisCard.hasTag(GuardianMod.TICK) && AbstractDungeon.player.hasRelic(TickHelperRelic.ID)){
+            this.basePassiveAmount = this.passiveAmount = this.basePassiveAmount + 2;
+            AbstractDungeon.player.getRelic(TickHelperRelic.ID).flash();
+
         }
         card.targetAngle = 0F;
 
@@ -151,6 +158,35 @@ public class StasisOrb extends AbstractOrb {
 
     @Override
     public void update() {
+        if (!initialized) {
+            if (AbstractDungeon.player.drawPile.contains(stasisCard)) {
+                AbstractDungeon.player.drawPile.removeCard(stasisCard);
+                stasisStartEffect = new AddCardToStasisEffect(stasisCard, this, AbstractDungeon.overlayMenu.combatDeckPanel.current_x + (100F * Settings.scale), AbstractDungeon.overlayMenu.combatDeckPanel.current_y + (100F * Settings.scale), AbstractDungeon.overlayMenu.combatDeckPanel.current_x + (200F * Settings.scale), AbstractDungeon.overlayMenu.combatDeckPanel.current_y + (600F * Settings.scale));
+                AbstractDungeon.effectsQueue.add(stasisStartEffect);
+            } else if (AbstractDungeon.player.hand.contains(stasisCard)) {
+                AbstractDungeon.player.hand.removeCard(stasisCard);
+                stasisStartEffect = new AddCardToStasisEffect(stasisCard, this, stasisCard.current_x, stasisCard.current_y, AbstractDungeon.overlayMenu.discardPilePanel.current_x - (200F * Settings.scale), AbstractDungeon.overlayMenu.discardPilePanel.current_y + (600F * Settings.scale));
+                AbstractDungeon.effectsQueue.add(stasisStartEffect);
+            } else if (AbstractDungeon.player.discardPile.contains(stasisCard)) {
+                AbstractDungeon.player.discardPile.removeCard(stasisCard);
+                stasisStartEffect = new AddCardToStasisEffect(stasisCard, this, AbstractDungeon.overlayMenu.discardPilePanel.current_x - (100F * Settings.scale), AbstractDungeon.overlayMenu.discardPilePanel.current_y + (100F * Settings.scale), AbstractDungeon.overlayMenu.discardPilePanel.current_x - (200F * Settings.scale), AbstractDungeon.overlayMenu.discardPilePanel.current_y + (600F * Settings.scale));
+                AbstractDungeon.effectsQueue.add(stasisStartEffect);
+            } else if (AbstractDungeon.player.exhaustPile.contains(stasisCard)) {
+                AbstractDungeon.player.exhaustPile.removeCard(stasisCard);
+                stasisStartEffect = new AddCardToStasisEffect(stasisCard, this, AbstractDungeon.overlayMenu.discardPilePanel.current_x - (100F * Settings.scale), AbstractDungeon.overlayMenu.exhaustPanel.current_y + (100F * Settings.scale), AbstractDungeon.overlayMenu.discardPilePanel.current_x - (200F * Settings.scale), AbstractDungeon.overlayMenu.discardPilePanel.current_y + (600F * Settings.scale));
+                AbstractDungeon.effectsQueue.add(stasisStartEffect);
+            } else if (AbstractDungeon.player.limbo.contains(stasisCard)) {
+                AbstractDungeon.player.limbo.removeCard(stasisCard);
+                stasisStartEffect = new AddCardToStasisEffect(stasisCard, this, Settings.WIDTH / 2, Settings.HEIGHT * .25F, Settings.WIDTH / 2, Settings.HEIGHT / 2);
+                AbstractDungeon.effectsQueue.add(stasisStartEffect);
+            } else {
+                stasisStartEffect = new AddCardToStasisEffect(stasisCard, this, Settings.WIDTH / 2, Settings.HEIGHT * .25F, Settings.WIDTH / 2, Settings.HEIGHT / 2);
+                AbstractDungeon.effectsQueue.add(stasisStartEffect);
+            }
+            this.stasisCard.targetDrawScale = GuardianMod.stasisCardRenderScale;
+            this.stasisCard.retain = false;
+            this.initialized = true;
+        }
 
         super.update();
         this.stasisCard.target_x = this.tX;
@@ -189,35 +225,7 @@ public class StasisOrb extends AbstractOrb {
 
     public void playChannelSFX() {
        // CardCrawlGame.sound.play("ORB_LIGHTNING_CHANNEL", 0.1F);
-        if (AbstractDungeon.player.drawPile.contains(stasisCard)){
-            AbstractDungeon.player.drawPile.removeCard(stasisCard);
-            stasisStartEffect = new AddCardToStasisEffect(stasisCard,this, AbstractDungeon.overlayMenu.combatDeckPanel.current_x + (100F * Settings.scale), AbstractDungeon.overlayMenu.combatDeckPanel.current_y + (100F * Settings.scale), AbstractDungeon.overlayMenu.combatDeckPanel.current_x + (200F * Settings.scale), AbstractDungeon.overlayMenu.combatDeckPanel.current_y + (600F * Settings.scale));
-            AbstractDungeon.effectsQueue.add(stasisStartEffect);
-        }
-        else if (AbstractDungeon.player.hand.contains(stasisCard)){
-            AbstractDungeon.player.hand.removeCard(stasisCard);
-            stasisStartEffect = new AddCardToStasisEffect(stasisCard,this, stasisCard.current_x, stasisCard.current_y, AbstractDungeon.overlayMenu.discardPilePanel.current_x - (200F * Settings.scale), AbstractDungeon.overlayMenu.discardPilePanel.current_y + (600F * Settings.scale));
-            AbstractDungeon.effectsQueue.add(stasisStartEffect);
-        }
-        else if (AbstractDungeon.player.discardPile.contains(stasisCard)){
-            AbstractDungeon.player.discardPile.removeCard(stasisCard);
-            stasisStartEffect = new AddCardToStasisEffect(stasisCard,this, AbstractDungeon.overlayMenu.discardPilePanel.current_x - (100F * Settings.scale), AbstractDungeon.overlayMenu.discardPilePanel.current_y + (100F * Settings.scale), AbstractDungeon.overlayMenu.discardPilePanel.current_x - (200F * Settings.scale), AbstractDungeon.overlayMenu.discardPilePanel.current_y + (600F * Settings.scale));
-            AbstractDungeon.effectsQueue.add(stasisStartEffect);
-        }
-        else if (AbstractDungeon.player.exhaustPile.contains(stasisCard)){
-            AbstractDungeon.player.exhaustPile.removeCard(stasisCard);
-            stasisStartEffect = new AddCardToStasisEffect(stasisCard,this, AbstractDungeon.overlayMenu.discardPilePanel.current_x - (100F * Settings.scale), AbstractDungeon.overlayMenu.exhaustPanel.current_y + (100F * Settings.scale), AbstractDungeon.overlayMenu.discardPilePanel.current_x - (200F * Settings.scale), AbstractDungeon.overlayMenu.discardPilePanel.current_y + (600F * Settings.scale));
-            AbstractDungeon.effectsQueue.add(stasisStartEffect);
-        } else if (AbstractDungeon.player.limbo.contains(stasisCard)){
-            AbstractDungeon.player.limbo.removeCard(stasisCard);
-            stasisStartEffect = new AddCardToStasisEffect(stasisCard,this, Settings.WIDTH / 2, Settings.HEIGHT * .25F, Settings.WIDTH / 2, Settings.HEIGHT / 2);
-            AbstractDungeon.effectsQueue.add(stasisStartEffect);
-        } else {
-            stasisStartEffect = new AddCardToStasisEffect(stasisCard,this, Settings.WIDTH / 2, Settings.HEIGHT * .25F, Settings.WIDTH / 2, Settings.HEIGHT / 2);
-            AbstractDungeon.effectsQueue.add(stasisStartEffect);
-        }
-        this.stasisCard.targetDrawScale = GuardianMod.stasisCardRenderScale;
-        this.stasisCard.retain = false;
+
        // GuardianMod.updateStasisCount();
     }
 

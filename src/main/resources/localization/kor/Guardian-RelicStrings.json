@@ -88,5 +88,12 @@
       "전투 시작시 ",
       " 카드를 전투에서 제외합니다. 3번째 턴 시작시 해당 카드와 복제된 카드 2장을 손으로 가져옵니다."
     ]
+  },
+  "Guardian:TickHelperRelic": {
+    "NAME": "Cooling Fluid",
+    "FLAVOR": "Hazardous. Do not consume.",
+    "DESCRIPTIONS": [
+      "When a card with a Tick effect enters Stasis, increase it's turn counter by 2."
+    ]
   }
 }

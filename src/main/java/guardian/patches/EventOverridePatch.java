@@ -6,10 +6,7 @@ import com.megacrit.cardcrawl.events.city.BackToBasics;
 import com.megacrit.cardcrawl.events.shrines.AccursedBlacksmith;
 
 import guardian.characters.GuardianCharacter;
-import guardian.events.AccursedBlacksmithGuardian;
-import guardian.events.BackToBasicsGuardian;
-import guardian.events.GemMine;
-import guardian.events.StasisEgg;
+import guardian.events.*;
 
 
 @SpirePatch(clz=AbstractDungeon.class,method="initializeCardPools")
@@ -26,6 +23,7 @@ public class EventOverridePatch {
             dungeon_instance.eventList.remove(BackToBasicsGuardian.ID);
             dungeon_instance.eventList.remove(GemMine.ID);
             dungeon_instance.eventList.remove(StasisEgg.ID);
+            dungeon_instance.eventList.remove(CrystalForge.ID);
 
         }
 

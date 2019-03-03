@@ -37,7 +37,7 @@ public class FastForward extends AbstractGuardianCard {
 
     public FastForward() {
         super(ID, NAME, GuardianMod.getResourcePath(IMG_PATH), COST, DESCRIPTION, TYPE, AbstractCardEnum.GUARDIAN, RARITY, TARGET);
-
+        this.exhaust = true;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

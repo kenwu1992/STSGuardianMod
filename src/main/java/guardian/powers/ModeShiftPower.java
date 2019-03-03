@@ -1,10 +1,12 @@
 package guardian.powers;
 
 
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.powers.BlurPower;
 import guardian.actions.SwitchToDefenseModeAction;
 
 
@@ -60,6 +62,9 @@ public class ModeShiftPower extends AbstractGuardianPower {
 
                 AbstractDungeon.actionManager.addToBottom(new SwitchToDefenseModeAction(AbstractDungeon.player));
                 AbstractDungeon.actionManager.addToBottom(new SwitchToDefenseModeAction(AbstractDungeon.player));
+                AbstractDungeon.actionManager.addToBottom(new SwitchToDefenseModeAction(AbstractDungeon.player));
+                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new BlurPower(AbstractDungeon.player, 1), 1));
+
                 this.activations++;
 
             }

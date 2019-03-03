@@ -4,6 +4,7 @@ import basemod.abstracts.CustomBottleRelic;
 import basemod.abstracts.CustomRelic;
 import basemod.abstracts.CustomSavable;
 import com.badlogic.gdx.graphics.Texture;
+import com.megacrit.cardcrawl.actions.defect.ChannelAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -13,6 +14,7 @@ import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import guardian.GuardianMod;
 import guardian.actions.PlaceActualCardIntoStasis;
+import guardian.orbs.StasisOrb;
 import guardian.patches.BottledStasisPatch;
 
 import java.util.function.Predicate;
@@ -24,7 +26,7 @@ public class BottledStasis extends CustomRelic implements CustomBottleRelic, Cus
     public static final String IMG_PATH = "relics/bottledStasis.png";
     public static final String OUTLINE_IMG_PATH = "relics/bottledStasisOutline.png";
     private boolean cardSelected = true;
-    private AbstractCard card = null;
+    public AbstractCard card = null;
 
     public BottledStasis()
     {
@@ -132,7 +134,13 @@ public class BottledStasis extends CustomRelic implements CustomBottleRelic, Cus
     @Override
     public void atBattleStartPreDraw() {
         super.atBattleStartPreDraw();
-        AbstractDungeon.actionManager.addToBottom(new PlaceActualCardIntoStasis(card));
+        for (AbstractCard c : AbstractDungeon.player.drawPile.group){
+            if (c.uuid == card.uuid){
+                AbstractDungeon.actionManager.addToTop(new ChannelAction(new StasisOrb(c)));
+                break;
+            }
+        }
+
     }
 
 }

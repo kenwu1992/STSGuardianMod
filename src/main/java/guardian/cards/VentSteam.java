@@ -35,7 +35,7 @@ public class VentSteam extends AbstractGuardianCard {
     private static final int COST = 1;
     private static final int DEBUFFCOUNT = 2;
     private static final int UPGRADE_DEBUFF = 1;
-    private static final int SOCKETS = 1;
+    private static final int SOCKETS = 2;
     private static final boolean SOCKETSAREAFTER = true;
 
     //END TUNING CONSTANTS
@@ -50,7 +50,7 @@ public class VentSteam extends AbstractGuardianCard {
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         super.use(p,m);
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new WeakPower(m, this.magicNumber, false), this.magicNumber));
+        if (upgraded) AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new WeakPower(m, this.magicNumber, false), this.magicNumber));
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new VulnerablePower(m, this.magicNumber, false), this.magicNumber));
 
         super.useGems(p,m);
@@ -63,9 +63,8 @@ public class VentSteam extends AbstractGuardianCard {
     public void upgrade() {
         if (!this.upgraded) {
             upgradeName();
-            upgradeMagicNumber(UPGRADE_DEBUFF);
-            this.socketCount++;
-            this.updateDescription();
+            this.rawDescription = UPGRADED_DESCRIPTION;
+            this.initializeDescription();
         }
     }
 

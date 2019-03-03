@@ -31,7 +31,7 @@ public class ChargeUp extends AbstractGuardianCard {
     //TUNING CONSTANTS
 
     private static final int COST = 1;
-    private static final int BLOCK = 9;
+    private static final int BLOCK = 12;
     private static final int UPGRADE_BLOCK = 3;
     private static final int STRENGTH = 1;
     private static final int UPGRADE_STRENGTH = 1;

@@ -55,6 +55,7 @@ public class FierceBash extends AbstractGuardianCard {
         //this.sockets.add(GuardianMod.socketTypes.RED);
         this.socketCount = SOCKETS;
         this.updateDescription();
+        this.tags.add(GuardianMod.TICK);
 
     }
 

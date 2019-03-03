@@ -69,7 +69,7 @@ public class BronzeOrbEffect extends com.megacrit.cardcrawl.vfx.AbstractGameEffe
                 this.duration = 0.5F;
                 this.firing = false;
                 this.targetX = p.drawX + (250F * Settings.scale);
-                this.targetY = p.drawY + (600F * Settings.scale);
+                this.targetY = p.drawY + (700F * Settings.scale);
                 this.exiting = true;
             } else if (this.exiting) {
                 this.exiting = false;

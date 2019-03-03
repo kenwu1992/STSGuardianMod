@@ -80,10 +80,10 @@
   },
   {
     "NAMES": [
-      "fleeting"
+      "momentary"
     ],
-    "PROPER_NAME": "Fleeting",
-    "DESCRIPTION": "A Fleeting buff effect also adds a debuff effect which causes you to lose the buff's effect at the end of the turn."
+    "PROPER_NAME": "Momentary",
+    "DESCRIPTION": "A Momentary buff effect also adds a debuff effect which causes you to lose the buff's effect at the end of your turn."
   },
   {
     "NAMES": [

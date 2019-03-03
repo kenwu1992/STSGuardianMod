@@ -30,8 +30,8 @@ public class TemporalShield extends AbstractGuardianCard {
     //TUNING CONSTANTS
 
     private static final int COST = 1;
-    private static final int BLOCK = 7;
-    private static final int UPGRADE_BLOCK = 3;
+    private static final int BLOCK = 5;
+    private static final int UPGRADE_BLOCK = 7;
     private static final int SOCKETS = 0;
     private static final boolean SOCKETSAREAFTER = true;
 

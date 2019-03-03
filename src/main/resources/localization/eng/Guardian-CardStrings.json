@@ -17,13 +17,13 @@
   },
   "Guardian:Gem_Red": {
     "NAME": "Ruby",
-    "DESCRIPTION": "Gem. NL Gain 1 Fleeting Strength.",
-    "UPGRADE_DESCRIPTION": "Gain 1 Fleeting Strength."
+    "DESCRIPTION": "Gem. NL Gain 1 Momentary Strength.",
+    "UPGRADE_DESCRIPTION": "Gain 1 Momentary Strength."
   },
   "Guardian:Gem_Green": {
     "NAME": "Emerald",
-    "DESCRIPTION": "Gem. NL Gain 1 Fleeting Dexterity.",
-    "UPGRADE_DESCRIPTION": "Gain 1 Fleeting Dexterity."
+    "DESCRIPTION": "Gem. NL Gain 1 Momentary Dexterity.",
+    "UPGRADE_DESCRIPTION": "Gain 1 Momentary Dexterity."
   },
   "Guardian:Gem_White": {
     "NAME": "Quartz",
@@ -56,7 +56,7 @@
   },
   "Guardian:FierceBash": {
     "NAME": "Fierce Bash",
-    "DESCRIPTION": "Deal !D! damage. NL Tick - increase this card's damage by !M!."
+    "DESCRIPTION": "Deal !D! damage. NL Tick - Increase this card's damage by !M!."
   },
   "Guardian:PolyBeam": {
     "NAME": "Poly Beam",
@@ -72,7 +72,8 @@
   },
   "Guardian:VentSteam": {
     "NAME": "Vent Steam",
-    "DESCRIPTION": "Apply !M! Weak and Vulnerable."
+    "DESCRIPTION": "Apply !M! Vulnerable.",
+    "UPGRADE_DESCRIPTION": "Apply !M! Weak and Vulnerable."
   },
   "Guardian:CurlUp": {
     "NAME": "Curl Up",
@@ -81,14 +82,6 @@
   "Guardian:TimeBomb": {
     "NAME": "Time Bomb",
     "DESCRIPTION": "Place this card into Stasis. NL When this card would leave Stasis, deal !M! damage to ALL enemies. NL Volatile."
-  },
-  "Guardian:RepulsorProtocol": {
-    "NAME": "Repulsor Protocol",
-    "DESCRIPTION": "Summon Bronze Orb. NL Your Bronze Orb attacks a random enemy for !GuardianSecondM! damage and applies !M! Weak each turn. NL Exhaust."
-  },
-  "Guardian:GuardProtocol": {
-    "NAME": "Guard Protocol",
-    "DESCRIPTION": "Summon Bronze Orb. NL Your Bronze Orb grants you !M! Block each turn. NL Exhaust."
   },
   "Guardian:HyperBeam_Guardian": {
     "NAME": "Hyper Beam",
@@ -122,7 +115,7 @@
   },
   "Guardian:SphericShield": {
     "NAME": "Spheric Shield",
-    "DESCRIPTION": "For !M! turns, Block is not removed at the start of your turn. NL Gain !B! Block NL Gain Defensive_Mode."
+    "DESCRIPTION": "For !M! turns, Block is not removed at the start of your turn. NL Gain !B! Block. NL Gain Defensive_Mode."
   },
   "Guardian:Harden": {
     "NAME": "Harden",
@@ -235,7 +228,7 @@
   },
   "Guardian:WeakpointTargeting": {
     "NAME": "Spot Weakpoint",
-    "DESCRIPTION": "Whenever targeted enemy takes damage, gain 1 Fleeting Strength. NL Exhaust."
+    "DESCRIPTION": "Whenever targeted enemy takes damage, gain 1 Momentary Strength. NL Exhaust."
   },
   "Guardian:RollAttack": {
     "NAME": "Roll Attack",
@@ -255,11 +248,11 @@
   },
   "Guardian:PiercingHide": {
   "NAME": "Piercing Hide",
-  "DESCRIPTION": "Gain !B! Block and !M! Fleeting Thorns. NL Gain Defensive_Mode."
+  "DESCRIPTION": "Gain !B! Block and !M! Momentary Thorns. NL Gain Defensive_Mode."
 },
   "Guardian:SharpenScales": {
     "NAME": "Shield Spikes",
-    "DESCRIPTION": "Gain !B! Block. NL Gain !M! Fleeting Thorns if you are in Defensive_Mode."
+    "DESCRIPTION": "Gain !B! Block. NL Gain !M! Momentary Thorns if you are in Defensive_Mode."
   },
   "Guardian:PrismaticBeam": {
     "NAME": "Prismatic Beam",
@@ -371,7 +364,7 @@
   },
   "Guardian:RevengeProtocol": {
     "NAME": "Revenge Protocol",
-    "DESCRIPTION": "Gain !M! Fleeting Strength whenever your Block is broken while in Defensive_Mode. NL Gain Defensive_Mode."
+    "DESCRIPTION": "Gain !M! Momentary Strength whenever your Block is broken while in Defensive_Mode. NL Gain Defensive_Mode."
   },
   "Guardian:GatlingBeam": {
     "NAME": "Gatling Beam",

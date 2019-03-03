@@ -49,6 +49,7 @@ public class GuardianWhirl extends AbstractGuardianCard {
 
         this.multihit = MULTICOUNT;
         this.socketCount = SOCKETS;
+        this.isMultiDamage = true;
 
         this.updateDescription();
 

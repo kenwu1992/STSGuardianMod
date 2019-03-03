@@ -52,7 +52,6 @@ public class HyperBeam_Guardian extends AbstractGuardianCard {
 
         this.tags.add(GuardianMod.BEAM);
         this.isMultiDamage = true;
-        this.exhaust = true;
 
 
         this.socketCount = SOCKETS;

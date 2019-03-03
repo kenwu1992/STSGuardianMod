@@ -48,6 +48,7 @@ public class SpacetimeBattery extends AbstractGuardianCard {
         this.baseMagicNumber = this.magicNumber = STASISBLOCK;
         this.socketCount = SOCKETS;
         this.updateDescription();
+        this.tags.add(GuardianMod.TICK);
 
     }
 

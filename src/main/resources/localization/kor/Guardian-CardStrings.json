@@ -72,7 +72,8 @@
   },
   "Guardian:VentSteam": {
     "NAME": "증기 분출",
-    "DESCRIPTION": "약화 와 취약 을 !M! 부여합니다."
+    "DESCRIPTION": "취약 을 !M! 부여합니다.",
+    "UPGRADE_DESCRIPTION": "약화 와 취약 을 !M! 부여합니다."
   },
   "Guardian:CurlUp": {
     "NAME": "웅크리기",

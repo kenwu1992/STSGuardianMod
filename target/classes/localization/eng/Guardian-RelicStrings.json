@@ -3,7 +3,7 @@
     "NAME": "Mode Shifter",
     "FLAVOR": "Protection where you need it most.",
     "DESCRIPTIONS": [
-      "When you lose 10 HP, gain 10 Block and 2 Defensive Mode. NL Each activation increases the amount of HP loss required to activate again."
+      "When you lose 10 HP, gain 3 Defensive Mode and 15 Block. NL When activated, Block will not be removed at the start of your next turn. NL Each activation increases the amount of HP loss required to activate again by 5."
     ]
   },
   "Guardian:ModeShifterPlus": {
@@ -87,6 +87,13 @@
       "Choose a card for ",
       "Start each combat with ",
       " removed from your deck. At the start of your 3rd turn, return it and two copies of it to your hand."
+    ]
+  },
+  "Guardian:TickHelperRelic": {
+    "NAME": "Cooling Fluid",
+    "FLAVOR": "Hazardous. Do not consume.",
+    "DESCRIPTIONS": [
+      "When a card with a Tick effect enters Stasis, increase it's turn counter by 2."
     ]
   }
 }
