@@ -78,7 +78,10 @@
       "당신은 들어왔던 길 그대로 방을 빠져나갔습니다. 오싹한 제련소를 뒤로하고 당신의 여행은 첨탑의 파멸을 향해 계속됩니다.",
       "해체할 카드를 선택하시오.",
       "보석을 떼어낼 카드를 선택하시오.",
-      "변성할 카드를 선택하시오."
+      "변성할 카드를 선택하시오.",
+      "Select a Gem.",
+      "Select a Card to receive Gem.",
+      "Taking advantage of this break in the climb, you place a gemstone into your equipment, instantly feeling your power grow."
     ],
     "OPTIONS": [
       "[해체] 소켓에 보석을 장착한 카드를 1장 #r파괴 합니다. 파괴한 카드에 있는 #g보석 을 얻습니다.",
@@ -86,7 +89,9 @@
       "[떼어내기] 소켓에 보석을 장착한 카드 1장에 있는 모든 #g보석 을 #r파괴 합니다.",
       "[변성] 카드를 1장 #r제거 합니다. 무작위 #g보석 을 1장 얻습니다.",
       "[잠김] 이미 사용했습니다.",
-      "[떠난다]"
+      "[떠난다]",
+      "[Enhance] Add a #gGem to a #gSocket.",
+      "[Locked] Requires a Gem and an open Socket."
     ]
   }
 }
