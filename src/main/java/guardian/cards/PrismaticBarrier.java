@@ -32,7 +32,7 @@ public class PrismaticBarrier extends AbstractGuardianCard {
 
     private static final int COST = 1;
     private static final int BLOCK = 3;
-    private static final int UPGRADE_BONUS = 2;
+    private static final int UPGRADE_BONUS = 0;
     private static final int MULTICOUNT = 1;
     private static final int SOCKETS = 2;
     private static final boolean SOCKETSAREAFTER = true;
@@ -66,7 +66,9 @@ public class PrismaticBarrier extends AbstractGuardianCard {
     public void upgrade() {
         if (!this.upgraded) {
             upgradeName();
-            upgradeBlock(UPGRADE_BONUS);
+
+            this.socketCount++;
+            this.updateDescription();
         }
     }
 

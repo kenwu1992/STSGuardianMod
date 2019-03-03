@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -111,12 +112,14 @@ public class StasisOrb extends AbstractOrb {
 
         }
         if (this.stasisCard instanceof GatlingBeam){
-            AbstractMonster m = AbstractDungeon.getMonsters().getRandomMonster(true);
-            for (int i = 0; i < ((GatlingBeam)stasisCard).turnsInStasis + 1; i++) {
 
+
+            for (int i = 0; i < ((GatlingBeam)stasisCard).turnsInStasis + 1; i++) {
+                AbstractMonster m = AbstractDungeon.getMonsters().getRandomMonster(true);
                 AbstractDungeon.actionManager.addToBottom(new SFXAction("ATTACK_MAGIC_BEAM_SHORT", 0.5F));
                 AbstractDungeon.actionManager.addToBottom(new VFXAction(new SmallLaserEffectColored(m.hb.cX, m.hb.cY, AbstractDungeon.player.hb.cX, AbstractDungeon.player.hb.cY, Color.BLUE), 0.1F));
-                AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new com.megacrit.cardcrawl.cards.DamageInfo(AbstractDungeon.player, stasisCard.damage, stasisCard.damageTypeForTurn), AbstractGameAction.AttackEffect.FIRE));
+                stasisCard.applyPowers();
+                AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new com.megacrit.cardcrawl.cards.DamageInfo(AbstractDungeon.player, stasisCard.damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.FIRE));
             }
             ((GatlingBeam)stasisCard).turnsInStasis++;
 
@@ -191,9 +194,12 @@ public class StasisOrb extends AbstractOrb {
         super.update();
         this.stasisCard.target_x = this.tX;
         this.stasisCard.target_y = this.tY;
+        this.stasisCard.applyPowers();
         this.stasisCard.update();
+
         if (this.hb.hovered) {
             this.stasisCard.targetDrawScale = 1F;
+
         } else {
             this.stasisCard.targetDrawScale = GuardianMod.stasisCardRenderScale;
         }

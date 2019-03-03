@@ -55,8 +55,8 @@ public class StasisEnginePower extends AbstractGuardianTwoAmountPower {
             this.amount2++;
             if (this.amount2 >= 3){
                 this.amount2 = 0;
-                AbstractDungeon.actionManager.addToTop(new DrawCardAction(AbstractDungeon.player, 1));
-                AbstractDungeon.actionManager.addToBottom(new GainEnergyAction(1));
+                AbstractDungeon.actionManager.addToTop(new DrawCardAction(AbstractDungeon.player, this.amount));
+                AbstractDungeon.actionManager.addToBottom(new GainEnergyAction(this.amount));
                 this.flash();
             }
         }

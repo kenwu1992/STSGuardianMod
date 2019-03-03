@@ -34,8 +34,8 @@ public class PrismaticBeam extends AbstractGuardianCard {
     //TUNING CONSTANTS
 
     private static final int COST = 1;
-    private static final int DAMAGE = 3;
-    private static final int UPGRADE_BONUS = 2;
+    private static final int DAMAGE = 4;
+    private static final int UPGRADE_BONUS = 1;
     private static final int MULTICOUNT = 1;
     private static final int SOCKETS = 2;
     private static final boolean SOCKETSAREAFTER = true;
@@ -86,7 +86,9 @@ public class PrismaticBeam extends AbstractGuardianCard {
     public void upgrade() {
         if (!this.upgraded) {
             upgradeName();
-            upgradeDamage(UPGRADE_BONUS);
+
+            this.socketCount++;
+            this.updateDescription();
         }
 
 

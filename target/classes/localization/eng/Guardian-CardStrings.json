@@ -180,7 +180,7 @@
   },
   "Guardian:Emergency": {
     "NAME": "Emergency",
-    "DESCRIPTION": "Return your right-most card in Stasis to your hand and reduce it's cost to 0. NL Exhaust."
+    "DESCRIPTION": "Accelerate your right-most card in Stasis until it's turn counter reaches 0. NL Exhaust."
   },
   "Guardian:Clone": {
     "NAME": "Clone",

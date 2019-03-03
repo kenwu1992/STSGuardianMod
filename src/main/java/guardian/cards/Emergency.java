@@ -2,6 +2,7 @@ package guardian.cards;
 
 
 
+import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.defect.DiscardPileToHandAction;
 import com.megacrit.cardcrawl.actions.defect.EvokeAllOrbsAction;
 import com.megacrit.cardcrawl.actions.defect.EvokeOrbAction;
@@ -13,6 +14,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import guardian.GuardianMod;
+import guardian.orbs.StasisOrb;
 import guardian.patches.AbstractCardEnum;
 
 public class Emergency extends AbstractGuardianCard {
@@ -47,7 +49,16 @@ public class Emergency extends AbstractGuardianCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         super.use(p,m);
 
-        AbstractDungeon.actionManager.addToBottom(new EvokeOrbAction(1));
+        for (AbstractOrb o : p.orbs){
+            if (o instanceof StasisOrb){
+                int stasisCount = o.passiveAmount;
+                ((StasisOrb) o).stasisCard.superFlash(Color.GOLDENROD);
+                for (int i = 0; i < stasisCount; i++) {
+                    o.onStartOfTurn();
+                }
+                break;
+            }
+        }
 
         super.useGems(p,m);
     }

@@ -25,7 +25,7 @@ public class StasisStrike extends AbstractGuardianCard {
     public static final String IMG_PATH = "cards/stasisStrike.png";
 
     private static final CardStrings cardStrings;
-    private static final CardType TYPE = CardType.SKILL;
+    private static final CardType TYPE = CardType.ATTACK;
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.ENEMY;
 

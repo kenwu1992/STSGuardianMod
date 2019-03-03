@@ -64,7 +64,7 @@ public class VentSteam extends AbstractGuardianCard {
         if (!this.upgraded) {
             upgradeName();
             this.rawDescription = UPGRADED_DESCRIPTION;
-            this.initializeDescription();
+            this.updateDescription();
         }
     }
 
