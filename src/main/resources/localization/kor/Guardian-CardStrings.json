@@ -83,14 +83,6 @@
     "NAME": "시간 폭탄",
     "DESCRIPTION": "이 카드를 정지장 에 넣습니다. NL 이 카드의 정지장 효과가 만료됐을 때 이 카드를 소멸 시키고 모든 적에게 피해를 !M! 줍니다."
   },
-  "Guardian:RepulsorProtocol": {
-    "NAME": "섬멸 프로토콜",
-    "DESCRIPTION": "청동 구체를 소환합니다. NL 청동 구체의 효과로 매 턴 무작위 적을 공격해 피해를 !GuardianSecondM! 주고 약화를 !M! 부여합니다. NL 소멸."
-  },
-  "Guardian:GuardProtocol": {
-    "NAME": "보호 프로토콜",
-    "DESCRIPTION": "청동 구체를 소환합니다. NL 청동 구체의 효과로 매 턴 방어도 를 !M! 얻습니다. NL 소멸."
-  },
   "Guardian:HyperBeam_Guardian": {
     "NAME": "파괴 광선",
     "DESCRIPTION": "모든 적에게 피해를 !D! 줍니다. NL 다음 턴을 넘깁니다."
@@ -123,7 +115,7 @@
   },
   "Guardian:SphericShield": {
     "NAME": "구체형 방어막",
-    "DESCRIPTION": "턴 시작시 방어도 가 사라지지 않습니다. NL 방어모드 로 전환합니다."
+    "DESCRIPTION": "!M! 턴 동안 턴 시작시 방어도 가 사라지지 않습니다. NL 방어도 를 !B! 얻습니다. NL 방어모드 로 전환합니다."
   },
   "Guardian:Harden": {
     "NAME": "담금질",

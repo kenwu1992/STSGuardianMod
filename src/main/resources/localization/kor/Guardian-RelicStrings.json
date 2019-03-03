@@ -90,10 +90,10 @@
     ]
   },
   "Guardian:TickHelperRelic": {
-    "NAME": "Cooling Fluid",
-    "FLAVOR": "Hazardous. Do not consume.",
+    "NAME": "냉각 유체",
+    "FLAVOR": "위험 : 먹지 마세요.",
     "DESCRIPTIONS": [
-      "When a card with a Tick effect enters Stasis, increase it's turn counter by 2."
+      "체크포인트 효과가 있는 카드가 정지장으로 들어갈 때 그 카드의 카운터를 2 증가 effect enters Stasis, increase it's turn counter by 2."
     ]
   }
 }
