@@ -69,24 +69,24 @@
     ]
   },
   "Guardian:CrystalForge": {
-    "NAME": "Grim Forge",
+    "NAME": "오싹한 제련소",
     "DESCRIPTIONS": [
-      "Through secret passages known only to the Constructs of the Spire, you enter a chamber designed for maintenance and repairs on Automaton models. The tools available here will be of certain use to you, even if they were not intended for Guardians.",
-      "Using the enchanted anvil, you smash an unnecessary piece of equipment to pieces, all to gain back the precious gems you foolishly placed into it earlier.",
-      "With the magic tongs, you carefully pry open a socket and remove the gems inside it, making room for better installments later, at the cost of making the gems completely unusable.",
-      "The Forge's ability to transmute matter is put to use immediately as you toss in an unneeded piece of equipment. Some moments later, the material dissolves and compresses into a beautiful gem.",
-      "You escape through the same secret passage you came in, leaving the Grim Forge behind you. Your journey continues towards the Dawn awaiting at the top of the Spire.",
-      "Select a Card to Dismantle.",
-      "Select a Card to Pry.",
-      "Select a Card to Transmute."
+      "첨탑의 관리자들만 알고있는 비밀 샛길을 통해 당신은 자동 인형의 유지 보수를 위해 설계된 방으로 들어갔습니다. 여기 있는 도구들은 수호자를 위해 제작되지는 않았지만, 다른 용도로 사용할 수 있어 보입니다.",
+      "힘이 깃든 모루를 이용해 당신은 이제는 더 이상 사용하지 않을 장비 하나를 조각냈습니다. 소중한 보석을 그 장비에 장착한 어리석었던 과거의 행동을 되돌릴 수 있었습니다.",
+      "당신은 소켓을 열어 마법의 집게로 그 안에 있는 보석을 조심스레 떼어냈습니다. 나중에 얻을 더 나은 장착물을 위한 공간을 만들어냈지만 떼어낸 보석들은 이제 더 이상 가치 있다고 말하기는 힘들어졌습니다.",
+      "제련소의 변성 기능은 불필요한 장비를 던져넣자마자 작동되었습니다. 잠시 후 장비는 녹아 없어지고 이내 아름다운 보석으로 압축되어 나왔습니다.",
+      "당신은 들어왔던 길 그대로 방을 빠져나갔습니다. 오싹한 제련소를 뒤로하고 당신의 여행은 첨탑의 파멸을 향해 계속됩니다.",
+      "해체할 카드를 선택하시오.",
+      "보석을 떼어낼 카드를 선택하시오.",
+      "변성할 카드를 선택하시오."
     ],
     "OPTIONS": [
-      "[Dismantle] #rDestroy Socketed Card. Gain it's #gGems.",
-      "[Locked] Requires Socketed Card with a Gem installed.",
-      "[Pry] #rDestroy all #gGems in a Socketed Card.",
-      "[Transmute] #rRemove a Card. Gain a random #gGem.",
-      "[Locked] Already used.",
-      "[Leave]"
+      "[해체] 소켓에 보석을 장착한 카드를 1장 #r파괴 합니다. 파괴한 카드에 있는 #g보석 을 얻습니다.",
+      "[잠김] 보석이 장작된 소켓 카드가 필요합니다.",
+      "[떼어내기] 소켓에 보석을 장착한 카드 1장에 있는 모든 #g보석 을 #r파괴 합니다.",
+      "[변성] 카드를 1장 #r제거 합니다. 무작위 #g보석 을 1장 얻습니다.",
+      "[잠김] 이미 사용했습니다.",
+      "[떠난다]"
     ]
   }
 }
