@@ -42,17 +42,17 @@
   },
   "Guardian:ChargeUp": {
     "NAME": "충전",
-    "DESCRIPTION": "다음 턴 시작시 방어도 !B! , 힘 !M! 을 얻습니다. NL 소멸."
+    "DESCRIPTION": "이 카드를 정지장 에 넣습니다. NL 체크포인트 - 방어도 를 !B! 얻고 힘 을 !M! 얻습니다. NL 시한부."
   },
   "Guardian:DonusPower": {
-    "NAME": "고대의 힘",
+    "NAME": "고대의 공격",
     "DESCRIPTION": "힘 을 1 얻습니다. NL 무작위 공격 카드 1장을 손으로 가져옵니다. 가져온 카드는 이번 턴에만 비용이 0이 됩니다. NL 소멸.",
     "UPGRADE_DESCRIPTION": "힘 을 1, 인공물 을 1 얻습니다. NL 무작위 공격 카드 1장을 손으로 가져옵니다. 가져온 카드는 이번 턴에만 비용이 0이 됩니다. NL 소멸."
   },
   "Guardian:DecasProtection": {
-    "NAME": "고대의 보호",
-    "DESCRIPTION": "민첩을 1 얻습니다. NL 무작위 파워 카드 1장을 손으로 가져옵니다. 가져온 카드는 이번 턴에만 비용이 0이 됩니다. NL 소멸.",
-    "UPGRADE_DESCRIPTION": "민첩을 1, 인공물 을 1 얻습니다. NL 무작위 파워 카드 1장을 손으로 가져옵니다. 가져온 카드는 이번 턴에만 비용이 0이 됩니다. NL 소멸."
+    "NAME": "고대의 힘",
+    "DESCRIPTION": "민첩 을 1 얻습니다. NL 무작위 파워 카드 1장을 손으로 가져옵니다. 가져온 카드는 이번 턴에만 비용이 0이 됩니다. NL 소멸.",
+    "UPGRADE_DESCRIPTION": "민첩 을 1, 인공물 을 1 얻습니다. NL 무작위 파워 카드 1장을 손으로 가져옵니다. 가져온 카드는 이번 턴에만 비용이 0이 됩니다. NL 소멸."
   },
   "Guardian:FierceBash": {
     "NAME": "매서운 강타",
@@ -77,7 +77,7 @@
   },
   "Guardian:CurlUp": {
     "NAME": "웅크리기",
-    "DESCRIPTION": "방어도 를 !B! 얻습니다. NL 방어모드 로 전환합니다."
+    "DESCRIPTION": "방어도 를 !B! 얻습니다. NL 방어모드 를 얻습니다."
   },
   "Guardian:TimeBomb": {
     "NAME": "시간 폭탄",
@@ -85,7 +85,7 @@
   },
   "Guardian:HyperBeam_Guardian": {
     "NAME": "파괴 광선",
-    "DESCRIPTION": "모든 적에게 피해를 !D! 줍니다. NL 다음 턴을 넘깁니다."
+    "DESCRIPTION": "모든 적에게 피해를 !D! 줍니다. NL  힘 의 효과가 !M! 배로 적용됩니다. NL 다음 턴을 넘깁니다."
   },
   "Guardian:BronzeArmor": {
     "NAME": "청동 갑옷",
@@ -115,7 +115,7 @@
   },
   "Guardian:SphericShield": {
     "NAME": "구체형 방어막",
-    "DESCRIPTION": "!M! 턴 동안 턴 시작시 방어도 가 사라지지 않습니다. NL 방어도 를 !B! 얻습니다. NL 방어모드 로 전환합니다."
+    "DESCRIPTION": "!M! 턴 동안 턴 시작시 방어도 가 사라지지 않습니다. NL 방어도 를 !B! 얻습니다. NL 방어모드 를 얻습니다."
   },
   "Guardian:Harden": {
     "NAME": "담금질",
@@ -166,8 +166,8 @@
   },
   "Guardian:PackageAutomaton": {
     "NAME": "꾸러미: 청동",
-    "DESCRIPTION": "파괴광선, 청동 구체, 청동 갑옷 을 손으로 가져옵니다. NL 소멸.",
-    "UPGRADE_DESCRIPTION": "강화된 파괴광선, 청동 구체, 청동 갑옷 을 손으로 가져옵니다. NL 소멸."
+    "DESCRIPTION": "파괴 광선, 청동 구체, 청동 갑옷 을 손으로 가져옵니다. NL 소멸.",
+    "UPGRADE_DESCRIPTION": "강화된 파괴 광선, 청동 구체, 청동 갑옷 을 손으로 가져옵니다. NL 소멸."
   },
   "Guardian:Planning": {
     "NAME": "설계",
@@ -208,7 +208,7 @@
     "DESCRIPTION": "턴 종료시 카드를 !M! 장까지 정지장 에 넣습니다.",
     "UPGRADE_DESCRIPTION": "선천성. NL 턴 종료시 카드를 !M! 장까지 정지장 에 넣습니다."
   },
- "Guardian:Suspension": {
+  "Guardian:Suspension": {
     "NAME": "완충장치",
     "DESCRIPTION": "내 손에 있는 카드 1장을 정지장 에 넣습니다.",
     "UPGRADE_DESCRIPTION": "카드를 1장 뽑습니다. NL 내 손에 있는 카드 1장을 정지장 에 넣습니다."
@@ -248,9 +248,9 @@
   },
   "Guardian:PiercingHide": {
   "NAME": "가시 돋친 외골격",
-  "DESCRIPTION": "이번 턴에만 방어도 를 !B! 얻고 가시 를 !M! 얻습니다. NL 방어모드 로 전환합니다."
+  "DESCRIPTION": "이번 턴에만 방어도 를 !B! 얻고 가시 를 !M! 얻습니다. NL 방어모드 를 얻습니다."
 },
-  "Guardian:SharpenScales": {
+  "Guardian:ShieldSpikes": {
     "NAME": "가시 돋친 방패",
     "DESCRIPTION": "방어도 를 !B! 얻습니다. NL 방어모드 라면 임시 가시 를 !M! 얻습니다."
   },
@@ -281,35 +281,36 @@
   },
   "Guardian:MultiBeam": {
     "NAME": "다중 광선",
-    "DESCRIPTION": "모든 적에게 피해를 !D! 줍니다. NL 뽑을 카드 더미에 있는 무작위 광선 카드를 사용합니다."
+    "DESCRIPTION": "모든 적에게 피해를 !D! 만큼 X 번 줍니다. NL 체크포인트 - 이번 전투동안 광선 카드의 피해량이 !M! 증가합니다.",
+    "UPGRADE_DESCRIPTION": "모든 적에게 피해를 !D! 만큼 X+1 번 줍니다. NL 체크포인트 - 이번 전투동안 광선 카드의 피해량이 !M! 증가합니다."
   },
   "Guardian:BaubleBeam": {
     "NAME": "큐빅 광선",
-    "DESCRIPTION": "이 카드에 장착한 보석 하나 당 비용이 1 감소합니다. NL 피해를 !D! 줍니다."
+    "DESCRIPTION": "피해를 !D! 줍니다. NL 다음 효과를 !M! 번 발동합니다: "
   },
   "Guardian:PrimingBeam": {
     "NAME": "격발 광선",
     "DESCRIPTION": "피해를 !D! 줍니다. NL 이번 전투에서 광선 카드로 주는 피해량이 !M! 씩 증가합니다."
   },
-  "Guardian:SlickScales": {
+  "Guardian:EvasiveProtocol": {
     "NAME": "회피기동 프로토콜",
-    "DESCRIPTION": "방어모드 일 때 민첩 을 !M! 얻습니다. NL 방어모드 로 전환합니다."
+    "DESCRIPTION": "방어모드 일 때 민첩 을 2 얻습니다. NL 방어모드 를 !M! 얻습니다."
   },
-  "Guardian:SpikyScales": {
+  "Guardian:SpikerProtocol": {
     "NAME": "고슴도치 프로토콜",
-    "DESCRIPTION": "방어모드 일 때 가시 를 !M! 얻습니다. NL 방어모드 로 전환합니다."
+    "DESCRIPTION": "방어모드 일 때 가시 를 3 얻습니다. NL 방어모드 를 !M! 얻습니다."
   },
-  "Guardian:ArmoredScales": {
+  "Guardian:ArmoredProtocol": {
     "NAME": "장갑 프로토콜",
-    "DESCRIPTION": "방어모드 일 때 금속화 를 !M! 얻습니다. NL 방어모드 로 전환합니다."
+    "DESCRIPTION": "방어모드 일 때 금속화 를 4 얻습니다. NL 방어모드 를 !M! 얻습니다."
   },
   "Guardian:TimeSifter": {
     "NAME": "시간 분리기",
     "DESCRIPTION": "턴 종료시 정지장 카운터가 2 이상 남은 카드 중 가장 오래된 카드 1장을 촉진 시킵니다."
   },
-  "Guardian:Construct": {
+  "Guardian:AncientConstruct": {
     "NAME": "고대의 구조물",
-    "DESCRIPTION": "턴 시작시 인공물 이 없다면 인공물 을 1 얻습니다."
+    "DESCRIPTION": "턴 시작시 인공물 이 없다면 인공물 을 1 얻고 [E] 를 잃습니다."
   },
   "Guardian:CrystalBeam": {
     "NAME": "크리스탈 광선",
@@ -337,8 +338,8 @@
   },
   "Guardian:Gem_Blue": {
     "NAME": "사파이어",
-    "DESCRIPTION": "보석. NL 방어모드 로 전환합니다.",
-    "UPGRADE_DESCRIPTION": "방어모드 로 전환합니다."
+    "DESCRIPTION": "보석. NL 방어모드 를 얻습니다.",
+    "UPGRADE_DESCRIPTION": "방어모드 를 얻습니다."
   },
   "Guardian:Gem_Fragmented": {
     "NAME": "보석 파편",
@@ -364,15 +365,15 @@
   },
   "Guardian:RevengeProtocol": {
     "NAME": "복수 프로토콜",
-    "DESCRIPTION": "방어모드 일 때 방어도를 모두 잃으면 임시 힘 을 !M! 얻습니다. NL 방어모드 로 전환합니다."
+    "DESCRIPTION": "방어모드 가 해제되었을 때 방어모드 가 활성화 되었던 턴 만큼 임시 힘 을 얻습니다. NL 방어모드 를 !M! 얻습니다."
   },
   "Guardian:GatlingBeam": {
     "NAME": "개틀링 광선",
     "DESCRIPTION": "이 카드를 정지장 에 넣습니다. NL 체크포인트 - 무작위 적에게 피해를 !D! 줍니다. 체크포인트 효과가 발동된 횟수만큼 반복합니다. NL 시한부."
   },
-  "Guardian:SpacetimeBattery": {
+  "Guardian:ShieldCharger": {
     "NAME": "보호막 충전기",
-    "DESCRIPTION": "방어도 를 !B! 얻습니다. NL 이 카드가 정지장 에 있을 때 카운터가 줄어들면 방어도를 !M! 얻습니다."
+    "DESCRIPTION": "이 카드를 정지장 에 넣습니다. NL 체크포인트 - 방어도 를 !B! 얻고 [E] 를 얻습니다. NL 시한부."
   },
   "Guardian:StasisEngine": {
     "NAME": "정지장 엔진",
