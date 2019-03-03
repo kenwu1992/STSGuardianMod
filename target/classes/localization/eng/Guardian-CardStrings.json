@@ -240,7 +240,7 @@
   },
   "Guardian:ChargeCore": {
     "NAME": "Charge Core",
-    "DESCRIPTION": "Deal !D! damage. NL Draw a card at the start of your next turn."
+    "DESCRIPTION": "Deal !D! damage, then place this card into Stasis. NL Tick - Draw a card. NL Volatile."
   },
   "Guardian:Reroute": {
     "NAME": "Reroute",

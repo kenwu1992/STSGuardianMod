@@ -17,6 +17,7 @@ import com.megacrit.cardcrawl.powers.DrawCardNextTurnPower;
 import com.megacrit.cardcrawl.powers.EnergizedBluePower;
 import com.megacrit.cardcrawl.powers.EnergizedPower;
 import guardian.GuardianMod;
+import guardian.actions.PlaceActualCardIntoStasis;
 import guardian.patches.AbstractCardEnum;
 
 
@@ -35,9 +36,9 @@ public class ChargeCore extends AbstractGuardianCard {
     //TUNING CONSTANTS
 
     private static final int COST = 1;
-    private static final int DAMAGE = 8;
-    private static final int UPGRADE_BONUS = 3;
-    private static final int SOCKETS = 1;
+    private static final int DAMAGE = 10;
+    private static final int UPGRADE_BONUS = 5;
+    private static final int SOCKETS = 0;
     private static final boolean SOCKETSAREAFTER = true;
 
     //END TUNING CONSTANTS
@@ -48,7 +49,8 @@ public class ChargeCore extends AbstractGuardianCard {
         this.baseDamage = DAMAGE;
 
         this.socketCount = SOCKETS;
-        //this.sockets.add(GuardianMod.socketTypes.RED);
+        this.tags.add(GuardianMod.TICK);
+        this.tags.add(GuardianMod.VOLATILE);
 
         this.updateDescription();
 
@@ -59,7 +61,7 @@ public class ChargeCore extends AbstractGuardianCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         super.use(p, m);
         AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.FIRE));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DrawCardNextTurnPower(p, 1), 1));
+        AbstractDungeon.actionManager.addToBottom(new PlaceActualCardIntoStasis(this));
 
         this.useGems(p, m);
     }
@@ -73,8 +75,6 @@ public class ChargeCore extends AbstractGuardianCard {
         if (!this.upgraded) {
             upgradeName();
             upgradeDamage(UPGRADE_BONUS);
-            this.socketCount++;
-            this.updateDescription();
         }
 
 

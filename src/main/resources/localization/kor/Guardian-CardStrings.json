@@ -240,7 +240,7 @@
   },
   "Guardian:ChargeCore": {
     "NAME": "충전 코어",
-    "DESCRIPTION": "피해를 !D! 줍니다. NL 다음 턴 시작시 카드를 1장 뽑습니다."
+    "DESCRIPTION": "피해를 !D! 줍니다. 이 카드를 정지장 에 넣습니다. NL 체크포인트 - 카드를 1장 뽑습 NL 시한부."
   },
   "Guardian:Reroute": {
     "NAME": "재배열",
