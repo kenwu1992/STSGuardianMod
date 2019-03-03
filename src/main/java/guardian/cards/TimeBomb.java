@@ -39,7 +39,7 @@ public class TimeBomb extends AbstractGuardianCard {
         super(ID, NAME, GuardianMod.getResourcePath(IMG_PATH), COST, DESCRIPTION, TYPE, AbstractCardEnum.GUARDIAN, RARITY, TARGET);
 
         this.baseMagicNumber = this.magicNumber = DAMAGE;
-        this.tags.add(GuardianMod.PROTOCOL);
+        this.tags.add(GuardianMod.VOLATILE);
         this.socketCount = SOCKETS;
         this.updateDescription();
     }

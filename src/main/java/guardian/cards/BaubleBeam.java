@@ -31,9 +31,10 @@ public class BaubleBeam extends AbstractGuardianCard {
 
     //TUNING CONSTANTS
 
-    private static final int COST = 3;
+    private static final int COST = 2;
     private static final int DAMAGE = 12;
-    private static final int UPGRADE_DAMAGE = 6;
+    private static final int GEMACTIVATIONS = 2;
+    private static final int UPGRADE_GEMACTIVATIONS = 1;
     private static final int SOCKETS = 2;
     private static final boolean SOCKETSAREAFTER = true;
 
@@ -52,7 +53,7 @@ public class BaubleBeam extends AbstractGuardianCard {
         this.socketCount = SOCKETS;
         this.updateDescription();
 
-
+        this.magicNumber = this.baseMagicNumber = GEMACTIVATIONS;
 
     }
 
@@ -72,19 +73,11 @@ public class BaubleBeam extends AbstractGuardianCard {
 
         AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.NONE));
 
-        super.useGems(p, m);
-
+        for (int i = 0; i < this.magicNumber; i++) {
+            super.useGems(p, m);
+        }
     }
 
-    @Override
-    public void addGemToSocket(AbstractGuardianCard gem) {
-        super.addGemToSocket(gem);
-        updateCost();
-    }
-
-    public void updateCost(){
-        this.upgradeBaseCost(3 - this.sockets.size());
-    }
 
 
 
@@ -95,7 +88,7 @@ public class BaubleBeam extends AbstractGuardianCard {
     public void upgrade() {
         if (!this.upgraded) {
             upgradeName();
-            upgradeDamage(UPGRADE_DAMAGE);
+            upgradeMagicNumber(UPGRADE_GEMACTIVATIONS);
         }
     }
 

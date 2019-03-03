@@ -1,11 +1,15 @@
 package guardian.powers;
 
 
+import basemod.ReflectionHacks;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.powers.ThornsPower;
 
 
 public class LoseThornsPower extends AbstractGuardianPower {
@@ -52,7 +56,8 @@ public class LoseThornsPower extends AbstractGuardianPower {
             if (this.owner.getPower("Thorns").amount <= this.amount) {
                 AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(this.owner, this.owner, "Thorns"));
             } else {
-                AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(this.owner, this.owner, "Thorns", this.amount));
+                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.owner,this.owner,new ThornsPower(this.owner, this.amount * -1), this.amount * -1));
+
             }
         }
     }

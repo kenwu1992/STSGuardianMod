@@ -31,7 +31,7 @@ public class FierceBash extends AbstractGuardianCard {
 
     //TUNING CONSTANTS
 
-    private static final int COST = 5;
+    private static final int COST = 3;
     private static final int DAMAGE = 30;
     private static final int UPGRADE_BONUS = 5;
     private static final int DAMAGEPERTURNINSTASIS = 3;

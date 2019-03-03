@@ -37,8 +37,9 @@ public class Orbwalk extends AbstractGuardianCard {
     public Orbwalk() {
         super(ID, NAME, GuardianMod.getResourcePath(IMG_PATH), COST, DESCRIPTION, TYPE, AbstractCardEnum.GUARDIAN, RARITY, TARGET);
 
-        this.baseMagicNumber = this.magicNumber = 1;
+        this.baseMagicNumber = this.magicNumber = 2;
         this.tags.add(GuardianMod.TICK);
+        this.tags.add(GuardianMod.VOLATILE);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
@@ -55,6 +56,7 @@ public class Orbwalk extends AbstractGuardianCard {
             upgradeName();
             this.rawDescription = UPGRADED_DESCRIPTION;
             this.initializeDescription();
+            this.tags.remove(GuardianMod.VOLATILE);
 
         }
     }

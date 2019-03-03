@@ -69,7 +69,14 @@ public class VentSteam extends AbstractGuardianCard {
     }
 
     public void updateDescription() {
-        if (this.socketCount > 0) this.rawDescription = this.updateGemDescription(cardStrings.DESCRIPTION, SOCKETSAREAFTER);
+        if (this.socketCount > 0) {
+            if (upgraded) {
+                this.rawDescription = this.updateGemDescription(cardStrings.UPGRADE_DESCRIPTION, SOCKETSAREAFTER);
+            } else {
+                this.rawDescription = this.updateGemDescription(cardStrings.DESCRIPTION, SOCKETSAREAFTER);
+
+            }
+        }
         //GuardianMod.logger.info(DESCRIPTION);
         this.initializeDescription();
     }

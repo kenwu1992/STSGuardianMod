@@ -193,7 +193,7 @@
   "Guardian:Clone": {
     "NAME": "복제",
     "DESCRIPTION": "카드를 1장 선택합니다. 선택한 카드의 복사본을 1장 정지장 에 넣습니다.",
-    "UPGRADE_DESCRIPTION": "카드를 1장 선택합니다. 선택한 카드의 복사본을 2장 정지장 에 넣습니다."
+    "EXTENDED_DESCRIPTION": ["~에러:~ #r정지장 작업중."]
   },
   "Guardian:Preprogram": {
     "NAME": "사전계획",

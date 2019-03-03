@@ -73,6 +73,8 @@ public class ChargeCore extends AbstractGuardianCard {
         if (!this.upgraded) {
             upgradeName();
             upgradeDamage(UPGRADE_BONUS);
+            this.socketCount++;
+            this.updateDescription();
         }
 
 

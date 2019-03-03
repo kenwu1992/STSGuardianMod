@@ -9,68 +9,61 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.ThornsPower;
 import guardian.GuardianMod;
-import guardian.actions.SwitchToDefenseModeAction;
 import guardian.patches.AbstractCardEnum;
-import guardian.powers.ConstructModePower;
-import guardian.powers.DefenseModePower;
-import guardian.powers.DefensiveModeBuffsPower;
+import guardian.powers.ConstructPower;
 
-public class SpikyScales extends AbstractGuardianCard {
-    public static final String ID = GuardianMod.makeID("SpikyScales");
+public class AncientConstruct extends AbstractGuardianCard {
+    public static final String ID = GuardianMod.makeID("AncientConstruct");
     public static final String NAME;
     public static final String DESCRIPTION;
     public static String UPGRADED_DESCRIPTION;
-    public static final String IMG_PATH = "cards/spikyScales.png";
+    public static final String IMG_PATH = "cards/construct.png";
 
     private static final CardStrings cardStrings;
     private static final CardType TYPE = CardType.POWER;
-    private static final CardRarity RARITY = CardRarity.UNCOMMON;
+    private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.SELF;
 
     //TUNING CONSTANTS
 
-    private static final int COST = 1;
-    private static final int THORNS = 3;
-    private static final int UPGRADE_THORNS = 1;
+    private static final int COST = 2;
+    private static final int ARTIFACT = 2;
+    private static final int UPGRADE_ARTIFACT = 1;
     private static final int SOCKETS = 0;
     private static final boolean SOCKETSAREAFTER = true;
 
     //END TUNING CONSTANTS
 
-    public SpikyScales() {
+    public AncientConstruct() {
         super(ID, NAME, GuardianMod.getResourcePath(IMG_PATH), COST, DESCRIPTION, TYPE, AbstractCardEnum.GUARDIAN, RARITY, TARGET);
 
         this.socketCount = SOCKETS;
         this.updateDescription();
-        this.magicNumber = this.baseMagicNumber = THORNS;
+        this.magicNumber = this.baseMagicNumber = ARTIFACT;
         
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         super.use(p,m);
-        if (p.hasPower(DefensiveModeBuffsPower.POWER_ID)){
-            ((DefensiveModeBuffsPower)p.getPower(DefensiveModeBuffsPower.POWER_ID)).thorns += this.magicNumber;
-            p.getPower(DefensiveModeBuffsPower.POWER_ID).flash();
-        } else {
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DefensiveModeBuffsPower(p, p,this.magicNumber,0,0,0,0)));
-        }
-        if (p.hasPower(DefenseModePower.POWER_ID)){
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new ThornsPower(p, this.magicNumber), this.magicNumber));
-        }
-        AbstractDungeon.actionManager.addToBottom(new SwitchToDefenseModeAction(p));
+        AbstractDungeon.effectsQueue.add(new com.megacrit.cardcrawl.vfx.BorderFlashEffect(com.badlogic.gdx.graphics.Color.GOLD, true));
+
+        //AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new ArtifactPower(p,this.magicNumber)));
+        
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new ConstructPower(p, p,this.magicNumber),this.magicNumber));
+
+
 
     }
 
     public AbstractCard makeCopy() {
-        return new SpikyScales();
+        return new AncientConstruct();
     }
 
     public void upgrade() {
         if (!this.upgraded) {
             upgradeName();
-            upgradeMagicNumber(UPGRADE_THORNS);
+            upgradeBaseCost(1);
         }
     }
 

@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -107,9 +108,10 @@ public class StasisOrb extends AbstractOrb {
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new StrengthPower(AbstractDungeon.player, 1), 1));
 
         }
-        if (this.stasisCard instanceof SpacetimeBattery){
-            AbstractDungeon.actionManager.addToBottom(new GainBlockAction(AbstractDungeon.player, AbstractDungeon.player, ((SpacetimeBattery)this.stasisCard).magicNumber));
-
+        if (this.stasisCard instanceof ShieldCharger){
+            stasisCard.applyPowers();
+            AbstractDungeon.actionManager.addToBottom(new GainBlockAction(AbstractDungeon.player, AbstractDungeon.player, this.stasisCard.block));
+            AbstractDungeon.actionManager.addToBottom(new GainEnergyAction(1));
         }
         if (this.stasisCard instanceof GatlingBeam){
 
@@ -124,7 +126,16 @@ public class StasisOrb extends AbstractOrb {
             ((GatlingBeam)stasisCard).turnsInStasis++;
 
         }
+        if (this.stasisCard instanceof MultiBeam){
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new BeamBuffPower(AbstractDungeon.player, AbstractDungeon.player, stasisCard.magicNumber), stasisCard.magicNumber));
 
+        }
+        if (this.stasisCard instanceof ChargeUp){
+            stasisCard.applyPowers();
+            AbstractDungeon.actionManager.addToBottom(new GainBlockAction(AbstractDungeon.player, AbstractDungeon.player, this.stasisCard.block));
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new StrengthPower(AbstractDungeon.player, stasisCard.magicNumber), stasisCard.magicNumber));
+
+        }
         if (this.passiveAmount > 0){
             this.passiveAmount -= 1;
         }
@@ -138,7 +149,7 @@ public class StasisOrb extends AbstractOrb {
         if (this.stasisCard instanceof TimeBomb){
             AbstractDungeon.player.exhaustPile.addToTop(this.stasisCard);
             AbstractDungeon.actionManager.addToBottom(new DestroyOrbSlotForDamageAction(this.stasisCard.magicNumber, this));
-        } else if (this.stasisCard instanceof GatlingBeam || (this.stasisCard instanceof Orbwalk && !this.stasisCard.upgraded)){
+        } else if (this.stasisCard.hasTag(GuardianMod.VOLATILE)){
             AbstractDungeon.player.exhaustPile.addToTop(this.stasisCard);
 
         } else {

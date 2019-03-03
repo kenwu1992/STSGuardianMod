@@ -2,6 +2,8 @@ package guardian.powers;
 
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.LoseHPAction;
+import com.megacrit.cardcrawl.actions.unique.LoseEnergyAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -32,7 +34,7 @@ public class ConstructPower extends AbstractGuardianPower {
     }
 
     public void updateDescription() {
-            this.description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1];
+            this.description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1] + (this.amount / 2) + DESCRIPTIONS[2];
 
     }
 
@@ -41,7 +43,7 @@ public class ConstructPower extends AbstractGuardianPower {
         super.atStartOfTurn();
         if (!this.owner.hasPower(ArtifactPower.POWER_ID)){
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.owner, this.owner, new ArtifactPower(this.owner,this.amount),this.amount));
-
+            AbstractDungeon.actionManager.addToBottom(new LoseEnergyAction(this.amount /2));
         }
     }
 }

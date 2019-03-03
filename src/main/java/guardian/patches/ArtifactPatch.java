@@ -16,7 +16,7 @@ import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 import com.megacrit.cardcrawl.vfx.cardManip.CardGlowBorder;
 import guardian.GuardianMod;
-import guardian.cards.Construct;
+import guardian.cards.AncientConstruct;
 import guardian.powers.ConstructPower;
 
 @SpirePatch(clz= ArtifactPower.class,method = "onSpecificTrigger")

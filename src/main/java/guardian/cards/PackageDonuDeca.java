@@ -11,8 +11,6 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndAddToHandEffect;
 import guardian.GuardianMod;
-import guardian.actions.CompilePackageAction;
-import guardian.patches.AbstractCardEnum;
 
 import java.util.ArrayList;
 
@@ -56,7 +54,7 @@ public class PackageDonuDeca extends AbstractGuardianCard {
         if (upgraded) tmp.upgrade();
         derp.add(tmp);
 
-        tmp = new Construct();
+        tmp = new AncientConstruct();
         if (upgraded) tmp.upgrade();
         derp.add(tmp);
 

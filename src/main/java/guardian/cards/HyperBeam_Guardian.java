@@ -15,6 +15,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.vfx.combat.LaserBeamEffect;
 import com.megacrit.cardcrawl.vfx.combat.MindblastEffect;
 import guardian.GuardianMod;
@@ -39,6 +40,7 @@ public class HyperBeam_Guardian extends AbstractGuardianCard {
     private static final int COST = 4;
     private static final int DAMAGE = 40;
     private static final int UPGRADE_DAMAGE = 10;
+    private static final int STRENGTHMULTIPLIER = 3;
     private static final int SOCKETS = 0;
     private static final boolean SOCKETSAREAFTER = true;
 
@@ -52,6 +54,7 @@ public class HyperBeam_Guardian extends AbstractGuardianCard {
 
         this.tags.add(GuardianMod.BEAM);
         this.isMultiDamage = true;
+        this.magicNumber = this.baseMagicNumber = STRENGTHMULTIPLIER;
 
 
         this.socketCount = SOCKETS;
@@ -60,11 +63,19 @@ public class HyperBeam_Guardian extends AbstractGuardianCard {
     }
     @Override
     public float calculateModifiedCardDamage(AbstractPlayer player, AbstractMonster mo, float tmp) {
-        return tmp + calculateBeamDamage();
+        int bonus = 0;
+        if (player.hasPower(StrengthPower.POWER_ID)){
+            bonus = player.getPower(StrengthPower.POWER_ID).amount * (this.magicNumber + 1);
+        }
+        return tmp + calculateBeamDamage() + bonus;
     }
     @Override
     public float calculateModifiedCardDamage(AbstractPlayer player, float tmp) {
-        return tmp + calculateBeamDamage();
+        int bonus = 0;
+        if (player.hasPower(StrengthPower.POWER_ID)){
+            bonus = player.getPower(StrengthPower.POWER_ID).amount * (this.magicNumber + 1);
+        }
+        return tmp + calculateBeamDamage() + bonus;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

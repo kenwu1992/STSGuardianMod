@@ -29,9 +29,7 @@ public class BottledStasisPatch
                 ((AbstractGuardianCard)__result).sockets = ((AbstractGuardianCard)__instance).sockets;
                 ((AbstractGuardianCard)__result).eventSockets = ((AbstractGuardianCard)__instance).eventSockets;
                 ((AbstractGuardianCard)__result).socketCount = ((AbstractGuardianCard)__instance).socketCount;
-                if (__result instanceof BaubleBeam){
-                    ((BaubleBeam)__result).updateCost();
-                }
+
 
                 ((AbstractGuardianCard)__result).updateDescription();
             }

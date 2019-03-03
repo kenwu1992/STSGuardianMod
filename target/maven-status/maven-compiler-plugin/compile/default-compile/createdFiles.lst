@@ -23,12 +23,13 @@ guardian\powers\LoseThornsPower.class
 guardian\cards\Clone.class
 guardian\powers\zzzGuardianModePower$BronzeOrbWeakenPower.class
 guardian\actions\PlaceTopCardIntoStasisAction.class
-guardian\cards\SpikyScales.class
 guardian\patches\BottledStasisPatch$MakeStatEquivalentCopy.class
+guardian\cards\EvasiveProtocol.class
 guardian\cards\SentryWave.class
 guardian\cards\FierceBash.class
 guardian\relics\PocketSentry.class
 guardian\patches\RewardItemTypePatch.class
+guardian\cards\ShieldSpikes.class
 guardian\cards\RevengeProtocol.class
 guardian\cards\TimeCapacitor.class
 guardian\cards\Gem_Yellow.class
@@ -46,7 +47,6 @@ guardian\cards\Defend_Guardian.class
 guardian\cards\FuturePlans.class
 guardian\cards\ChargeUp.class
 guardian\patches\PackageDiscoveryPatch$Locator.class
-guardian\cards\SlickScales.class
 guardian\cards\BronzeArmor.class
 guardian\powers\zzz\MultiBoostPower.class
 guardian\potions\AcceleratePotion.class
@@ -54,7 +54,6 @@ guardian\actions\DestroyOrbSlotForDamageAction.class
 guardian\actions\zzzGuardianSwitchModesAction.class
 guardian\relics\SackOfGems.class
 guardian\relics\StasisSlotIncreaseRelic.class
-guardian\cards\SharpenScales.class
 guardian\vfx\FloatingOrbsEffect.class
 guardian\cards\zzzSpikerProtocol.class
 guardian\cards\FloatingOrbs.class
@@ -96,6 +95,7 @@ guardian\cards\PackageDonuDeca.class
 guardian\cards\zzzCallForBackup.class
 guardian\relics\StasisUpgradeRelic.class
 guardian\powers\ConstructModePower.class
+guardian\cards\ShieldCharger.class
 guardian\cards\Gem_Purple.class
 guardian\cards\zzzSyncronizedStrike.class
 guardian\events\BackToBasicsGuardian$CUR_SCREEN.class
@@ -145,6 +145,7 @@ guardian\cards\Orbwalk.class
 guardian\powers\ExhaustStatusesPower.class
 guardian\powers\StasisEnginePower.class
 guardian\cards\StrikeTwo.class
+guardian\cards\ArmoredProtocol.class
 guardian\relics\StasisSlotReductionRelic.class
 guardian\cards\AbstractGuardianCard$1.class
 guardian\cards\GemFinder.class
@@ -153,6 +154,7 @@ guardian\cards\zzzGuardProtocol.class
 guardian\powers\zzzGuardianModePower$BronzeOrbLocationPower.class
 guardian\powers\zzzGuardianModePower$BronzeOrbDamagePower.class
 guardian\cards\PrismaticBeam.class
+guardian\cards\AncientConstruct.class
 guardian\vfx\AddCardToStasisEffect.class
 guardian\powers\AbstractGuardianTwoAmountPower.class
 guardian\vfx\IronWaveParticleBlue.class
@@ -161,12 +163,11 @@ guardian\cards\PackageWalker.class
 guardian\cards\PrismaticBarrier.class
 guardian\cards\FastForward.class
 guardian\GuardianMod.class
+guardian\cards\SpikerProtocol.class
 guardian\cards\CrystalWard.class
-guardian\cards\Construct.class
 guardian\patches\GuardianTalkAutomaton.class
 guardian\cards\VentSteam.class
 guardian\patches\LibraryTypeEnum.class
-guardian\cards\ArmoredScales.class
 guardian\patches\StasisGlowPatch.class
 guardian\actions\PlaceRandomCardIntoStasisAction.class
 guardian\helpers\SecondaryMagicVariable.class
@@ -204,4 +205,3 @@ guardian\cards\Emergency.class
 guardian\vfx\IronWaveEffectBlue.class
 guardian\powers\ClonePower.class
 guardian\patches\BottledStasisPatch.class
-guardian\cards\SpacetimeBattery.class

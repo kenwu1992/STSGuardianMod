@@ -21,11 +21,12 @@ public class Clone extends AbstractGuardianCard {
     public static final String NAME;
     public static final String DESCRIPTION;
     public static String UPGRADED_DESCRIPTION;
+    public static final String[] EXTENDED_DESCRIPTION;
     public static final String IMG_PATH = "cards/clone.png";
 
     private static final CardStrings cardStrings;
     private static final CardType TYPE = CardType.SKILL;
-    private static final CardRarity RARITY = CardRarity.RARE;
+    private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
 
     //TUNING CONSTANTS
@@ -33,7 +34,7 @@ public class Clone extends AbstractGuardianCard {
     private static final int COST = 1;
     private static final int COUNT = 1;
     private static final int UPGRADECOST = 0;
-    private static final int SOCKETS = 1;
+    private static final int SOCKETS = 0;
     private static final boolean SOCKETSAREAFTER = true;
 
     //END TUNING CONSTANTS
@@ -45,6 +46,19 @@ public class Clone extends AbstractGuardianCard {
 
         this.socketCount = SOCKETS;
         this.updateDescription();
+        this.exhaust = true;
+    }
+
+    @Override
+    public boolean canUse(AbstractPlayer p, AbstractMonster m) {
+        boolean result;
+        if (AbstractDungeon.player.hasEmptyOrb()){
+            result = true;
+        } else {
+            this.cantUseMessage = EXTENDED_DESCRIPTION[0];
+            result = false;
+        }
+        return result;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
@@ -77,6 +91,7 @@ public class Clone extends AbstractGuardianCard {
         NAME = cardStrings.NAME;
         DESCRIPTION = cardStrings.DESCRIPTION;
         UPGRADED_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
+        EXTENDED_DESCRIPTION = cardStrings.EXTENDED_DESCRIPTION;
     }
 }
 

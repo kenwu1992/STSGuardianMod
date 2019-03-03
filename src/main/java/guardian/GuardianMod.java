@@ -116,6 +116,8 @@ public class GuardianMod implements PostDrawSubscriber, PreMonsterTurnSubscriber
     public static AbstractCard.CardTags PROTOCOL;
     @SpireEnum
     public static AbstractCard.CardTags TICK;
+    @SpireEnum
+    public static AbstractCard.CardTags VOLATILE;
 
     //TODO - Unlock bundles
 
@@ -285,7 +287,7 @@ public class GuardianMod implements PostDrawSubscriber, PreMonsterTurnSubscriber
             BaseMod.addUnlockBundle(unlocks4, GuardianEnum.GUARDIAN, 4);
 
 
-            UnlockTracker.addCard(SpacetimeBattery.ID);
+            UnlockTracker.addCard(ShieldCharger.ID);
             UnlockTracker.addCard(Orbwalk.ID);
             UnlockTracker.addCard(FierceBash.ID);
 
@@ -449,7 +451,7 @@ public class GuardianMod implements PostDrawSubscriber, PreMonsterTurnSubscriber
         BaseMod.addCard(new PrismaticBarrier());
         BaseMod.addCard(new PrismaticBeam());
         BaseMod.addCard(new ChargeCore());
-        BaseMod.addCard(new SharpenScales());
+        BaseMod.addCard(new ShieldSpikes());
         BaseMod.addCard(new PiercingHide());
         BaseMod.addCard(new TemporalShield());
         BaseMod.addCard(new TemporalStrike());
@@ -458,12 +460,12 @@ public class GuardianMod implements PostDrawSubscriber, PreMonsterTurnSubscriber
         BaseMod.addCard(new BaubleBeam());
         BaseMod.addCard(new MultiBeam());
         BaseMod.addCard(new RefractedBeam());
-        BaseMod.addCard(new SpikyScales());
-        BaseMod.addCard(new ArmoredScales());
-        BaseMod.addCard(new SlickScales());
+        BaseMod.addCard(new SpikerProtocol());
+        BaseMod.addCard(new ArmoredProtocol());
+        BaseMod.addCard(new EvasiveProtocol());
         BaseMod.addCard(new TimeSifter());
         BaseMod.addCard(new CrystalBeam());
-        BaseMod.addCard(new Construct());
+        BaseMod.addCard(new AncientConstruct());
         BaseMod.addCard(new Gem_Blue());
         BaseMod.addCard(new Gem_Crimson());
         BaseMod.addCard(new Gem_Fragmented());
@@ -472,7 +474,7 @@ public class GuardianMod implements PostDrawSubscriber, PreMonsterTurnSubscriber
         BaseMod.addCard(new guardian.cards.BronzeOrb());
         BaseMod.addCard(new GatlingBeam());
         BaseMod.addCard(new RevengeProtocol());
-        BaseMod.addCard(new SpacetimeBattery());
+        BaseMod.addCard(new ShieldCharger());
         BaseMod.addCard(new StasisEngine());
         BaseMod.addCard(new Gem_Purple());
 
@@ -483,7 +485,7 @@ public class GuardianMod implements PostDrawSubscriber, PreMonsterTurnSubscriber
         //TODO - Part of unlocks
 
         unlocks0 = new CustomUnlockBundle(
-                SpacetimeBattery.ID, Orbwalk.ID, FierceBash.ID
+                ShieldCharger.ID, Orbwalk.ID, FierceBash.ID
         );
 
         unlocks1 = new CustomUnlockBundle(

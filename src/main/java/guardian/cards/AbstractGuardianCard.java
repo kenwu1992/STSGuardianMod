@@ -153,9 +153,6 @@ public abstract class AbstractGuardianCard extends CustomCard implements CustomS
             }
         }
         }
-        if (this instanceof BaubleBeam){
-            ((BaubleBeam) this).updateCost();
-        }
         updateDescription();
     }
 

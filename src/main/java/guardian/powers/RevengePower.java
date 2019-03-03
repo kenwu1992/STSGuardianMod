@@ -10,7 +10,7 @@ import com.megacrit.cardcrawl.powers.LoseStrengthPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 
 
-public class RevengePower extends AbstractGuardianPower implements OnMyBlockBrokenPower {
+public class RevengePower extends AbstractGuardianTwoAmountPower {
     public static final String POWER_ID = "Guardian:RevengePower";
     public static PowerType POWER_TYPE = PowerType.BUFF;
 
@@ -28,6 +28,7 @@ public class RevengePower extends AbstractGuardianPower implements OnMyBlockBrok
         this.setImage("Revenge84.png", "Revenge32.png");
         this.type = POWER_TYPE;
         this.amount = amount;
+        this.amount2 = 0;
         this.DESCRIPTIONS = CardCrawlGame.languagePack.getPowerStrings(this.ID).DESCRIPTIONS;
         this.name = CardCrawlGame.languagePack.getPowerStrings(this.ID).NAME;
 
@@ -37,14 +38,22 @@ public class RevengePower extends AbstractGuardianPower implements OnMyBlockBrok
 
 
     public void updateDescription() {
-        this.description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1];
+        this.description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1] + (this.amount2 * this.amount) + DESCRIPTIONS[2];
 
     }
 
     @Override
-    public void onMyBlockBroken() {
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.owner, this.owner, new StrengthPower(this.owner, this.amount), this.amount));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.owner, this.owner, new LoseStrengthPower(this.owner, this.amount), this.amount));
+    public void atEndOfTurn(boolean isPlayer) {
+        super.atEndOfTurn(isPlayer);
+        this.amount2++;
+        updateDescription();
+    }
+
+    @Override
+    public void onRemove() {
+        int strengthgain = this.amount2 * this.amount;
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.owner, this.owner, new StrengthPower(this.owner, strengthgain), strengthgain));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.owner, this.owner, new LoseStrengthPower(this.owner, strengthgain), strengthgain));
 
     }
 }

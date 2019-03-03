@@ -116,7 +116,7 @@
 			"Exhaust the first ",
 			" Status or Curse cards drawn each turn ",
 			"Gain ",
-			" Strength until the end of your turn whenever your Block is broken."
+			" Momentary Strength for each turn Defensive Mode was active when it ends."
 		]
 	},
 	"Guardian:AutomayhemPower": {
@@ -130,14 +130,15 @@
 		"NAME": "Ancient Construct",
 		"DESCRIPTIONS": [
 			"Gain ",
-			" Artifact at the start of your turn if you have no Artifact."
+			" Artifact and lose ",
+			" [E] at the start of your turn if you have no Artifact."
 		]
 	},
 	"Guardian:ModeShiftPower": {
 		"NAME": "Mode Shift",
 		"DESCRIPTIONS": [
 			"When you lose ",
-			" HP, gain 10 Block, then gain Defensive Mode and extend its duration by 1 turn. NL The amount required to activate increases each time Mode Shift is activated.",
+			" HP, gain 10 Block, then gain 3 Defensive Mode. NL The amount required to activate increases each time Mode Shift is activated.",
 			"Mode Shift already activated this turn."
 		]
 	},
@@ -152,8 +153,9 @@
 	"Guardian:RevengePower": {
 		"NAME": "Revenge",
 		"DESCRIPTIONS": [
-			"Gain ",
-			" Strength until the end of your turn whenever your Block is broken."
+			"When Defensive Mode is removed, gain ",
+			" Momentary Strength for each turn it was active. NL Currently will grant ",
+			" Momentary Strength."
 		]
 	},
 	"Guardian:StasisEnginePower": {

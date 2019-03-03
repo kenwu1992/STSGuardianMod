@@ -50,7 +50,7 @@ public class PackageShapes extends AbstractGuardianCard {
         if (upgraded) tmp.upgrade();
         derp.add(tmp);
 
-        tmp = new SpikyScales();
+        tmp = new SpikerProtocol();
         if (upgraded) tmp.upgrade();
         derp.add(tmp);
 

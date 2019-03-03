@@ -16,10 +16,12 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 import com.megacrit.cardcrawl.vfx.combat.SmallLaserEffect;
 import com.megacrit.cardcrawl.vfx.combat.SweepingBeamEffect;
 import guardian.GuardianMod;
 import guardian.actions.PlaceActualCardIntoStasis;
+import guardian.actions.RandomProtocolAction;
 import guardian.patches.AbstractCardEnum;
 
 import java.util.ArrayList;
@@ -39,9 +41,10 @@ public class MultiBeam extends AbstractGuardianCard {
 
     //TUNING CONSTANTS
 
-    private static final int COST = 2;
-    private static final int DAMAGE = 10;
-    private static final int UPGRADE_BONUS = 3;
+    private static final int COST = -1;
+    private static final int DAMAGE = 5;
+    private static final int BEAMBUFF = 2;
+    private static final int UPGRADE_BEAMBUFF = 1;
     private static final int SOCKETS = 0;
     private static final boolean SOCKETSAREAFTER = true;
 
@@ -58,7 +61,7 @@ public class MultiBeam extends AbstractGuardianCard {
         this.socketCount = SOCKETS;
         this.tags.add(GuardianMod.BEAM);
         this.updateDescription();
-
+        this.magicNumber = this.baseMagicNumber = BEAMBUFF;
         this.isMultiDamage = true;
     }
     @Override
@@ -72,23 +75,25 @@ public class MultiBeam extends AbstractGuardianCard {
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         super.use(p,m);
-        AbstractDungeon.actionManager.addToBottom(new SFXAction("ATTACK_MAGIC_BEAM_SHORT", 0.5F));
-        AbstractDungeon.actionManager.addToBottom(new VFXAction(p, new SweepingBeamEffect(AbstractDungeon.player.hb.cX, AbstractDungeon.player.hb.cY, AbstractDungeon.player.flipHorizontal), 0.4F));
-        AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(p, this.multiDamage, this.damageTypeForTurn, AbstractGameAction.AttackEffect.FIRE));
 
-        if (!AbstractDungeon.player.drawPile.isEmpty()){
-            ArrayList<AbstractCard> beamCards = new ArrayList<>();
-            for (AbstractCard c : AbstractDungeon.player.drawPile.group){
-                if (c.hasTag(GuardianMod.BEAM)){
-                    beamCards.add(c);
-                }
-            }
-            if (beamCards.size() > 0) {
-                AbstractCard randoBeam;
-                randoBeam = beamCards.get(AbstractDungeon.cardRng.random(beamCards.size() - 1));
-                randoBeam.freeToPlayOnce = true;
-                AbstractDungeon.actionManager.addToBottom(new QueueCardAction(randoBeam, AbstractDungeon.getMonsters().getRandomMonster(true)));
-            }
+        if (this.energyOnUse < EnergyPanel.totalCount) {
+            this.energyOnUse = EnergyPanel.totalCount;
+        }
+        if (p.hasRelic("Chemical X")) {
+            this.energyOnUse += 2;
+            p.getRelic("Chemical X").flash();
+        }
+        if (upgraded) this.energyOnUse++;
+
+        for (int i = 0; i < this.energyOnUse; i++) {
+            AbstractDungeon.actionManager.addToBottom(new SFXAction("ATTACK_MAGIC_BEAM_SHORT", 0.5F));
+            AbstractDungeon.actionManager.addToBottom(new VFXAction(p, new SweepingBeamEffect(AbstractDungeon.player.hb.cX, AbstractDungeon.player.hb.cY, AbstractDungeon.player.flipHorizontal), 0.15F));
+            AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(p, this.multiDamage, this.damageTypeForTurn, AbstractGameAction.AttackEffect.FIRE));
+
+        }
+
+        if (!this.freeToPlayOnce) {
+            p.energy.use(EnergyPanel.totalCount);
         }
 
         super.useGems(p,m);
@@ -108,7 +113,9 @@ public class MultiBeam extends AbstractGuardianCard {
         if (!this.upgraded) {
 
             upgradeName();
-            upgradeDamage(UPGRADE_BONUS);
+            this.rawDescription = UPGRADED_DESCRIPTION;
+            this.initializeDescription();
+            upgradeMagicNumber(UPGRADE_BEAMBUFF);
 
         }
 

@@ -30,7 +30,7 @@ public class RollAttack extends AbstractGuardianCard {
     //TUNING CONSTANTS
 
     private static final int COST = 2;
-    private static final int DAMAGE = 12;
+    private static final int DAMAGE = 10;
     private static final int UPGRADE_DAMAGE = 3;
     private static final int SOCKETS = 1;
     private static final boolean SOCKETSAREAFTER = true;

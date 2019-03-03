@@ -32,8 +32,9 @@ public class RevengeProtocol extends AbstractGuardianCard {
     //TUNING CONSTANTS
 
     private static final int COST = 1;
-    private static final int STRENGTHFORTURN = 4;
-    private static final int UPGRADE_STRENGTHFORTURN = 2;
+    private static final int STRENGTHFORTURN = 1;
+    private static final int DEFMODETURNS = 2;
+    private static final int UPGRADE_TURNS = 1;
     private static final int SOCKETS = 0;
     private static final boolean SOCKETSAREAFTER = true;
 
@@ -44,23 +45,26 @@ public class RevengeProtocol extends AbstractGuardianCard {
 
         this.socketCount = SOCKETS;
         this.updateDescription();
-        this.magicNumber = this.baseMagicNumber = STRENGTHFORTURN;
+        this.magicNumber = this.baseMagicNumber = DEFMODETURNS;
         
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         super.use(p,m);
         if (p.hasPower(DefensiveModeBuffsPower.POWER_ID)){
-            ((DefensiveModeBuffsPower)p.getPower(DefensiveModeBuffsPower.POWER_ID)).enrage += this.magicNumber;
+            ((DefensiveModeBuffsPower)p.getPower(DefensiveModeBuffsPower.POWER_ID)).enrage += STRENGTHFORTURN;
             p.getPower(DefensiveModeBuffsPower.POWER_ID).flash();
         } else {
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DefensiveModeBuffsPower(p, p, 0,0,0,0,this.magicNumber)));
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DefensiveModeBuffsPower(p, p, 0,0,0,0,STRENGTHFORTURN)));
         }
         if (p.hasPower(DefenseModePower.POWER_ID)){
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new RevengePower(p, p, this.magicNumber), this.magicNumber));
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new RevengePower(p, p, STRENGTHFORTURN), STRENGTHFORTURN));
         }
-        AbstractDungeon.actionManager.addToBottom(new SwitchToDefenseModeAction(p));
 
+        for (int i = 0; i < this.magicNumber; i++) {
+            AbstractDungeon.actionManager.addToBottom(new SwitchToDefenseModeAction(p));
+
+        }
     }
 
     public AbstractCard makeCopy() {
@@ -70,7 +74,7 @@ public class RevengeProtocol extends AbstractGuardianCard {
     public void upgrade() {
         if (!this.upgraded) {
             upgradeName();
-            upgradeMagicNumber(UPGRADE_STRENGTHFORTURN);
+            upgradeMagicNumber(UPGRADE_TURNS);
         }
     }
 

@@ -42,17 +42,17 @@
   },
   "Guardian:ChargeUp": {
     "NAME": "Charge Up",
-    "DESCRIPTION": "On your next turn, gain !B! Block and !M! Strength. NL Exhaust."
+    "DESCRIPTION": "Place this card into Stasis. NL Tick - Gain !B! Block and !M! Strength. NL Volatile."
   },
   "Guardian:DonusPower": {
     "NAME": "Ancient Power",
-    "DESCRIPTION": "Gain 1 Strength. NL Add a random Attack card to your hand. It costs 0 this turn. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Gain 1 Strength and 1 Artifact. NL Add a random Attack card to your hand. It costs 0 this turn. NL Exhaust."
+    "DESCRIPTION": "Gain 1 Strength. NL Add a random Attack card to your hand. It costs 1 less this combat. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Gain 1 Strength and 1 Artifact. NL Add a random Attack card to your hand. It costs 1 less this combat. NL Exhaust."
   },
   "Guardian:DecasProtection": {
     "NAME": "Ancient Protection",
-    "DESCRIPTION": "Gain 1 Dexterity. NL Add a random Power card to your hand. It costs 0 this turn. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Gain 1 Dexterity and 1 Artifact. NL Add a random Power card to your hand. It costs 0 this turn. NL Exhaust."
+    "DESCRIPTION": "Gain 1 Dexterity. NL Add a random Power card to your hand. It costs 1 less this combat. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Gain 1 Dexterity and 1 Artifact. NL Add a random Power card to your hand. It costs 1 less this combat. NL Exhaust."
   },
   "Guardian:FierceBash": {
     "NAME": "Fierce Bash",
@@ -85,7 +85,7 @@
   },
   "Guardian:HyperBeam_Guardian": {
     "NAME": "Hyper Beam",
-    "DESCRIPTION": "Deal !D! damage to ALL enemies. NL Skip your next turn."
+    "DESCRIPTION": "Deal !D! damage to ALL enemies. NL Strength affects this card !M! times. NL Skip your next turn."
   },
   "Guardian:BronzeArmor": {
     "NAME": "Bronze Armor",
@@ -184,8 +184,8 @@
   },
   "Guardian:Clone": {
     "NAME": "Clone",
-    "DESCRIPTION": "Choose a card. Place a copy of that card into Stasis.",
-    "UPGRADE_DESCRIPTION": "Choose a card. Place two copies of that card into Stasis."
+    "DESCRIPTION": "Choose a card. Place a copy of that card into Stasis. NL Exhaust.",
+    "EXTENDED_DESCRIPTION": ["~ERROR:~ #rStasis in progress."]
   },
   "Guardian:Preprogram": {
     "NAME": "Preprogram",
@@ -215,8 +215,8 @@
   },
   "Guardian:FastForward": {
     "NAME": "Fast Forward",
-    "DESCRIPTION": "Accelerate all cards in Stasis. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Accelerate all cards in Stasis."
+    "DESCRIPTION": "Accelerate all cards in Stasis.",
+    "UPGRADE_DESCRIPTION": "Accelerate all cards in Stasis twice."
   },
   "Guardian:TimeCapacitor": {
     "NAME": "Time Capacitor",
@@ -250,7 +250,7 @@
   "NAME": "Piercing Hide",
   "DESCRIPTION": "Gain !B! Block and !M! Momentary Thorns. NL Gain Defensive_Mode."
 },
-  "Guardian:SharpenScales": {
+  "Guardian:ShieldSpikes": {
     "NAME": "Shield Spikes",
     "DESCRIPTION": "Gain !B! Block. NL Gain !M! Momentary Thorns if you are in Defensive_Mode."
   },
@@ -281,35 +281,36 @@
   },
   "Guardian:MultiBeam": {
     "NAME": "Multi-Beam",
-    "DESCRIPTION": "Deal !D! damage to ALL enemies. NL Play a random Beam card from your draw pile."
+    "DESCRIPTION": "Deal !D! damage to ALL enemies X Times. NL Tick - Increase the damage dealt by Beam cards by !M! this combat.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage to ALL enemies X+1 Times. NL Tick - Increase the damage dealt by Beam cards by !M! this combat."
   },
   "Guardian:BaubleBeam": {
     "NAME": "Bauble Beam",
-    "DESCRIPTION": "Costs 1 less for each Gem in this card. NL Deal !D! damage."
+    "DESCRIPTION": "Deal !D! damage. NL Perform the following !M! times:"
   },
   "Guardian:PrimingBeam": {
     "NAME": "Priming Beam",
     "DESCRIPTION": "Deal !D! damage. NL Increase the damage dealt by Beam cards by !M! this combat."
   },
-  "Guardian:SlickScales": {
+  "Guardian:EvasiveProtocol": {
     "NAME": "Evasive Protocol",
-    "DESCRIPTION": "Gain !M! Dexterity while in Defensive_Mode. NL Gain Defensive_Mode."
+    "DESCRIPTION": "Gain 2 Dexterity while in Defensive_Mode. NL Gain !M! Defensive_Mode."
   },
-  "Guardian:SpikyScales": {
+  "Guardian:SpikerProtocol": {
     "NAME": "Spiker Protocol",
-    "DESCRIPTION": "Gain !M! Thorns while in Defensive_Mode. NL Gain Defensive_Mode."
+    "DESCRIPTION": "Gain 3 Thorns while in Defensive_Mode. NL Gain !M! Defensive_Mode."
   },
-  "Guardian:ArmoredScales": {
+  "Guardian:ArmoredProtocol": {
     "NAME": "Armored Protocol",
-    "DESCRIPTION": "Gain !M! Block at the end of each turn while in Defensive_Mode. NL Gain Defensive_Mode."
+    "DESCRIPTION": "Gain 4 Block at the end of each turn while in Defensive_Mode. NL Gain !M! Defensive_Mode."
   },
   "Guardian:TimeSifter": {
     "NAME": "Time Sifter",
     "DESCRIPTION": "At the end of your turn, Accelerate the right-most card in Stasis with a turn counter of 2 or more."
   },
-  "Guardian:Construct": {
+  "Guardian:AncientConstruct": {
     "NAME": "Ancient Construct",
-    "DESCRIPTION": "At the start of your turn, if you have no Artifact, gain 1 Artifact."
+    "DESCRIPTION": "At the start of your turn, if you have no Artifact, gain !M! Artifact and lose [E]."
   },
   "Guardian:CrystalBeam": {
     "NAME": "Crystal Beam",
@@ -364,15 +365,15 @@
   },
   "Guardian:RevengeProtocol": {
     "NAME": "Revenge Protocol",
-    "DESCRIPTION": "Gain !M! Momentary Strength whenever your Block is broken while in Defensive_Mode. NL Gain Defensive_Mode."
+    "DESCRIPTION": "When Defensive Mode is removed, gain 1 Momentary Strength for each turn it was active. NL Gain !M! Defensive_Mode."
   },
   "Guardian:GatlingBeam": {
     "NAME": "Gatling Beam",
     "DESCRIPTION": "Place this card into Stasis. NL Tick - Deal !D! damage to a random enemy. Repeat for each time this Tick effect has triggered. NL Volatile."
   },
-  "Guardian:SpacetimeBattery": {
+  "Guardian:ShieldCharger": {
     "NAME": "Shield Charger",
-    "DESCRIPTION": "Gain !B! Block. NL Tick - Gain !M! Block."
+    "DESCRIPTION": "Place this card into Stasis. NL Tick - Gain !B! Block and [E]. NL Volatile."
   },
   "Guardian:StasisEngine": {
     "NAME": "Stasis Engine",

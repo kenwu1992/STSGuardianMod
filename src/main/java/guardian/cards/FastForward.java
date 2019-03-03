@@ -37,7 +37,7 @@ public class FastForward extends AbstractGuardianCard {
 
     public FastForward() {
         super(ID, NAME, GuardianMod.getResourcePath(IMG_PATH), COST, DESCRIPTION, TYPE, AbstractCardEnum.GUARDIAN, RARITY, TARGET);
-        this.exhaust = true;
+
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
@@ -50,6 +50,7 @@ public class FastForward extends AbstractGuardianCard {
         for (AbstractOrb o:p.orbs){
             if (o instanceof StasisOrb){
                 o.onStartOfTurn();
+                if (upgraded) o.onStartOfTurn();
                 ((StasisOrb) o).stasisCard.superFlash(Color.GOLDENROD);
             }
         }
@@ -63,7 +64,6 @@ public class FastForward extends AbstractGuardianCard {
     public void upgrade() {
         if (!this.upgraded) {
             upgradeName();
-            this.exhaust = false;
             this.rawDescription = UPGRADED_DESCRIPTION;
             this.initializeDescription();
         }
