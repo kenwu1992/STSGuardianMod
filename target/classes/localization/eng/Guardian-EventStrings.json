@@ -77,15 +77,20 @@
       "You escape through the same secret passage you came in, leaving the Grim Forge behind you. Your journey continues towards the Dawn awaiting at the top of the Spire.",
       "Select a Card to Dismantle.",
       "Select a Card to Pry.",
-      "Select a Card to Transmute."
+      "Select a Card to Transmute.",
+      "Select a Gem.",
+      "Select a Card to receive Gem.",
+      "Taking advantage of this break in the climb, you place a gemstone into your equipment, instantly feeling your power grow."
     ],
     "OPTIONS": [
-      "[Dismantle] #rDestroy Socketed Card. Gain it's #gGems.",
+      "[Dismantle] #rRemove Socketed Card. Gain it's #gGems.",
       "[Locked] Requires Socketed Card with a Gem installed.",
-      "[Pry] #rDestroy all #gGems in a Socketed Card.",
+      "[Pry] #rRemove all #gGems in a Socketed Card.",
       "[Transmute] #rRemove a Card. Gain a random #gGem.",
       "[Locked] Already used.",
-      "[Leave]"
+      "[Leave]",
+      "[Enhance] Add a #gGem to a #gSocket.",
+      "[Locked] Requires a Gem and an open Socket."
     ]
   }
 }

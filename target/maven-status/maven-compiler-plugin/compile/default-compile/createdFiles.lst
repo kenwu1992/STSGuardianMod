@@ -36,6 +36,7 @@ guardian\cards\Gem_Yellow.class
 guardian\cards\MultiBeam.class
 guardian\cards\PackageSphere.class
 guardian\cards\AbstractGuardianCard.class
+guardian\ui\RelicPreviewButton$1.class
 guardian\cards\PiercingHide.class
 guardian\cards\Planning.class
 guardian\cards\TemporalStrike.class
@@ -158,6 +159,7 @@ guardian\cards\AncientConstruct.class
 guardian\vfx\AddCardToStasisEffect.class
 guardian\powers\AbstractGuardianTwoAmountPower.class
 guardian\vfx\IronWaveParticleBlue.class
+guardian\patches\RelicPreviewPatch.class
 guardian\cards\DecasProtection.class
 guardian\cards\PackageWalker.class
 guardian\cards\PrismaticBarrier.class
@@ -190,6 +192,7 @@ guardian\vfx\SocketGemEffect.class
 guardian\actions\StasisCodexAction.class
 guardian\cards\CurlUp.class
 guardian\actions\PolyBeamAction.class
+guardian\ui\RelicPreviewButton.class
 guardian\cards\GatlingBeam.class
 guardian\characters\GuardianCharacter.class
 guardian\powers\AbstractGuardianPower.class

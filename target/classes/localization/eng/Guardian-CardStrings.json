@@ -45,12 +45,12 @@
     "DESCRIPTION": "Place this card into Stasis. NL Tick - Gain !B! Block and !M! Strength. NL Volatile."
   },
   "Guardian:DonusPower": {
-    "NAME": "Ancient Power",
+    "NAME": "Ancient Attack",
     "DESCRIPTION": "Gain 1 Strength. NL Add a random Attack card to your hand. It costs 1 less this combat. NL Exhaust.",
     "UPGRADE_DESCRIPTION": "Gain 1 Strength and 1 Artifact. NL Add a random Attack card to your hand. It costs 1 less this combat. NL Exhaust."
   },
   "Guardian:DecasProtection": {
-    "NAME": "Ancient Protection",
+    "NAME": "Ancient Power",
     "DESCRIPTION": "Gain 1 Dexterity. NL Add a random Power card to your hand. It costs 1 less this combat. NL Exhaust.",
     "UPGRADE_DESCRIPTION": "Gain 1 Dexterity and 1 Artifact. NL Add a random Power card to your hand. It costs 1 less this combat. NL Exhaust."
   },
@@ -146,8 +146,8 @@
   },
   "Guardian:PackageDonuDeca": {
     "NAME": "Package: Ancients",
-    "DESCRIPTION": "Add an Ancient Power, Ancient Protection, and Ancient Construct to your hand. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Add an Ancient Power, Ancient Protection, and Ancient Construct to your hand, each of which is Upgraded. NL Exhaust."
+    "DESCRIPTION": "Add an Ancient Attack, Ancient Power, and Ancient Construct to your hand. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Add an Ancient Attack, Ancient Power, and Ancient Construct to your hand, each of which is Upgraded. NL Exhaust."
   },
   "Guardian:PackageSphere": {
     "NAME": "Package: Spheric",
