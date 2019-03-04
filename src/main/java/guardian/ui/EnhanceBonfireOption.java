@@ -37,7 +37,8 @@ public class EnhanceBonfireOption extends AbstractCampfireOption
     @Override
     public void useOption() {
         if (this.usable) {
-            AbstractDungeon.effectList.add(new SocketGemEffect());
+            GuardianMod.currSocketGemEffect = new SocketGemEffect();
+            AbstractDungeon.effectList.add(GuardianMod.currSocketGemEffect);
 
         }
     }

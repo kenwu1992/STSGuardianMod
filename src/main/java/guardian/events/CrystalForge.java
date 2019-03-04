@@ -42,8 +42,6 @@ public class CrystalForge extends AbstractImageEvent {
     private boolean pickCardForGemRemoval = false;
     private boolean pickCardForSalvageGems = false;
     private boolean pickCardForTransmute = false;
-    private boolean pickCardForSocket = false;
-    private boolean pickGemForSocket = false;
     private AbstractGuardianCard cardChosen = null;
     private AbstractGuardianCard gemChosen = null;
 
@@ -167,16 +165,16 @@ public class CrystalForge extends AbstractImageEvent {
             AbstractDungeon.gridSelectScreen.selectedCards.clear();
             this.pickCardForTransmute = false;
             updateEnhance(1);
-        } else if (!AbstractDungeon.isScreenUp && !AbstractDungeon.gridSelectScreen.selectedCards.isEmpty() && pickGemForSocket) {
+        } else if (!AbstractDungeon.isScreenUp && !AbstractDungeon.gridSelectScreen.selectedCards.isEmpty() && GuardianMod.gridScreenForGems) {
 
             this.gemChosen = (AbstractGuardianCard)AbstractDungeon.gridSelectScreen.selectedCards.get(0);
-            pickCardForSocket = true;
-            pickGemForSocket = false;
+            GuardianMod.gridScreenForGems = false;
+            GuardianMod.gridScreenForSockets = true;
             AbstractDungeon.gridSelectScreen.selectedCards.clear();
-            AbstractDungeon.gridSelectScreen.open(GuardianMod.getSocketableCards(), 1, DESCRIPTIONS[9], false, false, false,false);
+            AbstractDungeon.gridSelectScreen.open(GuardianMod.getSocketableCards(), 1, DESCRIPTIONS[9], false, false, true,false);
 
 
-        } else if (!AbstractDungeon.isScreenUp && !AbstractDungeon.gridSelectScreen.selectedCards.isEmpty() && pickCardForSocket) {
+        } else if (!AbstractDungeon.isScreenUp && !AbstractDungeon.gridSelectScreen.selectedCards.isEmpty() && GuardianMod.gridScreenForSockets) {
 
             this.cardChosen = (AbstractGuardianCard)AbstractDungeon.gridSelectScreen.selectedCards.get(0);
                 cardChosen.addGemToSocket(gemChosen);
@@ -184,7 +182,7 @@ public class CrystalForge extends AbstractImageEvent {
                 AbstractDungeon.effectList.add(new ShowCardBrieflyEffect(cardChosen.makeStatEquivalentCopy()));
 
             AbstractDungeon.gridSelectScreen.selectedCards.clear();
-            pickCardForSocket = false;
+            GuardianMod.gridScreenForSockets = false;
             updateEnhance();
             }
 
@@ -236,10 +234,9 @@ public class CrystalForge extends AbstractImageEvent {
 
                         break;
                     case 3:
+                        GuardianMod.gridScreenForGems = true;
                         AbstractDungeon.gridSelectScreen.open(GuardianMod.getGemCards(), 1, DESCRIPTIONS[8], false, false, true,false);
-                        this.pickGemForSocket = true;
                         this.imageEventText.updateBodyText(ENHANCE);
-                        this.imageEventText.updateDialogOption(0, OPTIONS[4], true);
 
                         break;
                     case 4:

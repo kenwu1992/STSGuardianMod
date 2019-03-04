@@ -159,6 +159,7 @@ guardian\cards\AncientConstruct.class
 guardian\vfx\AddCardToStasisEffect.class
 guardian\powers\AbstractGuardianTwoAmountPower.class
 guardian\vfx\IronWaveParticleBlue.class
+guardian\patches\SocketGemGridPatchCancelButton.class
 guardian\patches\RelicPreviewPatch.class
 guardian\cards\DecasProtection.class
 guardian\cards\PackageWalker.class
@@ -198,6 +199,7 @@ guardian\characters\GuardianCharacter.class
 guardian\powers\AbstractGuardianPower.class
 guardian\cards\DefendTwo.class
 guardian\powers\ConstructPower.class
+guardian\patches\SocketGemGridPatchCancelAction.class
 guardian\powers\NextTurnGainStrengthPower.class
 guardian\events\StasisEgg.class
 guardian\events\CrystalForge.class

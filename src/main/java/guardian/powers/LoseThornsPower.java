@@ -56,7 +56,7 @@ public class LoseThornsPower extends AbstractGuardianPower {
             if (this.owner.getPower("Thorns").amount <= this.amount) {
                 AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(this.owner, this.owner, "Thorns"));
             } else {
-                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.owner,this.owner,new ThornsPower(this.owner, this.amount * -1), this.amount * -1));
+                AbstractDungeon.player.getPower(ThornsPower.POWER_ID).stackPower(this.amount * -1);
 
             }
         }

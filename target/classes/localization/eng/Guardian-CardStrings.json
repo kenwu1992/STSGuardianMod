@@ -318,8 +318,8 @@
   },
   "Guardian:Gem_Synthetic": {
     "NAME": "Onyx",
-    "DESCRIPTION": "Gem. NL Gain 1 Artifact.",
-    "UPGRADE_DESCRIPTION": "Gain 1 Artifact."
+    "DESCRIPTION": "Gem. NL Gain 1 Artifact. Lose 2 HP.",
+    "UPGRADE_DESCRIPTION": "Gain 1 Artifact Lose 2 HP."
   },
   "Guardian:Gem_Yellow": {
     "NAME": "Amber",

@@ -43,6 +43,7 @@ import guardian.relics.*;
 import guardian.rewards.GemReward;
 import guardian.rewards.GemRewardAllRarities;
 import guardian.ui.EnhanceBonfireOption;
+import guardian.vfx.SocketGemEffect;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import guardian.characters.GuardianCharacter;
@@ -101,6 +102,12 @@ public class GuardianMod implements PostDrawSubscriber, PreMonsterTurnSubscriber
     public static boolean talked9 = false;
 
     private ModPanel settingsPanel;
+
+    public static boolean gridScreenForGems = false;
+    public static boolean gridScreenForSockets = false;
+    public static boolean gridScreenInGrimForge = false;
+
+    public static SocketGemEffect currSocketGemEffect = null;
 
     //public static BronzeOrb bronzeOrbInPlay;
 

@@ -28,14 +28,15 @@ public class SocketGemEffect extends AbstractGameEffect {
     private static final UIStrings uiStrings;
     public static final String[] TEXT;
 
-    private boolean openedScreen = false;
+    public boolean openedScreen = false;
 
-    private boolean gemSelect = false;
-    private boolean socketSelect = false;
+    public boolean gemSelect = false;
+    public boolean socketSelect = false;
+    public boolean confirmSelect = false;
 
     private Color screenColor;
 
-    private AbstractGuardianCard gemChosen;
+    public AbstractGuardianCard gemChosen;
 
     public SocketGemEffect() {
         this.screenColor = AbstractDungeon.fadeColor.cpy();
@@ -62,6 +63,8 @@ public class SocketGemEffect extends AbstractGameEffect {
             gemSelect = false;
             socketSelect = true;
             AbstractDungeon.gridSelectScreen.selectedCards.clear();
+            GuardianMod.gridScreenForGems = false;
+            GuardianMod.gridScreenForSockets = true;
             AbstractDungeon.gridSelectScreen.open(GuardianMod.getSocketableCards(), 1, TEXT[4], false, false, true,false);
 
 
@@ -76,6 +79,25 @@ public class SocketGemEffect extends AbstractGameEffect {
                 AbstractDungeon.effectsQueue.add(new UpgradeShineEffect((float)Settings.WIDTH / 2.0F, (float)Settings.HEIGHT / 2.0F));
                 AbstractDungeon.effectsQueue.add(new ShowCardBrieflyEffect(cg.makeStatEquivalentCopy()));
                 ((RestRoom) AbstractDungeon.getCurrRoom()).fadeIn();
+                GuardianMod.gridScreenForSockets = false;
+
+            }
+
+            AbstractDungeon.gridSelectScreen.selectedCards.clear();
+
+
+        }
+
+        if (!AbstractDungeon.isScreenUp && !AbstractDungeon.gridSelectScreen.selectedCards.isEmpty() && confirmSelect) {
+            var1 = AbstractDungeon.gridSelectScreen.selectedCards.iterator();
+
+            while (var1.hasNext()) {
+                AbstractGuardianCard cg = (AbstractGuardianCard) var1.next();
+                cg.addGemToSocket(gemChosen);
+                AbstractDungeon.effectsQueue.add(new UpgradeShineEffect((float)Settings.WIDTH / 2.0F, (float)Settings.HEIGHT / 2.0F));
+                AbstractDungeon.effectsQueue.add(new ShowCardBrieflyEffect(cg.makeStatEquivalentCopy()));
+                ((RestRoom) AbstractDungeon.getCurrRoom()).fadeIn();
+                GuardianMod.gridScreenForSockets = false;
 
             }
 
@@ -88,6 +110,7 @@ public class SocketGemEffect extends AbstractGameEffect {
             this.openedScreen = true;
             CardGroup gemCards = GuardianMod.getGemCards();
             this.gemSelect = true;
+            GuardianMod.gridScreenForGems = true;
             AbstractDungeon.gridSelectScreen.open(gemCards, 1, TEXT[3], false, false, true,false);
 
             /*  TODO - Relics that do "on Gem Socket" can go here
