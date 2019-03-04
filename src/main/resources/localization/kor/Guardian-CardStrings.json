@@ -318,8 +318,8 @@
   },
   "Guardian:Gem_Synthetic": {
     "NAME": "줄마노",
-    "DESCRIPTION": "보석. NL 인공물 을 1 얻습니다.",
-    "UPGRADE_DESCRIPTION": "인공물 을 1 얻습니다."
+    "DESCRIPTION": "보석. NL 인공물 을 1 얻습니다. 체력을 2 잃습니다",
+    "UPGRADE_DESCRIPTION": "인공물 을 1 얻습니다. 체력을 2 잃습니다"
   },
   "Guardian:Gem_Yellow": {
     "NAME": "호박석",
