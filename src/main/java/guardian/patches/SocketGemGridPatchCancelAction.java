@@ -21,10 +21,7 @@ public class SocketGemGridPatchCancelAction {
         if (!obj.isHidden) {
             obj.hb.update();
             if (obj.hb.clicked || (InputHelper.pressedEscape || CInputActionSet.cancel.isJustPressed()) && obj.current_x != obj.HIDE_X) {
-                AbstractDungeon.screenSwap = false;
-                InputHelper.pressedEscape = false;
-                obj.hb.clicked = false;
-                obj.hide();
+
                 if (AbstractDungeon.screen == AbstractDungeon.CurrentScreen.GRID && GuardianMod.gridScreenForSockets) {
                     if (!AbstractDungeon.gridSelectScreen.confirmScreenUp) {
                         GuardianMod.logger.info("cancel from grid for sockets");
@@ -39,8 +36,6 @@ public class SocketGemGridPatchCancelAction {
 
                         AbstractDungeon.gridSelectScreen.open(gemCards, 1, GuardianMod.currSocketGemEffect.TEXT[3], false, false, true,false);
 
-
-                        return;
                     }
 
                 }
@@ -56,7 +51,7 @@ public class SocketGemGridPatchCancelAction {
                             r.campfireUI.reopen();
                         }
 
-                        return;
+
                     }
 
                 }

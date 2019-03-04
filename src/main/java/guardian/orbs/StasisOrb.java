@@ -64,6 +64,8 @@ public class StasisOrb extends AbstractOrb {
             AbstractDungeon.player.getRelic(TickHelperRelic.ID).flash();
 
         }
+        this.baseEvokeAmount = this.basePassiveAmount;
+        this.evokeAmount = this.passiveAmount;
         card.targetAngle = 0F;
 
         if (AbstractDungeon.player != null){
@@ -138,6 +140,7 @@ public class StasisOrb extends AbstractOrb {
         }
         if (this.passiveAmount > 0){
             this.passiveAmount -= 1;
+            this.evokeAmount -= 1;
         }
 
         if (this.passiveAmount <= 0) {
@@ -153,10 +156,13 @@ public class StasisOrb extends AbstractOrb {
             AbstractDungeon.player.exhaustPile.addToTop(this.stasisCard);
 
         } else {
-            if (stasisCard.cost > 0) {
-                stasisCard.freeToPlayOnce = true;
-            }
-            else {
+            if (this.passiveAmount <= 0) {
+                if (stasisCard.cost > 0) {
+                    stasisCard.freeToPlayOnce = true;
+                } else {
+                    stasisCard.tags.remove(GuardianMod.STASISGLOW);
+                }
+            } else {
                 stasisCard.tags.remove(GuardianMod.STASISGLOW);
             }
             AbstractDungeon.actionManager.addToTop(new ReturnStasisCardToHandAction(this.stasisCard));
@@ -254,6 +260,7 @@ public class StasisOrb extends AbstractOrb {
     public AbstractOrb makeCopy() {
         StasisOrb so = new StasisOrb(this.stasisCard);
         so.passiveAmount = so.basePassiveAmount = this.passiveAmount;
+        so.evokeAmount = so.baseEvokeAmount = this.evokeAmount;
         return so;
     }
 

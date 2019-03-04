@@ -1,6 +1,7 @@
 package guardian.potions;
 
 
+import basemod.BaseMod;
 import basemod.abstracts.CustomPotion;
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -27,7 +28,7 @@ public class AcceleratePotion extends CustomPotion {
         this.isThrown = false;
         this.targetRequired = false;
         this.tips.add(new PowerTip(this.name, this.description));
-        this.tips.add(new PowerTip(TipHelper.capitalize("accelerate"), GameDictionary.keywords.get("accelerate")));
+        this.tips.add(new PowerTip(TipHelper.capitalize(BaseMod.getKeywordProper("accelerate")), GameDictionary.keywords.get("accelerate")));
 
     }
 

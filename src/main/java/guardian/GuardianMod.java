@@ -914,13 +914,13 @@ public static void saveData() {
         BaseMod.addEvent(StasisEgg.ID, StasisEgg.class, TheBeyond.ID);
 
         BaseMod.addEvent(BackToBasicsGuardian.ID, BackToBasicsGuardian.class, TheCity.ID);
-        BaseMod.addEvent(AccursedBlacksmithGuardian.ID, AccursedBlacksmithGuardian.class, TheCity.ID);
-        BaseMod.addEvent(CrystalForge.ID, CrystalForge.class, TheCity.ID);
+
+        BaseMod.addEvent(CrystalForge.ID, CrystalForge.class);
+        BaseMod.addEvent(AccursedBlacksmithGuardian.ID, AccursedBlacksmithGuardian.class);
 
 
         if (Loader.isModLoaded("TheJungle")){
             BaseMod.addEvent(BackToBasicsGuardian.ID, BackToBasicsGuardian.class, "TheJungle");
-            BaseMod.addEvent(AccursedBlacksmithGuardian.ID, AccursedBlacksmithGuardian.class, "TheJungle");
             BaseMod.addEvent(CrystalForge.ID, CrystalForge.class, "TheJungle");
         }
 

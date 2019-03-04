@@ -23,6 +23,7 @@ guardian\powers\LoseThornsPower.class
 guardian\cards\Clone.class
 guardian\powers\zzzGuardianModePower$BronzeOrbWeakenPower.class
 guardian\actions\PlaceTopCardIntoStasisAction.class
+guardian\patches\EventOverridePatchSpecial.class
 guardian\patches\BottledStasisPatch$MakeStatEquivalentCopy.class
 guardian\cards\EvasiveProtocol.class
 guardian\cards\SentryWave.class
@@ -121,6 +122,7 @@ guardian\patches\GuardianTalk.class
 guardian\cards\StasisEngine.class
 guardian\cards\PackageShapes.class
 guardian\actions\StasisEvokeIfRoomInHandAction.class
+guardian\patches\EventOverridePatchCustoms.class
 guardian\powers\DefensiveModeBuffsPower.class
 guardian\actions\PlaceActualCardIntoStasis.class
 guardian\cards\Suspension.class

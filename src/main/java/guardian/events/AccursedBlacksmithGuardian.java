@@ -59,6 +59,8 @@ public class AccursedBlacksmithGuardian extends AbstractImageEvent {
 
         this.imageEventText.setDialogOption(OPTIONS[1], CardLibrary.getCopy("Pain"));
         this.imageEventText.setDialogOption(OPTIONS[2]);
+
+
     }
 
     public void onEnterRoom() {
@@ -128,6 +130,7 @@ public class AccursedBlacksmithGuardian extends AbstractImageEvent {
                 this.imageEventText.clearRemainingOptions();
                 break;
             default:
+
                 this.openMap();
         }
 

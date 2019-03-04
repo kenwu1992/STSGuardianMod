@@ -1,7 +1,9 @@
 package guardian.patches;
 
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
+import com.evacipated.cardcrawl.modthespire.lib.SpirePostfixPatch;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.dungeons.TheCity;
 import com.megacrit.cardcrawl.events.city.BackToBasics;
 import com.megacrit.cardcrawl.events.shrines.AccursedBlacksmith;
 
@@ -9,22 +11,13 @@ import guardian.characters.GuardianCharacter;
 import guardian.events.*;
 
 
-@SpirePatch(clz=AbstractDungeon.class,method="initializeCardPools")
+@SpirePatch(clz= TheCity.class,method="initializeEventList")
 public class EventOverridePatch {
 
-    public static void Prefix(AbstractDungeon dungeon_instance) {
+    @SpirePostfixPatch
+    public static void Postfix(TheCity dungeon_instance) {
         if (AbstractDungeon.player instanceof GuardianCharacter) {
-            if (AbstractDungeon.specialOneTimeEventList.contains("Accursed Blacksmith")){
-                AbstractDungeon.specialOneTimeEventList.add(AccursedBlacksmithGuardian.ID);
-                AbstractDungeon.specialOneTimeEventList.remove(AccursedBlacksmith.ID);
-            }
             dungeon_instance.eventList.remove(BackToBasics.ID);
-        } else {
-            dungeon_instance.eventList.remove(BackToBasicsGuardian.ID);
-            dungeon_instance.eventList.remove(GemMine.ID);
-            dungeon_instance.eventList.remove(StasisEgg.ID);
-            dungeon_instance.eventList.remove(CrystalForge.ID);
-
         }
 
 
