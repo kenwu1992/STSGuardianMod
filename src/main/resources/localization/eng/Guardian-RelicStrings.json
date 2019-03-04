@@ -86,7 +86,7 @@
       "Upon pickup, choose a #yCard. Start each combat with this card removed from your deck. At the start of your 3rd turn, return it and two copies of it to your hand.",
       "Choose a card for ",
       "Start each combat with ",
-      " removed from your deck. At the start of your 3rd turn, return it and two copies of it to your hand."
+      " removed from your deck. At the start of your 4th turn, return it and two copies of it to your hand."
     ]
   },
   "Guardian:TickHelperRelic": {

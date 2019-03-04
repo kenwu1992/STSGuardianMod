@@ -16,6 +16,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
 import com.megacrit.cardcrawl.powers.WeakPower;
+import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import com.megacrit.cardcrawl.vfx.combat.ShockWaveEffect;
 import guardian.GuardianMod;
 import guardian.actions.CardToTopOfDrawPileAction;
@@ -32,7 +33,7 @@ public class SentryWave extends AbstractGuardianCard {
     private static final CardStrings cardStrings;
     private static final CardType TYPE = CardType.SKILL;
     private static final CardRarity RARITY = CardRarity.SPECIAL;
-    private static final CardTarget TARGET = CardTarget.ALL_ENEMY;
+    private static final CardTarget TARGET = CardTarget.ENEMY;
 
     //TUNING CONSTANTS
 
@@ -57,14 +58,20 @@ public class SentryWave extends AbstractGuardianCard {
         super.use(p,m);
         AbstractDungeon.actionManager.addToBottom(new VFXAction(AbstractDungeon.player, new ShockWaveEffect(p.hb.cX, p.hb.cY, Color.ROYAL, ShockWaveEffect.ShockWaveType.ADDITIVE), 0.1F));
 
-        for (AbstractMonster m2: AbstractDungeon.getMonsters().monsters) {
-            if (!m2.isDead && !m2.isDying) {
-                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m2, p, new WeakPower(m2, this.magicNumber, false), this.magicNumber));
+        if (upgraded) {
+            for (AbstractMonster m2 : AbstractDungeon.getMonsters().monsters) {
+                if (!m2.isDead && !m2.isDying) {
+                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m2, p, new WeakPower(m2, this.magicNumber, false), this.magicNumber));
+                }
             }
+        } else {
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new WeakPower(m, this.magicNumber, false), this.magicNumber));
+
         }
         AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, 1));
         AbstractGuardianCard newCard = new SentryBeam();
         if (this.upgraded) newCard.upgrade();
+        UnlockTracker.markCardAsSeen(SentryWave.ID);
 
         AbstractDungeon.actionManager.addToBottom(new CardToTopOfDrawPileAction(newCard));
 
@@ -78,7 +85,8 @@ public class SentryWave extends AbstractGuardianCard {
     public void upgrade() {
         if (!this.upgraded) {
             upgradeName();
-            upgradeMagicNumber(UPGRADE_DEBUFF);
+            //upgradeMagicNumber(UPGRADE_DEBUFF);
+            this.target = CardTarget.ALL_ENEMY;
             this.rawDescription = UPGRADED_DESCRIPTION;
             this.initializeDescription();
         }

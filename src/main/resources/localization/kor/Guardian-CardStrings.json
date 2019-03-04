@@ -128,7 +128,7 @@
   },
   "Guardian:SentryWave": {
     "NAME": "보초기 파동",
-    "DESCRIPTION": "모든 적에게 약화 를 !M! 부여합니다. NL 카드를 1장 뽑습니다. NL 보초기광선 카드를 1장 뽑을 카드 더미 맨 위에 놓습니다 NL 소멸.",
+    "DESCRIPTION": "약화 를 !M! 부여합니다. NL 카드를 1장 뽑습니다. NL 보초기광선 카드를 1장 뽑을 카드 더미 맨 위에 놓습니다 NL 소멸.",
     "UPGRADE_DESCRIPTION": "모든 적에게 약화 를 !M! 부여합니다. NL 카드를 1장 뽑습니다. NL 강화된 보초기광선 카드를 1장 뽑을 카드 더미 맨 위에 놓습니다 NL 소멸."
   },
   "Guardian:CompilePackage": {
@@ -318,8 +318,8 @@
   },
   "Guardian:Gem_Synthetic": {
     "NAME": "줄마노",
-    "DESCRIPTION": "보석. NL 인공물 을 1 얻습니다. 체력을 2 잃습니다",
-    "UPGRADE_DESCRIPTION": "인공물 을 1 얻습니다. 체력을 2 잃습니다"
+    "DESCRIPTION": "보석. NL 인공물 을 1 얻습니다. 체력을 1 잃습니다",
+    "UPGRADE_DESCRIPTION": "인공물 을 1 얻습니다. 체력을 1 잃습니다"
   },
   "Guardian:Gem_Yellow": {
     "NAME": "호박석",

@@ -138,7 +138,7 @@ public class StasisEgg extends CustomRelic implements CustomBottleRelic, CustomS
                 break;
             }
         }
-        this.counter = 3;
+        this.counter = 4;
     }
 
     @Override

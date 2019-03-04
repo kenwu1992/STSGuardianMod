@@ -64,8 +64,8 @@ public class HyperBeam_Guardian extends AbstractGuardianCard {
     @Override
     public float calculateModifiedCardDamage(AbstractPlayer player, AbstractMonster mo, float tmp) {
         int bonus = 0;
-        if (player.hasPower(StrengthPower.POWER_ID)){
-            bonus = player.getPower(StrengthPower.POWER_ID).amount * (this.magicNumber + 1);
+        if (player.hasPower(StrengthPower.POWER_ID) && this.magicNumber > 1){
+            bonus = player.getPower(StrengthPower.POWER_ID).amount * (this.magicNumber - 1);
         }
         return tmp + calculateBeamDamage() + bonus;
     }

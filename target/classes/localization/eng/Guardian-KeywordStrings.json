@@ -60,7 +60,7 @@
       "sentry_wave"
     ],
     "PROPER_NAME": "Sentry Wave",
-    "DESCRIPTION": "0-cost Exhausting Skill that applies 1 Weak to ALL enemies, draws 1 card (+1 Upgraded), and places a Sentry Beam on top of your draw pile."
+    "DESCRIPTION": "0-cost Exhausting Skill that applies 1 Weak (to ALL if Upgraded), draws 1 card , and places a Sentry Beam on top of your draw pile."
   },
   {
     "NAMES": [

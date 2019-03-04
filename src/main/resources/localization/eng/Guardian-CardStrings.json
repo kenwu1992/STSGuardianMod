@@ -128,7 +128,7 @@
   },
   "Guardian:SentryWave": {
     "NAME": "Sentry Wave",
-    "DESCRIPTION": "Apply !M! Weak to ALL enemies. NL Draw a card. NL Place a Sentry_Beam on top of your draw pile. NL Exhaust.",
+    "DESCRIPTION": "Apply !M! Weak. NL Draw a card. NL Place a Sentry_Beam on top of your draw pile. NL Exhaust.",
     "UPGRADE_DESCRIPTION": "Apply !M! Weak to ALL enemies. NL Draw a card. NL Place an Upgraded Sentry_Beam on top of your draw pile. NL Exhaust."
   },
   "Guardian:CompilePackage": {
@@ -318,8 +318,8 @@
   },
   "Guardian:Gem_Synthetic": {
     "NAME": "Onyx",
-    "DESCRIPTION": "Gem. NL Gain 1 Artifact. Lose 2 HP.",
-    "UPGRADE_DESCRIPTION": "Gain 1 Artifact Lose 2 HP."
+    "DESCRIPTION": "Gem. NL Gain 1 Artifact. Lose 1 HP.",
+    "UPGRADE_DESCRIPTION": "Gain 1 Artifact Lose 1 HP."
   },
   "Guardian:Gem_Yellow": {
     "NAME": "Amber",

@@ -153,7 +153,12 @@ public class StasisOrb extends AbstractOrb {
             AbstractDungeon.player.exhaustPile.addToTop(this.stasisCard);
 
         } else {
-            stasisCard.freeToPlayOnce = true;
+            if (stasisCard.cost > 0) {
+                stasisCard.freeToPlayOnce = true;
+            }
+            else {
+                stasisCard.tags.remove(GuardianMod.STASISGLOW);
+            }
             AbstractDungeon.actionManager.addToTop(new ReturnStasisCardToHandAction(this.stasisCard));
             this.stasisCard.superFlash(Color.GOLDENROD);
 
