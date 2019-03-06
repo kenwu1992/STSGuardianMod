@@ -6,6 +6,8 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import guardian.cards.AbstractGuardianCard;
 import guardian.cards.BaubleBeam;
 
+import java.util.ArrayList;
+
 @SpirePatch(
         clz= AbstractCard.class,
         method=SpirePatch.CLASS
@@ -26,8 +28,11 @@ public class BottledStasisPatch
             inBottledStasis.set(__result, inBottledStasis.get(__instance));
             inStasisEgg.set(__result, inStasisEgg.get(__instance));
             if (__instance instanceof AbstractGuardianCard){
-                ((AbstractGuardianCard)__result).sockets = ((AbstractGuardianCard)__instance).sockets;
+
                 ((AbstractGuardianCard)__result).socketCount = ((AbstractGuardianCard)__instance).socketCount;
+
+                ((AbstractGuardianCard)__result).sockets = new ArrayList<>(((AbstractGuardianCard)__instance).sockets);
+
 
                 ((AbstractGuardianCard)__result).updateDescription();
             }

@@ -15,7 +15,7 @@ public class TickHelperRelic extends CustomRelic {
 
     public TickHelperRelic() {
         super(ID, new Texture(GuardianMod.getResourcePath(IMG_PATH)), new Texture(GuardianMod.getResourcePath(OUTLINE_IMG_PATH)),
-                RelicTier.SHOP, LandingSound.FLAT);
+                RelicTier.RARE, LandingSound.FLAT);
         this.largeImg = ImageMaster.loadImage(GuardianMod.getResourcePath(LARGE_IMG_PATH));
     }
 

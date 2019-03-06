@@ -33,7 +33,7 @@ public class ChargeUp extends AbstractGuardianCard {
 
     private static final int COST = 0;
     private static final int BLOCK = 12;
-    private static final int UPGRADE_BLOCK = 4;
+    private static final int UPGRADE_BLOCK = 3;
     private static final int STRENGTH = 1;
     private static final int UPGRADE_STRENGTH = 1;
     private static final int SOCKETS = 0;
@@ -69,8 +69,8 @@ public class ChargeUp extends AbstractGuardianCard {
     public void upgrade() {
         if (!this.upgraded) {
             upgradeName();
-            upgradeBlock(UPGRADE_BLOCK);
-            //upgradeMagicNumber(UPGRADE_STRENGTH);
+            //upgradeBlock(UPGRADE_BLOCK);
+            upgradeBaseCost(1);
         }
     }
 

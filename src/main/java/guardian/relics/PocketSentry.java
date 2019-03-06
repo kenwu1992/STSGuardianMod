@@ -71,14 +71,6 @@ public class PocketSentry extends CustomRelic {
     }
 
     @Override
-    public void atBattleStart() {
-        super.atBattleStart();
-        this.flash();
-        AbstractCard beam = new SentryBeam();
-        AbstractDungeon.actionManager.addToBottom(new MakeTempCardInHandAction(beam));
-    }
-
-    @Override
     public AbstractRelic makeCopy() {
         return new PocketSentry();
     }

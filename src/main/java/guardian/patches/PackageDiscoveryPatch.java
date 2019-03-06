@@ -1,6 +1,7 @@
 package guardian.patches;
 
 
+import com.evacipated.cardcrawl.modthespire.Loader;
 import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -37,6 +38,8 @@ public class PackageDiscoveryPatch {
             startingList.add("DONUDECA");
             startingList.add("AUTOMATON");
             startingList.add("WALKER");
+            startingList.add("DEFECT");
+            if (Loader.isModLoaded("constructmod")) startingList.add("CONSTRUCT");
 
             for (int i = 0; i < 3; i++) {
                 rando = AbstractDungeon.cardRng.random(0, startingList.size() - 1);
@@ -80,6 +83,18 @@ public class PackageDiscoveryPatch {
                         tmp = new PackageWalker();
                         if (GuardianMod.discoveryOverrideUpgrade) tmp.upgrade();
                         GuardianMod.logger.info("randomed into WALKER");
+                        derp.add(tmp.makeStatEquivalentCopy());
+                        break;
+                    case "DEFECT":
+                        tmp = new PackageDefect();
+                        if (GuardianMod.discoveryOverrideUpgrade) tmp.upgrade();
+                        GuardianMod.logger.info("randomed into DEFECT");
+                        derp.add(tmp.makeStatEquivalentCopy());
+                        break;
+                    case "CONSTRUCT":
+                        tmp = new PackageConstruct();
+                        if (GuardianMod.discoveryOverrideUpgrade) tmp.upgrade();
+                        GuardianMod.logger.info("randomed into CONSTRUCT");
                         derp.add(tmp.makeStatEquivalentCopy());
                         break;
                 }

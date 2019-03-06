@@ -435,6 +435,7 @@ public class GuardianMod implements PostDrawSubscriber, PreMonsterTurnSubscriber
         BaseMod.addCard(new PackageShapes());
         BaseMod.addCard(new PackageSphere());
         BaseMod.addCard(new PackageWalker());
+        BaseMod.addCard(new PackageDefect());
         BaseMod.addCard(new Gem_Red());
         BaseMod.addCard(new Gem_Green());
         BaseMod.addCard(new Gem_Cyan());
@@ -486,6 +487,16 @@ public class GuardianMod implements PostDrawSubscriber, PreMonsterTurnSubscriber
         BaseMod.addCard(new ShieldCharger());
         BaseMod.addCard(new StasisEngine());
         BaseMod.addCard(new Gem_Purple());
+        BaseMod.addCard(new StrikeTwo());
+        BaseMod.addCard(new DefendTwo());
+
+        //CONSTRUCT cross-mod
+        if (Loader.isModLoaded("constructmod")) {
+            BaseMod.addCard(new HammerDown());
+            BaseMod.addCard(new ModeShift());
+            BaseMod.addCard(new OmegaCannon());
+            BaseMod.addCard(new PackageConstruct());
+        }
 
 
 

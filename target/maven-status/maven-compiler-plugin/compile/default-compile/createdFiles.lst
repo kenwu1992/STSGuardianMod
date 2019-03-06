@@ -24,6 +24,7 @@ guardian\powers\zzzGuardianModePower$BronzeOrbWeakenPower.class
 guardian\actions\PlaceTopCardIntoStasisAction.class
 guardian\patches\EventOverridePatchSpecial.class
 guardian\patches\BottledStasisPatch$MakeStatEquivalentCopy.class
+guardian\cards\ModeShift.class
 guardian\cards\EvasiveProtocol.class
 guardian\cards\SentryWave.class
 guardian\cards\FierceBash.class
@@ -34,6 +35,7 @@ guardian\cards\RevengeProtocol.class
 guardian\cards\TimeCapacitor.class
 guardian\cards\Gem_Yellow.class
 guardian\cards\MultiBeam.class
+guardian\cards\PackageConstruct.class
 guardian\cards\PackageSphere.class
 guardian\cards\AbstractGuardianCard.class
 guardian\ui\RelicPreviewButton$1.class
@@ -102,6 +104,7 @@ guardian\powers\ConstructModePower.class
 guardian\cards\ShieldCharger.class
 guardian\cards\Gem_Purple.class
 guardian\cards\zzzSyncronizedStrike.class
+guardian\cards\OmegaCannon.class
 guardian\events\BackToBasicsGuardian$CUR_SCREEN.class
 guardian\cards\HyperBeam_Guardian.class
 guardian\cards\OrbSlam.class
@@ -141,6 +144,7 @@ guardian\actions\PlaceCardsInHandIntoStasisAction.class
 guardian\screens\SocketGemScreen.class
 guardian\relics\ModeShifterPlus.class
 guardian\actions\PlaceRandom1CostIntoStasis.class
+guardian\actions\DoubleStatsAction.class
 guardian\cards\zzzBlastProtocol.class
 guardian\powers\EnergizedGuardianPower.class
 guardian\patches\GuardianTalkOrbwalker.class
@@ -165,6 +169,7 @@ guardian\powers\zzzGuardianModePower$BronzeOrbLocationPower.class
 guardian\powers\zzzGuardianModePower$BronzeOrbDamagePower.class
 guardian\cards\PrismaticBeam.class
 guardian\cards\AncientConstruct.class
+guardian\cards\PackageDefect.class
 guardian\vfx\AddCardToStasisEffect.class
 guardian\powers\AbstractGuardianTwoAmountPower.class
 guardian\vfx\IronWaveParticleBlue.class
@@ -178,6 +183,7 @@ guardian\events\PurificationShrineGuardian$CUR_SCREEN.class
 guardian\GuardianMod.class
 guardian\cards\SpikerProtocol.class
 guardian\cards\CrystalWard.class
+guardian\cards\HammerDown.class
 guardian\events\TransmogrifierGuardian$1.class
 guardian\patches\GuardianTalkAutomaton.class
 guardian\cards\VentSteam.class

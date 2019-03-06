@@ -51,7 +51,7 @@ public class FastForward extends AbstractGuardianCard {
         for (AbstractOrb o:p.orbs){
             if (o instanceof StasisOrb){
                 o.onStartOfTurn();
-                if (upgraded) o.onStartOfTurn();
+                if (upgraded && o.passiveAmount > 0) o.onStartOfTurn();
                 ((StasisOrb) o).stasisCard.superFlash(Color.GOLDENROD);
             }
         }
