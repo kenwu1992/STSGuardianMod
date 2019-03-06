@@ -310,7 +310,7 @@
   },
   "Guardian:AncientConstruct": {
     "NAME": "고대의 구조물",
-    "DESCRIPTION": "턴 시작시 인공물 이 없다면 인공물 을 1 얻고 [E] 를 잃습니다."
+    "DESCRIPTION": "턴 시작시 인공물 이 없다면 인공물 을 !M! 얻고 [E] 를 잃습니다."
   },
   "Guardian:CrystalBeam": {
     "NAME": "크리스탈 광선",
