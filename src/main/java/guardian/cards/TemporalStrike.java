@@ -43,7 +43,7 @@ public class TemporalStrike extends AbstractGuardianCard {
 
 
         //this.sockets.add(GuardianMod.socketTypes.RED);
-        this.socketCount = SOCKETS;
+        this.initializeSockets(SOCKETS);
         this.updateDescription();
 
     }

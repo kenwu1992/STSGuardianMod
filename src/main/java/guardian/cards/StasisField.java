@@ -42,8 +42,8 @@ public class StasisField extends AbstractGuardianCard {
 
         this.baseBlock = BLOCK;
 
-        this.socketCount = SOCKETS;
-        this.updateDescription();
+        this.initializeSockets(SOCKETS);
+
 
         this.isEthereal = true;
     }
@@ -68,11 +68,7 @@ public class StasisField extends AbstractGuardianCard {
         }
     }
 
-    public void updateDescription() {
-        if (this.socketCount > 0) this.rawDescription = this.updateGemDescription(cardStrings.DESCRIPTION, SOCKETSAREAFTER);
-        //GuardianMod.logger.info(DESCRIPTION);
-        this.initializeDescription();
-    }
+
 
     static {
         cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);

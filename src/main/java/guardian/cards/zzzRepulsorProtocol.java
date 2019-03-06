@@ -40,8 +40,8 @@ public class zzzRepulsorProtocol extends AbstractGuardianCard {
         this.secondaryM = DAMAGE;
         this.baseMagicNumber = this.magicNumber = DEBUFFCOUNT;
         this.exhaust = true;
-        this.socketCount = SOCKETS;
-        this.updateDescription();
+        this.initializeSockets(SOCKETS);
+
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
@@ -66,11 +66,7 @@ public class zzzRepulsorProtocol extends AbstractGuardianCard {
         }
     }
 
-    public void updateDescription() {
-        if (this.socketCount > 0) this.rawDescription = this.updateGemDescription(cardStrings.DESCRIPTION, SOCKETSAREAFTER);
-        //GuardianMod.logger.info(DESCRIPTION);
-        this.initializeDescription();
-    }
+
 
     static {
         cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);

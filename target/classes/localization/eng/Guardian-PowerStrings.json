@@ -63,9 +63,9 @@
 	"Guardian:DefenseModePower": {
 		"NAME": "Defensive Mode",
 		"DESCRIPTIONS": [
-			"Gain 2 Block when you play a card. NL Defensive Mode will remain active for ",
-			" turns. NL When Defensive Mode is removed, lose ",
-			" Thorns."
+			"Defensive Mode will remain active for ",
+			" turns. Defensive Mode grants ",
+			" Thorns, reduces Strength by 1, and grants 2 Block when you play a card."
 		]
 	},
 	"Guardian:ConstructModePower": {
@@ -154,8 +154,8 @@
 		"NAME": "Revenge",
 		"DESCRIPTIONS": [
 			"When Defensive Mode is removed, gain ",
-			" Momentary Strength for each turn it was active. NL Currently will grant ",
-			" Momentary Strength."
+			" Strength for each turn it was active. NL Currently will grant ",
+			" Strength."
 		]
 	},
 	"Guardian:StasisEnginePower": {

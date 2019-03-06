@@ -1,7 +1,6 @@
 guardian\cards\TwinSlam.class
 guardian\actions\CardToTopOfDrawPileAction.class
 guardian\cards\Gem_White.class
-guardian\cards\AbstractGuardianCard$2.class
 guardian\relics\DefensiveModeMoreBlock.class
 guardian\actions\RandomProtocolAction.class
 guardian\cards\Repulse.class
@@ -67,6 +66,7 @@ guardian\vfx\BronzeOrbEffect.class
 guardian\powers\FuturePlansPower.class
 guardian\cards\StasisStrike.class
 guardian\powers\StunnedPower.class
+guardian\events\UpgradeShrineGuardian.class
 guardian\cards\Gem_Red.class
 guardian\ui\EnhanceBonfireOption.class
 guardian\cards\PackageAutomaton.class
@@ -90,6 +90,7 @@ guardian\cards\GuardianWhirl.class
 guardian\GuardianMod$socketTypes.class
 guardian\actions\CompilePackageAction.class
 guardian\cards\Gem_Fragmented.class
+guardian\events\PurificationShrineGuardian.class
 guardian\cards\TimeSifter.class
 guardian\powers\AutomayhemPower.class
 guardian\cards\Strike_Guardian.class
@@ -115,6 +116,7 @@ guardian\cards\PrimingBeam.class
 guardian\actions\SwitchToDefenseModeAction.class
 guardian\rewards\GemRewardAllRarities.class
 guardian\patches\SetupItemReward.class
+guardian\events\UpgradeShrineGuardian$1.class
 guardian\cards\Gem_Orange.class
 guardian\cards\TimeBomb.class
 guardian\actions\ReturnStasisCardToHandAction.class
@@ -153,7 +155,10 @@ guardian\relics\StasisSlotReductionRelic.class
 guardian\cards\AbstractGuardianCard$1.class
 guardian\cards\GemFinder.class
 guardian\patches\GuardianEnum.class
+guardian\events\PurificationShrineGuardian$1.class
 guardian\cards\zzzGuardProtocol.class
+guardian\events\UpgradeShrineGuardian$CUR_SCREEN.class
+guardian\events\TransmogrifierGuardian$CUR_SCREEN.class
 guardian\powers\zzzGuardianModePower$BronzeOrbLocationPower.class
 guardian\powers\zzzGuardianModePower$BronzeOrbDamagePower.class
 guardian\cards\PrismaticBeam.class
@@ -167,9 +172,11 @@ guardian\cards\DecasProtection.class
 guardian\cards\PackageWalker.class
 guardian\cards\PrismaticBarrier.class
 guardian\cards\FastForward.class
+guardian\events\PurificationShrineGuardian$CUR_SCREEN.class
 guardian\GuardianMod.class
 guardian\cards\SpikerProtocol.class
 guardian\cards\CrystalWard.class
+guardian\events\TransmogrifierGuardian$1.class
 guardian\patches\GuardianTalkAutomaton.class
 guardian\cards\VentSteam.class
 guardian\patches\LibraryTypeEnum.class
@@ -199,6 +206,7 @@ guardian\ui\RelicPreviewButton.class
 guardian\cards\GatlingBeam.class
 guardian\characters\GuardianCharacter.class
 guardian\powers\AbstractGuardianPower.class
+guardian\events\TransmogrifierGuardian.class
 guardian\cards\DefendTwo.class
 guardian\powers\ConstructPower.class
 guardian\patches\SocketGemGridPatchCancelAction.class

@@ -50,7 +50,7 @@ public class Gem_Purple extends AbstractGuardianCard {
 
         this.tags.add(GuardianMod.GEM);
         this.thisGemsType = PURPLE;
-        this.socketCount = SOCKETS;
+        this.initializeSockets(SOCKETS);
 
     }
 
@@ -87,11 +87,7 @@ public class Gem_Purple extends AbstractGuardianCard {
 
     }
 
-    public void updateDescription() {
-        if (this.socketCount > 0) this.rawDescription = this.updateGemDescription(cardStrings.DESCRIPTION, SOCKETSAREAFTER);
-        //GuardianMod.logger.info(DESCRIPTION);
-        this.initializeDescription();
-    }
+
 
     public boolean canUpgrade() {
         return false;

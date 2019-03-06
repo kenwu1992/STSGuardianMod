@@ -4,6 +4,9 @@ import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePostfixPatch;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.events.shrines.AccursedBlacksmith;
+import com.megacrit.cardcrawl.events.shrines.PurificationShrine;
+import com.megacrit.cardcrawl.events.shrines.Transmogrifier;
+import com.megacrit.cardcrawl.events.shrines.UpgradeShrine;
 import guardian.characters.GuardianCharacter;
 import guardian.events.*;
 
@@ -16,6 +19,9 @@ public class EventOverridePatchSpecial {
         if (AbstractDungeon.player instanceof GuardianCharacter) {
 
             dungeon_instance.specialOneTimeEventList.remove(AccursedBlacksmith.ID);
+            dungeon_instance.specialOneTimeEventList.remove(PurificationShrine.ID);
+            dungeon_instance.specialOneTimeEventList.remove(Transmogrifier.ID);
+            dungeon_instance.specialOneTimeEventList.remove(UpgradeShrine.ID);
 
         }
 

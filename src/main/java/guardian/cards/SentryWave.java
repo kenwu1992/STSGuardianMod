@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
+import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -49,14 +50,15 @@ public class SentryWave extends AbstractGuardianCard {
         super(ID, NAME, GuardianMod.getResourcePath(IMG_PATH), COST, DESCRIPTION, TYPE, AbstractCardEnum.GUARDIAN, RARITY, TARGET);
 
         this.baseMagicNumber = this.magicNumber = DEBUFFCOUNT;
-        this.socketCount = SOCKETS;
-        this.updateDescription();
+        this.initializeSockets(SOCKETS);
+
         this.exhaust = true;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         super.use(p,m);
         AbstractDungeon.actionManager.addToBottom(new VFXAction(AbstractDungeon.player, new ShockWaveEffect(p.hb.cX, p.hb.cY, Color.ROYAL, ShockWaveEffect.ShockWaveType.ADDITIVE), 0.1F));
+        AbstractDungeon.actionManager.addToBottom(new SFXAction("THUNDERCLAP"));
 
         if (upgraded) {
             for (AbstractMonster m2 : AbstractDungeon.getMonsters().monsters) {
@@ -88,15 +90,12 @@ public class SentryWave extends AbstractGuardianCard {
             //upgradeMagicNumber(UPGRADE_DEBUFF);
             this.target = CardTarget.ALL_ENEMY;
             this.rawDescription = UPGRADED_DESCRIPTION;
+            this.originalDescription = this.rawDescription;
             this.initializeDescription();
         }
     }
 
-    public void updateDescription() {
-        if (this.socketCount > 0) this.rawDescription = this.updateGemDescription(cardStrings.DESCRIPTION, SOCKETSAREAFTER);
-        //GuardianMod.logger.info(DESCRIPTION);
-        this.initializeDescription();
-    }
+
 
     static {
         cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);

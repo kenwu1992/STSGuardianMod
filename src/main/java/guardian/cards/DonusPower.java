@@ -62,6 +62,7 @@ public class DonusPower extends AbstractGuardianCard {
             upgradeName();
 
             this.rawDescription = UPGRADED_DESCRIPTION;
+            this.originalDescription = this.rawDescription;
             this.initializeDescription();
         }
     }

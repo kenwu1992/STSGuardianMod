@@ -53,6 +53,8 @@ public class DefenseModePower extends AbstractGuardianPower {
         super.onInitialApplication();
         switchToDefensiveMode();
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.owner, this.owner, new ThornsPower(this.owner, THORNS), THORNS));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.owner, this.owner, new StrengthPower(this.owner, -1), -1));
+
         if (this.owner.hasPower(DefensiveModeBuffsPower.POWER_ID)){
             int extraDex = ((DefensiveModeBuffsPower)this.owner.getPower(DefensiveModeBuffsPower.POWER_ID)).dexterity;
             int extraThorns = ((DefensiveModeBuffsPower)this.owner.getPower(DefensiveModeBuffsPower.POWER_ID)).thorns;
@@ -123,6 +125,8 @@ public class DefenseModePower extends AbstractGuardianPower {
         super.onRemove();
         switchToOffensiveMode();
         int trueThorns = THORNS;
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.owner, this.owner, new StrengthPower(this.owner, 1), 1));
+
         if (this.owner.hasPower(DefensiveModeBuffsPower.POWER_ID)){
             trueThorns += ((DefensiveModeBuffsPower)this.owner.getPower(DefensiveModeBuffsPower.POWER_ID)).thorns;
         }

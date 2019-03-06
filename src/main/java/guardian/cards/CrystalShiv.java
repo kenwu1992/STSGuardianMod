@@ -44,13 +44,13 @@ public class CrystalShiv extends AbstractGuardianCard {
 
         this.baseDamage = DAMAGE;
 
-        this.socketCount = SOCKETS;
+        this.initializeSockets(SOCKETS);
 
         //this.sockets.add(GuardianMod.socketTypes.RED);
 
         this.exhaust = true;
 
-        this.updateDescription();
+
 
     }
 

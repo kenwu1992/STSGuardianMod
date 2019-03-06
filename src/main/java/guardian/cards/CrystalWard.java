@@ -43,13 +43,13 @@ public class CrystalWard extends AbstractGuardianCard {
 
         this.baseBlock = BLOCK;
 
-        this.socketCount = SOCKETS;
+        this.initializeSockets(SOCKETS);
 
         //this.sockets.add(GuardianMod.socketTypes.RED);
 
         this.exhaust = true;
 
-        this.updateDescription();
+
 
     }
 

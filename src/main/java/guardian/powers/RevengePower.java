@@ -53,7 +53,6 @@ public class RevengePower extends AbstractGuardianTwoAmountPower {
     public void onRemove() {
         int strengthgain = this.amount2 * this.amount;
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.owner, this.owner, new StrengthPower(this.owner, strengthgain), strengthgain));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.owner, this.owner, new LoseStrengthPower(this.owner, strengthgain), strengthgain));
 
     }
 }

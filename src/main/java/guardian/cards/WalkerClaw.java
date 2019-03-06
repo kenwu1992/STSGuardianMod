@@ -46,8 +46,8 @@ public class WalkerClaw extends AbstractGuardianCard {
         this.baseDamage = DAMAGE;
 
         this.baseMagicNumber = 2;
-        this.socketCount = SOCKETS;
-        this.updateDescription();
+        this.initializeSockets(SOCKETS);
+
 
     }
 
@@ -79,18 +79,17 @@ public class WalkerClaw extends AbstractGuardianCard {
         if (!this.upgraded) {
             upgradeName();
             upgradeDamage(UPGRADE_BONUS);
-            this.socketCount++;
-            this.updateDescription();
+
+            if (this.socketCount < 4) {
+                this.socketCount++;
+                this.saveGemMisc();
+            }             this.updateDescription();
         }
 
 
     }
 
-    public void updateDescription() {
-        if (this.socketCount > 0) this.rawDescription = this.updateGemDescription(cardStrings.DESCRIPTION, SOCKETSAREAFTER);
-        //GuardianMod.logger.info(DESCRIPTION);
-        this.initializeDescription();
-    }
+
 
     static {
         cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);

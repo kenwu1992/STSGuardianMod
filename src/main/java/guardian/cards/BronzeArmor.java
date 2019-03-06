@@ -41,8 +41,8 @@ public class BronzeArmor extends AbstractGuardianCard {
 
         this.magicNumber = this.baseMagicNumber = ARTIFACT;
         this.exhaust = true;
-        this.socketCount = SOCKETS;
-        this.updateDescription();
+        this.initializeSockets(SOCKETS);
+
 
     }
 
@@ -63,11 +63,7 @@ public class BronzeArmor extends AbstractGuardianCard {
         }
     }
 
-    public void updateDescription() {
-        if (this.socketCount > 0) this.rawDescription = this.updateGemDescription(cardStrings.DESCRIPTION, SOCKETSAREAFTER);
-        //GuardianMod.logger.info(DESCRIPTION);
-        this.initializeDescription();
-    }
+
 
     static {
         cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);

@@ -51,14 +51,17 @@ public class PackageWalker extends AbstractGuardianCard {
         tmp = new WalkerClaw();
         if (upgraded) tmp.upgrade();
         derp.add(tmp);
+        tmp.modifyCostForCombat(-1);
 
         tmp = new Incinerate();
         if (upgraded) tmp.upgrade();
         derp.add(tmp);
+        tmp.modifyCostForCombat(-1);
 
         tmp = new Orbwalk();
         if (upgraded) tmp.upgrade();
         derp.add(tmp);
+        tmp.modifyCostForCombat(-1);
 
         AbstractDungeon.effectList.add(new ShowCardAndAddToHandEffect((AbstractCard)derp.get(0), (float) Settings.WIDTH / 2.0F, (float)Settings.HEIGHT / 2.0F));
         AbstractDungeon.effectList.add(new ShowCardAndAddToHandEffect((AbstractCard)derp.get(1), (float) Settings.WIDTH * .75F, (float)Settings.HEIGHT / 2.0F));
@@ -74,15 +77,12 @@ public class PackageWalker extends AbstractGuardianCard {
         if (!this.upgraded) {
             upgradeName();
             this.rawDescription = UPGRADED_DESCRIPTION;
+            this.originalDescription = this.rawDescription;
             this.initializeDescription();
         }
     }
 
-    public void updateDescription() {
-        if (this.socketCount > 0) this.rawDescription = this.updateGemDescription(cardStrings.DESCRIPTION, SOCKETSAREAFTER);
-        //GuardianMod.logger.info(DESCRIPTION);
-        this.initializeDescription();
-    }
+
 
     static {
         cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);

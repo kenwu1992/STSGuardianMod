@@ -54,8 +54,8 @@ public class RefractedBeam extends AbstractGuardianCard {
 
         this.magicNumber = this.baseMagicNumber = MULTICOUNT;
         //this.sockets.add(GuardianMod.socketTypes.RED);
-        this.socketCount = SOCKETS;
-        this.updateDescription();
+        this.initializeSockets(SOCKETS);
+
 
     }
 

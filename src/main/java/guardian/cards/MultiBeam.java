@@ -58,9 +58,9 @@ public class MultiBeam extends AbstractGuardianCard {
         super(ID, NAME, GuardianMod.getResourcePath(IMG_PATH), COST, DESCRIPTION, TYPE, AbstractCardEnum.GUARDIAN, RARITY, TARGET);
 
         this.baseDamage = DAMAGE;
-        this.socketCount = SOCKETS;
+        this.initializeSockets(SOCKETS);
         this.tags.add(GuardianMod.BEAM);
-        this.updateDescription();
+
         this.magicNumber = this.baseMagicNumber = BEAMBUFF;
         this.isMultiDamage = true;
     }
@@ -114,6 +114,7 @@ public class MultiBeam extends AbstractGuardianCard {
 
             upgradeName();
             this.rawDescription = UPGRADED_DESCRIPTION;
+            this.originalDescription = this.rawDescription;
             this.initializeDescription();
             upgradeMagicNumber(UPGRADE_BEAMBUFF);
 
@@ -121,11 +122,7 @@ public class MultiBeam extends AbstractGuardianCard {
 
     }
 
-    public void updateDescription() {
-        if (this.socketCount > 0) this.rawDescription = this.updateGemDescription(cardStrings.DESCRIPTION, SOCKETSAREAFTER);
-        //GuardianMod.logger.info(DESCRIPTION);
-        this.initializeDescription();
-    }
+
 
     static {
         cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);

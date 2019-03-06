@@ -40,8 +40,8 @@ public class zzzSpikerProtocol extends AbstractGuardianCard {
         this.baseMagicNumber = this.magicNumber = THORNS;
         this.secondaryM = DAMAGE;
         this.tags.add(GuardianMod.PROTOCOL);
-        this.socketCount = SOCKETS;
-        this.updateDescription();
+        this.initializeSockets(SOCKETS);
+
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
@@ -67,11 +67,7 @@ public class zzzSpikerProtocol extends AbstractGuardianCard {
         }
     }
 
-    public void updateDescription() {
-        if (this.socketCount > 0) this.rawDescription = this.updateGemDescription(cardStrings.DESCRIPTION, SOCKETSAREAFTER);
-        //GuardianMod.logger.info(DESCRIPTION);
-        this.initializeDescription();
-    }
+
 
     static {
         cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);

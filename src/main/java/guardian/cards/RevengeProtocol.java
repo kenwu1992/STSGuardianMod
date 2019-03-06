@@ -31,7 +31,7 @@ public class RevengeProtocol extends AbstractGuardianCard {
 
     //TUNING CONSTANTS
 
-    private static final int COST = 1;
+    private static final int COST = 2;
     private static final int STRENGTHFORTURN = 1;
     private static final int DEFMODETURNS = 2;
     private static final int UPGRADE_TURNS = 1;
@@ -43,8 +43,8 @@ public class RevengeProtocol extends AbstractGuardianCard {
     public RevengeProtocol() {
         super(ID, NAME, GuardianMod.getResourcePath(IMG_PATH), COST, DESCRIPTION, TYPE, AbstractCardEnum.GUARDIAN, RARITY, TARGET);
 
-        this.socketCount = SOCKETS;
-        this.updateDescription();
+        this.initializeSockets(SOCKETS);
+
         this.magicNumber = this.baseMagicNumber = DEFMODETURNS;
         
     }
@@ -78,11 +78,7 @@ public class RevengeProtocol extends AbstractGuardianCard {
         }
     }
 
-    public void updateDescription() {
-        if (this.socketCount > 0) this.rawDescription = this.updateGemDescription(cardStrings.DESCRIPTION, SOCKETSAREAFTER);
-        //GuardianMod.logger.info(DESCRIPTION);
-        this.initializeDescription();
-    }
+
 
     static {
         cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);

@@ -47,7 +47,7 @@ public class Gem_Red extends AbstractGuardianCard {
         this.baseMagicNumber = this.magicNumber = DAMAGEBUFF;
         this.tags.add(GuardianMod.GEM);
         this.thisGemsType = RED;
-        this.socketCount = SOCKETS;
+        this.initializeSockets(SOCKETS);
 
     }
 
@@ -71,11 +71,7 @@ public class Gem_Red extends AbstractGuardianCard {
 
     }
 
-    public void updateDescription() {
-        if (this.socketCount > 0) this.rawDescription = this.updateGemDescription(cardStrings.DESCRIPTION, SOCKETSAREAFTER);
-        //GuardianMod.logger.info(DESCRIPTION);
-        this.initializeDescription();
-    }
+
 
     public boolean canUpgrade() {
         return false;

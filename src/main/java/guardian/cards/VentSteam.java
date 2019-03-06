@@ -44,8 +44,8 @@ public class VentSteam extends AbstractGuardianCard {
         super(ID, NAME, GuardianMod.getResourcePath(IMG_PATH), COST, DESCRIPTION, TYPE, AbstractCardEnum.GUARDIAN, RARITY, TARGET);
 
         this.baseMagicNumber = this.magicNumber = DEBUFFCOUNT;
-        this.socketCount = SOCKETS;
-        this.updateDescription();
+        this.initializeSockets(SOCKETS);
+
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
@@ -64,18 +64,14 @@ public class VentSteam extends AbstractGuardianCard {
         if (!this.upgraded) {
             upgradeName();
             this.rawDescription = UPGRADED_DESCRIPTION;
+            this.originalDescription = this.rawDescription;
             this.updateDescription();
         }
     }
 
     public void updateDescription() {
         if (this.socketCount > 0) {
-            if (upgraded) {
-                this.rawDescription = this.updateGemDescription(cardStrings.UPGRADE_DESCRIPTION, SOCKETSAREAFTER);
-            } else {
-                this.rawDescription = this.updateGemDescription(cardStrings.DESCRIPTION, SOCKETSAREAFTER);
 
-            }
         }
         //GuardianMod.logger.info(DESCRIPTION);
         this.initializeDescription();

@@ -64,6 +64,7 @@ public class DecasProtection extends AbstractGuardianCard {
 
 
             this.rawDescription = UPGRADED_DESCRIPTION;
+            this.originalDescription = this.rawDescription;
             this.initializeDescription();
         }
     }

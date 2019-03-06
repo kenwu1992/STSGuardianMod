@@ -48,11 +48,11 @@ public class ChargeCore extends AbstractGuardianCard {
 
         this.baseDamage = DAMAGE;
 
-        this.socketCount = SOCKETS;
+        this.initializeSockets(SOCKETS);
         this.tags.add(GuardianMod.TICK);
         this.tags.add(GuardianMod.VOLATILE);
 
-        this.updateDescription();
+
 
     }
 
@@ -80,11 +80,7 @@ public class ChargeCore extends AbstractGuardianCard {
 
     }
 
-    public void updateDescription() {
-        if (this.socketCount > 0) this.rawDescription = this.updateGemDescription(cardStrings.DESCRIPTION, SOCKETSAREAFTER);
-        //GuardianMod.logger.info(DESCRIPTION);
-        this.initializeDescription();
-    }
+
 
     static {
         cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);

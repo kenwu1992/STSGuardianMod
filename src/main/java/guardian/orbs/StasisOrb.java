@@ -144,7 +144,7 @@ public class StasisOrb extends AbstractOrb {
         }
 
         if (this.passiveAmount <= 0) {
-            AbstractDungeon.actionManager.addToBottom(new StasisEvokeIfRoomInHandAction(this));
+            AbstractDungeon.actionManager.addToTop(new StasisEvokeIfRoomInHandAction(this));
         }
     }
 

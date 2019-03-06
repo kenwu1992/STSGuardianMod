@@ -44,8 +44,8 @@ public class PrismaticBarrier extends AbstractGuardianCard {
 
 
         this.baseBlock = BLOCK;
-        this.socketCount = SOCKETS;
-        this.updateDescription();
+        this.initializeSockets(SOCKETS);
+
 
         this.multihit = MULTICOUNT;
     }
@@ -67,8 +67,11 @@ public class PrismaticBarrier extends AbstractGuardianCard {
         if (!this.upgraded) {
             upgradeName();
 
-            this.socketCount++;
-            this.updateDescription();
+
+            if (this.socketCount < 4) {
+                this.socketCount++;
+                this.saveGemMisc();
+            }             this.updateDescription();
         }
     }
 
@@ -80,11 +83,7 @@ public class PrismaticBarrier extends AbstractGuardianCard {
 
     }
 
-    public void updateDescription() {
-        if (this.socketCount > 0) this.rawDescription = this.updateGemDescription(cardStrings.DESCRIPTION, SOCKETSAREAFTER);
-        //GuardianMod.logger.info(DESCRIPTION);
-        this.initializeDescription();
-    }
+
 
     static {
         cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);

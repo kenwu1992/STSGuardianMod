@@ -46,14 +46,14 @@ public class OrbSlam extends AbstractGuardianCard {
         this.baseDamage = DAMAGE;
         this.tags.add(GuardianMod.MULTIHIT);
 
-        this.socketCount = SOCKETS;
+        this.initializeSockets(SOCKETS);
 
         this.multihit = MULTICOUNT;
         //this.sockets.add(GuardianMod.socketTypes.RED);
 
         this.exhaust = true;
 
-        this.updateDescription();
+
 
     }
 

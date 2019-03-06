@@ -19,6 +19,7 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.vfx.combat.ScreenOnFireEffect;
+import guardian.GuardianMod;
 import guardian.cards.AbstractGuardianCard;
 
 public class GemFireAction extends AbstractGameAction {
@@ -41,7 +42,7 @@ public class GemFireAction extends AbstractGameAction {
 
             for (AbstractCard c : AbstractDungeon.player.hand.group){
                 if (c instanceof AbstractGuardianCard){
-                    if (((AbstractGuardianCard) c).socketCount > 0){
+                    if (((AbstractGuardianCard) c).socketCount > 0 || c.hasTag(GuardianMod.GEM)){
                         if (((AbstractGuardianCard) c).sockets.size() > 0){
                             hitCount += ((AbstractGuardianCard) c).sockets.size();
                             AbstractDungeon.actionManager.addToBottom(new ExhaustSpecificCardAction(c, AbstractDungeon.player.hand, true));

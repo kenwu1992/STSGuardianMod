@@ -44,8 +44,8 @@ public class Clone extends AbstractGuardianCard {
 
         this.baseMagicNumber = this.magicNumber = COUNT;
 
-        this.socketCount = SOCKETS;
-        this.updateDescription();
+        this.initializeSockets(SOCKETS);
+
         this.exhaust = true;
     }
 
@@ -80,11 +80,7 @@ public class Clone extends AbstractGuardianCard {
         }
     }
 
-    public void updateDescription() {
-        if (this.socketCount > 0) this.rawDescription = this.updateGemDescription(cardStrings.DESCRIPTION, SOCKETSAREAFTER);
-        //GuardianMod.logger.info(DESCRIPTION);
-        this.initializeDescription();
-    }
+
 
     static {
         cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);

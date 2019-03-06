@@ -7,7 +7,9 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.BlurPower;
+import com.megacrit.cardcrawl.powers.BufferPower;
 import guardian.actions.SwitchToDefenseModeAction;
+import guardian.cards.ConstructionForm;
 
 
 public class ModeShiftPower extends AbstractGuardianPower {
@@ -53,7 +55,7 @@ public class ModeShiftPower extends AbstractGuardianPower {
 
     @Override
     public int onLoseHp(int damageAmount) {
-        if (this.active) {
+        if (this.active && !AbstractDungeon.player.hasPower(ConstructModePower.POWER_ID) && !AbstractDungeon.player.hasPower(BufferPower.POWER_ID)) {
             this.amount -= damageAmount;
             if (this.amount <= 0) {
                 this.amount = 0;

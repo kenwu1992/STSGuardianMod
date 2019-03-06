@@ -141,33 +141,33 @@
   },
   "Guardian:PackageShapes": {
     "NAME": "Package: Shapes",
-    "DESCRIPTION": "Add a Time Bomb, Spiker Protocol, and Repulsor Protocol to your hand. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Add a Time Bomb, Spiker Protocol, and Repulsor Protocol to your hand, each of which is Upgraded. NL Exhaust."
+    "DESCRIPTION": "Add a Time Bomb, Spiker Protocol, and Repulsor Protocol to your hand, and reduce their costs by 1 this combat. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Add an Time Bomb, Spiker Protocol, and Repulsor Protocol to your hand, Upgrade them, and reduce their costs by 1 this combat. NL Exhaust."
   },
   "Guardian:PackageDonuDeca": {
     "NAME": "Package: Ancients",
-    "DESCRIPTION": "Add an Ancient Attack, Ancient Power, and Ancient Construct to your hand. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Add an Ancient Attack, Ancient Power, and Ancient Construct to your hand, each of which is Upgraded. NL Exhaust."
+    "DESCRIPTION": "Add an Ancient Attack, Ancient Power, and Ancient Construct to your hand, and reduce their costs by 1 this combat. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Add an Ancient Attack, Ancient Power, and Ancient Construct to your hand, Upgrade them, and reduce their costs by 1 this combat. NL Exhaust."
   },
   "Guardian:PackageSphere": {
     "NAME": "Package: Spheric",
-    "DESCRIPTION": "Add a Spheric Shield, Harden, and Floating Orbs to your hand. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Add a Spheric Shield, Harden, and Floating Orbs to your hand, each of which is Upgraded. NL Exhaust."
+    "DESCRIPTION": "Add a Spheric Shield, Harden, and Floating Orbs to your hand, and reduce their costs by 1 this combat. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Add a Spheric Shield, Harden, and Floating Orbs to your hand, Upgrade them, and reduce their costs by 1 this combat. NL Exhaust."
   },
   "Guardian:PackageSentry": {
     "NAME": "Package: Sentry",
-    "DESCRIPTION": "Add a Sentry Beam and two Sentry Waves to your hand. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Add a Sentry Beam and two Sentry Waves to your hand, each of which is Upgraded. NL Exhaust."
+    "DESCRIPTION": "Add a Sentry Beam and two Sentry Waves to your hand, and reduce their costs by 1 this combat. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Add a Sentry Beam and two Sentry Waves to your hand, Upgrade them, and reduce their costs by 1 this combat. NL Exhaust."
   },
   "Guardian:PackageWalker": {
     "NAME": "Package: Orbwalker",
-    "DESCRIPTION": "Add an Orbwalk, Walker Claw, and Incinerate to your hand. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Add an Orbwalk, Walker Claw, and Incinerate to your hand, each of which is Upgraded. NL Exhaust."
+    "DESCRIPTION": "Add an Orbwalk, Walker Claw, and Incinerate to your hand, and reduce their costs by 1 this combat. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Add an Orbwalk, Walker Claw, and Incinerate to your hand, Upgrade them, and reduce their costs by 1 this combat. NL Exhaust."
   },
   "Guardian:PackageAutomaton": {
     "NAME": "Package: Bronze",
-    "DESCRIPTION": "Add a Hyper Beam, Bronze Orb, and Bronze Armor to your hand. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Add a Hyper Beam, Bronze Orb, and Bronze Armor to your hand, each of which is Upgraded. NL Exhaust."
+    "DESCRIPTION": "Add a Hyper Beam, Bronze Orb, and Bronze Armor to your hand, and reduce their costs by 1 this combat. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Add a Hyper Beam, Bronze Orb, and Bronze Armor to your hand, Upgrade them, and reduce their costs by 1 this combat. NL Exhaust."
   },
   "Guardian:Planning": {
     "NAME": "Planning",
@@ -193,7 +193,7 @@
   },
   "Guardian:GemFinder": {
     "NAME": "Gem Finder",
-    "DESCRIPTION": "At the end of combat, choose a Common Gem to add to your deck."
+    "DESCRIPTION": "At the end of combat, you may choose a Common Gem to add to your deck."
   },
   "Guardian:StasisField": {
     "NAME": "Stasis Field",
@@ -236,7 +236,7 @@
   },
   "Guardian:GemFire": {
     "NAME": "Gem Cannon",
-    "DESCRIPTION": "Exhaust all cards in your hand with Gems in them. Deal !D! damage to a random enemy for each Gem in those cards."
+    "DESCRIPTION": "Exhaust all Gems and cards with Gems in them in your hand. Deal !D! damage to a random enemy for each Gem in those cards."
   },
   "Guardian:ChargeCore": {
     "NAME": "Charge Core",
@@ -365,7 +365,7 @@
   },
   "Guardian:RevengeProtocol": {
     "NAME": "Revenge Protocol",
-    "DESCRIPTION": "When Defensive Mode is removed, gain 1 Momentary Strength for each turn it was active. NL Gain !M! Defensive_Mode."
+    "DESCRIPTION": "When Defensive Mode is removed, gain 1 Strength for each turn it was active. NL Gain !M! Defensive_Mode."
   },
   "Guardian:GatlingBeam": {
     "NAME": "Gatling Beam",

@@ -48,8 +48,8 @@ public class TwinSlam extends AbstractGuardianCard {
 
         this.multihit = MULTICOUNT;
         //this.sockets.add(GuardianMod.socketTypes.RED);
-        this.socketCount = SOCKETS;
-        this.updateDescription();
+        this.initializeSockets(SOCKETS);
+
 
     }
 
@@ -74,8 +74,11 @@ public class TwinSlam extends AbstractGuardianCard {
         if (!this.upgraded) {
             upgradeName();
             upgradeDamage(UPGRADE_BONUS);
-            this.socketCount++;
-            this.updateDescription();
+
+            if (this.socketCount < 4) {
+                this.socketCount++;
+                this.saveGemMisc();
+            }             this.updateDescription();
         }
 
 

@@ -84,7 +84,7 @@ public class AccursedBlacksmithGuardian extends AbstractImageEvent {
         if (this.pickCardForSocket && !AbstractDungeon.isScreenUp && !AbstractDungeon.gridSelectScreen.selectedCards.isEmpty()) {
             AbstractCard c = (AbstractCard)AbstractDungeon.gridSelectScreen.selectedCards.get(0);
             ((AbstractGuardianCard)c).socketCount++;
-            ((AbstractGuardianCard)c).eventSockets++;
+            ((AbstractGuardianCard)c).saveGemMisc();
             ((AbstractGuardianCard) c).updateDescription();
             AbstractDungeon.effectsQueue.add(new ShowCardBrieflyEffect(c.makeStatEquivalentCopy()));
             AbstractDungeon.topLevelEffects.add(new UpgradeShineEffect((float)Settings.WIDTH / 2.0F, (float)Settings.HEIGHT / 2.0F));

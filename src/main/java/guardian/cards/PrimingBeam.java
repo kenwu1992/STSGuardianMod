@@ -53,8 +53,8 @@ public class PrimingBeam extends AbstractGuardianCard {
 
         this.baseMagicNumber = this.magicNumber = BEAMBUFF;
         //this.sockets.add(GuardianMod.socketTypes.RED);
-        this.socketCount = SOCKETS;
-        this.updateDescription();
+        this.initializeSockets(SOCKETS);
+
 
     }
 

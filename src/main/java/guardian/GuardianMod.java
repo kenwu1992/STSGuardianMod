@@ -204,7 +204,7 @@ public class GuardianMod implements PostDrawSubscriber, PreMonsterTurnSubscriber
             AbstractCard c = (AbstractCard)var2.next();
             if (c instanceof AbstractGuardianCard) {
                 AbstractGuardianCard cg = (AbstractGuardianCard) c;
-                if (cg.socketCount > 0){
+                if (cg.socketCount > 0 && cg.socketCount < 5){
                     if (cg.sockets.size() < cg.socketCount){
                         retVal.group.add(c);
                     }
@@ -685,10 +685,10 @@ public static void saveData() {
             case KOR:
                 language = "kor";
                 break;
-                /*
             case ZHS:
                 language = "zhs";
                 break;
+                /*
             case ZHT:
                 language = "zht";
                 break;
@@ -735,10 +735,10 @@ public static void saveData() {
             case KOR:
                 language = "kor";
                 break;
-            /*
             case ZHS:
                 language = "zhs";
                 break;
+            /*
             case ZHT:
                 language = "zht";
                 break;
@@ -916,7 +916,11 @@ public static void saveData() {
         BaseMod.addEvent(BackToBasicsGuardian.ID, BackToBasicsGuardian.class, TheCity.ID);
 
         BaseMod.addEvent(CrystalForge.ID, CrystalForge.class);
+
         BaseMod.addEvent(AccursedBlacksmithGuardian.ID, AccursedBlacksmithGuardian.class);
+        BaseMod.addEvent(PurificationShrineGuardian.ID, PurificationShrineGuardian.class);
+        BaseMod.addEvent(TransmogrifierGuardian.ID, TransmogrifierGuardian.class);
+        BaseMod.addEvent(UpgradeShrineGuardian.ID, UpgradeShrineGuardian.class);
 
 
         if (Loader.isModLoaded("TheJungle")){
@@ -1049,7 +1053,20 @@ public static void saveData() {
 
 
     public static boolean canSpawnStasisOrb(){
-        boolean result = AbstractDungeon.player.hasEmptyOrb();
+        boolean result = false;
+
+        result = AbstractDungeon.player.hasEmptyOrb();
+
+        if (!result) {
+            for (AbstractOrb o:AbstractDungeon.player.orbs){
+                if (!(o instanceof StasisOrb)){
+                    result = true;
+                }
+            }
+        }
+
+
+
         if (!result) {
             UIStrings UI_STRINGS = CardCrawlGame.languagePack.getUIString("Guardian:UIOptions");
             AbstractDungeon.effectList.add(new ThoughtBubble(AbstractDungeon.player.dialogX, AbstractDungeon.player.dialogY, 2.0F, UI_STRINGS.TEXT[5], true));

@@ -31,7 +31,8 @@
     "NAME": "Pocket Sentry",
     "FLAVOR": "Sentry Mode active. Target acquired. No hard feelings.",
     "DESCRIPTIONS": [
-      "Begin each combat with a Sentry Beam."
+      "At the start of each turn, alternates between: NL Deal ",
+      " damage to a random enemy. NL Apply 1 Weak to ALL enemies."
     ]
   },
   "Guardian:SackOfGems": {

@@ -92,5 +92,32 @@
 	  "[세공] #g소켓 에 #g보석 을 장착합니다.",
       "[잠김] 빈 소켓과 보석이 필요합니다."
     ]
+  },
+  "Guardian:Purifier": {
+    "NAME": "",
+    "DESCRIPTIONS": [
+      "With a swift crushing blow, you shatter the Shrine into pieces in order to uncover the treasures within. Within the rubble, you find two pristine and usable gemstones, patiently awaiting their place in your weaponry. NL NL You leave the remains of the Shrine and continue the climb."
+    ],
+    "OPTIONS": [
+      "[Smash] #gGain #g2 #gRandom #gGems."
+    ]
+  },
+  "Guardian:Transmorgrifier": {
+    "NAME": "",
+    "DESCRIPTIONS": [
+      ""
+    ],
+    "OPTIONS": [
+      ""
+    ]
+  },
+  "Guardian:UpgradeShrine": {
+    "NAME": "",
+    "DESCRIPTIONS": [
+      ""
+    ],
+    "OPTIONS": [
+      ""
+    ]
   }
 }

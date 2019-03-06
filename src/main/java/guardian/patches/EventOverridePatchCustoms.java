@@ -17,6 +17,9 @@ public class EventOverridePatchCustoms {
         if (AbstractDungeon.player instanceof GuardianCharacter) {
         } else {
             dungeon_instance.eventList.remove(AccursedBlacksmithGuardian.ID);
+            dungeon_instance.eventList.remove(TransmogrifierGuardian.ID);
+            dungeon_instance.eventList.remove(UpgradeShrineGuardian.ID);
+            dungeon_instance.eventList.remove(PurificationShrineGuardian.ID);
             dungeon_instance.eventList.remove(BackToBasicsGuardian.ID);
             dungeon_instance.eventList.remove(GemMine.ID);
             dungeon_instance.eventList.remove(StasisEgg.ID);

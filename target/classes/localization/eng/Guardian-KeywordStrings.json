@@ -29,7 +29,7 @@
       "defensive mode",
       "defensive_mode"
     ],
-    "DESCRIPTION": "Gain 2 Block when you play a card. NL While in Defensive Mode, you deal 3 damage to attackers."
+    "DESCRIPTION": "While in Defensive Mode, you have 3 Thorns, have 1 less Strength, and gain 2 Block when you play a card."
   },
   {
   "NAMES": [
@@ -68,7 +68,7 @@
       "packages"
     ],
     "PROPER_NAME": "Package",
-    "DESCRIPTION": "0-cost Exhausting Skill that generates three cards inspired by a chosen Construct of the Spire."
+    "DESCRIPTION": "0-cost Exhausting Skill that generates three cards inspired by a chosen Construct of the Spire, and reduces their cost by 1 for this combat."
   },
   {
     "NAMES": [

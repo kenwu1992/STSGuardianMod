@@ -31,7 +31,8 @@
     "NAME": "휴대용 보초기",
     "FLAVOR": "경계 모드 발동. 타겟 발견. 악감정 없음.",
     "DESCRIPTIONS": [
-      "각 전투를 보초기 공격을 지닌 채로 시작합니다."
+      "At the start of each turn, alternates between: NL Deal ",
+      " damage to a random enemy. NL Apply 1 Weak to ALL enemies."
     ]
   },
   "Guardian:SackOfGems": {

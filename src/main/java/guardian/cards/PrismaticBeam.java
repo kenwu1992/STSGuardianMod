@@ -53,8 +53,8 @@ public class PrismaticBeam extends AbstractGuardianCard {
 
         this.multihit = 1;
         //this.sockets.add(GuardianMod.socketTypes.RED);
-        this.socketCount = SOCKETS;
-        this.updateDescription();
+        this.initializeSockets(SOCKETS);
+
 
     }
 
@@ -87,8 +87,11 @@ public class PrismaticBeam extends AbstractGuardianCard {
         if (!this.upgraded) {
             upgradeName();
 
-            this.socketCount++;
-            this.updateDescription();
+
+            if (this.socketCount < 4) {
+                this.socketCount++;
+                this.saveGemMisc();
+            }             this.updateDescription();
         }
 
 

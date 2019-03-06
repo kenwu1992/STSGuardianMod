@@ -51,14 +51,17 @@ public class PackageSphere extends AbstractGuardianCard {
         tmp = new SphericShield();
         if (upgraded) tmp.upgrade();
         derp.add(tmp);
+        tmp.modifyCostForCombat(-1);
 
         tmp = new FloatingOrbs();
         if (upgraded) tmp.upgrade();
         derp.add(tmp);
+        tmp.modifyCostForCombat(-1);
 
         tmp = new Harden();
         if (upgraded) tmp.upgrade();
         derp.add(tmp);
+        tmp.modifyCostForCombat(-1);
 
         AbstractDungeon.effectList.add(new ShowCardAndAddToHandEffect((AbstractCard)derp.get(0), (float) Settings.WIDTH / 2.0F, (float)Settings.HEIGHT / 2.0F));
         AbstractDungeon.effectList.add(new ShowCardAndAddToHandEffect((AbstractCard)derp.get(1), (float) Settings.WIDTH * .75F, (float)Settings.HEIGHT / 2.0F));
@@ -73,16 +76,13 @@ public class PackageSphere extends AbstractGuardianCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.rawDescription = UPGRADED_DESCRIPTION;
+            this.originalDescription = this.rawDescription;
             this.initializeDescription();
             upgradeName();
         }
     }
 
-    public void updateDescription() {
-        if (this.socketCount > 0) this.rawDescription = this.updateGemDescription(cardStrings.DESCRIPTION, SOCKETSAREAFTER);
-        //GuardianMod.logger.info(DESCRIPTION);
-        this.initializeDescription();
-    }
+
 
     static {
         cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
