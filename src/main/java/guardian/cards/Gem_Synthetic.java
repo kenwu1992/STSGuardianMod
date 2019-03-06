@@ -46,9 +46,7 @@ public class Gem_Synthetic extends AbstractGuardianCard {
 
         this.tags.add(GuardianMod.GEM);
         this.thisGemsType = SYNTHETIC;
-        this.initializeSockets(SOCKETS);
-
-    }
+}
 
     public void use(AbstractPlayer p, AbstractMonster m)
     {

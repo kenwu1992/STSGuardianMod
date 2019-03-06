@@ -48,8 +48,8 @@ public class GuardianWhirl extends AbstractGuardianCard {
         //this.sockets.add(GuardianMod.socketTypes.RED);
 
         this.multihit = MULTICOUNT;
-        this.initializeSockets(SOCKETS);
-        this.isMultiDamage = true;
+this.isMultiDamage = true;
+        this.socketCount = SOCKETS;  updateDescription();  loadGemMisc();
 
 
 
@@ -89,9 +89,15 @@ public class GuardianWhirl extends AbstractGuardianCard {
 
     }
 
-    public void updateDescription() {
-        if (this.socketCount > 0) this.rawDescription = this.updateGemDescription(cardStrings.DESCRIPTION, SOCKETSAREAFTER);
-        GuardianMod.logger.info(DESCRIPTION);
+    public void updateDescription(){
+
+        if (this.socketCount > 0) {
+            if (upgraded && UPGRADED_DESCRIPTION != null) {
+                this.rawDescription = this.updateGemDescription(UPGRADED_DESCRIPTION,true);
+            } else {
+                this.rawDescription = this.updateGemDescription(DESCRIPTION,true);
+            }
+        }
         this.initializeDescription();
     }
 

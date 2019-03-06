@@ -44,9 +44,8 @@ public class SphericShield extends AbstractGuardianCard {
 
         this.baseBlock = BLOCK;
         this.magicNumber = this.baseMagicNumber = TURNS;
-        this.initializeSockets(SOCKETS);
-
-    }
+        this.socketCount = SOCKETS;  updateDescription();  loadGemMisc();
+}
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         super.use(p,m);
@@ -69,7 +68,17 @@ public class SphericShield extends AbstractGuardianCard {
         }
     }
 
+    public void updateDescription(){
 
+        if (this.socketCount > 0) {
+            if (upgraded && UPGRADED_DESCRIPTION != null) {
+                this.rawDescription = this.updateGemDescription(UPGRADED_DESCRIPTION,true);
+            } else {
+                this.rawDescription = this.updateGemDescription(DESCRIPTION,true);
+            }
+        }
+        this.initializeDescription();
+    }
 
     static {
         cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);

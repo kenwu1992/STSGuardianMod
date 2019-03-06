@@ -47,9 +47,7 @@ public class Gem_Red extends AbstractGuardianCard {
         this.baseMagicNumber = this.magicNumber = DAMAGEBUFF;
         this.tags.add(GuardianMod.GEM);
         this.thisGemsType = RED;
-        this.initializeSockets(SOCKETS);
-
-    }
+}
 
     public void use(AbstractPlayer p, AbstractMonster m)
     {

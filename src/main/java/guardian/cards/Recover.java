@@ -42,9 +42,8 @@ public class Recover extends AbstractGuardianCard {
         super(ID, NAME, GuardianMod.getResourcePath(IMG_PATH), COST, DESCRIPTION, TYPE, AbstractCardEnum.GUARDIAN, RARITY, TARGET);
 
         this.baseBlock = BLOCK;
-        this.initializeSockets(SOCKETS);
-
-        this.baseMagicNumber = this.magicNumber = CARDS;
+this.baseMagicNumber = this.magicNumber = CARDS;
+        this.socketCount = SOCKETS;  updateDescription();  loadGemMisc();
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
@@ -70,7 +69,17 @@ public class Recover extends AbstractGuardianCard {
         }
     }
 
+    public void updateDescription(){
 
+        if (this.socketCount > 0) {
+            if (upgraded && UPGRADED_DESCRIPTION != null) {
+                this.rawDescription = this.updateGemDescription(UPGRADED_DESCRIPTION,true);
+            } else {
+                this.rawDescription = this.updateGemDescription(DESCRIPTION,true);
+            }
+        }
+        this.initializeDescription();
+    }
 
     static {
         cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);

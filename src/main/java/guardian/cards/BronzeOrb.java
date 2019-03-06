@@ -50,10 +50,9 @@ public class BronzeOrb extends AbstractGuardianCard {
         this.baseBlock = BLOCK;
 
         //this.sockets.add(GuardianMod.socketTypes.RED);
-        this.initializeSockets(SOCKETS);
-
-        this.isInnate = true;
+this.isInnate = true;
         this.exhaust = true;
+        this.socketCount = SOCKETS;  updateDescription();  loadGemMisc();
 
     }
 
@@ -84,7 +83,17 @@ public class BronzeOrb extends AbstractGuardianCard {
 
     }
 
+    public void updateDescription(){
 
+        if (this.socketCount > 0) {
+            if (upgraded && UPGRADED_DESCRIPTION != null) {
+                this.rawDescription = this.updateGemDescription(UPGRADED_DESCRIPTION,true);
+            } else {
+                this.rawDescription = this.updateGemDescription(DESCRIPTION,true);
+            }
+        }
+        this.initializeDescription();
+    }
 
     static {
         cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);

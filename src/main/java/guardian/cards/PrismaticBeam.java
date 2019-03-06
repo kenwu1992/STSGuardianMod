@@ -53,10 +53,8 @@ public class PrismaticBeam extends AbstractGuardianCard {
 
         this.multihit = 1;
         //this.sockets.add(GuardianMod.socketTypes.RED);
-        this.initializeSockets(SOCKETS);
-
-
-    }
+        this.socketCount = SOCKETS;  updateDescription();  loadGemMisc();
+}
 
     @Override
     public float calculateModifiedCardDamage(AbstractPlayer player, AbstractMonster mo, float tmp) {
@@ -97,9 +95,15 @@ public class PrismaticBeam extends AbstractGuardianCard {
 
     }
 
-    public void updateDescription() {
-        if (this.socketCount > 0) this.rawDescription = this.updateGemDescription(cardStrings.DESCRIPTION, SOCKETSAREAFTER);
-        GuardianMod.logger.info(DESCRIPTION);
+    public void updateDescription(){
+
+        if (this.socketCount > 0) {
+            if (upgraded && UPGRADED_DESCRIPTION != null) {
+                this.rawDescription = this.updateGemDescription(UPGRADED_DESCRIPTION,true);
+            } else {
+                this.rawDescription = this.updateGemDescription(DESCRIPTION,true);
+            }
+        }
         this.initializeDescription();
     }
 

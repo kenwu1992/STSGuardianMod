@@ -53,11 +53,9 @@ public class RefractedBeam extends AbstractGuardianCard {
 
 
         this.magicNumber = this.baseMagicNumber = MULTICOUNT;
+        this.socketCount = SOCKETS;  updateDescription();  loadGemMisc();
         //this.sockets.add(GuardianMod.socketTypes.RED);
-        this.initializeSockets(SOCKETS);
-
-
-    }
+}
 
     @Override
     public float calculateModifiedCardDamage(AbstractPlayer player, AbstractMonster mo, float tmp) {
@@ -75,9 +73,9 @@ public class RefractedBeam extends AbstractGuardianCard {
             float randoX = MathUtils.random(-80,80);
             float randoY = MathUtils.random(-80,80);
 
-            AbstractDungeon.actionManager.addToBottom(new VFXAction(new SmallLaserEffectColored(m.hb.cX + (randoX * Settings.scale), m.hb.cY + (randoY * Settings.scale), p.hb.cX, p.hb.cY, Color.CYAN), 0.3F));
+            AbstractDungeon.actionManager.addToBottom(new VFXAction(new SmallLaserEffectColored(p.hb.cX, p.hb.cY, m.hb.cX + (randoX * Settings.scale), m.hb.cY + (randoY * Settings.scale), Color.CYAN), 0.15F));
 
-            AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HEAVY));
+            AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.FIRE));
 
         }
 
@@ -96,17 +94,23 @@ public class RefractedBeam extends AbstractGuardianCard {
         this.initializeTitle();
     }
 
-    public void updateDescription() {
-        if (this.socketCount > 0) this.rawDescription = this.updateGemDescription(cardStrings.DESCRIPTION, SOCKETSAREAFTER);
-        GuardianMod.logger.info(DESCRIPTION);
-        this.initializeDescription();
-    }
+
 
     public boolean canUpgrade() {
         return true;
     }
 
+    public void updateDescription(){
 
+        if (this.socketCount > 0) {
+            if (upgraded && UPGRADED_DESCRIPTION != null) {
+                this.rawDescription = this.updateGemDescription(UPGRADED_DESCRIPTION,true);
+            } else {
+                this.rawDescription = this.updateGemDescription(DESCRIPTION,true);
+            }
+        }
+        this.initializeDescription();
+    }
     static {
         cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
         NAME = cardStrings.NAME;

@@ -53,9 +53,8 @@ public class FierceBash extends AbstractGuardianCard {
         this.baseDamage = DAMAGE;
         this.baseMagicNumber = this.magicNumber = DAMAGEPERTURNINSTASIS;
         //this.sockets.add(GuardianMod.socketTypes.RED);
-        this.initializeSockets(SOCKETS);
-
-        this.tags.add(GuardianMod.TICK);
+this.tags.add(GuardianMod.TICK);
+        this.socketCount = SOCKETS;  updateDescription();  loadGemMisc();
 
     }
 
@@ -89,7 +88,17 @@ public class FierceBash extends AbstractGuardianCard {
 
     }
 
+    public void updateDescription(){
 
+        if (this.socketCount > 0) {
+            if (upgraded && UPGRADED_DESCRIPTION != null) {
+                this.rawDescription = this.updateGemDescription(UPGRADED_DESCRIPTION,true);
+            } else {
+                this.rawDescription = this.updateGemDescription(DESCRIPTION,true);
+            }
+        }
+        this.initializeDescription();
+    }
 
     static {
         cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);

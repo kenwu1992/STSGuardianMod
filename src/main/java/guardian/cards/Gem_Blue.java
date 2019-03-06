@@ -43,9 +43,7 @@ public class Gem_Blue extends AbstractGuardianCard {
 
         this.tags.add(GuardianMod.GEM);
         this.thisGemsType = BLUE;
-        this.initializeSockets(SOCKETS);
-
-    }
+}
 
     public void use(AbstractPlayer p, AbstractMonster m)
     {

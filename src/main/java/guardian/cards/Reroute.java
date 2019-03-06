@@ -44,10 +44,9 @@ public class Reroute extends AbstractGuardianCard {
 
         this.baseDamage = DAMAGE;
 
-        this.initializeSockets(SOCKETS);
-
-        this.magicNumber = this.baseMagicNumber = 1;
+this.magicNumber = this.baseMagicNumber = 1;
         //this.sockets.add(GuardianMod.socketTypes.RED);
+        this.socketCount = SOCKETS;  updateDescription();  loadGemMisc();
 
 
 
@@ -77,7 +76,17 @@ public class Reroute extends AbstractGuardianCard {
 
     }
 
+    public void updateDescription(){
 
+        if (this.socketCount > 0) {
+            if (upgraded && UPGRADED_DESCRIPTION != null) {
+                this.rawDescription = this.updateGemDescription(UPGRADED_DESCRIPTION,true);
+            } else {
+                this.rawDescription = this.updateGemDescription(DESCRIPTION,true);
+            }
+        }
+        this.initializeDescription();
+    }
 
     static {
         cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);

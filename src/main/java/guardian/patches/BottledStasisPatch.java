@@ -29,7 +29,6 @@ public class BottledStasisPatch
                 ((AbstractGuardianCard)__result).sockets = ((AbstractGuardianCard)__instance).sockets;
                 ((AbstractGuardianCard)__result).socketCount = ((AbstractGuardianCard)__instance).socketCount;
 
-
                 ((AbstractGuardianCard)__result).updateDescription();
             }
 

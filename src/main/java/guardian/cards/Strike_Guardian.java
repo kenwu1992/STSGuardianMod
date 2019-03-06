@@ -43,9 +43,9 @@ public class Strike_Guardian extends AbstractGuardianCard {
         this.baseDamage = DAMAGE;
         this.tags.add(BaseModCardTags.BASIC_STRIKE);
         this.tags.add(AbstractCard.CardTags.STRIKE);
+        this.socketCount = SOCKETS;  updateDescription();  loadGemMisc();
 
-        this.initializeSockets(SOCKETS);
-        //this.sockets.add(GuardianMod.socketTypes.RED);
+//this.sockets.add(GuardianMod.socketTypes.RED);
 
 
 
@@ -73,7 +73,17 @@ public class Strike_Guardian extends AbstractGuardianCard {
 
     }
 
+    public void updateDescription(){
 
+        if (this.socketCount > 0) {
+            if (upgraded && UPGRADED_DESCRIPTION != null) {
+                this.rawDescription = this.updateGemDescription(UPGRADED_DESCRIPTION,true);
+            } else {
+                this.rawDescription = this.updateGemDescription(DESCRIPTION,true);
+            }
+        }
+        this.initializeDescription();
+    }
 
     static {
         cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);

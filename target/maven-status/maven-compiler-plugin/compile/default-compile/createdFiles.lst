@@ -46,6 +46,7 @@ guardian\powers\SearingPower.class
 guardian\relics\ModeShifter.class
 guardian\cards\Defend_Guardian.class
 guardian\cards\FuturePlans.class
+guardian\patches\LoadGemsPatch.class
 guardian\cards\ChargeUp.class
 guardian\patches\PackageDiscoveryPatch$Locator.class
 guardian\cards\BronzeArmor.class
@@ -129,6 +130,7 @@ guardian\powers\DefensiveModeBuffsPower.class
 guardian\actions\PlaceActualCardIntoStasis.class
 guardian\cards\Suspension.class
 guardian\relics\TickHelperRelic.class
+guardian\patches\EventOverridePatchShrines.class
 guardian\patches\GuardianTalkSentries.class
 guardian\relics\StasisEgg.class
 guardian\patches\EventOverridePatch.class

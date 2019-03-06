@@ -38,9 +38,8 @@ public class AncientConstruct extends AbstractGuardianCard {
     public AncientConstruct() {
         super(ID, NAME, GuardianMod.getResourcePath(IMG_PATH), COST, DESCRIPTION, TYPE, AbstractCardEnum.GUARDIAN, RARITY, TARGET);
 
-        this.initializeSockets(SOCKETS);
-
         this.magicNumber = this.baseMagicNumber = ARTIFACT;
+        this.socketCount = SOCKETS;  updateDescription();  loadGemMisc();
         
     }
 
@@ -67,7 +66,17 @@ public class AncientConstruct extends AbstractGuardianCard {
         }
     }
 
+    public void updateDescription(){
 
+        if (this.socketCount > 0) {
+            if (upgraded && UPGRADED_DESCRIPTION != null) {
+                this.rawDescription = this.updateGemDescription(UPGRADED_DESCRIPTION,true);
+            } else {
+                this.rawDescription = this.updateGemDescription(DESCRIPTION,true);
+            }
+        }
+        this.initializeDescription();
+    }
 
     static {
         cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);

@@ -1,5 +1,6 @@
 package guardian.ui;
 
+        import com.megacrit.cardcrawl.cards.AbstractCard;
         import com.megacrit.cardcrawl.core.CardCrawlGame;
 
         import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -23,6 +24,10 @@ public class EnhanceBonfireOption extends AbstractCampfireOption
     //private ArrayList<String> idleMessages;
     public EnhanceBonfireOption(boolean active) {
         this.label =  DESCRIPTIONS[0];
+
+        for (AbstractCard c : AbstractDungeon.player.masterDeck.group){
+            c.update();
+        }
 
         this.usable = active;
         if (active) {

@@ -40,9 +40,7 @@ public class zzzSpikerProtocol extends AbstractGuardianCard {
         this.baseMagicNumber = this.magicNumber = THORNS;
         this.secondaryM = DAMAGE;
         this.tags.add(GuardianMod.PROTOCOL);
-        this.initializeSockets(SOCKETS);
-
-    }
+}
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         super.use(p,m);

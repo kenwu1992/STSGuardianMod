@@ -67,7 +67,7 @@ public class zzzCallForBackup extends AbstractGuardianCard {
         if (!this.upgraded) {
             upgradeName();
             this.rawDescription = UPGRADED_DESCRIPTION;
-            this.originalDescription = this.rawDescription;
+
             this.initializeDescription();
         }
     }

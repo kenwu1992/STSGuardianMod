@@ -52,12 +52,9 @@ public class GatlingBeam extends AbstractGuardianCard {
         this.tags.add(GuardianMod.BEAM);
         this.tags.add(GuardianMod.TICK);
         this.tags.add(GuardianMod.VOLATILE);
+        this.socketCount = SOCKETS;  updateDescription();  loadGemMisc();
 
-        this.initializeSockets(SOCKETS);
-
-
-
-    }
+}
     @Override
     public float calculateModifiedCardDamage(AbstractPlayer player, AbstractMonster mo, float tmp) {
         return tmp + calculateBeamDamage();
@@ -93,7 +90,17 @@ public class GatlingBeam extends AbstractGuardianCard {
     }
 
 
+    public void updateDescription(){
 
+        if (this.socketCount > 0) {
+            if (upgraded && UPGRADED_DESCRIPTION != null) {
+                this.rawDescription = this.updateGemDescription(UPGRADED_DESCRIPTION,true);
+            } else {
+                this.rawDescription = this.updateGemDescription(DESCRIPTION,true);
+            }
+        }
+        this.initializeDescription();
+    }
     static {
         cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
         NAME = cardStrings.NAME;

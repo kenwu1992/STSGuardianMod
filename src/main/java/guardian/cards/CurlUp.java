@@ -41,10 +41,8 @@ public class CurlUp extends AbstractGuardianCard {
 
 
         this.baseBlock = BLOCK;
-        this.initializeSockets(SOCKETS);
-
-
-        this.multihit = MULTICOUNT;
+this.multihit = MULTICOUNT;
+        this.socketCount = SOCKETS;  updateDescription();  loadGemMisc();
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
@@ -71,7 +69,17 @@ public class CurlUp extends AbstractGuardianCard {
     }
 
 
+    public void updateDescription(){
 
+        if (this.socketCount > 0) {
+            if (upgraded && UPGRADED_DESCRIPTION != null) {
+                this.rawDescription = this.updateGemDescription(UPGRADED_DESCRIPTION,true);
+            } else {
+                this.rawDescription = this.updateGemDescription(DESCRIPTION,true);
+            }
+        }
+        this.initializeDescription();
+    }
     static {
         cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
         NAME = cardStrings.NAME;

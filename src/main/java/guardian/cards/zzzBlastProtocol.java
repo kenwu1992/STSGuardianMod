@@ -38,9 +38,7 @@ public class zzzBlastProtocol extends AbstractGuardianCard {
         this.exhaust = true;
         this.baseMagicNumber = this.magicNumber = DAMAGE;
         this.tags.add(GuardianMod.PROTOCOL);
-        this.initializeSockets(SOCKETS);
-
-    }
+}
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         super.use(p,m);

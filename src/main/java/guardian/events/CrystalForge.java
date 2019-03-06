@@ -48,6 +48,10 @@ public class CrystalForge extends AbstractImageEvent {
     public CrystalForge() {
         super(NAME, INTRO, GuardianMod.getResourcePath("/events/grimForge.jpg"));
 
+        for (AbstractCard c : AbstractDungeon.player.masterDeck.group){
+            c.update();
+        }
+
         if (GuardianMod.getCardsWithFilledSockets().size() == 0){
             this.imageEventText.setDialogOption(OPTIONS[1], true);
 
@@ -198,6 +202,10 @@ public class CrystalForge extends AbstractImageEvent {
 
 
         private void updateEnhance(int inflateGemCount){
+            for (AbstractCard c : AbstractDungeon.player.masterDeck.group){
+                c.update();
+            }
+
         if (GuardianMod.getSocketableCards().size() == 0 || GuardianMod.getGemCards().size() + inflateGemCount == 0){
             this.imageEventText.updateDialogOption(3, OPTIONS[7], true);
 

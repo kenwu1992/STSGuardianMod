@@ -223,7 +223,9 @@ public class GuardianMod implements PostDrawSubscriber, PreMonsterTurnSubscriber
             AbstractCard c = (AbstractCard)var2.next();
             if (c instanceof AbstractGuardianCard) {
                 AbstractGuardianCard cg = (AbstractGuardianCard) c;
-                if (cg.socketCount > 0){
+                logger.info("card name: " + c.name + " socketCount = " + cg.socketCount);
+                if (cg.socketCount > 0 && cg.socketCount < 5){
+                    logger.info("card name: " + c.name);
                     retVal.group.add(c);
                 }
             }

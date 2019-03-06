@@ -40,9 +40,7 @@ public class zzzGuardProtocol extends AbstractGuardianCard {
 
         this.exhaust = true;
 
-        this.initializeSockets(SOCKETS);
-
-    }
+}
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         super.use(p,m);

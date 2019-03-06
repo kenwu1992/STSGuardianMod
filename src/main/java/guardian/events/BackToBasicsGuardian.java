@@ -52,6 +52,10 @@ public class BackToBasicsGuardian extends AbstractImageEvent {
         this.screen = BackToBasicsGuardian.CUR_SCREEN.INTRO;
         this.cardsUpgraded = new ArrayList();
 
+        for (AbstractCard c : AbstractDungeon.player.masterDeck.group){
+            c.update();
+        }
+
         strikes = new ArrayList<>();
         defends = new ArrayList<>();
 

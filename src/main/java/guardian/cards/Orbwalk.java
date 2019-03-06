@@ -40,6 +40,7 @@ public class Orbwalk extends AbstractGuardianCard {
         this.baseMagicNumber = this.magicNumber = 2;
         this.tags.add(GuardianMod.TICK);
         this.tags.add(GuardianMod.VOLATILE);
+        this.socketCount = SOCKETS;  updateDescription();  loadGemMisc();
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
@@ -55,14 +56,24 @@ public class Orbwalk extends AbstractGuardianCard {
         if (!this.upgraded) {
             upgradeName();
             this.rawDescription = UPGRADED_DESCRIPTION;
-            this.originalDescription = this.rawDescription;
+
             this.initializeDescription();
             this.tags.remove(GuardianMod.VOLATILE);
 
         }
     }
 
+    public void updateDescription(){
 
+        if (this.socketCount > 0) {
+            if (upgraded && UPGRADED_DESCRIPTION != null) {
+                this.rawDescription = this.updateGemDescription(UPGRADED_DESCRIPTION,true);
+            } else {
+                this.rawDescription = this.updateGemDescription(DESCRIPTION,true);
+            }
+        }
+        this.initializeDescription();
+    }
 
     static {
         cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);

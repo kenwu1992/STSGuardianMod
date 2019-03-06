@@ -53,10 +53,8 @@ public class PrimingBeam extends AbstractGuardianCard {
 
         this.baseMagicNumber = this.magicNumber = BEAMBUFF;
         //this.sockets.add(GuardianMod.socketTypes.RED);
-        this.initializeSockets(SOCKETS);
-
-
-    }
+        this.socketCount = SOCKETS;  updateDescription();  loadGemMisc();
+}
 
 
     public void use(AbstractPlayer p, AbstractMonster m) {
@@ -93,9 +91,15 @@ public class PrimingBeam extends AbstractGuardianCard {
 
     }
 
-    public void updateDescription() {
-        if (this.socketCount > 0) this.rawDescription = this.updateGemDescription(cardStrings.DESCRIPTION, SOCKETSAREAFTER);
-        GuardianMod.logger.info(DESCRIPTION);
+    public void updateDescription(){
+
+        if (this.socketCount > 0) {
+            if (upgraded && UPGRADED_DESCRIPTION != null) {
+                this.rawDescription = this.updateGemDescription(UPGRADED_DESCRIPTION,true);
+            } else {
+                this.rawDescription = this.updateGemDescription(DESCRIPTION,true);
+            }
+        }
         this.initializeDescription();
     }
 

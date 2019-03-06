@@ -43,15 +43,13 @@ public class TwinSlam extends AbstractGuardianCard {
 
         this.baseDamage = DAMAGE;
         this.tags.add(GuardianMod.MULTIHIT);
+        this.socketCount = SOCKETS;  updateDescription();  loadGemMisc();
 
 
 
         this.multihit = MULTICOUNT;
         //this.sockets.add(GuardianMod.socketTypes.RED);
-        this.initializeSockets(SOCKETS);
-
-
-    }
+}
 
 
 
@@ -78,15 +76,22 @@ public class TwinSlam extends AbstractGuardianCard {
             if (this.socketCount < 4) {
                 this.socketCount++;
                 this.saveGemMisc();
-            }             this.updateDescription();
+            }
+            this.updateDescription();
         }
 
 
     }
 
-    public void updateDescription() {
-        if (this.socketCount > 0) this.rawDescription = this.updateGemDescription(cardStrings.DESCRIPTION, SOCKETSAREAFTER);
-        GuardianMod.logger.info(DESCRIPTION);
+    public void updateDescription(){
+
+        if (this.socketCount > 0) {
+            if (upgraded && UPGRADED_DESCRIPTION != null) {
+                this.rawDescription = this.updateGemDescription(UPGRADED_DESCRIPTION,true);
+            } else {
+                this.rawDescription = this.updateGemDescription(DESCRIPTION,true);
+            }
+        }
         this.initializeDescription();
     }
 

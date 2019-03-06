@@ -56,8 +56,8 @@ public class CrystalBeam extends AbstractGuardianCard {
 
         this.baseDamage = DAMAGE;
         this.baseMagicNumber = this.magicNumber = DAMAGEPERGEM;
-        this.initializeSockets(SOCKETS);
-        this.tags.add(GuardianMod.BEAM);
+this.tags.add(GuardianMod.BEAM);
+        this.socketCount = SOCKETS;  updateDescription();  loadGemMisc();
 
 
     }
@@ -129,7 +129,17 @@ public class CrystalBeam extends AbstractGuardianCard {
     }
 
 
+    public void updateDescription(){
 
+        if (this.socketCount > 0) {
+            if (upgraded && UPGRADED_DESCRIPTION != null) {
+                this.rawDescription = this.updateGemDescription(UPGRADED_DESCRIPTION,true);
+            } else {
+                this.rawDescription = this.updateGemDescription(DESCRIPTION,true);
+            }
+        }
+        this.initializeDescription();
+    }
     static {
         cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
         NAME = cardStrings.NAME;

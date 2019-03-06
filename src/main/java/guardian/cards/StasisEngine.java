@@ -39,6 +39,7 @@ public class StasisEngine extends AbstractGuardianCard {
         super(ID, NAME, GuardianMod.getResourcePath(IMG_PATH), COST, DESCRIPTION, TYPE, AbstractCardEnum.GUARDIAN, RARITY, TARGET);
 
         this.baseMagicNumber = this.magicNumber = 1;
+        this.socketCount = SOCKETS;  updateDescription();  loadGemMisc();
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
@@ -57,12 +58,22 @@ public class StasisEngine extends AbstractGuardianCard {
             upgradeName();
             this.isInnate = true;
             this.rawDescription = UPGRADED_DESCRIPTION;
-            this.originalDescription = this.rawDescription;
+
             this.initializeDescription();
         }
     }
 
+    public void updateDescription(){
 
+        if (this.socketCount > 0) {
+            if (upgraded && UPGRADED_DESCRIPTION != null) {
+                this.rawDescription = this.updateGemDescription(UPGRADED_DESCRIPTION,true);
+            } else {
+                this.rawDescription = this.updateGemDescription(DESCRIPTION,true);
+            }
+        }
+        this.initializeDescription();
+    }
 
     static {
         cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);

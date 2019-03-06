@@ -43,10 +43,9 @@ public class Clone extends AbstractGuardianCard {
         super(ID, NAME, GuardianMod.getResourcePath(IMG_PATH), COST, DESCRIPTION, TYPE, AbstractCardEnum.GUARDIAN, RARITY, TARGET);
 
         this.baseMagicNumber = this.magicNumber = COUNT;
+        this.socketCount = SOCKETS;  updateDescription();  loadGemMisc();
 
-        this.initializeSockets(SOCKETS);
-
-        this.exhaust = true;
+this.exhaust = true;
     }
 
     @Override
@@ -81,7 +80,17 @@ public class Clone extends AbstractGuardianCard {
     }
 
 
+    public void updateDescription(){
 
+        if (this.socketCount > 0) {
+            if (upgraded && UPGRADED_DESCRIPTION != null) {
+                this.rawDescription = this.updateGemDescription(UPGRADED_DESCRIPTION,true);
+            } else {
+                this.rawDescription = this.updateGemDescription(DESCRIPTION,true);
+            }
+        }
+        this.initializeDescription();
+    }
     static {
         cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
         NAME = cardStrings.NAME;

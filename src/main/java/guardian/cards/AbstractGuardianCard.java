@@ -25,8 +25,6 @@ public abstract class AbstractGuardianCard extends CustomCard {
     public ArrayList<GuardianMod.socketTypes> sockets = new ArrayList<>();
     public GuardianMod.socketTypes thisGemsType = null;
 
-    private Integer receivedSocketCount = 0;
-
     public int multihit;
     public int upgradeMulthit;
     public boolean isMultihitModified;
@@ -35,12 +33,6 @@ public abstract class AbstractGuardianCard extends CustomCard {
     public boolean upgradesecondaryM;
     public boolean isSecondaryMModified;
 
-    private boolean gemsInitialized = false;
-    private boolean readyToInitializeGems = false;
-
-    private String gemDescription;
-    private String mergedDescription;
-    public String originalDescription;
 
 
     public AbstractGuardianCard(String id, String name, String img, int cost, String rawDescription, CardType type, CardColor color,
@@ -175,71 +167,79 @@ public abstract class AbstractGuardianCard extends CustomCard {
     }
 
     public void saveGemMisc() {
-        this.misc = 0;
-        this.misc = 10 + this.socketCount;
-        GuardianMod.logger.info("New misc gem save in progress: " + this.name + " new misc = " + this.misc);
+        if (AbstractDungeon.player != null) {
 
-        if (sockets.size() > 0) {
-            for (int i = 0; i < sockets.size(); i++) {
-                this.misc *= 100;
-                int gemindex = 0;
-                switch (sockets.get(i)) {
-                    case RED:
-                        gemindex = 0;
-                        break;
-                    case GREEN:
-                        gemindex = 1;
-                        break;
-                    case ORANGE:
-                        gemindex = 2;
-                        break;
-                    case WHITE:
-                        gemindex = 3;
-                        break;
-                    case CYAN:
-                        gemindex = 4;
-                        break;
-                    case BLUE:
-                        gemindex = 5;
-                        break;
-                    case CRIMSON:
-                        gemindex = 6;
-                        break;
-                    case FRAGMENTED:
-                        gemindex = 7;
-                        break;
-                    case PURPLE:
-                        gemindex = 8;
-                        break;
-                    case SYNTHETIC:
-                        gemindex = 9;
-                        break;
-                    case YELLOW:
-                        gemindex = 10;
-                        break;
-                }
-                this.misc += 10 + gemindex;
+            if (AbstractDungeon.player.masterDeck.contains(this)) {
+
+                this.misc = 0;
+                this.misc = 10 + this.socketCount;
                 GuardianMod.logger.info("New misc gem save in progress: " + this.name + " new misc = " + this.misc);
+
+                if (sockets.size() > 0) {
+                    for (int i = 0; i < sockets.size(); i++) {
+                        this.misc *= 100;
+                        int gemindex = 0;
+                        switch (sockets.get(i)) {
+                            case RED:
+                                gemindex = 0;
+                                break;
+                            case GREEN:
+                                gemindex = 1;
+                                break;
+                            case ORANGE:
+                                gemindex = 2;
+                                break;
+                            case WHITE:
+                                gemindex = 3;
+                                break;
+                            case CYAN:
+                                gemindex = 4;
+                                break;
+                            case BLUE:
+                                gemindex = 5;
+                                break;
+                            case CRIMSON:
+                                gemindex = 6;
+                                break;
+                            case FRAGMENTED:
+                                gemindex = 7;
+                                break;
+                            case PURPLE:
+                                gemindex = 8;
+                                break;
+                            case SYNTHETIC:
+                                gemindex = 9;
+                                break;
+                            case YELLOW:
+                                gemindex = 10;
+                                break;
+                        }
+                        this.misc += 10 + gemindex;
+                        GuardianMod.logger.info("New misc gem save in progress: " + this.name + " new misc = " + this.misc);
+
+                    }
+                }
+                GuardianMod.logger.info("New misc gem save final: " + this.name + " new misc = " + this.misc);
 
             }
         }
-        GuardianMod.logger.info("New misc gem save final: " + this.name + " new misc = " + this.misc);
     }
 
     public void loadGemMisc(){
         this.sockets.clear();
+        if (this.misc > 0){
         GuardianMod.logger.info("Attempting to load non-zero misc " + this.misc);
-        if (Integer.toString(this.misc).length() % 2 == 0){
+        if (Integer.toString(this.misc).length() % 2 == 0) {
             GuardianMod.logger.info("New misc gem load: " + this.name + " new misc = " + this.misc);
             String miscString = Integer.toString(this.misc);
-            String socketCountString = miscString.substring(0,2);
+            String socketCountString = miscString.substring(0, 2);
             GuardianMod.logger.info("New misc gem load: " + this.name + " socket string = " + socketCountString + " parsed = " + Integer.parseInt(socketCountString));
 
             this.socketCount = Integer.parseInt(socketCountString) - 10;
             GuardianMod.logger.info("New misc gem load: " + this.name + " new sockets = " + this.socketCount);
 
             //SOCKETS
-            if (miscString.length() > 2){
+            if (miscString.length() > 2) {
                 miscString = miscString.substring(2);
                 GuardianMod.logger.info("New misc gem load: " + this.name + " new misc = " + miscString);
 
@@ -247,12 +247,13 @@ public abstract class AbstractGuardianCard extends CustomCard {
                 this.updateDescription();
                 return;
             }
+
             //GEMS
 
             int loops = miscString.length() / 2;
             String gemString;
             for (int i = 0; i < loops; i++) {
-                gemString = miscString.substring(0,2);
+                gemString = miscString.substring(0, 2);
                 switch (gemString) {
                     case "10":
                         sockets.add(GuardianMod.socketTypes.RED);
@@ -298,27 +299,10 @@ public abstract class AbstractGuardianCard extends CustomCard {
             }
 
             this.updateDescription();
-            this.saveGemMisc();
-
-
-
 
         }
-    }
 
-    public void initializeSockets(int socketCount){
-            this.receivedSocketCount = socketCount;
-            this.readyToInitializeGems = true;
-    }
 
-    public void beginInitializeSockets(){
-        GuardianMod.logger.info("New initial gem load: " + this.name + " misc = " + this.misc);
-        this.originalDescription = this.rawDescription;
-        if (this.misc > 0){
-            loadGemMisc();
-        } else {
-            this.socketCount = receivedSocketCount;
-            this.updateDescription();
         }
     }
 
@@ -329,28 +313,8 @@ public abstract class AbstractGuardianCard extends CustomCard {
         this.saveGemMisc();
     }
 
-    @Override
-    public void update() {
-        super.update();
-        if (!this.gemsInitialized && this.readyToInitializeGems){
-            this.gemsInitialized = true;
-            this.beginInitializeSockets();
-        }
-    }
-
     public void updateDescription(){
-        GuardianMod.logger.info("updating description for " + this.name);
-        if (this.socketCount > 0) {
-            GuardianMod.logger.info("updating description with sockets for " + this.name + " this socket count = " + this.socketCount + " sockets array size = " + this.sockets.size());
-            this.gemDescription = this.updateGemDescription("",true);
-
-            if (this.originalDescription == null){
-                this.originalDescription = this.rawDescription;
-            }
-            this.rawDescription = this.originalDescription + this.gemDescription;
-
-        }
-        this.initializeDescription();
+       //Overwritten in cards
     }
 
     public void useGems(AbstractPlayer p, AbstractMonster m){

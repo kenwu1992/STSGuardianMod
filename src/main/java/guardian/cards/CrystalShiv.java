@@ -44,11 +44,10 @@ public class CrystalShiv extends AbstractGuardianCard {
 
         this.baseDamage = DAMAGE;
 
-        this.initializeSockets(SOCKETS);
-
-        //this.sockets.add(GuardianMod.socketTypes.RED);
+//this.sockets.add(GuardianMod.socketTypes.RED);
 
         this.exhaust = true;
+        this.socketCount = SOCKETS;  updateDescription();  loadGemMisc();
 
 
 
@@ -76,12 +75,17 @@ public class CrystalShiv extends AbstractGuardianCard {
 
     }
 
-    public void updateDescription() {
-        if (this.socketCount > 0) this.rawDescription = this.updateGemDescription(cardStrings.DESCRIPTION, SOCKETSAREAFTER);
-        GuardianMod.logger.info(DESCRIPTION);
+    public void updateDescription(){
+
+        if (this.socketCount > 0) {
+            if (upgraded && UPGRADED_DESCRIPTION != null) {
+                this.rawDescription = this.updateGemDescription(UPGRADED_DESCRIPTION,true);
+            } else {
+                this.rawDescription = this.updateGemDescription(DESCRIPTION,true);
+            }
+        }
         this.initializeDescription();
     }
-
     static {
         cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
         NAME = cardStrings.NAME;

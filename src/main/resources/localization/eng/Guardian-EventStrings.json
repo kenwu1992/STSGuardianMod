@@ -85,7 +85,7 @@
     "OPTIONS": [
       "[Dismantle] #rRemove Socketed Card. Gain it's #gGems.",
       "[Locked] Requires Socketed Card with a Gem installed.",
-      "[Pry] #rRemove all #gGems in a Socketed Card.",
+      "[Pry] #rDestroy all #gGems in a Socketed Card.",
       "[Transmute] #rRemove a Card. Gain a random #gGem.",
       "[Locked] Already used.",
       "[Leave]",

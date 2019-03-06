@@ -46,8 +46,7 @@ public class zzzSyncronizedStrike extends AbstractGuardianCard {
         this.baseMagicNumber = this.magicNumber = HEAL;
         this.tags.add(CardTags.STRIKE);
 
-        this.initializeSockets(SOCKETS);
-        //this.sockets.add(GuardianMod.socketTypes.RED);
+//this.sockets.add(GuardianMod.socketTypes.RED);
 
 
 

@@ -50,10 +50,8 @@ public class BaubleBeam extends AbstractGuardianCard {
         //COST MODIFICATION IS ULTRA HACKY... in AbstractG
 
         //this.sockets.add(GuardianMod.socketTypes.RED);
-        this.initializeSockets(SOCKETS);
-
-
-        this.magicNumber = this.baseMagicNumber = GEMACTIVATIONS;
+this.magicNumber = this.baseMagicNumber = GEMACTIVATIONS;
+        this.socketCount = SOCKETS;  updateDescription();  loadGemMisc();
 
     }
 
@@ -92,7 +90,17 @@ public class BaubleBeam extends AbstractGuardianCard {
         }
     }
 
+    public void updateDescription(){
 
+        if (this.socketCount > 0) {
+            if (upgraded && UPGRADED_DESCRIPTION != null) {
+                this.rawDescription = this.updateGemDescription(UPGRADED_DESCRIPTION,true);
+            } else {
+                this.rawDescription = this.updateGemDescription(DESCRIPTION,true);
+            }
+        }
+        this.initializeDescription();
+    }
     static {
         cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
         NAME = cardStrings.NAME;
