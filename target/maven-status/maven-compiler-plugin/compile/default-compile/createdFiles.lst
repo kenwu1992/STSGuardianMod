@@ -1,6 +1,7 @@
 guardian\cards\TwinSlam.class
 guardian\actions\CardToTopOfDrawPileAction.class
 guardian\cards\Gem_White.class
+guardian\cards\MassSlam.class
 guardian\relics\DefensiveModeMoreBlock.class
 guardian\actions\RandomProtocolAction.class
 guardian\cards\Repulse.class
@@ -140,6 +141,7 @@ guardian\patches\EventOverridePatch.class
 guardian\patches\GuardianTalkDonu.class
 guardian\cards\CompilePackage.class
 guardian\vfx\SmallLaserEffectColored.class
+guardian\cards\MassTimeBomb.class
 guardian\actions\PlaceCardsInHandIntoStasisAction.class
 guardian\screens\SocketGemScreen.class
 guardian\relics\ModeShifterPlus.class
@@ -163,12 +165,14 @@ guardian\cards\GemFinder.class
 guardian\patches\GuardianEnum.class
 guardian\events\PurificationShrineGuardian$1.class
 guardian\cards\zzzGuardProtocol.class
+guardian\cards\PackageMass.class
 guardian\events\UpgradeShrineGuardian$CUR_SCREEN.class
 guardian\events\TransmogrifierGuardian$CUR_SCREEN.class
 guardian\powers\zzzGuardianModePower$BronzeOrbLocationPower.class
 guardian\powers\zzzGuardianModePower$BronzeOrbDamagePower.class
 guardian\cards\PrismaticBeam.class
 guardian\cards\AncientConstruct.class
+guardian\cards\MassOfThorns.class
 guardian\cards\PackageDefect.class
 guardian\vfx\AddCardToStasisEffect.class
 guardian\powers\AbstractGuardianTwoAmountPower.class

@@ -40,6 +40,7 @@ public class PackageDiscoveryPatch {
             startingList.add("WALKER");
             startingList.add("DEFECT");
             if (Loader.isModLoaded("constructmod")) startingList.add("CONSTRUCT");
+            if (Loader.isModLoaded("infinitespire")) startingList.add("MASS");
 
             for (int i = 0; i < 3; i++) {
                 rando = AbstractDungeon.cardRng.random(0, startingList.size() - 1);
@@ -95,6 +96,12 @@ public class PackageDiscoveryPatch {
                         tmp = new PackageConstruct();
                         if (GuardianMod.discoveryOverrideUpgrade) tmp.upgrade();
                         GuardianMod.logger.info("randomed into CONSTRUCT");
+                        derp.add(tmp.makeStatEquivalentCopy());
+                        break;
+                    case "MASS":
+                        tmp = new PackageMass();
+                        if (GuardianMod.discoveryOverrideUpgrade) tmp.upgrade();
+                        GuardianMod.logger.info("randomed into MASS");
                         derp.add(tmp.makeStatEquivalentCopy());
                         break;
                 }

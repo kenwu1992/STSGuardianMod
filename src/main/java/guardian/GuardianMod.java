@@ -498,7 +498,13 @@ public class GuardianMod implements PostDrawSubscriber, PreMonsterTurnSubscriber
             BaseMod.addCard(new PackageConstruct());
         }
 
-
+        //INFINITE cross-mod
+        if (Loader.isModLoaded("infinitespire")) {
+            BaseMod.addCard(new MassTimeBomb());
+            BaseMod.addCard(new MassOfThorns());
+            BaseMod.addCard(new MassSlam());
+            BaseMod.addCard(new PackageMass());
+        }
 
 
 

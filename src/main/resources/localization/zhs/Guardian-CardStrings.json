@@ -402,5 +402,23 @@
     "NAME": "Package: Construct",
     "DESCRIPTION": "Add a Hammer Down, Omega Cannon, and Mode Shift to your hand, and reduce their costs by 1 this combat. NL Exhaust.",
     "UPGRADE_DESCRIPTION": "Add a Hammer Down, Omega Cannon, and Mode Shift to your hand, Upgrade them, and reduce their costs by 1 this combat. NL Exhaust."
+  },
+  "Guardian:PackageMass": {
+    "NAME": "Package: Mass",
+    "DESCRIPTION": "Add a Mass of Spikes, Mass of Bombs, and Group Slam to your hand, and reduce their costs by 1 this combat. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Add a Mass of Spikes, Mass of Bombs, and Group Slam to your hand, Upgrade them, and reduce their costs by 1 this combat. NL Exhaust."
+  },
+  "Guardian:MassOfThorns": {
+    "NAME": "Mass Of Spikes",
+    "DESCRIPTION": "Gain !M! Momentary Thorns."
+  },
+  "Guardian:MassTimeBomb": {
+    "NAME": "Mass Of Bombs",
+    "DESCRIPTION": "In each empty Stasis slot, place a Time Bomb into Stasis there. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "In each empty Stasis slot, place an Upgraded Time Bomb into Stasis there. NL Exhaust."
+  },
+  "Guardian:MassSlam": {
+    "NAME": "Group Slam",
+    "DESCRIPTION": "Deal !D! damage !M! times."
   }
 }

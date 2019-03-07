@@ -25,7 +25,7 @@ public class HammerDown extends AbstractGuardianCard {
     public static String UPGRADED_DESCRIPTION;
     public static final String IMG_PATH = "cards/HammerDown.png";
     private static final CardType TYPE = CardType.ATTACK;
-    private static final CardRarity RARITY = CardRarity.RARE;
+    private static final CardRarity RARITY = CardRarity.SPECIAL;
     private static final CardTarget TARGET = CardTarget.ENEMY;
 
     private static final CardStrings cardStrings;
