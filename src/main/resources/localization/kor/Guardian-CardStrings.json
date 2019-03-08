@@ -141,33 +141,33 @@
   },
   "Guardian:PackageShapes": {
     "NAME": "꾸러미: 구체들",
-    "DESCRIPTION": "시간 폭탄, 고슴도치 프로토콜, 섬멸 프로토콜 을 손으로 가져옵니다. NL 소멸.",
-    "UPGRADE_DESCRIPTION": "강화된 시간 폭탄, 고슴도치 프로토콜, 섬멸 프로토콜 을 손으로 가져옵니다. NL 소멸."
+    "DESCRIPTION": "시간 폭탄, 고슴도치 프로토콜, 섬멸 프로토콜 을 손으로 가져옵니다. 이번 전투동안 비용이 1 감소합니다. NL 소멸.",
+    "UPGRADE_DESCRIPTION": "강화된 시간 폭탄, 고슴도치 프로토콜, 섬멸 프로토콜 을 손으로 가져옵니다. 이번 전투동안 비용이 1 감소합니다. NL 소멸."
   },
   "Guardian:PackageDonuDeca": {
     "NAME": "꾸러미: 고대의 존재",
-    "DESCRIPTION": "고대의 힘, 고대의 방어, 고대의 구조물 을 손으로 가져옵니다. NL 소멸.",
-    "UPGRADE_DESCRIPTION": "강화된 고대의 힘, 고대의 방어, 고대의 구조물 을 손으로 가져옵니다. NL 소멸."
+    "DESCRIPTION": "고대의 힘, 고대의 방어, 고대의 구조물 을 손으로 가져옵니다. 이번 전투동안 비용이 1 감소합니다. NL 소멸.",
+    "UPGRADE_DESCRIPTION": "강화된 고대의 힘, 고대의 방어, 고대의 구조물 을 손으로 가져옵니다. 이번 전투동안 비용이 1 감소합니다. NL 소멸."
   },
   "Guardian:PackageSphere": {
     "NAME": "꾸러미: 구체형 수호기",
-    "DESCRIPTION": "구체형 방어막, 담금질, 떠다니는 구체들 을 손으로 가져옵니다. NL 소멸.",
-    "UPGRADE_DESCRIPTION": "강화된 구체형 방어막, 담금질, 떠다니는 구체들 을 손으로 가져옵니다. NL 소멸."
+    "DESCRIPTION": "구체형 방어막, 담금질, 떠다니는 구체들 을 손으로 가져옵니다. 이번 전투동안 비용이 1 감소합니다. NL 소멸.",
+    "UPGRADE_DESCRIPTION": "강화된 구체형 방어막, 담금질, 떠다니는 구체들 을 손으로 가져옵니다. 이번 전투동안 비용이 1 감소합니다. NL 소멸."
   },
   "Guardian:PackageSentry": {
     "NAME": "꾸러미: 보초기",
-    "DESCRIPTION": "보초기 광선 1장, 보초기 파동 2장을 손으로 가져옵니다. NL 소멸.",
-    "UPGRADE_DESCRIPTION": "강화된 보초기 광선 1장, 보초기 파동 2장을 손으로 가져옵니다. NL 소멸. NL 소멸."
+    "DESCRIPTION": "보초기 광선 1장, 보초기 파동 2장을 손으로 가져옵니다. 이번 전투동안 비용이 1 감소합니다. NL 소멸.",
+    "UPGRADE_DESCRIPTION": "강화된 보초기 광선 1장, 보초기 파동 2장을 손으로 가져옵니다. 이번 전투동안 비용이 1 감소합니다. NL 소멸."
   },
   "Guardian:PackageWalker": {
     "NAME": "꾸러미: 구체 방랑자",
-    "DESCRIPTION": "구체 방랑, 방랑자 할퀴기, 잿더미 를 손으로 가져옵니다. NL 소멸.",
-    "UPGRADE_DESCRIPTION": "강화된 구체 방랑, 방랑자 할퀴기, 잿더미 를 손으로 가져옵니다. NL 소멸."
+    "DESCRIPTION": "구체 방랑, 방랑자 할퀴기, 잿더미 를 손으로 가져옵니다. 이번 전투동안 비용이 1 감소합니다. NL 소멸.",
+    "UPGRADE_DESCRIPTION": "강화된 구체 방랑, 방랑자 할퀴기, 잿더미 를 손으로 가져옵니다. 이번 전투동안 비용이 1 감소합니다. NL 소멸."
   },
   "Guardian:PackageAutomaton": {
     "NAME": "꾸러미: 청동",
-    "DESCRIPTION": "파괴 광선, 청동 구체, 청동 갑옷 을 손으로 가져옵니다. NL 소멸.",
-    "UPGRADE_DESCRIPTION": "강화된 파괴 광선, 청동 구체, 청동 갑옷 을 손으로 가져옵니다. NL 소멸."
+    "DESCRIPTION": "파괴 광선, 청동 구체, 청동 갑옷 을 손으로 가져옵니다. 이번 전투동안 비용이 1 감소합니다. NL 소멸.",
+    "UPGRADE_DESCRIPTION": "강화된 파괴 광선, 청동 구체, 청동 갑옷 을 손으로 가져옵니다. 이번 전투동안 비용이 1 감소합니다. NL 소멸."
   },
   "Guardian:PackageDefect": {
     "NAME": "꾸러미: 디펙트",
@@ -278,7 +278,7 @@
   "Guardian:ExploitGems": {
     "NAME": "보석 활용",
     "DESCRIPTION": "카드를 1장 뽑습니다.",
-    "UPGRADE_DESCRIPTION": "[E] 를 얻습니다. NL 카드를 1장 뽑습니다."
+    "UPGRADE_DESCRIPTION": "카드를 1장 뽑습니다."
   },
   "Guardian:RefractedBeam": {
     "NAME": "굴절 광선",
@@ -370,7 +370,7 @@
   },
   "Guardian:RevengeProtocol": {
     "NAME": "복수 프로토콜",
-    "DESCRIPTION": "방어모드 가 해제되었을 때 방어모드 가 활성화 되었던 턴 만큼 임시 힘 을 얻습니다. NL 방어모드 를 !M! 얻습니다."
+    "DESCRIPTION": "방어모드 가 해제되었을 때 방어모드 가 활성화 되었던 턴 만큼 힘 을 얻습니다. NL 방어모드 를 !M! 얻습니다."
   },
   "Guardian:GatlingBeam": {
     "NAME": "개틀링 광선",

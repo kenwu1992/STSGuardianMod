@@ -96,10 +96,10 @@
   "Guardian:Purifier": {
     "NAME": "",
     "DESCRIPTIONS": [
-      "With a swift crushing blow, you shatter the Shrine into pieces in order to uncover the treasures within. Within the rubble, you find two pristine and usable gemstones, patiently awaiting their place in your weaponry. NL NL You leave the remains of the Shrine and continue the climb."
+      "당신은 제단에 묻혀있는 보물을 발견하기 위해 재빠르면서도 강력한 공격으로 제단을 파괴하여 조각냈습니다. 제단의 파편 속에서 마치 당신의 무기에 세공되기를 원하는 듯이 놓여진 깨끗하고 쓸만한 보석 원석을 2개 발견했습니다. NL NL 당신은 제단을 그대로 내버려두고 등반을 계속합니다."
     ],
     "OPTIONS": [
-      "[Smash] #gGain #g2 #gRandom #gGems."
+      "[파괴한다] #g무작위 #g보석을 #g2개 #g얻습니다."
     ]
   },
   "Guardian:Transmorgrifier": {
