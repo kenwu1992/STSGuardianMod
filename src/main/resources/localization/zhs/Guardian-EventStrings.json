@@ -96,10 +96,10 @@
   "Guardian:Purifier": {
     "NAME": "",
     "DESCRIPTIONS": [
-      "With a swift crushing blow, you shatter the Shrine into pieces in order to uncover the treasures within. Within the rubble, you find two pristine and usable gemstones, patiently awaiting their place in your weaponry. NL NL You leave the remains of the Shrine and continue the climb."
+      "你以一个快速的粉碎打击把神殿打碎以便寻找里面的宝藏。在瓦砾堆中，你会发现两块原始有用的宝石，耐心地等待它们在你的武器中的位置。你离开神殿之后继续攀登。"
     ],
     "OPTIONS": [
-      "[Smash] #gGain #g2 #gRandom #gGems."
+      "[粉碎] #g获得2个随机宝石 。"
     ]
   },
   "Guardian:Transmorgrifier": {

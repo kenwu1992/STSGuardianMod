@@ -17,13 +17,13 @@
   },
   "Guardian:Gem_Red": {
     "NAME": "红宝石",
-    "DESCRIPTION": " 宝石 。 NL 获得 2 点 临时 力量 。",
-    "UPGRADE_DESCRIPTION": "获得 2 点 临时 力量 。"
+    "DESCRIPTION": " 宝石 。 NL 获得 1 点 临时 力量 。",
+    "UPGRADE_DESCRIPTION": "获得 1 点 临时 力量 。"
   },
   "Guardian:Gem_Green": {
     "NAME": "翡翠",
-    "DESCRIPTION": " 宝石 。 NL 获得 2 点 临时 敏捷 。",
-    "UPGRADE_DESCRIPTION": "获得 2 点 临时 敏捷 。"
+    "DESCRIPTION": " 宝石 。 NL 获得 1 点 临时 敏捷 。",
+    "UPGRADE_DESCRIPTION": "获得 1 点 临时 敏捷 。"
   },
   "Guardian:Gem_White": {
     "NAME": "石英",
@@ -85,7 +85,7 @@
   },
   "Guardian:HyperBeam_Guardian": {
     "NAME": "超能射线",
-    "DESCRIPTION": "对所有敌人造成 !D! 点伤害。NL  力量在本牌中发挥 !M! 倍效果。  NL 跳过你的下个回合。"
+    "DESCRIPTION": "对所有敌人造成 !D! 点伤害。NL  力量 在本牌中发挥 !M! 倍效果。  NL 跳过你的下个回合。"
   },
   "Guardian:BronzeArmor": {
     "NAME": "铜制装甲",
@@ -102,7 +102,7 @@
   },
   "Guardian:Incinerate": {
     "NAME": "焚烧",
-    "DESCRIPTION": "造成 !D! 点伤害，给予 !M! 层灼烧。"
+    "DESCRIPTION": "造成 !D! 点伤害，给予 !M! 层 灼烧 。"
   },
   "Guardian:Orbwalk": {
     "NAME": "圆球运转",
@@ -110,8 +110,8 @@
 	"UPGRADE_DESCRIPTION": "获得 !M! 力量。 NL 滴答 -获得 1 点 力量 。"
   },
   "Guardian:WalkerClaw": {
-    "NAME": "冲刺爪击",
-    "DESCRIPTION": "造成 !D! 点伤害。 NL 力量在本牌中发挥 !M! 倍效果。"
+    "NAME": "天行爪击",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 力量 在本牌中发挥 !M! 倍效果。"
   },
   "Guardian:SphericShield": {
     "NAME": "球形护盾",
@@ -141,38 +141,38 @@
   },
   "Guardian:PackageShapes": {
     "NAME": "组件: 变形",
-    "DESCRIPTION": "增加一张 时间炸弹 ， 荆棘协议 和 反冲 到你的手牌。 NL 消耗 。",
-    "UPGRADE_DESCRIPTION": "增加一张 时间炸弹 ， 荆棘协议 和 反冲 到你的手牌， 每张都是已 升级 的。 NL 消耗 。"
+    "DESCRIPTION": "增加一张 时间炸弹 ， 荆棘协议 和 反冲 到你的手牌。他们的费用本场战斗降低 1  点。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "增加一张已 升级 的 时间炸弹 ， 荆棘协议 和 反冲 到你的手牌。他们的费用本场战斗降低 1  点。 NL 消耗 。"
   },
   "Guardian:PackageDonuDeca": {
     "NAME": "组件: 先古",
-    "DESCRIPTION": "增加1张 先古攻击 , 先古防御 和 先古机械 到你的手牌。 NL 消耗 。",
-    "UPGRADE_DESCRIPTION": "增加1张 先古攻击 ，先古防御 和 先古机械 到你的手牌，每张都是已 升级 的。 NL 消耗 。"
+    "DESCRIPTION": "增加1张 先古攻击 , 先古防御 和 先古建造 到你的手牌。他们的费用本场战斗降低 1  点。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "增加1张已 升级 的 先古攻击 ，先古防御 和 先古建造 到你的手牌。他们的费用本场战斗降低 1  点。 NL 消耗 。"
   },
   "Guardian:PackageSphere": {
     "NAME": "组件: 圆球",
-    "DESCRIPTION": "增加一张 球形护盾 ,  硬化 和 浮动圆球 到你的手牌。 NL 消耗 。",
-    "UPGRADE_DESCRIPTION": "增加一张 球形护盾 ， 硬化 和 浮动圆球 到你的手牌, 每张都是已 升级 的。 NL 消耗 。"
+    "DESCRIPTION": "增加一张 球形护盾 ,  硬化 和 浮动圆球 到你的手牌。他们的费用本场战斗降低 1  点。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "增加一张已 升级 的 球形护盾 ， 硬化 和 浮动圆球 到你的手牌。他们的费用本场战斗降低 1  点。 NL 消耗 。"
   },
   "Guardian:PackageSentry": {
     "NAME": "组件: 哨兵",
-    "DESCRIPTION": "增加一张 哨兵射线 和两张 哨兵震荡 到你的手牌。 NL 消耗 。",
-    "UPGRADE_DESCRIPTION": "增加一张 哨兵射线 和两张 哨兵震荡 到你的手牌，每张都是已 升级 的。 NL 消耗 。"
+    "DESCRIPTION": "增加一张 哨兵射线 和两张 哨兵震荡 到你的手牌。他们的费用本场战斗降低 1  点。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "增加一张已 升级 的 哨兵射线 和两张 哨兵震荡 到你的手牌。他们的费用本场战斗降低 1  点。 NL 消耗 。"
   },
   "Guardian:PackageWalker": {
-    "NAME": "组件: 圆球",
-    "DESCRIPTION": "增加一张 圆球运转 , 冲刺爪击 和 焚烧 到你的手牌。 NL 消耗 。",
-    "UPGRADE_DESCRIPTION": "增加一张 圆球运转 , 冲刺爪击 和 焚烧 到你的手牌， 每张都是已 升级 的。 NL 消耗 。"
+    "NAME": "组件: 天行",
+    "DESCRIPTION": "增加一张 圆球运转 , 冲刺爪击 和 焚烧 到你的手牌。他们的费用本场战斗降低 1  点。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "增加一张已 升级 的 圆球运转 , 冲刺爪击 和 焚烧 到你的手牌。他们的费用本场战斗降低 1  点。 NL 消耗 。"
   },
   "Guardian:PackageAutomaton": {
     "NAME": "组件: 铜制",
-    "DESCRIPTION": "增加一张 超能射线 ， 铜制圆球 和 铜制装甲 到你的手牌。 NL 消耗 。",
-    "UPGRADE_DESCRIPTION": "增加一张 超能射线 ， 铜制圆球 和 铜制装甲 到你的手牌， 每张都是已 升级 的。 NL 消耗 。"
+    "DESCRIPTION": "增加一张 超能射线 ， 铜制圆球 和 铜制装甲 到你的手牌。他们的费用本场战斗降低 1  点。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "增加一张已 升级 的 超能射线 ， 铜制圆球 和 铜制装甲 到你的手牌。他们的费用本场战斗降低 1  点。 NL 消耗 。"
   },
   "Guardian:PackageDefect": {
-    "NAME": "组件: 铜制",
-    "DESCRIPTION": "增加一张 预编程 ， 重连 和 时间电容器 到你的手牌。 NL 消耗 。",
-    "UPGRADE_DESCRIPTION": "增加一张 预编程 ， 重连 和 时间电容器 到你的手牌， 每张都是已 升级 的。 NL 消耗 。"
+    "NAME": "组件: 缺陷",
+    "DESCRIPTION": "增加一张 重连 ，预编程  和 时间电容器 到你的手牌。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "增加一张已 升级 的 重连 ，预编程  和 时间电容器 到你的手牌。他们的费用本场战斗降低 1  点。 NL 消耗 。"
   },
   "Guardian:Planning": {
     "NAME": "计划",
@@ -185,7 +185,7 @@
   },
   "Guardian:Emergency": {
     "NAME": "紧急恢复",
-    "DESCRIPTION": " 加速 最右的 凝滞 到0。 NL 消耗 。"
+    "DESCRIPTION": " 加速 最右的 凝滞 到 0。 NL 消耗 。"
   },
   "Guardian:Clone": {
     "NAME": "克隆",
@@ -228,7 +228,7 @@
     "DESCRIPTION": "获得 !M! 个凝滞栏位。"
   },
   "Guardian:ConstructionForm": {
-    "NAME": "建设形态",
+    "NAME": "建造形态",
     "DESCRIPTION": "在接下来 !M! 个回合， 你不会失去生命但不能打出攻击牌。"
   },
   "Guardian:WeakpointTargeting": {
@@ -241,7 +241,7 @@
   },
   "Guardian:GemFire": {
     "NAME": "宝石加农炮",
-    "DESCRIPTION": "消耗所有镶嵌有 宝石 的牌。 每颗宝石对随机敌人造成 !D! 点伤害。"
+    "DESCRIPTION": "消耗所有有 宝石 的牌。 每颗宝石对随机敌人造成 !D! 点伤害。"
   },
   "Guardian:ChargeCore": {
     "NAME": "充能核心",
@@ -276,7 +276,7 @@
     "DESCRIPTION": "获得 !B! 点 格挡 。 NL 如果有牌被 凝滞 ，再获得 !B! 点格挡。"
   },
   "Guardian:ExploitGems": {
-    "NAME": "宝石利用",
+    "NAME": "开采宝石",
     "DESCRIPTION": "抽 1 张牌。",
     "UPGRADE_DESCRIPTION": "获得 [E] 。 NL 抽 1 张牌。"
   },
@@ -311,15 +311,15 @@
   },
   "Guardian:TimeSifter": {
     "NAME": "时间沙漏",
-    "DESCRIPTION": "在你的回合结束时， 加速 最右侧的 凝滞 大于等于两点的降低 1 点。"
+    "DESCRIPTION": "在你的回合结束时， 加速 最右侧的 凝滞 大于等于两点的牌 1 点。"
   },
   "Guardian:AncientConstruct": {
-    "NAME": "先古机械",
+    "NAME": "先古建造",
     "DESCRIPTION": "在你的回合开始时， 如果你没有 人工制品 ，获得 !M! 层人工制品并失去 [E] 。"
   },
   "Guardian:CrystalBeam": {
     "NAME": "水晶射线",
-    "DESCRIPTION": "造成 !D! 点伤害。 每镶嵌一颗 宝石 增加 !M! 点伤害。"
+    "DESCRIPTION": "造成 !D! 点伤害。 所有的镶嵌有宝石的牌，每镶嵌一颗 宝石 增加 #b这张 牌 !M! 点伤害。"
   },
   "Guardian:Gem_Synthetic": {
     "NAME": "玛瑙",
@@ -370,7 +370,7 @@
   },
   "Guardian:RevengeProtocol": {
     "NAME": "复仇协议",
-    "DESCRIPTION": "当 防御模式 消失时, 获得防御模式持续回合数的 临时 力量 。 NL 获得 !M! 层防御模式"
+    "DESCRIPTION": "当 防御模式 消失时, 获得防御模式持续回合数的 力量 。 NL 获得 !M! 层防御模式"
   },
   "Guardian:GatlingBeam": {
     "NAME": "加特林射线",
@@ -378,7 +378,7 @@
   },
   "Guardian:ShieldCharger": {
     "NAME": "护盾充能",
-    "DESCRIPTION": "将这张牌 凝滞。  NL  滴答 -获得 !B! 点 格挡 和 [E] 。 NL 挥发 。"
+    "DESCRIPTION": "将这张牌 凝滞 。  NL  滴答 -获得 !B! 点 格挡 和 [E] 。 NL 挥发 。"
   },
   "Guardian:StasisEngine": {
     "NAME": "凝滞引擎",
@@ -386,39 +386,39 @@
     "UPGRADE_DESCRIPTION": "固有 ， NL 在一回合内打出 3 张0费卡时，获得 [E] 并抽 1 张卡。"
   },
   "Guardian:HammerDown": {
-    "NAME": "Hammer Down",
-    "DESCRIPTION": "Deal !D! damage. NL Double your Strength and Dexterity."
+    "NAME": "坠落重锤",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 翻倍你的 力量 和 敏捷 。"
   },
   "Guardian:OmegaCannon": {
-    "NAME": "Omega Cannon",
-    "DESCRIPTION": "Deal !D! damage. NL Costs 1 less [E] for each Strength you have."
+    "NAME": "终极加农炮",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 你每有 1 点 力量，降低 1 点费用。"
   },
   "Guardian:ModeShift": {
-    "NAME": "Mode Shift",
-    "DESCRIPTION": "Swap your Strength and Dexterity. NL Draw a card.",
-    "UPGRADE_DESCRIPTION": "Retain. NL Swap your Strength and Dexterity. NL Draw !M! cards."
+    "NAME": "模式切换",
+    "DESCRIPTION": "交换你的 力量 与 敏捷 。 NL 抽 1 张牌。",
+    "UPGRADE_DESCRIPTION": " 保留 。 NL 交换你的 力量 与 敏捷 。 NL 抽 !M! 张牌。"
   },
   "Guardian:PackageConstruct": {
-    "NAME": "Package: Construct",
-    "DESCRIPTION": "Add a Hammer Down, Omega Cannon, and Mode Shift to your hand, and reduce their costs by 1 this combat. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Add a Hammer Down, Omega Cannon, and Mode Shift to your hand, Upgrade them, and reduce their costs by 1 this combat. NL Exhaust."
+    "NAME": "组件：建设",
+    "DESCRIPTION": "增加 1 张 实锤,，终极加农炮 和 模式切换 到你的手牌中。 他们的费用本场战斗降低 1  点。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "增加 1 张已 升级 的 实锤,，终极加农炮 和 模式切换 到你的手牌中。 他们的费用本场战斗降低 1  点。 NL Exhaust."
   },
   "Guardian:PackageMass": {
-    "NAME": "Package: Mass",
-    "DESCRIPTION": "Add a Mass of Spikes, Mass of Bombs, and Group Slam to your hand, and reduce their costs by 1 this combat. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Add a Mass of Spikes, Mass of Bombs, and Group Slam to your hand, Upgrade them, and reduce their costs by 1 this combat. NL Exhaust."
+    "NAME": "组件: 团块",
+    "DESCRIPTION": "增加一张 扭曲荆棘 ， 团状炸弹 和 合体撞击 到你的手牌。他们的费用本场战斗降低 1  点。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "增加一张已 升级 的 扭曲荆棘 ， 团状炸弹 和 合体撞击 到你的手牌。他们的费用本场战斗降低 1  点。 NL 消耗 。"
   },
   "Guardian:MassOfThorns": {
-    "NAME": "Mass Of Spikes",
-    "DESCRIPTION": "Gain !M! Momentary Thorns."
+    "NAME": "团状荆棘",
+    "DESCRIPTION": "获得 !M! 层 临时 荆棘 。"
   },
   "Guardian:MassTimeBomb": {
-    "NAME": "Mass Of Bombs",
-    "DESCRIPTION": "In each empty Stasis slot, place a Time Bomb into Stasis there. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "In each empty Stasis slot, place an Upgraded Time Bomb into Stasis there. NL Exhaust."
+    "NAME": "团状炸弹",
+    "DESCRIPTION": "向每个空的凝滞栏位加入一张 时间炸弹 。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "向每个空的凝滞栏位加入一张已 升级 的 时间炸弹 。 NL 消耗 。"
   },
   "Guardian:MassSlam": {
-    "NAME": "Group Slam",
-    "DESCRIPTION": "Deal !D! damage !M! times."
+    "NAME": "合体撞击",
+    "DESCRIPTION": "造成 !D! 点伤害 !M! 次。"
   }
 }

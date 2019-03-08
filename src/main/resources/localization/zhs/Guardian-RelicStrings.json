@@ -31,8 +31,8 @@
     "NAME": "便携哨兵",
     "FLAVOR": "哨兵模式启动。 获得目标。无慈悲。",
     "DESCRIPTIONS": [
-      "At the start of each turn, alternates between: NL Deal ",
-      " damage to a random enemy. NL Apply 1 Weak to ALL enemies."
+      "在你的回合开始时,，以下行动交替进行: NL 对随机敌人造成 ",
+      " 点伤害。 NL 对所有敌人给予 1 层 虚弱 。"
     ]
   },
   "Guardian:SackOfGems": {
@@ -53,7 +53,7 @@
     "NAME": "警务亭",
     "FLAVOR": "在里面的更大。。。",
     "DESCRIPTIONS": [
-      "获得两个 凝滞 栏位。"
+      "获得 2 个 凝滞 栏位。"
     ]
   },
   "Guardian:StasisSlotReductionRelic": {
@@ -94,7 +94,7 @@
     "NAME": "冷却液",
     "FLAVOR": "有公害，不要随便丢弃",
     "DESCRIPTIONS": [
-      "当一张牌触发 滴答 时, 提高回合计数器 2 点."
+      "当一张牌触发 滴答 时, #y提高 回合计数器 2 点。"
     ]
   }
 }
