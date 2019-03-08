@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.ArtifactPower;
 import com.megacrit.cardcrawl.powers.ThornsPower;
 import guardian.GuardianMod;
 import guardian.actions.SwitchToDefenseModeAction;
@@ -50,7 +51,9 @@ public class MassOfThorns extends AbstractGuardianCard {
 
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new ThornsPower(p, this.magicNumber), this.magicNumber));
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new LoseThornsPower(p, this.magicNumber), this.magicNumber));
-
+        if (AbstractDungeon.player.hasPower(ArtifactPower.POWER_ID)){
+            this.exhaust = true;
+        }
         super.useGems(p,m);
     }
 

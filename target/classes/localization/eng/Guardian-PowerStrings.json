@@ -65,7 +65,7 @@
 		"DESCRIPTIONS": [
 			"Defensive Mode will remain active for ",
 			" turns. Defensive Mode grants ",
-			" Thorns, reduces Strength by 1, and grants 2 Block when you play a card."
+			" Thorns, reduces damage dealt by 25%, and grants 2 Block when you play a card."
 		]
 	},
 	"Guardian:ConstructModePower": {

@@ -48,6 +48,7 @@ public class HammerDown extends AbstractGuardianCard {
 
         this.baseDamage = DAMAGE;
         //this.sockets.add(GuardianMod.socketTypes.RED);
+        this.exhaust = true;
 
 
     }

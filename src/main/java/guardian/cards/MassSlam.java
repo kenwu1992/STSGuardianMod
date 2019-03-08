@@ -11,6 +11,8 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.ArtifactPower;
+import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.random.Random;
 import com.megacrit.cardcrawl.vfx.combat.BloodShotEffect;
 import guardian.GuardianMod;
@@ -69,6 +71,12 @@ public class MassSlam extends AbstractGuardianCard {
             }
             AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), effect));
 
+        }
+
+        if (AbstractDungeon.player.hasPower(StrengthPower.POWER_ID)){
+            if (AbstractDungeon.player.getPower(StrengthPower.POWER_ID).amount >= 3) {
+                this.exhaust = true;
+            }
         }
 
     }

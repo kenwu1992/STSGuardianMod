@@ -141,8 +141,8 @@
   },
   "Guardian:PackageShapes": {
     "NAME": "Package: Shapes",
-    "DESCRIPTION": "Add a Time Bomb, Spiker Protocol, and Repulsor Protocol to your hand, and reduce their costs by 1 this combat. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Add an Time Bomb, Spiker Protocol, and Repulsor Protocol to your hand, Upgrade them, and reduce their costs by 1 this combat. NL Exhaust."
+    "DESCRIPTION": "Add a Time Bomb, Spiker Protocol, and Repulsor to your hand, and reduce their costs by 1 this combat. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Add a Time Bomb, Spiker Protocol, and Repulsor to your hand, Upgrade them, and reduce their costs by 1 this combat. NL Exhaust."
   },
   "Guardian:PackageDonuDeca": {
     "NAME": "Package: Ancients",
@@ -387,7 +387,7 @@
   },
   "Guardian:HammerDown": {
     "NAME": "Hammer Down",
-    "DESCRIPTION": "Deal !D! damage. NL Double your Strength and Dexterity."
+    "DESCRIPTION": "Deal !D! damage. NL Double your Strength and Dexterity. NL Exhaust."
   },
   "Guardian:OmegaCannon": {
     "NAME": "Omega Cannon",
@@ -410,15 +410,15 @@
   },
   "Guardian:MassOfThorns": {
     "NAME": "Mass Of Spikes",
-    "DESCRIPTION": "Gain !M! Momentary Thorns."
+    "DESCRIPTION": "Gain !M! Momentary Thorns. NL Exhaust if you have Artifact."
   },
   "Guardian:MassTimeBomb": {
     "NAME": "Mass Of Bombs",
-    "DESCRIPTION": "In each empty Stasis slot, place a Time Bomb into Stasis there. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "In each empty Stasis slot, place an Upgraded Time Bomb into Stasis there. NL Exhaust."
+    "DESCRIPTION": "In each empty Stasis slot, place a Time Bomb there. NL Exhaust if this created 2 or more Time Bombs.",
+    "UPGRADE_DESCRIPTION": "In each empty Stasis slot, place an Upgraded Time Bomb there. NL Exhaust if this created 2 or more Time Bombs."
   },
   "Guardian:MassSlam": {
     "NAME": "Group Slam",
-    "DESCRIPTION": "Deal !D! damage !M! times."
+    "DESCRIPTION": "Deal !D! damage !M! times. NL Exhaust if you have 3 or more Strength."
   }
 }

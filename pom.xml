@@ -3,7 +3,7 @@
 
     <groupId>guardian</groupId>
     <artifactId>guardian</artifactId>
-    <version>v0.4.5</version>
+    <version>v0.4.7</version>
     <packaging>jar</packaging>
 
     <name>Guardian Mod</name>

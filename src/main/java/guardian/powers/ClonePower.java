@@ -1,6 +1,7 @@
 package guardian.powers;
 
 
+import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -52,7 +53,7 @@ public class ClonePower extends AbstractGuardianPower {
         super.onUseCard(card, action);
         if (!(card.hasTag(GuardianMod.VOLATILE)) && !(card instanceof StasisField) && !(card instanceof StasisStrike) && !card.exhaust && (card.type == AbstractCard.CardType.ATTACK || card.type == AbstractCard.CardType.SKILL)) {
             if (this.amount == 1) {
-                AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(this.owner, this.owner, this));
+                AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(this.owner, this.owner, this, 1));
 
             } else {
                 this.amount -= 1;
@@ -60,6 +61,14 @@ public class ClonePower extends AbstractGuardianPower {
 
                 AbstractDungeon.actionManager.addToBottom(new PlaceActualCardIntoStasis(card));
 
+        }
+    }
+
+    @Override
+    public void reducePower(int reduceAmount) {
+        super.reducePower(reduceAmount);
+        if (this.amount <= 0){
+            AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(this.owner, this.owner, this));
         }
     }
 

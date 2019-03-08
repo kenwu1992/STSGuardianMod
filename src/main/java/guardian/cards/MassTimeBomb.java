@@ -40,7 +40,6 @@ public class MassTimeBomb extends AbstractGuardianCard {
     public MassTimeBomb() {
         super(ID, NAME, GuardianMod.getResourcePath(IMG_PATH), COST, DESCRIPTION, TYPE, AbstractCardEnum.GUARDIAN, RARITY, TARGET);
 
-        this.exhaust = true;
 }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
@@ -57,13 +56,16 @@ public class MassTimeBomb extends AbstractGuardianCard {
             }
 
         }
-
         //GuardianMod.logger.info("bombcount = " + bombCount);
         for (int i = 0; i < bombCount; i++) {
             AbstractCard c = new TimeBomb();
             if (upgraded) c.upgrade();
             AbstractDungeon.actionManager.addToBottom(new PlaceActualCardIntoStasis(c));
 
+        }
+
+        if (bombCount >= 2){
+            this.exhaust = true;
         }
 
     }
