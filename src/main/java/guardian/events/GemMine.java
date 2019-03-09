@@ -48,11 +48,11 @@ public class GemMine extends AbstractImageEvent {
         this.imageEventText.updateBodyText(DIALOG_START);
 
         if (AbstractDungeon.player.hasRelic(PickAxe.ID)){
-            if (AbstractDungeon.player.getRelic(PickAxe.ID).counter == 0){
+            if (AbstractDungeon.player.getRelic(PickAxe.ID).counter == -2){
                 this.imageEventText.setDialogOption(OPTIONS[5], true);
+            } else {
+                this.imageEventText.setDialogOption(OPTIONS[4]);
             }
-            this.imageEventText.setDialogOption(OPTIONS[4]);
-
         } else {
             this.imageEventText.setDialogOption(OPTIONS[3]);
 
@@ -83,15 +83,15 @@ public class GemMine extends AbstractImageEvent {
                             AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(card, (float)(Settings.WIDTH / 2), (float)(Settings.HEIGHT / 2)));
                             CardCrawlGame.sound.play("MONSTER_BOOK_STAB_0");
                             AbstractDungeon.player.getRelic(PickAxe.ID).onTrigger();
-                            if (AbstractDungeon.player.getRelic(PickAxe.ID).counter == 0){
-                                this.imageEventText.updateDialogOption(0, OPTIONS[6], true);
+                            if (AbstractDungeon.player.getRelic(PickAxe.ID).counter == -2){
+                                this.imageEventText.updateDialogOption(0, OPTIONS[5], true);
 
                             }
                             this.tookGems = true;
                         } else {
                             this.imageEventText.updateBodyText(DIALOG_LOOT);
                             AbstractDungeon.getCurrRoom().spawnRelicAndObtain((float)(Settings.WIDTH / 2), (float)(Settings.HEIGHT / 2), new guardian.relics.PickAxe());
-                            this.imageEventText.updateDialogOption(0, OPTIONS[4], true);
+                            this.imageEventText.updateDialogOption(0, OPTIONS[4], false);
 
                         }
 

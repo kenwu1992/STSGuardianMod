@@ -98,13 +98,10 @@
     ]
   },
   "Guardian:PickAxe": {
-    "NAME": "Rhapsody Pick",
+    "NAME": "Rhapsody Co. Mining Pick",
     "FLAVOR": "With as many gemstones that litter the Spire, it is hard to imagine anyone so unlucky to have needed this Pick to aid them.",
     "DESCRIPTIONS": [
-      "You can now #yMine for two Gems at one more Rest Site.",
-      "You can now #yMine for two Gems at up to ",
-      " Rest Sites.",
-      "The Pick has broken."
+      "You can #gMine for two #yGems at up to 3 Rest Sites."
     ]
   }
 }

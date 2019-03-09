@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.actions.utility.QueueCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
+import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import guardian.GuardianMod;
@@ -19,42 +20,41 @@ public class PickAxe extends CustomRelic {
     public PickAxe() {
         super(ID, new Texture(GuardianMod.getResourcePath(IMG_PATH)), new Texture(GuardianMod.getResourcePath(OUTLINE_IMG_PATH)),
                 RelicTier.COMMON, LandingSound.FLAT);
+
+        this.counter = 3;
+    }
+
+    @Override
+    public void onEquip() {
+        super.onEquip();
     }
 
     @Override
     public String getUpdatedDescription() {
-        if (this.counter == 0){
-            return this.DESCRIPTIONS[3];
-        } else {
-            if (this.counter == 1){
-                return this.DESCRIPTIONS[0];
-            } else {
-                return this.DESCRIPTIONS[1] + this.counter + this.DESCRIPTIONS[2];
-            }
 
-        }
+        return this.DESCRIPTIONS[0];
 
-    }
-
-    @Override
-    public void onPlayCard(AbstractCard c, AbstractMonster m) {
-        super.onPlayCard(c, m);
-        if (c.hasTag(GuardianMod.GEM)){
-            AbstractCard gemCard = c.makeStatEquivalentCopy();
-            AbstractDungeon.actionManager.addToBottom(new QueueCardAction(gemCard, m));
-            this.flash();
-        }
     }
 
     @Override
     public void onTrigger() {
         super.onTrigger();
         this.counter--;
-        getUpdatedDescription();
+        setCounter(this.counter);
+
+
 
     }
 
-    public void checkNoCounter(){
+    public void setCounter(int counter) {
+        this.counter = counter;
+        if (counter == 0) {
+            this.counter = -2;
+            this.img = ImageMaster.loadImage(GuardianMod.getResourcePath("relics/pickUsed.png"));
+            this.usedUp();
+        } else {
+
+        }
 
     }
 

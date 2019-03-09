@@ -22,7 +22,8 @@
   "Guardian:FindGemsOption": {
     "TEXT": [
       "Mine",
-      "Gain 2 random Gems."
+      "Gain 2 random Gems.",
+      "Pick broken."
     ]
   }
 }

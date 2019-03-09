@@ -9,6 +9,9 @@ import com.megacrit.cardcrawl.events.shrines.PurificationShrine;
 import com.megacrit.cardcrawl.events.shrines.Transmogrifier;
 import com.megacrit.cardcrawl.events.shrines.UpgradeShrine;
 import guardian.characters.GuardianCharacter;
+import guardian.events.PurificationShrineGuardian;
+import guardian.events.TransmogrifierGuardian;
+import guardian.events.UpgradeShrineGuardian;
 
 
 @SpirePatch(clz= AbstractDungeon.class,method="initializeCardPools")
@@ -22,6 +25,10 @@ public class EventOverridePatchShrines {
             AbstractDungeon.shrineList.remove(Transmogrifier.ID);
             AbstractDungeon.shrineList.remove(UpgradeShrine.ID);
 
+        } else {
+            AbstractDungeon.eventList.remove(PurificationShrineGuardian.ID);
+            AbstractDungeon.eventList.remove(TransmogrifierGuardian.ID);
+            AbstractDungeon.eventList.remove(UpgradeShrineGuardian.ID);
         }
 
 
