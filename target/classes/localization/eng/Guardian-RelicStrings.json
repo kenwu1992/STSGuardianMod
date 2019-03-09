@@ -96,5 +96,15 @@
     "DESCRIPTIONS": [
       "When a card with a Tick effect enters Stasis, increase it's turn counter by 2."
     ]
+  },
+  "Guardian:PickAxe": {
+    "NAME": "Rhapsody Pick",
+    "FLAVOR": "With as many gemstones that litter the Spire, it is hard to imagine anyone so unlucky to have needed this Pick to aid them.",
+    "DESCRIPTIONS": [
+      "You can now #yMine for two Gems at one more Rest Site.",
+      "You can now #yMine for two Gems at up to ",
+      " Rest Sites.",
+      "The Pick has broken."
+    ]
   }
 }

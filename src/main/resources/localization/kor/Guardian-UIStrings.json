@@ -18,5 +18,11 @@
       "~에러:~ #r정지장 작업중.",
       "덱에 보석 하나를 넣습니다."
     ]
+  },
+  "Guardian:FindGemsOption": {
+    "TEXT": [
+      "Mine",
+      "Gain 2 random Gems."
+    ]
   }
 }

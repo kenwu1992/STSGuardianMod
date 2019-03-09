@@ -96,5 +96,15 @@
     "DESCRIPTIONS": [
       "체크포인트 효과가 있는 카드가 정지장으로 들어갈 때 그 카드의 카운터를 2 증가 effect enters Stasis, increase it's turn counter by 2."
     ]
+  },
+  "Guardian:PickAxe": {
+    "NAME": "Mining Pick",
+    "FLAVOR": "For the on-the-go jewelcrafter.",
+    "DESCRIPTIONS": [
+      "You can now #yMine for two Gems at one Rest Site.",
+      "You can now #yMine for two Gems at ",
+      " Rest Sites.",
+      "The Pick has broken."
+    ]
   }
 }

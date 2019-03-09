@@ -32,8 +32,10 @@ guardian\cards\FierceBash.class
 guardian\relics\PocketSentry.class
 guardian\patches\RewardItemTypePatch.class
 guardian\cards\ShieldSpikes.class
+guardian\ui\FindGemsOption.class
 guardian\cards\RevengeProtocol.class
 guardian\cards\TimeCapacitor.class
+guardian\relics\PickAxe.class
 guardian\cards\Gem_Yellow.class
 guardian\cards\MultiBeam.class
 guardian\cards\PackageConstruct.class
@@ -93,6 +95,7 @@ guardian\events\BackToBasicsGuardian.class
 guardian\cards\GuardianWhirl.class
 guardian\GuardianMod$socketTypes.class
 guardian\actions\CompilePackageAction.class
+guardian\vfx\CampfireFindGemsEffect.class
 guardian\cards\Gem_Fragmented.class
 guardian\events\PurificationShrineGuardian.class
 guardian\cards\TimeSifter.class

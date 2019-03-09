@@ -5,12 +5,17 @@
       "당신은 오래된 광산 입구로 들어갔습니다. 돌 무더기 안 쪽을 보니 반짝이는 보석들이 보입니다.  #g에메랄드, #r루비, #y토파즈 등 여러가지가 있습니다. 주변을 둘러봐도 채광 도구는 보이지 않습니다. 하지만 보석들은 거의 표면에 드러나있다시피 합니다. 힘만 조금 쓴다면 그 돌 무더기에서 추출해낼 수 있을 것 같습니다.",
       "바위같은 벽을 파내자 당신은 이내 안쪽에 있는 보석을 발견할 수 있었습니다. 고통이 따르긴 하지만 희생 없이 영광을 얻을 순 없습니다.",
       "보물을 찾는 것도 상당히 매력적인 일이지만 당신은 더 중요한 것을 위해 당신의 방어구를 손상시키지 않는 쪽을 선택했습니다.",
-      "이 오래된 광산을 성공적으로 채광한 뒤, 당신은 약간의 성취감과 함께 자리를 뜹니다. 하지만 당신의 청동 부속품이 약간 삐걱대는 것이 느껴집니다."
+      "이 오래된 광산을 성공적으로 채광한 뒤, 당신은 약간의 성취감과 함께 자리를 뜹니다. 하지만 당신의 청동 부속품이 약간 삐걱대는 것이 느껴집니다.",
+      "You snatch up the mining pick, which seems to be in poor condition. You could use it here to gain some gems, or stash it away to use later in your climb.",
+      "Using the mining pick, you hammer away at the wall and carve out a gem. The pick takes some wear and tear in the process, but better to damage it than your claws."
     ],
     "OPTIONS": [
       "[채광] #g무작위 #g보석 #g하나를 #g얻습니다. #r체력을 #r",
       " #r잃습니다.",
-      "[떠난다]"
+      "[떠난다]",
+      "[Loot] #gGain #gMining #gPick.",
+      "[Mine] #gGain #grandom #gGem. #rLose #rPick #rcharge.",
+      "[Locked] Pick #rBroken."
     ]
   },
   "Guardian:StasisEgg": {

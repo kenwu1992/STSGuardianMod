@@ -18,6 +18,7 @@ import com.megacrit.cardcrawl.localization.EventStrings;
 
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
 import guardian.GuardianMod;
+import guardian.relics.PickAxe;
 
 import java.util.ArrayList;
 
@@ -31,6 +32,8 @@ public class GemMine extends AbstractImageEvent {
     private static final String DIALOG_LEAVE;
     private static final String DIALOG_MINE;
     private static final String DIALOG_LEAVEWITHGEM;
+    private static final String DIALOG_LOOT;
+    private static final String DIALOG_MINEPICK;
     private int screenNum = 0;
     private boolean tookGems = false;
     private int damage;
@@ -43,7 +46,19 @@ public class GemMine extends AbstractImageEvent {
             this.damage = (int)((float)AbstractDungeon.player.maxHealth * 0.06F);
         }
         this.imageEventText.updateBodyText(DIALOG_START);
+
+        if (AbstractDungeon.player.hasRelic(PickAxe.ID)){
+            if (AbstractDungeon.player.getRelic(PickAxe.ID).counter == 0){
+                this.imageEventText.setDialogOption(OPTIONS[5], true);
+            }
+            this.imageEventText.setDialogOption(OPTIONS[4]);
+
+        } else {
+            this.imageEventText.setDialogOption(OPTIONS[3]);
+
+        }
         this.imageEventText.setDialogOption(OPTIONS[0] + this.damage + OPTIONS[1]);
+
         this.imageEventText.setDialogOption(OPTIONS[2]);
 
     }
@@ -60,6 +75,28 @@ public class GemMine extends AbstractImageEvent {
             case 0:
                 switch(buttonPressed) {
                     case 0:
+                        if (AbstractDungeon.player.hasRelic(PickAxe.ID)){
+                            this.imageEventText.updateBodyText(DIALOG_MINEPICK);
+                            ArrayList<AbstractCard> gems = GuardianMod.getRewardGemCards(false, 1);
+                            AbstractCard card = gems.get(0);
+
+                            AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(card, (float)(Settings.WIDTH / 2), (float)(Settings.HEIGHT / 2)));
+                            CardCrawlGame.sound.play("MONSTER_BOOK_STAB_0");
+                            AbstractDungeon.player.getRelic(PickAxe.ID).onTrigger();
+                            if (AbstractDungeon.player.getRelic(PickAxe.ID).counter == 0){
+                                this.imageEventText.updateDialogOption(0, OPTIONS[6], true);
+
+                            }
+                            this.tookGems = true;
+                        } else {
+                            this.imageEventText.updateBodyText(DIALOG_LOOT);
+                            AbstractDungeon.getCurrRoom().spawnRelicAndObtain((float)(Settings.WIDTH / 2), (float)(Settings.HEIGHT / 2), new guardian.relics.PickAxe());
+                            this.imageEventText.updateDialogOption(0, OPTIONS[4], true);
+
+                        }
+
+                        return;
+                    case 1:
                         this.imageEventText.updateBodyText(DIALOG_MINE);
 
                         ArrayList<AbstractCard> gems = GuardianMod.getRewardGemCards(false, 1);
@@ -99,5 +136,7 @@ public class GemMine extends AbstractImageEvent {
         DIALOG_LEAVE = DESCRIPTIONS[2];
         DIALOG_START = DESCRIPTIONS[0];
         DIALOG_LEAVEWITHGEM = DESCRIPTIONS[3];
+        DIALOG_LOOT = DESCRIPTIONS[3];
+        DIALOG_MINEPICK = DESCRIPTIONS[3];
     }
 }

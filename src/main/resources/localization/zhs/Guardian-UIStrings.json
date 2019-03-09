@@ -18,5 +18,11 @@
       "~错误:~ 在 #r凝滞 进程中。",
       "增加一颗宝石到你的牌库。"
     ]
+  },
+  "Guardian:FindGemsOption": {
+    "TEXT": [
+      "Mine",
+      "Gain 2 random Gems."
+    ]
   }
 }

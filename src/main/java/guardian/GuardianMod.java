@@ -363,6 +363,7 @@ public class GuardianMod implements PostDrawSubscriber, PreMonsterTurnSubscriber
         BaseMod.addRelicToCustomPool(new TickHelperRelic(), AbstractCardEnum.GUARDIAN);
         BaseMod.addRelicToCustomPool(new StasisUpgradeRelic(), AbstractCardEnum.GUARDIAN);
         BaseMod.addRelicToCustomPool(new guardian.relics.StasisEgg(), AbstractCardEnum.GUARDIAN);
+        BaseMod.addRelicToCustomPool(new guardian.relics.PickAxe(), AbstractCardEnum.GUARDIAN);
         BaseMod.registerBottleRelic(BottledStasisPatch.inStasisEgg, new guardian.relics.StasisEgg());
 
 

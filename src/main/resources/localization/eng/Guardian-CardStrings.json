@@ -123,8 +123,8 @@
   },
   "Guardian:SentryBeam": {
     "NAME": "Sentry Beam",
-    "DESCRIPTION": "Deal !D! Damage. NL Place a Sentry_Wave on top of your draw pile. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Deal !D! Damage. NL Place an Upgraded Sentry_Wave on top of your draw pile. NL Exhaust."
+    "DESCRIPTION": "Deal !D! Damage. NL Draw a card. NL Place a Sentry_Wave into Stasis. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Deal !D! Damage. NL Draw a card. NL Place an Upgraded Sentry_Wave into Stasis. NL Exhaust."
   },
   "Guardian:SentryWave": {
     "NAME": "Sentry Wave",

@@ -70,11 +70,15 @@ this.exhaust = true;
 
         }
         AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, 1));
-        AbstractGuardianCard newCard = new SentryBeam();
-        if (this.upgraded) newCard.upgrade();
-        UnlockTracker.markCardAsSeen(SentryWave.ID);
 
-        AbstractDungeon.actionManager.addToBottom(new CardToTopOfDrawPileAction(newCard));
+        if (AbstractDungeon.player.hasEmptyOrb()) {
+
+            AbstractGuardianCard newCard = new SentryBeam();
+            if (this.upgraded) newCard.upgrade();
+            UnlockTracker.markCardAsSeen(SentryWave.ID);
+
+            AbstractDungeon.actionManager.addToBottom(new PlaceActualCardIntoStasis(newCard));
+        }
 
         super.useGems(p,m);
     }

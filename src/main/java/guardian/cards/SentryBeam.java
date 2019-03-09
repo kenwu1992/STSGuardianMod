@@ -5,6 +5,7 @@ package guardian.cards;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -71,11 +72,13 @@ this.exhaust = true;
 
         AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new com.megacrit.cardcrawl.cards.DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.FIRE));
 
-        AbstractGuardianCard newCard = new SentryWave();
-        newCard.sockets = this.sockets;
-        if (this.upgraded) newCard.upgrade();
+        if (AbstractDungeon.player.hasEmptyOrb()) {
+            AbstractGuardianCard newCard = new SentryWave();
+            newCard.sockets = this.sockets;
+            if (this.upgraded) newCard.upgrade();
 
-        AbstractDungeon.actionManager.addToBottom(new CardToTopOfDrawPileAction(newCard));
+            AbstractDungeon.actionManager.addToBottom(new PlaceActualCardIntoStasis(newCard));
+        }
 
 
         super.useGems(p,m);
