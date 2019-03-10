@@ -60,7 +60,7 @@
     "NAME": "撤离计划",
     "FLAVOR": "撤离尖塔的指令。最好不要让他们落入坏人之手。",
     "DESCRIPTIONS": [
-      "拾起时， 失去 2 个 凝滞 栏位，NL 每回合开始时获得 [E] 。"
+      "拾起时， 失去 2 个 凝滞 栏位， NL 每回合开始时获得 [E] 。"
     ]
   },
   "Guardian:StasisUpgradeRelic": {
@@ -98,10 +98,10 @@
     ]
   },
   "Guardian:PickAxe": {
-    "NAME": "Mining Pick",
-    "FLAVOR": "For the on-the-go jewelcrafter.",
+    "NAME": "狂热公司采矿镐",
+    "FLAVOR": "有那么多宝石散落在尖塔中，很难想象有这么不幸的人需要这把镐来帮助他们。",
     "DESCRIPTIONS": [
-      "You can #gMine for two #yGems at up to 3 Rest Sites."
+	"你能在 3 处 篝火 #g挖掘 2 颗 #y宝石。"
     ]
   }
 }
