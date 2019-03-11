@@ -48,6 +48,11 @@ public class GemFireAction extends AbstractGameAction {
                             AbstractDungeon.actionManager.addToBottom(new ExhaustSpecificCardAction(c, AbstractDungeon.player.hand, true));
 
                         }
+                        if (c.hasTag(GuardianMod.GEM)){
+                            hitCount ++;
+                            AbstractDungeon.actionManager.addToBottom(new ExhaustSpecificCardAction(c, AbstractDungeon.player.hand, true));
+
+                        }
                     }
                 }
             }

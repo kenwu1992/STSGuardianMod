@@ -55,7 +55,7 @@ public class CampfirePatch
                 final ArrayList<AbstractCampfireOption> campfireButtons = (ArrayList<AbstractCampfireOption>) ReflectionHacks.getPrivate((Object) campfire, (Class) CampfireUI.class, "buttons");
 
                 boolean relicActive;
-                if (AbstractDungeon.player.getRelic(PickAxe.ID).counter == 0){
+                if (AbstractDungeon.player.getRelic(PickAxe.ID).counter == -2){
                     relicActive = false;
                 } else {
                     relicActive = true;
